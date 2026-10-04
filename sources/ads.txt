@@ -1,0 +1,5 @@
+# 广告拦截
+# 合并结果: dist/ads.srs
+# 路由动作: outbound = block
+
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ads-all.srs

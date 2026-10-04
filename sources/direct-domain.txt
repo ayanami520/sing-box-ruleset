@@ -1,0 +1,12 @@
+# 直连 - 域名类
+# 一行一个上游 .srs 地址, # 开头为注释
+# 合并结果: dist/direct-domain.srs
+
+# 中国大陆域名 (v2fly domain-list-community 的 geosite:cn)
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs
+
+# PT 站 (馒头/chdbits/hdsky/ttg/ourbits/pterclub/柠檬... 约 130 站)
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-pt.srs
+
+# 游戏平台中国区下载 CDN (Steam/Epic/暴雪/育碧/Xbox 的国内节点)
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-game-platforms-download@cn.srs

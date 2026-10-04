@@ -1,0 +1,10 @@
+# 直连 - IP 类
+# 合并结果: dist/direct-ip.srs
+#
+# 注意: 域名规则与 IP 规则务必分开成不同文件。
+#   - 语义清晰, 便于排查
+#   - sing-box 的 `rule-set match` 在混合类型的规则集上结果不可靠
+#     (会把域名误判为命中 ip_cidr), 纯类型才能用它做验证
+
+# 中国大陆 IP 段
+https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs

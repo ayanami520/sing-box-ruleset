@@ -1,0 +1,5 @@
+# Google 系站点
+# 合并结果: dist/google.srs
+# 路由动作: 指定出站 (建议指向 urltest 分组以获得自动故障切换)
+
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google.srs

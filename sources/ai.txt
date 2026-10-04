@@ -1,0 +1,5 @@
+# 境外 AI 站点 (OpenAI/Claude/Gemini/Copilot/Perplexity/Grok...)
+# 合并结果: dist/ai.srs
+# 路由动作: 指向 AI 专用出站分组
+
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ai-!cn.srs

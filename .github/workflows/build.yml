@@ -1,0 +1,78 @@
+name: Build rule-sets
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # 每天 UTC 18:00 (北京时间 02:00) 自动重建
+    - cron: '0 18 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-rulesets
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      # 与本机路由器保持一致, 避免 .srs 版本差异
+      SING_BOX_VERSION: 1.12.25
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Install sing-box
+        run: |
+          set -Eeuo pipefail
+          url="https://github.com/SagerNet/sing-box/releases/download/v${SING_BOX_VERSION}/sing-box-${SING_BOX_VERSION}-linux-amd64.tar.gz"
+          echo "下载: $url"
+          curl -fsSL --retry 3 -o sing-box.tar.gz "$url"
+          tar -xzf sing-box.tar.gz
+          sudo install -m 0755 "sing-box-${SING_BOX_VERSION}-linux-amd64/sing-box" /usr/local/bin/sing-box
+          sing-box version
+
+      - name: Tool check
+        run: |
+          set -Eeuo pipefail
+          command -v jq && jq --version
+          command -v curl
+
+      - name: Build
+        run: |
+          set -Eeuo pipefail
+          sh ./build.sh
+
+      - name: Verify artifacts
+        run: |
+          set -Eeuo pipefail
+          fail=0
+          for f in dist/*.srs; do
+            [ -e "$f" ] || { echo "没有生成任何 .srs"; exit 1; }
+            size=$(wc -c < "$f")
+            echo "$f  ${size}B"
+            if [ "$size" -lt 100 ]; then
+              echo "::error::产物 $f 过小 (${size}B), 疑似为空"
+              fail=1
+            fi
+          done
+          [ "$fail" -eq 0 ] || exit 1
+
+      - name: Commit results
+        run: |
+          set -Eeuo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dist/
+          if git diff --staged --quiet; then
+            echo "内容无变化, 跳过提交"
+            exit 0
+          fi
+          git commit -m "chore: 重建规则集 $(date -u +%Y-%m-%dT%H:%M:%SZ) [skip ci]"
+          git push
