@@ -243,3 +243,36 @@ direct-domain: 原始 9752 → 去重 9441 → 覆盖删除 2588 → 最终 6853
    lyc8503 / MetaCubeX 的 `.json` 都是 `{"rules":[...]}`，而 sing-box 的
    `compile` / `merge` 要求必须有 version（且 `rule-set upgrade` 对无 version 的文件
    同样报错）。`build.sh` 会自动补 `version: 1`。
+
+## 致谢
+
+本仓库**只做「合并 + 去重 + 覆盖过滤 + 编译」**，规则内容全部来自下列上游项目，版权归各作者所有。
+没有他们日复一日的维护，这个仓库没有任何意义。
+
+| 上游 | 本仓库用到的部分 | 许可证 |
+|---|---|---|
+| [SagerNet/sing-geosite](https://github.com/SagerNet/sing-geosite) | `cn` / `ads` / `google` / `ai` / `pt` / `tailscale` / 游戏平台国内 CDN | GPL-3.0 |
+| [SagerNet/sing-geoip](https://github.com/SagerNet/sing-geoip) | `geoip-cn` | GPL-3.0 |
+| [lyc8503/sing-box-rules](https://github.com/lyc8503/sing-box-rules) | `115` / `netdisk-cn` / `social-media-cn` / `speedtest@cn` / `18comic` 等 | 未附许可证文件；其数据移植自 [Loyalsoldier/v2ray-rules-dat](https://github.com/Loyalsoldier/v2ray-rules-dat) |
+| [MetaCubeX/meta-rules-dat](https://github.com/MetaCubeX/meta-rules-dat) | Apple 中国区 / Apple Music CN / AWS CN / bilibili 系列 | 未附许可证文件 |
+| [217heidai/adblockfilters](https://github.com/217heidai/adblockfilters) | 去广告增强（`adblocksingboxlite`） | GPL |
+
+还有两个「上游的上游」同样应当被提及：
+
+- [SagerNet/sing-box](https://github.com/SagerNet/sing-box) —— 提供 `rule-set` 工具链（`decompile` / `merge` / `compile`），本仓库整个构建流程都建立在它之上
+- [v2fly/domain-list-community](https://github.com/v2fly/domain-list-community)（MIT）—— geosite 系列规则集的原始数据
+
+思路与实现方面，参考并感谢：
+
+**[@sammimk830](https://github.com/sammimk830)** —— [sing-box-ruleset](https://github.com/sammimk830/sing-box-ruleset)（MIT）。
+本仓库「`sources/` 声明式清单 + CI 自动合并」的组织方式、以及「在浏览器里点选规则集」的收集器形态，
+都受它启发；它的 `config.py` 字段映射表也是我们核对 sing-box 规则字段时的重要参考。
+
+### 关于分发
+
+- 本仓库的产物（`dist/*.srs`）是**上游数据的再打包**，仅供**个人自用**。
+- **转发或二次分发前，请先确认各上游仓库当前的许可与说明** —— 部分来源可能要求不得商用或不得再分发。
+  若有上游作者提出异议，请开 issue，我会立刻移除对应来源。
+- 引用时请**优先引用上游原文**并保留出处，不要把别人的数据当成自己的成果。
+- 本仓库公开全部输入清单（`sources/*.txt`）与构建脚本（`build.sh`），
+  任何产物都可以从上游**原样复现**，这也是我们对 GPL 类上游的合规方式。
