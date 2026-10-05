@@ -44,6 +44,13 @@ jobs:
           command -v jq && jq --version
           command -v curl
 
+      - name: Apply picks
+        run: |
+          set -Eeuo pipefail
+          sh ./scripts/apply-picks.sh
+          echo "--- sources 变化 ---"
+          git --no-pager diff --stat -- sources/ || true
+
       - name: Build
         run: |
           set -Eeuo pipefail
@@ -87,7 +94,8 @@ jobs:
           set -Eeuo pipefail
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dist/
+          # sources/ 可能被 apply-picks 改写（自动块），一并提交
+          git add dist/ sources/
           if git diff --staged --quiet; then
             echo "内容无变化, 跳过提交"
             exit 0
