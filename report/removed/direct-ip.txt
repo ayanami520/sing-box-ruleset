@@ -1,0 +1,7 @@
+# direct-ip —— 本次构建删除明细
+# 每次构建【覆盖写, 不追加】 => 本文件的 git diff 就是"增量变更"
+# 列: 原因<TAB>字段<TAB>值[<TAB>覆盖它的后缀]
+#   dup     = 上游之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
+#   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
+# 完整未截断清单: report/.full/direct-ip.txt (不提交, 随 CI artifact 上传)
+# 本次共 0 行 (dup=0, covered=0); 提交版上限 2000 行

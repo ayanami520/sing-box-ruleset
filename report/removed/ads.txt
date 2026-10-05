@@ -1,0 +1,344 @@
+# ads —— 本次构建删除明细
+# 每次构建【覆盖写, 不追加】 => 本文件的 git diff 就是"增量变更"
+# 列: 原因<TAB>字段<TAB>值[<TAB>覆盖它的后缀]
+#   dup     = 上游之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
+#   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
+# 完整未截断清单: report/.full/ads.txt (不提交, 随 CI artifact 上传)
+# 本次共 337 行 (dup=282, covered=55); 提交版上限 2000 行
+dup	domain_suffix	2mdn-cn.net
+dup	domain_suffix	51.la
+dup	domain_suffix	a.youdao.com
+dup	domain_suffix	acjs.aliyun.com
+dup	domain_suffix	ad.12306.cn
+dup	domain_suffix	ad.api.3g.youku.com
+dup	domain_suffix	ad.api.moji.com
+dup	domain_suffix	ad.cctv.com
+dup	domain_suffix	ad.mi.com
+dup	domain_suffix	ad.mobile.youku.com
+dup	domain_suffix	ad.qq.com
+dup	domain_suffix	ad.sina.com.cn
+dup	domain_suffix	ad.tencentmusic.com
+dup	domain_suffix	ad.toutiao.com
+dup	domain_suffix	ad.us.sinaimg.cn
+dup	domain_suffix	adash-c.m.taobao.com
+dup	domain_suffix	adash-c.ut.taobao.com
+dup	domain_suffix	adash-emas.cn-hangzhou.aliyuncs.com
+dup	domain_suffix	adash.m.taobao.com
+dup	domain_suffix	adashbc.m.taobao.com
+dup	domain_suffix	adashbc.ut.taobao.com
+dup	domain_suffix	adashx.m.taobao.com
+dup	domain_suffix	adashx.ut.amap.com
+dup	domain_suffix	adashx.ut.ele.me
+dup	domain_suffix	adashx.ut.youku.com
+dup	domain_suffix	adashx4ae.ut.taobao.com
+dup	domain_suffix	adashx4yt.m.taobao.com
+dup	domain_suffix	adashxgc.ut.taobao.com
+dup	domain_suffix	adbehavior.ximalaya.com
+dup	domain_suffix	adbox.sina.com.cn
+dup	domain_suffix	adfilter.imtt.qq.com
+dup	domain_suffix	adimg.mobile.sina.cn
+dup	domain_suffix	admob-cn.com
+dup	domain_suffix	adping.qq.com
+dup	domain_suffix	ads-union.jd.com
+dup	domain_suffix	ads.api.my7v.com
+dup	domain_suffix	ads.huan.tv
+dup	domain_suffix	ads.huantest.com
+dup	domain_suffix	ads.music.126.net
+dup	domain_suffix	ads.service.kugou.com
+dup	domain_suffix	ads.sina.com
+dup	domain_suffix	ads.sohu.com
+dup	domain_suffix	ads.uc.cn
+dup	domain_suffix	ads.union.jd.com
+dup	domain_suffix	adscdn.baidu.com
+dup	domain_suffix	adsclick.qq.com
+dup	domain_suffix	adse.wsa.ximalaya.com
+dup	domain_suffix	adse.ximalaya.com
+dup	domain_suffix	adservice.google.com
+dup	domain_suffix	adserviceretry.kugou.com
+dup	domain_suffix	adsfile.qq.com
+dup	domain_suffix	adshmmsg.qq.com
+dup	domain_suffix	adslvfile.qq.com
+dup	domain_suffix	adslvseed.qq.com
+dup	domain_suffix	adsmind.apdcdn.tc.qq.com
+dup	domain_suffix	adsqqclick.qq.com
+dup	domain_suffix	adstats.tencentmusic.com
+dup	domain_suffix	adsview.qq.com
+dup	domain_suffix	adsview2.qq.com
+dup	domain_suffix	adtrack.quark.cn
+dup	domain_suffix	adv-sv-show.focus.cn
+dup	domain_suffix	adv-sv-stat.focus.cn
+dup	domain_suffix	adv.sec.intl.miui.com
+dup	domain_suffix	adv.sec.miui.com
+dup	domain_suffix	adview.cn
+dup	domain_suffix	adx.36kr.com
+dup	domain_suffix	adx.xiaodutv.com
+dup	domain_suffix	afd.baidu.com
+dup	domain_suffix	afdconf.baidu.com
+dup	domain_suffix	alimama.alicdn.com
+dup	domain_suffix	alitui.weibo.com
+dup	domain_suffix	analytics.163.com
+dup	domain_suffix	analytics.umetrip.com
+dup	domain_suffix	app-analytics-services-att.com
+dup	domain_suffix	app-analytics-services.com
+dup	domain_suffix	app-measurement-cn.com
+dup	domain_suffix	app-measurement.com
+dup	domain_suffix	apple.www.letv.com
+dup	domain_suffix	ark.letv.com
+dup	domain_suffix	assp.sohu.com
+dup	domain_suffix	atanx.alicdn.com
+dup	domain_suffix	atanx2.alicdn.com
+dup	domain_suffix	badjs.weixinbridge.com
+dup	domain_suffix	baichuan-sdk.alicdn.com
+dup	domain_suffix	baifen.music.baidu.com
+dup	domain_suffix	bds.snssdk.com
+dup	domain_suffix	bdu.focus.cn
+dup	domain_suffix	beacon.cdn.qq.com
+dup	domain_suffix	beacon.qq.com
+dup	domain_suffix	beacon.sina.com.cn
+dup	domain_suffix	beaconcdn.qq.com
+dup	domain_suffix	beizi.biz
+dup	domain_suffix	btrace.qq.com
+dup	domain_suffix	bugly.qq.com
+dup	domain_suffix	bzclk.baidu.com
+dup	domain_suffix	c-adash.m.taobao.com
+dup	domain_suffix	c-nfa.jd.com
+dup	domain_suffix	c.sayhi.360.cn
+dup	domain_suffix	c.uaa.iqiyi.com
+dup	domain_suffix	cb.baidu.com
+dup	domain_suffix	cbjs.baidu.com
+dup	domain_suffix	chinaciaf.org
+dup	domain_suffix	click.gamersky.com
+dup	domain_suffix	cm.baidu.com
+dup	domain_suffix	cnaa123.com
+dup	domain_suffix	cpro.baidu.com
+dup	domain_suffix	cps.360buy.com
+dup	domain_suffix	cpu.baidu.com
+dup	domain_suffix	crash.163.com
+dup	domain_suffix	crash2.zhihu.com
+dup	domain_suffix	crashlytics.163.com
+dup	domain_suffix	csjplatform.com
+dup	domain_suffix	cstm.baidu.com
+dup	domain_suffix	dc.letv.com
+dup	domain_suffix	doubleclick-cn.net
+dup	domain_suffix	doubleclick.cn
+dup	domain_suffix	doubleclick.net
+dup	domain_suffix	dualstack-logs.amap.com
+dup	domain_suffix	e.kuaishou.cn
+dup	domain_suffix	e.kuaishou.com
+dup	domain_suffix	e.qq.com
+dup	domain_suffix	eclick.baidu.com
+dup	domain_suffix	ecma.bdimg.com
+dup	domain_suffix	ecmb.bdimg.com
+dup	domain_suffix	ecmc.bdimg.com
+dup	domain_suffix	eduad.baidu.com
+dup	domain_suffix	eiv.baidu.com
+dup	domain_suffix	euads-o.api.leiniao.com
+dup	domain_suffix	extlog.snssdk.com
+dup	domain_suffix	fclick.baidu.com
+dup	domain_suffix	fclog.baidu.com
+dup	domain_suffix	fenxi.com
+dup	domain_suffix	fourier.taobao.com
+dup	domain_suffix	fpb.sohu.com
+dup	domain_suffix	g.163.com
+dup	domain_suffix	g.click.taobao.com
+dup	domain_suffix	g3.letv.com
+dup	domain_suffix	gdt.qq.com
+dup	domain_suffix	giocdn.com
+dup	domain_suffix	google-analytics-cn.com
+dup	domain_suffix	google-analytics.com
+dup	domain_suffix	googleadapis.l.google.com
+dup	domain_suffix	googleadservices-cn.com
+dup	domain_suffix	googleadservices.com
+dup	domain_suffix	googleanalytics.com
+dup	domain_suffix	googleoptimize-cn.com
+dup	domain_suffix	googleoptimize.com
+dup	domain_suffix	googlesyndication-cn.com
+dup	domain_suffix	googlesyndication.com
+dup	domain_suffix	googletagmanager-cn.com
+dup	domain_suffix	googletagmanager.com
+dup	domain_suffix	googletagservices-cn.com
+dup	domain_suffix	googletraveladservices.com
+dup	domain_suffix	googlevads-cn.com
+dup	domain_suffix	growingio.com
+dup	domain_suffix	gz-data.com
+dup	domain_suffix	h-adashx.ut.ele.me
+dup	domain_suffix	h-adashx.ut.taobao.com
+dup	domain_suffix	h-adashx.ut.youku.com
+dup	domain_suffix	h2tcbox.baidu.com
+dup	domain_suffix	hm.baidu.com
+dup	domain_suffix	hmma.baidu.com
+dup	domain_suffix	hq-tracking.qq.com
+dup	domain_suffix	htrace.wetvinfo.com
+dup	domain_suffix	hubcloud.com.cn
+dup	domain_suffix	i.snssdk.com
+dup	domain_suffix	iadmat.nosdn.127.net
+dup	domain_suffix	iadmatapk.nosdn.127.net
+dup	domain_suffix	iadmusicmat.music.126.net
+dup	domain_suffix	iadmusicmatvideo.music.126.net
+dup	domain_suffix	iadsdk.apple.com
+dup	domain_suffix	ifacelog.iqiyi.com
+dup	domain_suffix	img-x.jd.com
+dup	domain_suffix	imgstat.baidu.com
+dup	domain_suffix	imp.go.sohu.com
+dup	domain_suffix	ipinyou.com
+dup	domain_suffix	ipinyou.com.cn
+dup	domain_suffix	jzt.jd.com
+dup	domain_suffix	kuyun.com
+dup	domain_suffix	lianmeng.360.cn
+dup	domain_suffix	log-upload-os.hoyoverse.com
+dup	domain_suffix	log-upload.mihoyo.com
+dup	domain_suffix	log.hunantv.com
+dup	domain_suffix	log.mix.sina.com.cn
+dup	domain_suffix	log.sina.cn
+dup	domain_suffix	log.tbs.qq.com
+dup	domain_suffix	log.v2.hunantv.com
+dup	domain_suffix	log.zijieapi.com
+dup	domain_suffix	log2.sina.cn
+dup	domain_suffix	logger.qmai.cn
+dup	domain_suffix	logs.amap.com
+dup	domain_suffix	logs.chelaile.net.cn
+dup	domain_suffix	logupdate.avlyun.sec.miui.com
+dup	domain_suffix	lstat.youku.com
+dup	domain_suffix	m-adash.m.taobao.com
+dup	domain_suffix	marketing.alibaba.com
+dup	domain_suffix	mbdlog.iqiyi.com
+dup	domain_suffix	mcs.snssdk.com
+dup	domain_suffix	mediav.com
+dup	domain_suffix	miaowu.baidu.com
+dup	domain_suffix	mipcache.bdstatic.com
+dup	domain_suffix	mixer.sina.cn
+dup	domain_suffix	mobads-logs.baidu.com
+dup	domain_suffix	mobads-pre-config.cdn.bcebos.com
+dup	domain_suffix	mobads.baidu.com
+dup	domain_suffix	monitor.music.qq.com
+dup	domain_suffix	mountain.zhidao.baidu.com
+dup	domain_suffix	msg.video.qiyi.com
+dup	domain_suffix	msg.youku.com
+dup	domain_suffix	msg2.video.qiyi.com
+dup	domain_suffix	mtrace.qq.com
+dup	domain_suffix	nbsdk-baichuan.alicdn.com
+dup	domain_suffix	nbsdk-baichuan.taobao.com
+dup	domain_suffix	nsclickvideo.baidu.com
+dup	domain_suffix	optimus-ads.amap.com
+dup	domain_suffix	pangle.cn
+dup	domain_suffix	pangolin.snssdk.com
+dup	domain_suffix	partnerad.l.google.com
+dup	domain_suffix	pgdt.gtimg.cn
+dup	domain_suffix	pimlog.baidu.com
+dup	domain_suffix	pingjs.qq.com
+dup	domain_suffix	pmir.3g.qq.com
+dup	domain_suffix	policy.video.iqiyi.com
+dup	domain_suffix	pos.baidu.com
+dup	domain_suffix	pv.hd.sohu.com
+dup	domain_suffix	pv.sohu.com
+dup	domain_suffix	qpb.sohu.com
+dup	domain_suffix	qpb1.sohu.com
+dup	domain_suffix	qqdata.ab.qq.com
+dup	domain_suffix	reachmax.cn
+dup	domain_suffix	reke.at.sohu.com
+dup	domain_suffix	report.qqweb.qq.com
+dup	domain_suffix	report.tencentmusic.com
+dup	domain_suffix	retcode.taobao.com
+dup	domain_suffix	rmonitor.qq.com
+dup	domain_suffix	rs.sinajs.cn
+dup	domain_suffix	sa.sina.cn
+dup	domain_suffix	sbeacon.sina.com.cn
+dup	domain_suffix	sclick.baidu.com
+dup	domain_suffix	sdkclick.mobile.sina.cn
+dup	domain_suffix	sensors.umetrip.com.cn
+dup	domain_suffix	sentry.d.mi.com
+dup	domain_suffix	sentry.d.xiaomi.net
+dup	domain_suffix	sentry.music.163.com
+dup	domain_suffix	sf3-ttcdn-tos.pstatp.com
+dup	domain_suffix	shuzilm.cn
+dup	domain_suffix	sigmob.com
+dup	domain_suffix	slog.sina.com.cn
+dup	domain_suffix	sngmta.qq.com
+dup	domain_suffix	stat.m.jd.com
+dup	domain_suffix	stats.music.xiaomi.com
+dup	domain_suffix	syh.zybang.com
+dup	domain_suffix	tcbox.baidu.com
+dup	domain_suffix	tce.alicdn.com
+dup	domain_suffix	theta.sogoucdn.com
+dup	domain_suffix	tmead.y.qq.com
+dup	domain_suffix	tmeadcomm.y.qq.com
+dup	domain_suffix	tns.simba.taobao.com
+dup	domain_suffix	tpstelemetry.tencent.com
+dup	domain_suffix	trace.qq.com
+dup	domain_suffix	track.lc.quark.cn
+dup	domain_suffix	track.sohu.com
+dup	domain_suffix	tracker.xiaomixiaoai.com
+dup	domain_suffix	tracking.mcdonalds.com.cn
+dup	domain_suffix	tracking.miui.com
+dup	domain_suffix	trackingprd.hwwt8.com
+dup	domain_suffix	ugdtimg.com
+dup	domain_suffix	union.baidu.com
+dup	domain_suffix	unionimage.baidu.com
+dup	domain_suffix	unityads.unitychina.cn
+dup	domain_suffix	wangmeng.baidu.com
+dup	domain_suffix	wbclick.mobile.sina.cn
+dup	domain_suffix	wkctj.baidu.com
+dup	domain_suffix	wm.baidu.com
+dup	domain_suffix	wmbd.gamersky.com
+dup	domain_suffix	wwads.cn
+dup	domain_suffix	ykad-data.youku.com
+dup	domain_suffix	zhihu-web-analytics.zhihu.com
+dup	domain_suffix	zhugeapi.com
+dup	domain_suffix	zhugeapi.net
+dup	domain_suffix	zhugeio.com
+dup	domain_suffix	zz.bdstatic.com
+covered	domain	ads3-normal-hl.zijieapi.com	ads3-normal-hl.zijieapi.com
+covered	domain	ads3-normal.zijieapi.com	ads3-normal.zijieapi.com
+covered	domain	ads5-normal-hl.zijieapi.com	ads5-normal-hl.zijieapi.com
+covered	domain	ads5-normal.zijieapi.com	ads5-normal.zijieapi.com
+covered	domain	apilog-web.acfun.cn	apilog-web.acfun.cn
+covered	domain	disney.my.sentry.io	sentry.io
+covered	domain	log-sdk.gifshow.com	log-sdk.gifshow.com
+covered	domain	log3-applog-hl.fqnovel.com	log3-applog-hl.fqnovel.com
+covered	domain	log3-applog.fqnovel.com	log3-applog.fqnovel.com
+covered	domain	log5-applog-hl.fqnovel.com	log5-applog-hl.fqnovel.com
+covered	domain	log5-applog.fqnovel.com	log5-applog.fqnovel.com
+covered	domain	o33249.ingest.sentry.io	sentry.io
+covered	domain	o4504926511693824.ingest.sentry.io	sentry.io
+covered	domain	p3-ad-sign.byteimg.com	p3-ad-sign.byteimg.com
+covered	domain	p6-ad-sign.byteimg.com	p6-ad-sign.byteimg.com
+covered	domain	p9-ad-sign.byteimg.com	p9-ad-sign.byteimg.com
+covered	domain	rtlog3-applog-hl.fqnovel.com	rtlog3-applog-hl.fqnovel.com
+covered	domain	rtlog5-applog-hl.fqnovel.com	rtlog5-applog-hl.fqnovel.com
+covered	domain	rtlog5-applog.fqnovel.com	rtlog5-applog.fqnovel.com
+covered	domain	wlog.kuaishou.com	wlog.kuaishou.com
+covered	domain_suffix	aaid.umeng.com	umeng.com
+covered	domain_suffix	ad.hpplay.cn	hpplay.cn
+covered	domain_suffix	adc.hpplay.cn	hpplay.cn
+covered	domain_suffix	adeng.hpplay.cn	hpplay.cn
+covered	domain_suffix	alog.umeng.com	umeng.com
+covered	domain_suffix	alogs.umeng.com	umeng.com
+covered	domain_suffix	alogus.umeng.com	umeng.com
+covered	domain_suffix	ar.umeng.com	umeng.com
+covered	domain_suffix	aspect-upush.umeng.com	umeng.com
+covered	domain_suffix	audid.umeng.com	umeng.com
+covered	domain_suffix	ccs.umeng.com	umeng.com
+covered	domain_suffix	cnlogs.umeng.com	umeng.com
+covered	domain_suffix	cpro.baidustatic.com	baidustatic.com
+covered	domain_suffix	dup.baidustatic.com	baidustatic.com
+covered	domain_suffix	eul.s.360.cn	s.360.cn
+covered	domain_suffix	g.s.360.cn	s.360.cn
+covered	domain_suffix	g1.tagtic.cn	tagtic.cn
+covered	domain_suffix	mlog.hiido.com	hiido.com
+covered	domain_suffix	monitor.uu.qq.com	uu.qq.com
+covered	domain_suffix	new-aaid.umeng.com	umeng.com
+covered	domain_suffix	oc.umeng.com	umeng.com
+covered	domain_suffix	oth.str.mdt.qq.com	mdt.qq.com
+covered	domain_suffix	p.s.360.cn	s.360.cn
+covered	domain_suffix	plbslog.umeng.com	umeng.com
+covered	domain_suffix	resolve.umeng.com	umeng.com
+covered	domain_suffix	static.sensorsdata.cn	sensorsdata.cn
+covered	domain_suffix	t1.a.market.xiaomi.com	a.market.xiaomi.com
+covered	domain_suffix	ubmcvideo.baidustatic.com	baidustatic.com
+covered	domain_suffix	ulogs.umeng.com	umeng.com
+covered	domain_suffix	utoken.umeng.com	umeng.com
+covered	domain_suffix	w.cnzz.com	cnzz.com
+covered	domain_suffix	xy-log.tagtic.cn	tagtic.cn
+covered	domain_suffix	yk-ssp.ad.youku.com	ad.youku.com
+covered	domain_suffix	ylog.hiido.com	hiido.com
+covered	domain_suffix	z.gds.cnzz.com	cnzz.com

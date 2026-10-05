@@ -1,0 +1,2008 @@
+# direct-domain —— 本次构建删除明细
+# 每次构建【覆盖写, 不追加】 => 本文件的 git diff 就是"增量变更"
+# 列: 原因<TAB>字段<TAB>值[<TAB>覆盖它的后缀]
+#   dup     = 上游之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
+#   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
+# 完整未截断清单: report/.full/direct-domain.txt (不提交, 随 CI artifact 上传)
+# 本次共 2885 行 (dup=297, covered=2588); 提交版上限 2000 行
+dup	domain	a1.mzstatic.com
+dup	domain	a2.mzstatic.com
+dup	domain	a3.mzstatic.com
+dup	domain	a4.mzstatic.com
+dup	domain	a5.mzstatic.com
+dup	domain	adcdownload.apple.com
+dup	domain	adcdownload.apple.com.akadns.net
+dup	domain	alibaba.cdn.steampipe.steamcontent.com
+dup	domain	amp-api-edge.music.apple.com
+dup	domain	amp-api-updates.apps.apple.com
+dup	domain	amp-api.media.apple.com
+dup	domain	amp-api.music.apple.com
+dup	domain	app-site-association.cdn-apple.com
+dup	domain	appldnld.apple.com
+dup	domain	appldnld.g.aaplimg.com
+dup	domain	appleid.cdn-apple.com
+dup	domain	apps.mzstatic.com
+dup	domain	assets1.xboxlive.cn
+dup	domain	assets2.xboxlive.cn
+dup	domain	bag-cdn.itunes-apple.com.akadns.net
+dup	domain	blzdist-d3.necdn.leihuo.netease.com
+dup	domain	blzdist-di.necdn.leihuo.netease.com
+dup	domain	blzdist-hs.necdn.leihuo.netease.com
+dup	domain	blzdist-ow.necdn.leihuo.netease.com
+dup	domain	blzdist-phx.necdn.leihuo.netease.com
+dup	domain	blzdist-wow.necdn.leihuo.netease.com
+dup	domain	cdn-ali.content.steamchina.com
+dup	domain	cdn-cn1.apple-mapkit.com
+dup	domain	cdn-cn2.apple-mapkit.com
+dup	domain	cdn-cn3.apple-mapkit.com
+dup	domain	cdn-cn4.apple-mapkit.com
+dup	domain	cdn-qc.content.steamchina.com
+dup	domain	cdn-ws.content.steamchina.com
+dup	domain	cdn.apple-mapkit.com
+dup	domain	cdn1.apple-mapkit.com
+dup	domain	cdn2.apple-mapkit.com
+dup	domain	cdn3.apple-mapkit.com
+dup	domain	cdn4.apple-mapkit.com
+dup	domain	cds-cdn.v.aaplimg.com
+dup	domain	cds.apple.com
+dup	domain	cds.apple.com.akadns.net
+dup	domain	cdsassets.apple.com
+dup	domain	certs.apple.com
+dup	domain	cl1-cdn.origin-apple.com.akadns.net
+dup	domain	cl1.apple.com
+dup	domain	cl2-cn.apple.com
+dup	domain	cl2.apple.com
+dup	domain	cl2.apple.com.edgekey.net.globalredir.akadns.net
+dup	domain	cl3-cdn.origin-apple.com.akadns.net
+dup	domain	cl3.apple.com
+dup	domain	cl4-cdn.origin-apple.com.akadns.net
+dup	domain	cl4-cn.apple.com
+dup	domain	cl4.apple.com
+dup	domain	cl5-cdn.origin-apple.com.akadns.net
+dup	domain	cl5.apple.com
+dup	domain	clientflow.apple.com
+dup	domain	clientflow.apple.com.akadns.net
+dup	domain	cn-smp-paymentservices.apple.com
+dup	domain	configuration.apple.com
+dup	domain	configuration.apple.com.akadns.net
+dup	domain	crl.apple.com
+dup	domain	cstat.apple.com
+dup	domain	cstat.cdn-apple.com
+dup	domain	dd-cdn.origin-apple.com.akadns.net
+dup	domain	dejavu.apple.com
+dup	domain	devimages-cdn.apple.com
+dup	domain	devstreaming-cdn.apple.com
+dup	domain	download.developer.apple.com
+dup	domain	epicgames-download1-1251447533.file.myqcloud.com
+dup	domain	experiments.apple.com
+dup	domain	gs-loc-cn.apple.com
+dup	domain	gs-loc.apple.com
+dup	domain	gsp10-ssl-cn.ls.apple.com
+dup	domain	gsp11-cn.ls.apple.com
+dup	domain	gsp12-cn.ls.apple.com
+dup	domain	gsp13-cn.ls.apple.com
+dup	domain	gsp4-cn.ls.apple.com
+dup	domain	gsp4-cn.ls.apple.com.edgekey.net.globalredir.akadns.net
+dup	domain	gsp5-cn.ls.apple.com
+dup	domain	gsp85-cn-ssl.ls.apple.com
+dup	domain	gspe11-2-cn-ssl.ls.apple.com
+dup	domain	gspe19-2-cn-ssl.ls-apple.com.akadns.net
+dup	domain	gspe19-2-cn-ssl.ls.apple.com
+dup	domain	gspe19-cn-ssl.ls.apple.com
+dup	domain	gspe19-cn.ls-apple.com.akadns.net
+dup	domain	gspe19-cn.ls.apple.com
+dup	domain	gspe21-ssl.ls.apple.com
+dup	domain	gspe35-ssl.ls.apple.com
+dup	domain	gspe79-cn-ssl.ls.apple.com
+dup	domain	guzzoni-apple-com.v.aaplimg.com
+dup	domain	guzzoni.apple.com
+dup	domain	guzzoni.smoot.apple.com
+dup	domain	images.apple.com.edgekey.net.globalredir.akadns.net
+dup	domain	init-kt.apple.com
+dup	domain	init-p01md-lb.push-apple.com.akadns.net
+dup	domain	init-p01md.apple.com
+dup	domain	init-p01st-lb.push-apple.com.akadns.net
+dup	domain	init-p01st.push.apple.com
+dup	domain	init-s01st-lb.push-apple.com.akadns.net
+dup	domain	init-s01st.push.apple.com
+dup	domain	init.ess.apple.com
+dup	domain	iosapps.itunes.g.aaplimg.com
+dup	domain	ipcdn.apple.com
+dup	domain	iphone-ld.apple.com
+dup	domain	iphone-ld.origin-apple.com.akadns.net
+dup	domain	is-ssl.mzstatic.com-cn-lb.itunes-apple.com.akadns.net
+dup	domain	is1-ssl.mzstatic.com
+dup	domain	is1.mzstatic.com
+dup	domain	is2-ssl.mzstatic.com
+dup	domain	is2.mzstatic.com
+dup	domain	is3-ssl.mzstatic.com
+dup	domain	is3.mzstatic.com
+dup	domain	is4-ssl.mzstatic.com
+dup	domain	is4.mzstatic.com
+dup	domain	is5-ssl.mzstatic.com
+dup	domain	is5.mzstatic.com
+dup	domain	itunes-apple.com.akadns.net
+dup	domain	itunes.apple.com
+dup	domain	itunesconnect.apple.com
+dup	domain	js-cdn.music.apple.com
+dup	domain	lv.queniujq.cn
+dup	domain	mensura.cdn-apple.com
+dup	domain	mesu-cdn.apple.com.akadns.net
+dup	domain	mesu-china.apple.com.akadns.net
+dup	domain	mesu.apple.com
+dup	domain	ml.cdn-apple.com
+dup	domain	music.apple.com
+dup	domain	musicstatus.music.apple.com
+dup	domain	ocsp.apple.com
+dup	domain	ocsp2.apple.com
+dup	domain	oscdn.apple.com
+dup	domain	oscdn.origin-apple.com.akadns.net
+dup	domain	osxapps.itunes.g.aaplimg.com
+dup	domain	pancake.apple.com
+dup	domain	pba0.apple.com
+dup	domain	play.music.apple.com
+dup	domain	probe.siri.apple.com
+dup	domain	prod-support.apple-support.akadns.net
+dup	domain	publicassets.cdn-apple.com
+dup	domain	s.mzstatic.com
+dup	domain	seed-sequoia.siri.apple.com
+dup	domain	seed-swallow.siri.apple.com
+dup	domain	seed.siri.apple.com
+dup	domain	sequoia.apple.com
+dup	domain	sh-pod2-smp-device.apple.com
+dup	domain	shazam-insights.cdn-apple.com
+dup	domain	smp-device-content.apple.com
+dup	domain	speedysub.music.apple.com
+dup	domain	st-bak.viv.wanwang.space
+dup	domain	static.gc.apple.com
+dup	domain	stocks-sparkline-lb.apple.com.akadns.net
+dup	domain	stocks-sparkline.apple.com
+dup	domain	store.apple.com
+dup	domain	store.apple.com.edgekey.net
+dup	domain	store.apple.com.edgekey.net.globalredir.akadns.net
+dup	domain	store.storeimages.apple.com.akadns.net
+dup	domain	store.storeimages.cdn-apple.com
+dup	domain	support-china.apple-support.akadns.net
+dup	domain	support.apple.com
+dup	domain	swallow-apple-com.v.aaplimg.com
+dup	domain	swallow.apple.com
+dup	domain	swcatalog-cdn.apple.com.akadns.net
+dup	domain	swcatalog.apple.com
+dup	domain	swcdn.apple.com
+dup	domain	swcdn.g.aaplimg.com
+dup	domain	swdist.apple.com
+dup	domain	swdist.apple.com.akadns.net
+dup	domain	swscan-cdn.apple.com.akadns.net
+dup	domain	swscan.apple.com
+dup	domain	sylvan.apple.com
+dup	domain	tj-pod1-smp-device.apple.com
+dup	domain	tlu.dl.delivery.mp.microsoft.com
+dup	domain	trts.baishancdnx.cn
+dup	domain	ubisoftconnect.eo-edgefunctions7.com
+dup	domain	updates-http.cdn-apple.com
+dup	domain	updates-http.cdn-apple.com.akadns.net
+dup	domain	updates.cdn-apple.com
+dup	domain	uplaypc-s-ubisoft.cdn.ubionline.com.cn
+dup	domain	valid.apple.com
+dup	domain	valid.origin-apple.com.akadns.net
+dup	domain	weather-data.apple.com
+dup	domain	weather-data.apple.com.akadns.net
+dup	domain	weather-map.apple.com
+dup	domain	weather-map2.apple.com
+dup	domain	weatherkit.apple.com
+dup	domain	www.apple.com
+dup	domain	www.apple.com.edgekey.net.globalredir.akadns.net
+dup	domain	xp.apple.com
+dup	domain	xz.pphimalayanrt.com
+dup	domain_regex	.+\.awsdns-cn-[0-9][0-9]\.(biz|com|net|top)$
+dup	domain_regex	.+\.awsdns-cn-[0-9][a-e0-9]\.cn$
+dup	domain_suffix	115.com
+dup	domain_suffix	115cdn.com
+dup	domain_suffix	115cdn.net
+dup	domain_suffix	115cloud.cn
+dup	domain_suffix	115cloud.com
+dup	domain_suffix	115cloud.net
+dup	domain_suffix	115img.com
+dup	domain_suffix	115meta.com
+dup	domain_suffix	115vod.com
+dup	domain_suffix	116cd.cn
+dup	domain_suffix	116cd.com
+dup	domain_suffix	116cd.net
+dup	domain_suffix	a2z.org.cn
+dup	domain_suffix	acg.tv
+dup	domain_suffix	acgvideo.com
+dup	domain_suffix	amazonaws.cn
+dup	domain_suffix	amazonaws.com.cn
+dup	domain_suffix	amazonwebservices.cn
+dup	domain_suffix	amazonwebservices.com.cn
+dup	domain_suffix	amazonworkdocs.cn
+dup	domain_suffix	amazonworkdocs.com.cn
+dup	domain_suffix	amzndns-cn.biz
+dup	domain_suffix	amzndns-cn.cn
+dup	domain_suffix	amzndns-cn.com
+dup	domain_suffix	amzndns-cn.net
+dup	domain_suffix	animetamashi.cn
+dup	domain_suffix	animetamashi.com
+dup	domain_suffix	anitama.cn
+dup	domain_suffix	anitama.net
+dup	domain_suffix	anxia.com
+dup	domain_suffix	asfiovnxocqpcry.com.cn
+dup	domain_suffix	aws-border.cn
+dup	domain_suffix	aws-icp-domain-manager.cn
+dup	domain_suffix	awsapps.cn
+dup	domain_suffix	awsapps.com.cn
+dup	domain_suffix	awsstatic.cn
+dup	domain_suffix	b23.tv
+dup	domain_suffix	bigfun.cn
+dup	domain_suffix	bigfunapp.cn
+dup	domain_suffix	bili22.cn
+dup	domain_suffix	bili2233.cn
+dup	domain_suffix	bili23.cn
+dup	domain_suffix	bili33.cn
+dup	domain_suffix	biliapi.com
+dup	domain_suffix	biliapi.net
+dup	domain_suffix	bilibili.cc
+dup	domain_suffix	bilibili.cn
+dup	domain_suffix	bilibili.com
+dup	domain_suffix	bilibili.net
+dup	domain_suffix	bilibiligame.cn
+dup	domain_suffix	bilibiligame.co
+dup	domain_suffix	bilibiligame.net
+dup	domain_suffix	bilibilipay.cn
+dup	domain_suffix	bilibilipay.com
+dup	domain_suffix	bilicdn1.com
+dup	domain_suffix	bilicdn2.com
+dup	domain_suffix	bilicdn3.com
+dup	domain_suffix	bilicdn4.com
+dup	domain_suffix	bilicdn5.com
+dup	domain_suffix	bilicomic.com
+dup	domain_suffix	bilicomics.com
+dup	domain_suffix	biligame.co
+dup	domain_suffix	biligame.com
+dup	domain_suffix	biligame.net
+dup	domain_suffix	biligo.com
+dup	domain_suffix	biliimg.com
+dup	domain_suffix	bilivideo.cn
+dup	domain_suffix	bilivideo.com
+dup	domain_suffix	bilivideo.net
+dup	domain_suffix	cloudfront-cn.net
+dup	domain_suffix	cloudfront-test.cn
+dup	domain_suffix	cloudfront.cn
+dup	domain_suffix	cnspeedtest.cn
+dup	domain_suffix	hdslb.com
+dup	domain_suffix	hdslb.org
+dup	domain_suffix	huasheng.cn
+dup	domain_suffix	im9.com
+dup	domain_suffix	maoer.com
+dup	domain_suffix	maoercdn.com
+dup	domain_suffix	mincdn.com
+dup	domain_suffix	missevan.com
+dup	domain_suffix	nwcdcloud.cn
+dup	domain_suffix	nwcdcloud.com.cn
+dup	domain_suffix	nwcddns.cn
+dup	domain_suffix	nwcdinfosec.cn
+dup	domain_suffix	route53.cn
+dup	domain_suffix	sagemaker.com.cn
+dup	domain_suffix	speed.neu6.edu.cn
+dup	domain_suffix	speed.nju.edu.cn
+dup	domain_suffix	speed.nuaa.edu.cn
+dup	domain_suffix	speed.qlu.edu.cn
+dup	domain_suffix	speed.ujs.edu.cn
+dup	domain_suffix	speed6.ujs.edu.cn
+dup	domain_suffix	speedtest.cn
+dup	domain_suffix	speedtest.mfcyun.com
+dup	domain_suffix	speedtest.shu.edu.cn
+dup	domain_suffix	speedtest.xaut.edu.cn
+dup	domain_suffix	speedtest6.shu.edu.cn
+dup	domain_suffix	sq.cc
+dup	domain_suffix	test.nju.edu.cn
+dup	domain_suffix	test.ustc.edu.cn
+dup	domain_suffix	test6.nju.edu.cn
+dup	domain_suffix	test6.ustc.edu.cn
+dup	domain_suffix	updream.cn
+dup	domain_suffix	xnfz.seu.edu.cn
+dup	domain_suffix	yo9.com
+covered	domain	ads3-normal-hl.zijieapi.com	zijieapi.com
+covered	domain	ads3-normal.zijieapi.com	zijieapi.com
+covered	domain	ads5-normal-hl.zijieapi.com	zijieapi.com
+covered	domain	ads5-normal.zijieapi.com	zijieapi.com
+covered	domain	ai.zhaomi.cn	cn
+covered	domain	apilog-web.acfun.cn	cn
+covered	domain	assets1.xboxlive.cn	cn
+covered	domain	assets2.xboxlive.cn	cn
+covered	domain	blzdist-d3.necdn.leihuo.netease.com	netease.com
+covered	domain	blzdist-di.necdn.leihuo.netease.com	netease.com
+covered	domain	blzdist-hs.necdn.leihuo.netease.com	netease.com
+covered	domain	blzdist-ow.necdn.leihuo.netease.com	netease.com
+covered	domain	blzdist-phx.necdn.leihuo.netease.com	netease.com
+covered	domain	blzdist-wow.necdn.leihuo.netease.com	netease.com
+covered	domain	cdn-ali.content.steamchina.com	steamchina.com
+covered	domain	cdn-qc.content.steamchina.com	steamchina.com
+covered	domain	cdn-ws.content.steamchina.com	steamchina.com
+covered	domain	cueme-api.quark.cn	cn
+covered	domain	dl.delivery.mp.microsoft.com	dl.delivery.mp.microsoft.com
+covered	domain	dl.steam.clngaa.com	dl.steam.clngaa.com
+covered	domain	enrichgw.10010.com	10010.com
+covered	domain	epicgames-download1-1251447533.file.myqcloud.com	myqcloud.com
+covered	domain	hap.10010.com	10010.com
+covered	domain	hospital.pku.edu.cn	cn
+covered	domain	hs.wosms.cn	cn
+covered	domain	log-sdk.gifshow.com	gifshow.com
+covered	domain	log3-applog-hl.fqnovel.com	fqnovel.com
+covered	domain	log3-applog.fqnovel.com	fqnovel.com
+covered	domain	log5-applog-hl.fqnovel.com	fqnovel.com
+covered	domain	log5-applog.fqnovel.com	fqnovel.com
+covered	domain	lv.queniujq.cn	cn
+covered	domain	moocs.unipus.cn	cn
+covered	domain	ntp.aliyun.com	aliyun.com
+covered	domain	ntp.tencent.com	tencent.com
+covered	domain	ntp1.aliyun.com	aliyun.com
+covered	domain	ntp1.tencent.com	tencent.com
+covered	domain	ntp2.aliyun.com	aliyun.com
+covered	domain	ntp2.tencent.com	tencent.com
+covered	domain	ntp3.aliyun.com	aliyun.com
+covered	domain	ntp3.tencent.com	tencent.com
+covered	domain	ntp4.aliyun.com	aliyun.com
+covered	domain	ntp4.tencent.com	tencent.com
+covered	domain	ntp5.aliyun.com	aliyun.com
+covered	domain	ntp5.tencent.com	tencent.com
+covered	domain	ntp6.aliyun.com	aliyun.com
+covered	domain	ntp7.aliyun.com	aliyun.com
+covered	domain	opencloud.wostore.cn	cn
+covered	domain	opencourse.pku.edu.cn	cn
+covered	domain	p1-juejin.byteimg.com	byteimg.com
+covered	domain	p2-juejin.byteimg.com	byteimg.com
+covered	domain	p3-ad-sign.byteimg.com	byteimg.com
+covered	domain	p3-juejin.byteimg.com	byteimg.com
+covered	domain	p3-novel.byteimg.com	byteimg.com
+covered	domain	p4-juejin.byteimg.com	byteimg.com
+covered	domain	p5-juejin.byteimg.com	byteimg.com
+covered	domain	p6-ad-sign.byteimg.com	byteimg.com
+covered	domain	p6-juejin.byteimg.com	byteimg.com
+covered	domain	p6-novel.byteimg.com	byteimg.com
+covered	domain	p7-juejin.byteimg.com	byteimg.com
+covered	domain	p8-juejin.byteimg.com	byteimg.com
+covered	domain	p9-ad-sign.byteimg.com	byteimg.com
+covered	domain	p9-juejin.byteimg.com	byteimg.com
+covered	domain	rtlog3-applog-hl.fqnovel.com	fqnovel.com
+covered	domain	rtlog3-applog.fqnovel.com	fqnovel.com
+covered	domain	rtlog5-applog-hl.fqnovel.com	fqnovel.com
+covered	domain	rtlog5-applog.fqnovel.com	fqnovel.com
+covered	domain	ss.bjmu.edu.cn	cn
+covered	domain	st.dl.bscstorage.net	st.dl.bscstorage.net
+covered	domain	st.dl.eccdnx.com	st.dl.eccdnx.com
+covered	domain	study.163.com	163.com
+covered	domain	time.amazonaws.cn	cn
+covered	domain	time.izatcloud.net	izatcloud.net
+covered	domain	tlu.dl.delivery.mp.microsoft.com	dl.delivery.mp.microsoft.com
+covered	domain	trts.baishancdnx.cn	cn
+covered	domain	uplaypc-s-ubisoft.cdn.ubionline.com.cn	cn
+covered	domain	wlog.kuaishou.com	kuaishou.com
+covered	domain	www.entrust.cn	cn
+covered	domain	ykimg.alicdn.com	alicdn.com
+covered	domain_suffix	0033.cn	cn
+covered	domain_suffix	10010.com.cn	cn
+covered	domain_suffix	10044.cn	cn
+covered	domain_suffix	10086.cn	cn
+covered	domain_suffix	10099.com.cn	cn
+covered	domain_suffix	10jqka.com.cn	cn
+covered	domain_suffix	11183.com.cn	cn
+covered	domain_suffix	11185.cn	cn
+covered	domain_suffix	11222.cn	cn
+covered	domain_suffix	115cloud.cn	cn
+covered	domain_suffix	116cd.cn	cn
+covered	domain_suffix	12306.cn	cn
+covered	domain_suffix	12315.cn	cn
+covered	domain_suffix	12321.cn	cn
+covered	domain_suffix	1234567.com.cn	cn
+covered	domain_suffix	12371.cn	cn
+covered	domain_suffix	12377.cn	cn
+covered	domain_suffix	123pan.cn	cn
+covered	domain_suffix	133.cn	cn
+covered	domain_suffix	16q.cn	cn
+covered	domain_suffix	17u.cn	cn
+covered	domain_suffix	17zuoye.cn	cn
+covered	domain_suffix	18.cn	cn
+covered	domain_suffix	18.com.cn	cn
+covered	domain_suffix	189.cn	cn
+covered	domain_suffix	1hai.cn	cn
+covered	domain_suffix	1tyy.cn	cn
+covered	domain_suffix	1xhh.cn	cn
+covered	domain_suffix	2345.cn	cn
+covered	domain_suffix	2345tianqi.cn	cn
+covered	domain_suffix	26r9y.cn	cn
+covered	domain_suffix	2gkjr.cn	cn
+covered	domain_suffix	3.cn	cn
+covered	domain_suffix	300.cn	cn
+covered	domain_suffix	360-api.cn	cn
+covered	domain_suffix	360-g.cn	cn
+covered	domain_suffix	360.cn	cn
+covered	domain_suffix	360buy.cn	cn
+covered	domain_suffix	360buy.com.cn	cn
+covered	domain_suffix	360panyun.cn	cn
+covered	domain_suffix	360pay.cn	cn
+covered	domain_suffix	360sjyh.cn	cn
+covered	domain_suffix	360sou.cn	cn
+covered	domain_suffix	360sou.com.cn	cn
+covered	domain_suffix	37.com.cn	cn
+covered	domain_suffix	3ili6.cn	cn
+covered	domain_suffix	3type.cn	cn
+covered	domain_suffix	40017.cn	cn
+covered	domain_suffix	4008-517-517.cn	cn
+covered	domain_suffix	42r.cn	cn
+covered	domain_suffix	4399.cn	cn
+covered	domain_suffix	4399sj.cn	cn
+covered	domain_suffix	4thworkshop.cn	cn
+covered	domain_suffix	51106.cn	cn
+covered	domain_suffix	51ctocdn.cn	cn
+covered	domain_suffix	51jianxie.cn	cn
+covered	domain_suffix	51ssl.cn	cn
+covered	domain_suffix	52pojie.cn	cn
+covered	domain_suffix	576nt.cn	cn
+covered	domain_suffix	58.com.cn	cn
+covered	domain_suffix	58antenna.cn	cn
+covered	domain_suffix	58cdn.com.cn	cn
+covered	domain_suffix	58control.cn	cn
+covered	domain_suffix	58v5.cn	cn
+covered	domain_suffix	58xinghuo.cn	cn
+covered	domain_suffix	59bob.cn	cn
+covered	domain_suffix	6.cn	cn
+covered	domain_suffix	66law.cn	cn
+covered	domain_suffix	6ts7c.cn	cn
+covered	domain_suffix	7k2k1.cn	cn
+covered	domain_suffix	8008205555.cn	cn
+covered	domain_suffix	800best.cn	cn
+covered	domain_suffix	800best.com.cn	cn
+covered	domain_suffix	800bestapi.cn	cn
+covered	domain_suffix	800bestapp.cn	cn
+covered	domain_suffix	81.cn	cn
+covered	domain_suffix	8531.cn	cn
+covered	domain_suffix	88y.cn	cn
+covered	domain_suffix	8gcdp.cn	cn
+covered	domain_suffix	8n82b.cn	cn
+covered	domain_suffix	8uri.cn	cn
+covered	domain_suffix	95306.cn	cn
+covered	domain_suffix	95588.com.cn	cn
+covered	domain_suffix	95598.cn	cn
+covered	domain_suffix	99uri.cn	cn
+covered	domain_suffix	9coof.cn	cn
+covered	domain_suffix	9game.cn	cn
+covered	domain_suffix	9xsecndns.cn	cn
+covered	domain_suffix	a-map.cn	cn
+covered	domain_suffix	a.alimama.cn	cn
+covered	domain_suffix	a.market.xiaomi.com	xiaomi.com
+covered	domain_suffix	a.youdao.com	youdao.com
+covered	domain_suffix	a2z.org.cn	cn
+covered	domain_suffix	aadcloud.cn	cn
+covered	domain_suffix	aadrm.cn	cn
+covered	domain_suffix	aaic.com.cn	cn
+covered	domain_suffix	aaid.umeng.com	umeng.com
+covered	domain_suffix	aboutamazon.cn	cn
+covered	domain_suffix	acadn.cn	cn
+covered	domain_suffix	accuratead.cn	cn
+covered	domain_suffix	acer.com.cn	cn
+covered	domain_suffix	acfun.cn	cn
+covered	domain_suffix	acfunchina.cn	cn
+covered	domain_suffix	acgab.cn	cn
+covered	domain_suffix	acimg.cn	cn
+covered	domain_suffix	acjs.aliyun.com	aliyun.com
+covered	domain_suffix	ad.api.3g.youku.com	youku.com
+covered	domain_suffix	ad.api.mobile.youku.com	youku.com
+covered	domain_suffix	ad.api.moji.com	moji.com
+covered	domain_suffix	ad.browser.qq.com	qq.com
+covered	domain_suffix	ad.cctv.com	cctv.com
+covered	domain_suffix	ad.intl.xiaomi.com	xiaomi.com
+covered	domain_suffix	ad.m.iqiyi.com	iqiyi.com
+covered	domain_suffix	ad.mi.com	mi.com
+covered	domain_suffix	ad.mobile.youku.com	youku.com
+covered	domain_suffix	ad.qq.com	qq.com
+covered	domain_suffix	ad.qun.qq.com	qq.com
+covered	domain_suffix	ad.sina.com.cn	cn
+covered	domain_suffix	ad.tencentmusic.com	tencentmusic.com
+covered	domain_suffix	ad.toutiao.com	toutiao.com
+covered	domain_suffix	ad.us.sinaimg.cn	cn
+covered	domain_suffix	ad.weixin.qq.com	qq.com
+covered	domain_suffix	ad.xiaomi.com	xiaomi.com
+covered	domain_suffix	ad1.xiaomi.com	xiaomi.com
+covered	domain_suffix	adash-c.m.taobao.com	taobao.com
+covered	domain_suffix	adash-c.ut.taobao.com	taobao.com
+covered	domain_suffix	adash-emas.cn-hangzhou.aliyuncs.com	cn-hangzhou.aliyuncs.com
+covered	domain_suffix	adash.m.taobao.com	taobao.com
+covered	domain_suffix	adashbc.m.taobao.com	taobao.com
+covered	domain_suffix	adashbc.ut.taobao.com	taobao.com
+covered	domain_suffix	adashx.m.taobao.com	taobao.com
+covered	domain_suffix	adashx.ut.amap.com	amap.com
+covered	domain_suffix	adashx.ut.ele.me	ele.me
+covered	domain_suffix	adashx.ut.youku.com	youku.com
+covered	domain_suffix	adashx4ae.ut.taobao.com	taobao.com
+covered	domain_suffix	adashx4yt.m.taobao.com	taobao.com
+covered	domain_suffix	adashxgc.ut.taobao.com	taobao.com
+covered	domain_suffix	adbehavior.ximalaya.com	ximalaya.com
+covered	domain_suffix	adbox.sina.com.cn	cn
+covered	domain_suffix	adcommerce.cn	cn
+covered	domain_suffix	adfilter.imtt.qq.com	qq.com
+covered	domain_suffix	adidas.cn	cn
+covered	domain_suffix	adidas.com.cn	cn
+covered	domain_suffix	adidasspecialtysports.cn	cn
+covered	domain_suffix	adimg.mobile.sina.cn	cn
+covered	domain_suffix	adimg.uve.weibo.com	weibo.com
+covered	domain_suffix	admob.xiaomi.com	xiaomi.com
+covered	domain_suffix	admusicpic.music.126.net	126.net
+covered	domain_suffix	adnet.qq.com	qq.com
+covered	domain_suffix	adnet.sohu.com	sohu.com
+covered	domain_suffix	adobedc.cn	cn
+covered	domain_suffix	adping.qq.com	qq.com
+covered	domain_suffix	adpm.app.qq.com	qq.com
+covered	domain_suffix	ads-union.jd.com	jd.com
+covered	domain_suffix	ads-uo.api.leiniao.com	leiniao.com
+covered	domain_suffix	ads-ut.api.leiniao.com	leiniao.com
+covered	domain_suffix	ads.api.my7v.com	my7v.com
+covered	domain_suffix	ads.music.126.net	126.net
+covered	domain_suffix	ads.service.kugou.com	kugou.com
+covered	domain_suffix	ads.sina.com	sina.com
+covered	domain_suffix	ads.sohu.com	sohu.com
+covered	domain_suffix	ads.uc.cn	cn
+covered	domain_suffix	ads.union.jd.com	jd.com
+covered	domain_suffix	ads.unitychina.cn	cn
+covered	domain_suffix	adscdn.baidu.com	baidu.com
+covered	domain_suffix	adsclick.qq.com	qq.com
+covered	domain_suffix	adse.wsa.ximalaya.com	ximalaya.com
+covered	domain_suffix	adse.ximalaya.com	ximalaya.com
+covered	domain_suffix	adserviceretry.kglink.cn	cn
+covered	domain_suffix	adserviceretry.kugou.com	kugou.com
+covered	domain_suffix	adsfile.qq.com	qq.com
+covered	domain_suffix	adsh.m.taobao.com	taobao.com
+covered	domain_suffix	adshmmsg.qq.com	qq.com
+covered	domain_suffix	adslot.uc.cn	cn
+covered	domain_suffix	adslvfile.qq.com	qq.com
+covered	domain_suffix	adslvseed.qq.com	qq.com
+covered	domain_suffix	adsmind.apdcdn.tc.qq.com	qq.com
+covered	domain_suffix	adsqqclick.qq.com	qq.com
+covered	domain_suffix	adstats.tencentmusic.com	tencentmusic.com
+covered	domain_suffix	adstestview.qq.com	qq.com
+covered	domain_suffix	adsview.qq.com	qq.com
+covered	domain_suffix	adsview2.qq.com	qq.com
+covered	domain_suffix	adtrack.quark.cn	cn
+covered	domain_suffix	adv-sv-show.focus.cn	cn
+covered	domain_suffix	adv-sv-stat.focus.cn	cn
+covered	domain_suffix	adv.app.qq.com	qq.com
+covered	domain_suffix	adv.sec.intl.miui.com	miui.com
+covered	domain_suffix	adv.sec.miui.com	miui.com
+covered	domain_suffix	adver.qq.com	qq.com
+covered	domain_suffix	adx.36kr.com	36kr.com
+covered	domain_suffix	adx.xiaodutv.com	xiaodutv.com
+covered	domain_suffix	afd.baidu.com	baidu.com
+covered	domain_suffix	afdconf.baidu.com	baidu.com
+covered	domain_suffix	afp.iqiyi.com	iqiyi.com
+covered	domain_suffix	agoraio.cn	cn
+covered	domain_suffix	ahnews.com.cn	cn
+covered	domain_suffix	ahwang.cn	cn
+covered	domain_suffix	ai-guardrail.com.cn	cn
+covered	domain_suffix	aichongzoo.cn	cn
+covered	domain_suffix	aiqicha.baidu.com	baidu.com
+covered	domain_suffix	aiqicha.cn	cn
+covered	domain_suffix	airchina.cn	cn
+covered	domain_suffix	airchina.com.cn	cn
+covered	domain_suffix	airchinalimited.cn	cn
+covered	domain_suffix	airchinalimited.com.cn	cn
+covered	domain_suffix	aireads.cn	cn
+covered	domain_suffix	airitilibrary.cn	cn
+covered	domain_suffix	akikocorp.cn	cn
+covered	domain_suffix	alexafund.cn	cn
+covered	domain_suffix	alexafund.com.cn	cn
+covered	domain_suffix	alihealth.cn	cn
+covered	domain_suffix	alihealth.com.cn	cn
+covered	domain_suffix	alimama.alicdn.com	alicdn.com
+covered	domain_suffix	alimama.cn	cn
+covered	domain_suffix	alios.cn	cn
+covered	domain_suffix	alipay.cn	cn
+covered	domain_suffix	alipay.com.cn	cn
+covered	domain_suffix	alitui.weibo.com	weibo.com
+covered	domain_suffix	aliwx.com.cn	cn
+covered	domain_suffix	allflow.cn	cn
+covered	domain_suffix	alog.umeng.com	umeng.com
+covered	domain_suffix	alog.umengcloud.com	umengcloud.com
+covered	domain_suffix	alogs.umeng.com	umeng.com
+covered	domain_suffix	alogus.umeng.com	umeng.com
+covered	domain_suffix	alyms.cn	cn
+covered	domain_suffix	alysm.cn	cn
+covered	domain_suffix	amazon.cn	cn
+covered	domain_suffix	amazonaws.cn	cn
+covered	domain_suffix	amazonaws.com.cn	cn
+covered	domain_suffix	amazonbusiness.cn	cn
+covered	domain_suffix	amazonbusiness.com.cn	cn
+covered	domain_suffix	amazonchoice.cn	cn
+covered	domain_suffix	amazonchoice.com.cn	cn
+covered	domain_suffix	amazonchoices.cn	cn
+covered	domain_suffix	amazonchoices.com.cn	cn
+covered	domain_suffix	amazoninspire.cn	cn
+covered	domain_suffix	amazoninspire.com.cn	cn
+covered	domain_suffix	amazonlaunchpad.cn	cn
+covered	domain_suffix	amazonlaunchpad.com.cn	cn
+covered	domain_suffix	amazonlending.com.cn	cn
+covered	domain_suffix	amazonnow.cn	cn
+covered	domain_suffix	amazonnow.com.cn	cn
+covered	domain_suffix	amazonprimevideo.cn	cn
+covered	domain_suffix	amazonprimevideo.com.cn	cn
+covered	domain_suffix	amazonwebservices.cn	cn
+covered	domain_suffix	amazonwebservices.com.cn	cn
+covered	domain_suffix	amazonworkdocs.cn	cn
+covered	domain_suffix	amazonworkdocs.com.cn	cn
+covered	domain_suffix	amemv.cn	cn
+covered	domain_suffix	ami-alliance.org.cn	cn
+covered	domain_suffix	amplifi.com.cn	cn
+covered	domain_suffix	amzndns-cn.cn	cn
+covered	domain_suffix	analytics.163.com	163.com
+covered	domain_suffix	ancientbooks.cn	cn
+covered	domain_suffix	andfx.cn	cn
+covered	domain_suffix	animetamashi.cn	cn
+covered	domain_suffix	anitabi.cn	cn
+covered	domain_suffix	anitama.cn	cn
+covered	domain_suffix	anker.com.cn	cn
+covered	domain_suffix	ankerwork.cn	cn
+covered	domain_suffix	anlaiye.com.cn	cn
+covered	domain_suffix	antgroup-inc.cn	cn
+covered	domain_suffix	anzhuo.cn	cn
+covered	domain_suffix	aorizon.cn	cn
+covered	domain_suffix	aoruszone.cn	cn
+covered	domain_suffix	apidns.kwd.inkuai.com	inkuai.com
+covered	domain_suffix	apifox.cn	cn
+covered	domain_suffix	apihub-internal.cn	cn
+covered	domain_suffix	apipost.cn	cn
+covered	domain_suffix	appforebay.cn	cn
+covered	domain_suffix	apple-appstore.cn	cn
+covered	domain_suffix	apple-dns.cn	cn
+covered	domain_suffix	apple-dns.com.cn	cn
+covered	domain_suffix	apple-ibooks.cn	cn
+covered	domain_suffix	apple-icloud.cn	cn
+covered	domain_suffix	apple-itunes.cn	cn
+covered	domain_suffix	apple-maps.cn	cn
+covered	domain_suffix	apple-store.cn	cn
+covered	domain_suffix	apple.cn	cn
+covered	domain_suffix	apple.com.cn	cn
+covered	domain_suffix	apple.www.letv.com	letv.com
+covered	domain_suffix	appleappstore.cn	cn
+covered	domain_suffix	applecenter.cn	cn
+covered	domain_suffix	applecenter.com.cn	cn
+covered	domain_suffix	applecomputer.cn	cn
+covered	domain_suffix	applecomputer.com.cn	cn
+covered	domain_suffix	appledns.cn	cn
+covered	domain_suffix	appledns.com.cn	cn
+covered	domain_suffix	appleicloud.cn	cn
+covered	domain_suffix	applepaycash.cn	cn
+covered	domain_suffix	applepaycash.com.cn	cn
+covered	domain_suffix	applepaysupplies.cn	cn
+covered	domain_suffix	applepaysupplies.com.cn	cn
+covered	domain_suffix	applesiri.cn	cn
+covered	domain_suffix	applestore.cn	cn
+covered	domain_suffix	applestore.com.cn	cn
+covered	domain_suffix	appletv4.cn	cn
+covered	domain_suffix	appletv4.com.cn	cn
+covered	domain_suffix	appserviceenvironment.cn	cn
+covered	domain_suffix	appstoreapple.cn	cn
+covered	domain_suffix	ar.umeng.com	umeng.com
+covered	domain_suffix	arcaea.cn	cn
+covered	domain_suffix	ark-doc-resources.cn	cn
+covered	domain_suffix	ark.letv.com	letv.com
+covered	domain_suffix	arrow.cn	cn
+covered	domain_suffix	asfiovnxocqpcry.com.cn	cn
+covered	domain_suffix	asmlink.cn	cn
+covered	domain_suffix	aspect-upush.umeng.com	umeng.com
+covered	domain_suffix	assoc-amazon.cn	cn
+covered	domain_suffix	assp.sohu.com	sohu.com
+covered	domain_suffix	asus.com.cn	cn
+covered	domain_suffix	atanx.alicdn.com	alicdn.com
+covered	domain_suffix	atanx2.alicdn.com	alicdn.com
+covered	domain_suffix	atm.youku.com	youku.com
+covered	domain_suffix	att.cn	cn
+covered	domain_suffix	attcorp.cn	cn
+covered	domain_suffix	audid.umeng.com	umeng.com
+covered	domain_suffix	aurorapush.cn	cn
+covered	domain_suffix	autohome.com.cn	cn
+covered	domain_suffix	autoimg.cn	cn
+covered	domain_suffix	autoimg.com.cn	cn
+covered	domain_suffix	auxauto.com.cn	cn
+covered	domain_suffix	auxshop.cn	cn
+covered	domain_suffix	auxsmart.com.cn	cn
+covered	domain_suffix	auxsolar.com.cn	cn
+covered	domain_suffix	avermedia.cn	cn
+covered	domain_suffix	avicfund.cn	cn
+covered	domain_suffix	aws-border.cn	cn
+covered	domain_suffix	aws-icp-domain-manager.cn	cn
+covered	domain_suffix	awsapps.cn	cn
+covered	domain_suffix	awsapps.com.cn	cn
+covered	domain_suffix	awsstatic.cn	cn
+covered	domain_suffix	azcrmc-test.cn	cn
+covered	domain_suffix	azcrmc.cn	cn
+covered	domain_suffix	azk8s.cn	cn
+covered	domain_suffix	azkr2.cn	cn
+covered	domain_suffix	aznbcontent.cn	cn
+covered	domain_suffix	aztask.cn	cn
+covered	domain_suffix	azure-api.cn	cn
+covered	domain_suffix	azure-apihub.cn	cn
+covered	domain_suffix	azure-automation.cn	cn
+covered	domain_suffix	azure-connectedvehicles-stage.cn	cn
+covered	domain_suffix	azure-connectedvehicles.cn	cn
+covered	domain_suffix	azure-devices-provisioning.cn	cn
+covered	domain_suffix	azure-devices.cn	cn
+covered	domain_suffix	azure-dns-1.cn	cn
+covered	domain_suffix	azure-dns-10.cn	cn
+covered	domain_suffix	azure-dns-2.cn	cn
+covered	domain_suffix	azure-dns-3.cn	cn
+covered	domain_suffix	azure-dns-4.cn	cn
+covered	domain_suffix	azure-dns-5.cn	cn
+covered	domain_suffix	azure-dns-6.cn	cn
+covered	domain_suffix	azure-dns-7.cn	cn
+covered	domain_suffix	azure-dns-8.cn	cn
+covered	domain_suffix	azure-dns-9.cn	cn
+covered	domain_suffix	azure-dns.cn	cn
+covered	domain_suffix	azure-mobile.cn	cn
+covered	domain_suffix	azure.cn	cn
+covered	domain_suffix	azurecr-test.cn	cn
+covered	domain_suffix	azurecr.cn	cn
+covered	domain_suffix	azurehdinsight.cn	cn
+covered	domain_suffix	azureiotsuite.cn	cn
+covered	domain_suffix	azuremresolver.cn	cn
+covered	domain_suffix	azureprivatedns.cn	cn
+covered	domain_suffix	azurerms.cn	cn
+covered	domain_suffix	azuresandbox.cn	cn
+covered	domain_suffix	b2clogin.cn	cn
+covered	domain_suffix	b3itech.cn	cn
+covered	domain_suffix	badjs.weixinbridge.com	weixinbridge.com
+covered	domain_suffix	baichuan-sdk.alicdn.com	alicdn.com
+covered	domain_suffix	baidu-cdn.cn	cn
+covered	domain_suffix	baidu.cn	cn
+covered	domain_suffix	baidu.com.cn	cn
+covered	domain_suffix	baiduyuncdn.cn	cn
+covered	domain_suffix	baifen.music.baidu.com	baidu.com
+covered	domain_suffix	baiying.cn	cn
+covered	domain_suffix	baiying.com.cn	cn
+covered	domain_suffix	baltamatica.cn	cn
+covered	domain_suffix	baltamatica.org.cn	cn
+covered	domain_suffix	bambulab.cn	cn
+covered	domain_suffix	bandao.cn	cn
+covered	domain_suffix	bankcomm.cn	cn
+covered	domain_suffix	bankofbeijing.com.cn	cn
+covered	domain_suffix	baobaoaichi.cn	cn
+covered	domain_suffix	bbdc.cn	cn
+covered	domain_suffix	bbtnews.com.cn	cn
+covered	domain_suffix	bbtv.cn	cn
+covered	domain_suffix	bce-cdn.cn	cn
+covered	domain_suffix	bczeducation.cn	cn
+covered	domain_suffix	bdfund.cn	cn
+covered	domain_suffix	bds.snssdk.com	snssdk.com
+covered	domain_suffix	bdu.focus.cn	cn
+covered	domain_suffix	bdycdn.cn	cn
+covered	domain_suffix	bdydns.cn	cn
+covered	domain_suffix	beacon.cdn.qq.com	qq.com
+covered	domain_suffix	beacon.qq.com	qq.com
+covered	domain_suffix	beacon.sina.com.cn	cn
+covered	domain_suffix	beaconcdn.qq.com	qq.com
+covered	domain_suffix	beats1.cn	cn
+covered	domain_suffix	beats1.com.cn	cn
+covered	domain_suffix	beats2.com.cn	cn
+covered	domain_suffix	beats4.cn	cn
+covered	domain_suffix	beatsbydre.com.cn	cn
+covered	domain_suffix	beatsep.cn	cn
+covered	domain_suffix	beifangsl.cn	cn
+covered	domain_suffix	beingfine.cn	cn
+covered	domain_suffix	beingfine.com.cn	cn
+covered	domain_suffix	beisen.cn	cn
+covered	domain_suffix	bestbuy.cn	cn
+covered	domain_suffix	bestbuy.com.cn	cn
+covered	domain_suffix	bestincapi.cn	cn
+covered	domain_suffix	bestincapp.cn	cn
+covered	domain_suffix	bestpay.cn	cn
+covered	domain_suffix	bestpay.com.cn	cn
+covered	domain_suffix	bestv.com.cn	cn
+covered	domain_suffix	bestvcdn.cn	cn
+covered	domain_suffix	bestvcdn.com.cn	cn
+covered	domain_suffix	betastar.cn	cn
+covered	domain_suffix	bigfun.cn	cn
+covered	domain_suffix	bigfunapp.cn	cn
+covered	domain_suffix	bigmodel.cn	cn
+covered	domain_suffix	bili22.cn	cn
+covered	domain_suffix	bili2233.cn	cn
+covered	domain_suffix	bili23.cn	cn
+covered	domain_suffix	bili33.cn	cn
+covered	domain_suffix	bilibili.cn	cn
+covered	domain_suffix	bilibiligame.cn	cn
+covered	domain_suffix	bilibilipay.cn	cn
+covered	domain_suffix	bilivideo.cn	cn
+covered	domain_suffix	bing.com.cn	cn
+covered	domain_suffix	biomart.cn	cn
+covered	domain_suffix	bisheng.cn	cn
+covered	domain_suffix	bishengcompiler.cn	cn
+covered	domain_suffix	bitpt.cn	cn
+covered	domain_suffix	biz.weibo.com	weibo.com
+covered	domain_suffix	bjctyiptv.cn	cn
+covered	domain_suffix	bjd.com.cn	cn
+covered	domain_suffix	bjnews.com.cn	cn
+covered	domain_suffix	bkchina.cn	cn
+covered	domain_suffix	blueos.com.cn	cn
+covered	domain_suffix	bmac.com.cn	cn
+covered	domain_suffix	boc.cn	cn
+covered	domain_suffix	boccfc.cn	cn
+covered	domain_suffix	bocichina.cn	cn
+covered	domain_suffix	bocichina.com.cn	cn
+covered	domain_suffix	bocifunds.cn	cn
+covered	domain_suffix	bocifunds.com.cn	cn
+covered	domain_suffix	bocservices.com.cn	cn
+covered	domain_suffix	boe.com.cn	cn
+covered	domain_suffix	booking.cn	cn
+covered	domain_suffix	bookln.cn	cn
+covered	domain_suffix	bootcdn.cn	cn
+covered	domain_suffix	bosc.cn	cn
+covered	domain_suffix	boscam.com.cn	cn
+covered	domain_suffix	brawlstars.cn	cn
+covered	domain_suffix	bsb.com.cn	cn
+covered	domain_suffix	bsclink.cn	cn
+covered	domain_suffix	bsurl.cn	cn
+covered	domain_suffix	bt.byr.cn	cn
+covered	domain_suffix	btrace.qq.com	qq.com
+covered	domain_suffix	bubei.com.cn	cn
+covered	domain_suffix	buf35.cn	cn
+covered	domain_suffix	bugly.qq.com	qq.com
+covered	domain_suffix	burningvocabulary.cn	cn
+covered	domain_suffix	butterfly-static.cn	cn
+covered	domain_suffix	butterflyai.cn	cn
+covered	domain_suffix	bxexpress.com.cn	cn
+covered	domain_suffix	byte-test.cn	cn
+covered	domain_suffix	bytecdn.cn	cn
+covered	domain_suffix	bytedance.cn	cn
+covered	domain_suffix	bytehouse.cn	cn
+covered	domain_suffix	byteinspire.cn	cn
+covered	domain_suffix	byteplus-api-test.com.cn	cn
+covered	domain_suffix	byteplus-api.com.cn	cn
+covered	domain_suffix	byteplusapi-test.com.cn	cn
+covered	domain_suffix	byteplusapi.com.cn	cn
+covered	domain_suffix	bytepluses.com.cn	cn
+covered	domain_suffix	byteurl.cn	cn
+covered	domain_suffix	bytexns.cn	cn
+covered	domain_suffix	bzclk.baidu.com	baidu.com
+covered	domain_suffix	c-adash.m.taobao.com	taobao.com
+covered	domain_suffix	c-nfa.jd.com	jd.com
+covered	domain_suffix	c.sayhi.360.cn	cn
+covered	domain_suffix	c.uaa.iqiyi.com	iqiyi.com
+covered	domain_suffix	cae.cn	cn
+covered	domain_suffix	caijing.com.cn	cn
+covered	domain_suffix	cainiao.com.cn	cn
+covered	domain_suffix	canon.cn	cn
+covered	domain_suffix	canon.com.cn	cn
+covered	domain_suffix	caocao.com.cn	cn
+covered	domain_suffix	caocaokeji.cn	cn
+covered	domain_suffix	capcut.cn	cn
+covered	domain_suffix	cas.cn	cn
+covered	domain_suffix	cb.baidu.com	baidu.com
+covered	domain_suffix	cbern.com.cn	cn
+covered	domain_suffix	cbjs.baidu.com	baidu.com
+covered	domain_suffix	cbn.cn	cn
+covered	domain_suffix	cc-pay.cn	cn
+covered	domain_suffix	ccb-life.com.cn	cn
+covered	domain_suffix	ccb.cn	cn
+covered	domain_suffix	ccb.com.cn	cn
+covered	domain_suffix	ccbfund.cn	cn
+covered	domain_suffix	ccbfund.com.cn	cn
+covered	domain_suffix	ccbfutures.cn	cn
+covered	domain_suffix	ccblife-test.com.cn	cn
+covered	domain_suffix	ccbtrust.com.cn	cn
+covered	domain_suffix	ccf.org.cn	cn
+covered	domain_suffix	ccfund.com.cn	cn
+covered	domain_suffix	ccn.com.cn	cn
+covered	domain_suffix	ccreports.com.cn	cn
+covered	domain_suffix	ccs.umeng.com	umeng.com
+covered	domain_suffix	ccspeed.cn	cn
+covered	domain_suffix	cctv.cn	cn
+covered	domain_suffix	cctvlib.cn	cn
+covered	domain_suffix	cctvlib.com.cn	cn
+covered	domain_suffix	cctvlibrary.cn	cn
+covered	domain_suffix	cctvlibrary.com.cn	cn
+covered	domain_suffix	cctvpro.cn	cn
+covered	domain_suffix	cctvpro.com.cn	cn
+covered	domain_suffix	cdn-go.cn	cn
+covered	domain_suffix	cdnhwc1.cn	cn
+covered	domain_suffix	cdnhwc10.cn	cn
+covered	domain_suffix	cdnhwc2.cn	cn
+covered	domain_suffix	cdnhwc3.cn	cn
+covered	domain_suffix	cdnhwc4.cn	cn
+covered	domain_suffix	cdnhwc5.cn	cn
+covered	domain_suffix	cdnhwc6.cn	cn
+covered	domain_suffix	cdnhwc7.cn	cn
+covered	domain_suffix	cdnhwc8.cn	cn
+covered	domain_suffix	cdnhwc9.cn	cn
+covered	domain_suffix	cdnhwcaip122.cn	cn
+covered	domain_suffix	cdnhwcaoc115.cn	cn
+covered	domain_suffix	cdnhwcbie120.cn	cn
+covered	domain_suffix	cdnhwcbvo20.cn	cn
+covered	domain_suffix	cdnhwccvo19.cn	cn
+covered	domain_suffix	cdnhwcdkd21.cn	cn
+covered	domain_suffix	cdnhwcdvg22.cn	cn
+covered	domain_suffix	cdnhwceft18.cn	cn
+covered	domain_suffix	cdnhwceod109.cn	cn
+covered	domain_suffix	cdnhwcfzp15.cn	cn
+covered	domain_suffix	cdnhwcgrb01.cn	cn
+covered	domain_suffix	cdnhwcgvs16.cn	cn
+covered	domain_suffix	cdnhwcidu117.cn	cn
+covered	domain_suffix	cdnhwcjbj05.cn	cn
+covered	domain_suffix	cdnhwcjkl10.cn	cn
+covered	domain_suffix	cdnhwcjqv17.cn	cn
+covered	domain_suffix	cdnhwckbw08.cn	cn
+covered	domain_suffix	cdnhwckfd24.cn	cn
+covered	domain_suffix	cdnhwclkl04.cn	cn
+covered	domain_suffix	cdnhwclnh23.cn	cn
+covered	domain_suffix	cdnhwclrd102.cn	cn
+covered	domain_suffix	cdnhwclsl119.cn	cn
+covered	domain_suffix	cdnhwcofl101.cn	cn
+covered	domain_suffix	cdnhwcogx108.cn	cn
+covered	domain_suffix	cdnhwcojn124.cn	cn
+covered	domain_suffix	cdnhwconz06.cn	cn
+covered	domain_suffix	cdnhwcozb112.cn	cn
+covered	domain_suffix	cdnhwcpcw110.cn	cn
+covered	domain_suffix	cdnhwcpqh13.cn	cn
+covered	domain_suffix	cdnhwcqrr114.cn	cn
+covered	domain_suffix	cdnhwcqvk105.cn	cn
+covered	domain_suffix	cdnhwcrgg07.cn	cn
+covered	domain_suffix	cdnhwcrpp12.cn	cn
+covered	domain_suffix	cdnhwcscc123.cn	cn
+covered	domain_suffix	cdnhwcsjs09.cn	cn
+covered	domain_suffix	cdnhwcsux118.cn	cn
+covered	domain_suffix	cdnhwctmz11.cn	cn
+covered	domain_suffix	cdnhwctyd116.cn	cn
+covered	domain_suffix	cdnhwcurr103.cn	cn
+covered	domain_suffix	cdnhwcuwd107.cn	cn
+covered	domain_suffix	cdnhwcuxc121.cn	cn
+covered	domain_suffix	cdnhwcwqz113.cn	cn
+covered	domain_suffix	cdnhwcxsi14.cn	cn
+covered	domain_suffix	cdnhwcywp03.cn	cn
+covered	domain_suffix	cdnhwcyxb02.cn	cn
+covered	domain_suffix	cdnhwczic111.cn	cn
+covered	domain_suffix	cdnhwczid104.cn	cn
+covered	domain_suffix	cdnhwczoy106.cn	cn
+covered	domain_suffix	cdnv1.cn	cn
+covered	domain_suffix	cdnv2.cn	cn
+covered	domain_suffix	cdnv3.cn	cn
+covered	domain_suffix	ce.cn	cn
+covered	domain_suffix	ceati.org.cn	cn
+covered	domain_suffix	cedf.cn	cn
+covered	domain_suffix	cedf.org.cn	cn
+covered	domain_suffix	cegid-cloud.cn	cn
+covered	domain_suffix	cepsp.cn	cn
+covered	domain_suffix	cfgw.net.cn	cn
+covered	domain_suffix	cfi.cn	cn
+covered	domain_suffix	cfi.net.cn	cn
+covered	domain_suffix	cfp.cn	cn
+covered	domain_suffix	cfsc.com.cn	cn
+covered	domain_suffix	cfsn.cn	cn
+covered	domain_suffix	cftest5.cn	cn
+covered	domain_suffix	cftest6.cn	cn
+covered	domain_suffix	cgbchina.com.cn	cn
+covered	domain_suffix	cgigc.com.cn	cn
+covered	domain_suffix	chatdrama.cn	cn
+covered	domain_suffix	chatglm.cn	cn
+covered	domain_suffix	chatqidian.cn	cn
+covered	domain_suffix	chattext.cn	cn
+covered	domain_suffix	chatyuewen.cn	cn
+covered	domain_suffix	chdi.com.cn	cn
+covered	domain_suffix	chei.com.cn	cn
+covered	domain_suffix	chelaile.net.cn	cn
+covered	domain_suffix	chengjiaxiangqin.cn	cn
+covered	domain_suffix	chengquan.cn	cn
+covered	domain_suffix	chesicc.cn	cn
+covered	domain_suffix	chesicc.com.cn	cn
+covered	domain_suffix	chesicc.net.cn	cn
+covered	domain_suffix	chesicc.org.cn	cn
+covered	domain_suffix	chicalot.cn	cn
+covered	domain_suffix	china.cn	cn
+covered	domain_suffix	china.com.cn	cn
+covered	domain_suffix	china.org.cn	cn
+covered	domain_suffix	chinabank.com.cn	cn
+covered	domain_suffix	chinaclear.cn	cn
+covered	domain_suffix	chinacloud-mobile.cn	cn
+covered	domain_suffix	chinacloudapi.cn	cn
+covered	domain_suffix	chinacloudapp.cn	cn
+covered	domain_suffix	chinacloudsites.cn	cn
+covered	domain_suffix	chinadevelopment.com.cn	cn
+covered	domain_suffix	chinaepg.cn	cn
+covered	domain_suffix	chinanature.com.cn	cn
+covered	domain_suffix	chinanews.com.cn	cn
+covered	domain_suffix	chinapost.cn	cn
+covered	domain_suffix	chinapost.com.cn	cn
+covered	domain_suffix	chinapostdaily.com.cn	cn
+covered	domain_suffix	chinapostnews.cn	cn
+covered	domain_suffix	chinapostnews.com.cn	cn
+covered	domain_suffix	chinastarmarket.cn	cn
+covered	domain_suffix	chinastock.com.cn	cn
+covered	domain_suffix	chinatea.com.cn	cn
+covered	domain_suffix	chinatelecom.com.cn	cn
+covered	domain_suffix	chinatowercom.cn	cn
+covered	domain_suffix	chinaunicom.cn	cn
+covered	domain_suffix	chinaunicom.com.cn	cn
+covered	domain_suffix	chinaunionpay.com.cn	cn
+covered	domain_suffix	chinayz.com.cn	cn
+covered	domain_suffix	chsi.cn	cn
+covered	domain_suffix	chsi.com.cn	cn
+covered	domain_suffix	chuanbaoguancha.cn	cn
+covered	domain_suffix	cib-fund.com.cn	cn
+covered	domain_suffix	cib.com.cn	cn
+covered	domain_suffix	cidp.com.cn	cn
+covered	domain_suffix	cisco.cn	cn
+covered	domain_suffix	cisco.com.cn	cn
+covered	domain_suffix	citibank.com.cn	cn
+covered	domain_suffix	citic-prudential.com.cn	cn
+covered	domain_suffix	citicprufunds.com.cn	cn
+covered	domain_suffix	citv.net.cn	cn
+covered	domain_suffix	clawsentry.cn	cn
+covered	domain_suffix	click.gamersky.com	gamersky.com
+covered	domain_suffix	click.hunantv.com	hunantv.com
+covered	domain_suffix	click.uve.mobile.sina.cn	cn
+covered	domain_suffix	click.uve.weibo.com	weibo.com
+covered	domain_suffix	clink.cn	cn
+covered	domain_suffix	clk1.cn	cn
+covered	domain_suffix	cloud.189.cn	cn
+covered	domain_suffix	cloudbase.cn	cn
+covered	domain_suffix	cloudeagle.cn	cn
+covered	domain_suffix	cloudendpoint.cn	cn
+covered	domain_suffix	cloudflarechina.cn	cn
+covered	domain_suffix	cloudfront-test.cn	cn
+covered	domain_suffix	cloudfront.cn	cn
+covered	domain_suffix	cloudpush.iqiyi.com	iqiyi.com
+covered	domain_suffix	cls.cn	cn
+covered	domain_suffix	cm.baidu.com	baidu.com
+covered	domain_suffix	cma.cn	cn
+covered	domain_suffix	cmbc.com.cn	cn
+covered	domain_suffix	cmbchina.cn	cn
+covered	domain_suffix	cmbimg.cn	cn
+covered	domain_suffix	cmbt.cn	cn
+covered	domain_suffix	cmburl.cn	cn
+covered	domain_suffix	cmcc-cs.cn	cn
+covered	domain_suffix	cmft.com.cn	cn
+covered	domain_suffix	cmfunds.cn	cn
+covered	domain_suffix	cmicrwx.cn	cn
+covered	domain_suffix	cmicvip.cn	cn
+covered	domain_suffix	cmvideo.cn	cn
+covered	domain_suffix	cncnimg.cn	cn
+covered	domain_suffix	cneo.com.cn	cn
+covered	domain_suffix	cnht.com.cn	cn
+covered	domain_suffix	cninfo.com.cn	cn
+covered	domain_suffix	cnki.com.cn	cn
+covered	domain_suffix	cnlogs.umeng.com	umeng.com
+covered	domain_suffix	cnlogs.umengcloud.com	umengcloud.com
+covered	domain_suffix	cnms.net.cn	cn
+covered	domain_suffix	cnpc.com.cn	cn
+covered	domain_suffix	cnr.cn	cn
+covered	domain_suffix	cns.com.cn	cn
+covered	domain_suffix	cnspeedtest.cn	cn
+covered	domain_suffix	cntv.cn	cn
+covered	domain_suffix	cntv.com.cn	cn
+covered	domain_suffix	cntvwb.cn	cn
+covered	domain_suffix	cnwza.cn	cn
+covered	domain_suffix	codebuddy.cn	cn
+covered	domain_suffix	conac.cn	cn
+covered	domain_suffix	connectcommerce.cn	cn
+covered	domain_suffix	connectcommerce.com.cn	cn
+covered	domain_suffix	connectedcommerce.cn	cn
+covered	domain_suffix	coze.cn	cn
+covered	domain_suffix	cozebaas.cn	cn
+covered	domain_suffix	cozefn.cn	cn
+covered	domain_suffix	cozeide.cn	cn
+covered	domain_suffix	cozetest.cn	cn
+covered	domain_suffix	cozetest2.cn	cn
+covered	domain_suffix	cozetest3.cn	cn
+covered	domain_suffix	cpic.com.cn	cn
+covered	domain_suffix	cpro.baidu.com	baidu.com
+covered	domain_suffix	cpro.baidustatic.com	baidustatic.com
+covered	domain_suffix	cps.360buy.com	360buy.com
+covered	domain_suffix	cptu.cn	cn
+covered	domain_suffix	cptu.org.cn	cn
+covered	domain_suffix	cpu.baidu.com	baidu.com
+covered	domain_suffix	cqctyiptv.cn	cn
+covered	domain_suffix	cqhlw.cn	cn
+covered	domain_suffix	cqn.com.cn	cn
+covered	domain_suffix	cqtk.com.cn	cn
+covered	domain_suffix	crash.163.com	163.com
+covered	domain_suffix	crash2.zhihu.com	zhihu.com
+covered	domain_suffix	crashlytics.163.com	163.com
+covered	domain_suffix	cravatar.cn	cn
+covered	domain_suffix	cri.cn	cn
+covered	domain_suffix	cs.com.cn	cn
+covered	domain_suffix	csco.com.cn	cn
+covered	domain_suffix	csdl.ac.cn	cn
+covered	domain_suffix	csdn.net.cn	cn
+covered	domain_suffix	csdnimg.cn	cn
+covered	domain_suffix	csg.cn	cn
+covered	domain_suffix	csgo.com.cn	cn
+covered	domain_suffix	csgo.wmsj.cn	cn
+covered	domain_suffix	cstm.baidu.com	baidu.com
+covered	domain_suffix	ctacdn.cn	cn
+covered	domain_suffix	ctadns.cn	cn
+covered	domain_suffix	ctaigw.cn	cn
+covered	domain_suffix	ctcdn.cn	cn
+covered	domain_suffix	ctcdn.com.cn	cn
+covered	domain_suffix	ctcloudzos.cn	cn
+covered	domain_suffix	ctcns.cn	cn
+covered	domain_suffix	ctdns.cn	cn
+covered	domain_suffix	ctdns.com.cn	cn
+covered	domain_suffix	ctecdn.cn	cn
+covered	domain_suffix	ctecx.cn	cn
+covered	domain_suffix	cthcdn.cn	cn
+covered	domain_suffix	ctlcdn.cn	cn
+covered	domain_suffix	ctmcdn.cn	cn
+covered	domain_suffix	ctrip.cn	cn
+covered	domain_suffix	ctripgslb.cn	cn
+covered	domain_suffix	ctripgslb.com.cn	cn
+covered	domain_suffix	ctwcdn.cn	cn
+covered	domain_suffix	ctxcdn.cn	cn
+covered	domain_suffix	ctxirang.cn	cn
+covered	domain_suffix	ctycdn.cn	cn
+covered	domain_suffix	ctycdn.net.cn	cn
+covered	domain_suffix	ctydoh.cn	cn
+covered	domain_suffix	ctyecx.cn	cn
+covered	domain_suffix	ctyiptv.cn	cn
+covered	domain_suffix	ctyun.cn	cn
+covered	domain_suffix	ctyun.com.cn	cn
+covered	domain_suffix	ctyuncdn.cn	cn
+covered	domain_suffix	ctyuncs.cn	cn
+covered	domain_suffix	ctyunmds.cn	cn
+covered	domain_suffix	ctyunwaf.cn	cn
+covered	domain_suffix	ctyunwaf3.cn	cn
+covered	domain_suffix	ctyunxs.cn	cn
+covered	domain_suffix	ctyunzos.cn	cn
+covered	domain_suffix	ctzcdn.cn	cn
+covered	domain_suffix	cueme.cn	cn
+covered	domain_suffix	cugbonline.cn	cn
+covered	domain_suffix	cunchuhulian-ln.cn	cn
+covered	domain_suffix	cup.com.cn	cn
+covered	domain_suffix	cup62.cn	cn
+covered	domain_suffix	cupid.iqiyi.com	iqiyi.com
+covered	domain_suffix	cww.net.cn	cn
+covered	domain_suffix	cxzx10086.cn	cn
+covered	domain_suffix	cyber-bay.cn	cn
+covered	domain_suffix	cyber-bay.com.cn	cn
+covered	domain_suffix	cytxl.com.cn	cn
+covered	domain_suffix	cyzone.cn	cn
+covered	domain_suffix	cza84.cn	cn
+covered	domain_suffix	da.hunantv.com	hunantv.com
+covered	domain_suffix	da.mgtv.com	mgtv.com
+covered	domain_suffix	dahe.cn	cn
+covered	domain_suffix	dahebao.cn	cn
+covered	domain_suffix	damai.cn	cn
+covered	domain_suffix	data.mistat.india.xiaomi.com	xiaomi.com
+covered	domain_suffix	data.mistat.intl.xiaomi.com	xiaomi.com
+covered	domain_suffix	data.mistat.rus.xiaomi.com	xiaomi.com
+covered	domain_suffix	data.mistat.xiaomi.com	xiaomi.com
+covered	domain_suffix	data.pharmacodia.com	pharmacodia.com
+covered	domain_suffix	datacon.org.cn	cn
+covered	domain_suffix	datasea.cn	cn
+covered	domain_suffix	datayi.cn	cn
+covered	domain_suffix	daton.com.cn	cn
+covered	domain_suffix	daytx.cn	cn
+covered	domain_suffix	dbankcdn.cn	cn
+covered	domain_suffix	dbankcloud.cn	cn
+covered	domain_suffix	dbankedge.cn	cn
+covered	domain_suffix	dbfund.com.cn	cn
+covered	domain_suffix	dc.letv.com	letv.com
+covered	domain_suffix	dccnet.com.cn	cn
+covered	domain_suffix	dcloud.net.cn	cn
+covered	domain_suffix	dcocsp.cn	cn
+covered	domain_suffix	ddimg.cn	cn
+covered	domain_suffix	debugmode.cn	cn
+covered	domain_suffix	dedao.cn	cn
+covered	domain_suffix	deepin.cn	cn
+covered	domain_suffix	deepin.org.cn	cn
+covered	domain_suffix	dell.com.cn	cn
+covered	domain_suffix	dellemc.com.cn	cn
+covered	domain_suffix	dellmobile.cn	cn
+covered	domain_suffix	delltechnologies.com.cn	cn
+covered	domain_suffix	deppon.com.cn	cn
+covered	domain_suffix	designkit.cn	cn
+covered	domain_suffix	dewuapp.cn	cn
+covered	domain_suffix	dewuhaowu.cn	cn
+covered	domain_suffix	dewuhd.cn	cn
+covered	domain_suffix	dewuhui.cn	cn
+covered	domain_suffix	dewus.cn	cn
+covered	domain_suffix	dewuyouhui.cn	cn
+covered	domain_suffix	dfyun.com.cn	cn
+covered	domain_suffix	dfzq.com.cn	cn
+covered	domain_suffix	dgzq.com.cn	cn
+covered	domain_suffix	dhsvc.cn	cn
+covered	domain_suffix	dianwoda.cn	cn
+covered	domain_suffix	dicos.com.cn	cn
+covered	domain_suffix	dict.cn	cn
+covered	domain_suffix	didi.cn	cn
+covered	domain_suffix	diditaxi.com.cn	cn
+covered	domain_suffix	dig.bdurl.net	bdurl.net
+covered	domain_suffix	digicert.cn	cn
+covered	domain_suffix	diiing.cn	cn
+covered	domain_suffix	dingstore.cn	cn
+covered	domain_suffix	dingtalk.cn	cn
+covered	domain_suffix	dingxinwen.cn	cn
+covered	domain_suffix	dlgslb.cn	cn
+covered	domain_suffix	dlife.cn	cn
+covered	domain_suffix	dm5.cn	cn
+covered	domain_suffix	dns.iqiyi.com	iqiyi.com
+covered	domain_suffix	dns.jd.com	jd.com
+covered	domain_suffix	dns.qiyipic.iqiyi.com	iqiyi.com
+covered	domain_suffix	dns.weibo.cn	cn
+covered	domain_suffix	dns.weixin.qq.com	qq.com
+covered	domain_suffix	dns.weixin.qq.com.cn	cn
+covered	domain_suffix	dnsapi.cn	cn
+covered	domain_suffix	dnse0.cn	cn
+covered	domain_suffix	dnse1.cn	cn
+covered	domain_suffix	dnse2.cn	cn
+covered	domain_suffix	dnse3.cn	cn
+covered	domain_suffix	dnse4.cn	cn
+covered	domain_suffix	dnse5.cn	cn
+covered	domain_suffix	dnspod.cn	cn
+covered	domain_suffix	dnspod.com.cn	cn
+covered	domain_suffix	dnsv1.com.cn	cn
+covered	domain_suffix	doctoryou.cn	cn
+covered	domain_suffix	doh.iqiyi.com	iqiyi.com
+covered	domain_suffix	doh.ptqy.gitv.tv	gitv.tv
+covered	domain_suffix	dota2.com.cn	cn
+covered	domain_suffix	dota2.wmsj.cn	cn
+covered	domain_suffix	dothework.cn	cn
+covered	domain_suffix	dotserver.douyucdn.cn	cn
+covered	domain_suffix	doucang.cn	cn
+covered	domain_suffix	douding.cn	cn
+covered	domain_suffix	douyucdn.cn	cn
+covered	domain_suffix	douyucdn2.cn	cn
+covered	domain_suffix	drcnet.com.cn	cn
+covered	domain_suffix	drmcmm.baidu.com	baidu.com
+covered	domain_suffix	dtsbc.com.cn	cn
+covered	domain_suffix	dualstack-logs.amap.com	amap.com
+covered	domain_suffix	duiba.com.cn	cn
+covered	domain_suffix	duiou.com.cn	cn
+covered	domain_suffix	duiwai.baidu.com	baidu.com
+covered	domain_suffix	dumate.cn	cn
+covered	domain_suffix	duolingo.cn	cn
+covered	domain_suffix	duoyigroup.cn	cn
+covered	domain_suffix	dup.baidustatic.com	baidustatic.com
+covered	domain_suffix	duurl.cn	cn
+covered	domain_suffix	dwhhd.cn	cn
+covered	domain_suffix	dwjq.com.cn	cn
+covered	domain_suffix	dwz.cn	cn
+covered	domain_suffix	dxy.cn	cn
+covered	domain_suffix	dynamics.cn	cn
+covered	domain_suffix	dzh.com.cn	cn
+covered	domain_suffix	e.kuaishou.cn	cn
+covered	domain_suffix	e.kuaishou.com	kuaishou.com
+covered	domain_suffix	e.qq.com	qq.com
+covered	domain_suffix	e.stat.ykimg.com	ykimg.com
+covered	domain_suffix	e0n.cn	cn
+covered	domain_suffix	easec.com.cn	cn
+covered	domain_suffix	easytier.cn	cn
+covered	domain_suffix	ebay.cn	cn
+covered	domain_suffix	ebay.com.cn	cn
+covered	domain_suffix	ebay.net.cn	cn
+covered	domain_suffix	ebay.org.cn	cn
+covered	domain_suffix	ebay.yn.cn	cn
+covered	domain_suffix	ebay.zj.cn	cn
+covered	domain_suffix	ebayadvertising.cn	cn
+covered	domain_suffix	ebayclassifieds.cn	cn
+covered	domain_suffix	ebayclassifieds.com.cn	cn
+covered	domain_suffix	ebaydesc.cn	cn
+covered	domain_suffix	ebaydesc.com.cn	cn
+covered	domain_suffix	ebaydns.cn	cn
+covered	domain_suffix	ebayenterprise.cn	cn
+covered	domain_suffix	ebayenterprise.com.cn	cn
+covered	domain_suffix	ebaymotors.cn	cn
+covered	domain_suffix	ebaymotors.com.cn	cn
+covered	domain_suffix	ebaypedia.cn	cn
+covered	domain_suffix	ebaypedia.com.cn	cn
+covered	domain_suffix	ebayshopping.cn	cn
+covered	domain_suffix	ebayshopping.com.cn	cn
+covered	domain_suffix	ebaystatic.cn	cn
+covered	domain_suffix	ebaystores.cn	cn
+covered	domain_suffix	ebf.com.cn	cn
+covered	domain_suffix	ecgapp.com.cn	cn
+covered	domain_suffix	eclick.baidu.com	baidu.com
+covered	domain_suffix	ecma.bdimg.com	bdimg.com
+covered	domain_suffix	ecmb.bdimg.com	bdimg.com
+covered	domain_suffix	ecmc.bdimg.com	bdimg.com
+covered	domain_suffix	ecns.cn	cn
+covered	domain_suffix	ecsg.com.cn	cn
+covered	domain_suffix	ectencent.cn	cn
+covered	domain_suffix	ectencent.com.cn	cn
+covered	domain_suffix	eda.cn	cn
+covered	domain_suffix	edgecloudx.cn	cn
+covered	domain_suffix	edu.cn	cn
+covered	domain_suffix	eduad.baidu.com	baidu.com
+covered	domain_suffix	eduyun.cn	cn
+covered	domain_suffix	eeo.com.cn	cn
+covered	domain_suffix	efunds.com.cn	cn
+covered	domain_suffix	eiv.baidu.com	baidu.com
+covered	domain_suffix	eleme.cn	cn
+covered	domain_suffix	elemecdn.cn	cn
+covered	domain_suffix	email.cn	cn
+covered	domain_suffix	ems.com.cn	cn
+covered	domain_suffix	ems.youku.com	youku.com
+covered	domain_suffix	eol.cn	cn
+covered	domain_suffix	erp.cn	cn
+covered	domain_suffix	erp321.cn	cn
+covered	domain_suffix	esgcc.com.cn	cn
+covered	domain_suffix	esp8266.cn	cn
+covered	domain_suffix	esp8266.com.cn	cn
+covered	domain_suffix	espressif.cn	cn
+covered	domain_suffix	espressif.com.cn	cn
+covered	domain_suffix	essence.com.cn	cn
+covered	domain_suffix	etnet.com.cn	cn
+covered	domain_suffix	etnetchina.com.cn	cn
+covered	domain_suffix	euads-o.api.leiniao.com	leiniao.com
+covered	domain_suffix	eufymake.com.cn	cn
+covered	domain_suffix	evolife.cn	cn
+covered	domain_suffix	eword.cn	cn
+covered	domain_suffix	ewww.com.cn	cn
+covered	domain_suffix	extlog.snssdk.com	snssdk.com
+covered	domain_suffix	faasapp.cn	cn
+covered	domain_suffix	faasdev.cn	cn
+covered	domain_suffix	faceshift.cn	cn
+covered	domain_suffix	farfetch.cn	cn
+covered	domain_suffix	farfetch.com.cn	cn
+covered	domain_suffix	farfetch.net.cn	cn
+covered	domain_suffix	fastcdn.com.cn	cn
+covered	domain_suffix	fastcom.com.cn	cn
+covered	domain_suffix	fbstatic.cn	cn
+covered	domain_suffix	fclick.baidu.com	baidu.com
+covered	domain_suffix	fclog.baidu.com	baidu.com
+covered	domain_suffix	fcsc.cn	cn
+covered	domain_suffix	feelgood.cn	cn
+covered	domain_suffix	fei-shu.cn	cn
+covered	domain_suffix	feidee.cn	cn
+covered	domain_suffix	feilian.cn	cn
+covered	domain_suffix	feishu-customer.cn	cn
+covered	domain_suffix	feishu-pre.cn	cn
+covered	domain_suffix	feishu-psc.cn	cn
+covered	domain_suffix	feishu-staging.cn	cn
+covered	domain_suffix	feishu.cn	cn
+covered	domain_suffix	feishuapp.cn	cn
+covered	domain_suffix	feishudoc.cn	cn
+covered	domain_suffix	feishuhuiyi.cn	cn
+covered	domain_suffix	feishumeetings.cn	cn
+covered	domain_suffix	feishuoffice.cn	cn
+covered	domain_suffix	feishustatus.cn	cn
+covered	domain_suffix	feishuvc.cn	cn
+covered	domain_suffix	feizhu.cn	cn
+covered	domain_suffix	fenbike.cn	cn
+covered	domain_suffix	fenbilantian.cn	cn
+covered	domain_suffix	fengkongcloud.cn	cn
+covered	domain_suffix	fenxi.360.cn	cn
+covered	domain_suffix	findlaw.cn	cn
+covered	domain_suffix	fjctyiptv.cn	cn
+covered	domain_suffix	flgff.cn	cn
+covered	domain_suffix	flowus.cn	cn
+covered	domain_suffix	flxdns.cn	cn
+covered	domain_suffix	flyme.cn	cn
+covered	domain_suffix	focus-img.cn	cn
+covered	domain_suffix	focus.cn	cn
+covered	domain_suffix	fontstar.com.cn	cn
+covered	domain_suffix	fourier.taobao.com	taobao.com
+covered	domain_suffix	foxmail.com.cn	cn
+covered	domain_suffix	fpb.sohu.com	sohu.com
+covered	domain_suffix	fpxyo.cn	cn
+covered	domain_suffix	frontrow.com.cn	cn
+covered	domain_suffix	fshark.cn	cn
+covered	domain_suffix	fsphere.cn	cn
+covered	domain_suffix	fullgoal.com.cn	cn
+covered	domain_suffix	fund123.cn	cn
+covered	domain_suffix	furamc.com.cn	cn
+covered	domain_suffix	g.163.com	163.com
+covered	domain_suffix	g.click.taobao.com	taobao.com
+covered	domain_suffix	g.cn	cn
+covered	domain_suffix	g3.letv.com	letv.com
+covered	domain_suffix	gamediary.cn	cn
+covered	domain_suffix	gamedog.cn	cn
+covered	domain_suffix	gamelook.com.cn	cn
+covered	domain_suffix	gamepack.cn	cn
+covered	domain_suffix	gaokao.cn	cn
+covered	domain_suffix	gatzs.com.cn	cn
+covered	domain_suffix	gcable.com.cn	cn
+covered	domain_suffix	gdctyiptv.cn	cn
+covered	domain_suffix	gdt.qq.com	qq.com
+covered	domain_suffix	geforce.cn	cn
+covered	domain_suffix	gefund.com.cn	cn
+covered	domain_suffix	geossl.cn	cn
+covered	domain_suffix	getfeishu.cn	cn
+covered	domain_suffix	getsays.cn	cn
+covered	domain_suffix	getui.cn	cn
+covered	domain_suffix	gf.com.cn	cn
+covered	domain_suffix	gfbzb.cn	cn
+covered	domain_suffix	gfbzb.com.cn	cn
+covered	domain_suffix	gfbzb.gov.cn	cn
+covered	domain_suffix	gffunds.com.cn	cn
+covered	domain_suffix	ggpht.cn	cn
+covered	domain_suffix	ghsl.cn	cn
+covered	domain_suffix	ghzq.com.cn	cn
+covered	domain_suffix	gia.jd.com	jd.com
+covered	domain_suffix	giftatdw.cn	cn
+covered	domain_suffix	gigabyte.cn	cn
+covered	domain_suffix	gitbook.cn	cn
+covered	domain_suffix	gitchat.cn	cn
+covered	domain_suffix	gitdrone.cn	cn
+covered	domain_suffix	gitv.cn	cn
+covered	domain_suffix	gjgbdszt.cn	cn
+covered	domain_suffix	gjgbdszt.com.cn	cn
+covered	domain_suffix	gjgbdszt.net.cn	cn
+covered	domain_suffix	gjzq.com.cn	cn
+covered	domain_suffix	gkecnapps.cn	cn
+covered	domain_suffix	gkzq.com.cn	cn
+covered	domain_suffix	globalcdn.cn	cn
+covered	domain_suffix	globalrdp.cn	cn
+covered	domain_suffix	globalsign.cn	cn
+covered	domain_suffix	globalssh.cn	cn
+covered	domain_suffix	glsc.com.cn	cn
+covered	domain_suffix	gmdaily.cn	cn
+covered	domain_suffix	gmedev.cn	cn
+covered	domain_suffix	gmw.cn	cn
+covered	domain_suffix	gneec.com.cn	cn
+covered	domain_suffix	gogokid.com.cn	cn
+covered	domain_suffix	gongniu.cn	cn
+covered	domain_suffix	gongqingyun.cn	cn
+covered	domain_suffix	google.cn	cn
+covered	domain_suffix	googlecnapps.cn	cn
+covered	domain_suffix	goproxy.cn	cn
+covered	domain_suffix	goto-game.net.cn	cn
+covered	domain_suffix	gouhuo.qq.com	qq.com
+covered	domain_suffix	gov.cn	cn
+covered	domain_suffix	govwza.cn	cn
+covered	domain_suffix	gpall.cn	cn
+covered	domain_suffix	gputechconf.cn	cn
+covered	domain_suffix	greatwallwine.com.cn	cn
+covered	domain_suffix	gree.cn	cn
+covered	domain_suffix	gree.com.cn	cn
+covered	domain_suffix	growin.cn	cn
+covered	domain_suffix	growingio.cn	cn
+covered	domain_suffix	growthsharebounce.cn	cn
+covered	domain_suffix	growthsharequestion.cn	cn
+covered	domain_suffix	growthsharetubular.cn	cn
+covered	domain_suffix	gsctyiptv.cn	cn
+covered	domain_suffix	gsgh.cn	cn
+covered	domain_suffix	gsjtyiptv.cn	cn
+covered	domain_suffix	gstatic.cn	cn
+covered	domain_suffix	gstaticcnapps.cn	cn
+covered	domain_suffix	gtimg.cn	cn
+covered	domain_suffix	gtimg.com.cn	cn
+covered	domain_suffix	guancha.cn	cn
+covered	domain_suffix	guanggaoad.youku.com	youku.com
+covered	domain_suffix	guanggaotongapp.cn	cn
+covered	domain_suffix	guangmingdaily.cn	cn
+covered	domain_suffix	guba.com.cn	cn
+covered	domain_suffix	gucci.cn	cn
+covered	domain_suffix	guosen.com.cn	cn
+covered	domain_suffix	gw.com.cn	cn
+covered	domain_suffix	gwm.com.cn	cn
+covered	domain_suffix	gxnews.com.cn	cn
+covered	domain_suffix	gxrb.com.cn	cn
+covered	domain_suffix	gxtv.cn	cn
+covered	domain_suffix	gyzq.com.cn	cn
+covered	domain_suffix	gzctyiptv.cn	cn
+covered	domain_suffix	gzurl.cn	cn
+covered	domain_suffix	h-adashx.ut.ele.me	ele.me
+covered	domain_suffix	h-adashx.ut.taobao.com	taobao.com
+covered	domain_suffix	h-adashx.ut.youku.com	youku.com
+covered	domain_suffix	h-adashx4yt.ut.taobao.com	taobao.com
+covered	domain_suffix	h2tcbox.baidu.com	baidu.com
+covered	domain_suffix	hacl.cn	cn
+covered	domain_suffix	half.com.cn	cn
+covered	domain_suffix	hammi.cn	cn
+covered	domain_suffix	hangzhouyq.cn	cn
+covered	domain_suffix	hanyi.com.cn	cn
+covered	domain_suffix	hao123union.baidu.com	baidu.com
+covered	domain_suffix	haosou.com.cn	cn
+covered	domain_suffix	happyhorse.cn	cn
+covered	domain_suffix	happyshrimp.cn	cn
+covered	domain_suffix	haydaypop.cn	cn
+covered	domain_suffix	hbhk.com.cn	cn
+covered	domain_suffix	hc-cdn.cn	cn
+covered	domain_suffix	hdinsightservices.cn	cn
+covered	domain_suffix	hdns.ksyun.com	ksyun.com
+covered	domain_suffix	hellofont.cn	cn
+covered	domain_suffix	helpothers.cn	cn
+covered	domain_suffix	hemashare.cn	cn
+covered	domain_suffix	hep.com.cn	cn
+covered	domain_suffix	heptio.cn	cn
+covered	domain_suffix	hexin.cn	cn
+covered	domain_suffix	hexin.com.cn	cn
+covered	domain_suffix	hf-aw.cn	cn
+covered	domain_suffix	hffunds.cn	cn
+covered	domain_suffix	hfzq.com.cn	cn
+covered	domain_suffix	hi-butterfly.cn	cn
+covered	domain_suffix	hiascend.cn	cn
+covered	domain_suffix	hihonor.cn	cn
+covered	domain_suffix	hikunpeng.cn	cn
+covered	domain_suffix	hikunpeng.com.cn	cn
+covered	domain_suffix	hisilicon.com.cn	cn
+covered	domain_suffix	hitokoto.cn	cn
+covered	domain_suffix	hiu58.cn	cn
+covered	domain_suffix	hjfile.cn	cn
+covered	domain_suffix	hm.baidu.com	baidu.com
+covered	domain_suffix	hm.com.cn	cn
+covered	domain_suffix	hmma.baidu.com	baidu.com
+covered	domain_suffix	hnr.cn	cn
+covered	domain_suffix	homepod.cn	cn
+covered	domain_suffix	hongyibo.com.cn	cn
+covered	domain_suffix	honor.cn	cn
+covered	domain_suffix	honor.com.cn	cn
+covered	domain_suffix	hoopchina.com.cn	cn
+covered	domain_suffix	hophing.cn	cn
+covered	domain_suffix	hophing.com.cn	cn
+covered	domain_suffix	hotjob.cn	cn
+covered	domain_suffix	hpplay.cn	cn
+covered	domain_suffix	hpstore.cn	cn
+covered	domain_suffix	hq-tracking.qq.com	qq.com
+covered	domain_suffix	hrsec.com.cn	cn
+covered	domain_suffix	hsbc.com.cn	cn
+covered	domain_suffix	hsbcinsurance.com.cn	cn
+covered	domain_suffix	hsbcqh.com.cn	cn
+covered	domain_suffix	hsw.cn	cn
+covered	domain_suffix	hsz71.cn	cn
+covered	domain_suffix	htsc.com.cn	cn
+covered	domain_suffix	httpdns-browser.platform.dbankcloud.cn	cn
+covered	domain_suffix	httpdns-sdk.n.netease.com	netease.com
+covered	domain_suffix	httpdns.alicdn.com	alicdn.com
+covered	domain_suffix	httpdns.baidu.com	baidu.com
+covered	domain_suffix	httpdns.baidubce.com	baidubce.com
+covered	domain_suffix	httpdns.bcelive.com	bcelive.com
+covered	domain_suffix	httpdns.bilivideo.com	bilivideo.com
+covered	domain_suffix	httpdns.browser.miui.com	miui.com
+covered	domain_suffix	httpdns.c.cdnhwc2.com	cdnhwc2.com
+covered	domain_suffix	httpdns.cctv.com	cctv.com
+covered	domain_suffix	httpdns.danuoyi.tbcache.com	tbcache.com
+covered	domain_suffix	httpdns.gslb.yy.com	yy.com
+covered	domain_suffix	httpdns.huaweicloud.com	huaweicloud.com
+covered	domain_suffix	httpdns.kg.qq.com	qq.com
+covered	domain_suffix	httpdns.kwd.inkuai.com	inkuai.com
+covered	domain_suffix	httpdns.meituan.com	meituan.com
+covered	domain_suffix	httpdns.music.163.com	163.com
+covered	domain_suffix	httpdns.n.netease.com	netease.com
+covered	domain_suffix	httpdns.n.shifen.com	shifen.com
+covered	domain_suffix	httpdns.ocloud.heytapmobi.com	heytapmobi.com
+covered	domain_suffix	httpdns.ocloud.oppomobile.com	oppomobile.com
+covered	domain_suffix	httpdns.platform.dbankcloud.cn	cn
+covered	domain_suffix	httpdns.platform.dbankcloud.com	dbankcloud.com
+covered	domain_suffix	httpdns.push.heytapmobi.com	heytapmobi.com
+covered	domain_suffix	httpdns.push.oppomobile.com	oppomobile.com
+covered	domain_suffix	httpdns.volcengineapi.com	volcengineapi.com
+covered	domain_suffix	httpdns.yunxindns.com	yunxindns.com
+covered	domain_suffix	httpdns.zhihu.com	zhihu.com
+covered	domain_suffix	httpdns.zybang.com	zybang.com
+covered	domain_suffix	httpdns1.cc.cdnhwc5.com	cdnhwc5.com
+covered	domain_suffix	httpdnsmultiapivip.meituan.com	meituan.com
+covered	domain_suffix	httpdnsvip.meituan.com	meituan.com
+covered	domain_suffix	httpsdns.baidu.com	baidu.com
+covered	domain_suffix	huaan.com.cn	cn
+covered	domain_suffix	huafeng-accuweather.cn	cn
+covered	domain_suffix	huajinsc.cn	cn
+covered	domain_suffix	huanqiucdn.cn	cn
+covered	domain_suffix	huasheng.cn	cn
+covered	domain_suffix	huawei.cn	cn
+covered	domain_suffix	huawei.com.cn	cn
+covered	domain_suffix	huaweiapaas.cn	cn
+covered	domain_suffix	huaweicloud-dns.cn	cn
+covered	domain_suffix	huaweicloud-idme.cn	cn
+covered	domain_suffix	huaweicloud-koophone.cn	cn
+covered	domain_suffix	huaweicloud-smn.cn	cn
+covered	domain_suffix	huaweicloud.cn	cn
+covered	domain_suffix	huaweicloudapis.cn	cn
+covered	domain_suffix	huaweicloudsite.cn	cn
+covered	domain_suffix	huaweicloudwaf.cn	cn
+covered	domain_suffix	huaweiief.cn	cn
+covered	domain_suffix	huaweioneaccess.cn	cn
+covered	domain_suffix	huaweisafedns.cn	cn
+covered	domain_suffix	huaweisafehub.cn	cn
+covered	domain_suffix	huaweisre.cn	cn
+covered	domain_suffix	huaweiyun.cn	cn
+covered	domain_suffix	hudbt.hust.edu.cn	cn
+covered	domain_suffix	hunantoday.cn	cn
+covered	domain_suffix	hunyuan.tencent.com	tencent.com
+covered	domain_suffix	huolala.cn	cn
+covered	domain_suffix	huorong.cn	cn
+covered	domain_suffix	huoshanvideo.cn	cn
+covered	domain_suffix	huoshanxiaoshipin.cn	cn
+covered	domain_suffix	huoshanzhibo.cn	cn
+covered	domain_suffix	hupun.com.cn	cn
+covered	domain_suffix	hwads-t.api.my7v.com	my7v.com
+covered	domain_suffix	hwastro.cn	cn
+covered	domain_suffix	hwccpc.cn	cn
+covered	domain_suffix	hwcdnsre.cn	cn
+covered	domain_suffix	hwclouds-dns.cn	cn
+covered	domain_suffix	hwclouds.cn	cn
+covered	domain_suffix	hwclouds.org.cn	cn
+covered	domain_suffix	hwcloudsite.cn	cn
+covered	domain_suffix	hwcloudvis.cn	cn
+covered	domain_suffix	hweventgrid.cn	cn
+covered	domain_suffix	hwht.cn	cn
+covered	domain_suffix	hx168.com.cn	cn
+covered	domain_suffix	hxb.com.cn	cn
+covered	domain_suffix	hxzq.cn	cn
+covered	domain_suffix	hytung.cn	cn
+covered	domain_suffix	i.snssdk.com	snssdk.com
+covered	domain_suffix	i2oo.cn	cn
+covered	domain_suffix	i4.cn	cn
+covered	domain_suffix	i618.com.cn	cn
+covered	domain_suffix	iachina.cn	cn
+covered	domain_suffix	iadmat.nosdn.127.net	127.net
+covered	domain_suffix	iadmatapk.nosdn.127.net	127.net
+covered	domain_suffix	iadmusicmat.music.126.net	126.net
+covered	domain_suffix	iadmusicmatvideo.music.126.net	126.net
+covered	domain_suffix	ibytepluses.com.cn	cn
+covered	domain_suffix	icbc.com.cn	cn
+covered	domain_suffix	icbccs.com.cn	cn
+covered	domain_suffix	icbccstz.com.cn	cn
+covered	domain_suffix	icbcmanila.com.cn	cn
+covered	domain_suffix	icloud-apple.cn	cn
+covered	domain_suffix	icloud-content.com.cn	cn
+covered	domain_suffix	icloud.cn	cn
+covered	domain_suffix	icloud.com.cn	cn
+covered	domain_suffix	icloud.net.cn	cn
+covered	domain_suffix	icloudapple.cn	cn
+covered	domain_suffix	iconfont.cn	cn
+covered	domain_suffix	icourses.cn	cn
+covered	domain_suffix	icphoto.cn	cn
+covered	domain_suffix	ictbda.cn	cn
+covered	domain_suffix	icve.com.cn	cn
+covered	domain_suffix	idea123.cn	cn
+covered	domain_suffix	idonguapi.cn	cn
+covered	domain_suffix	ieshuodong.cn	cn
+covered	domain_suffix	ifacelog.iqiyi.com	iqiyi.com
+covered	domain_suffix	ifanr.cn	cn
+covered	domain_suffix	ifastps.com.cn	cn
+covered	domain_suffix	ifeilian.cn	cn
+covered	domain_suffix	igetget.cn	cn
+covered	domain_suffix	ign.com.cn	cn
+covered	domain_suffix	ihappystudio.cn	cn
+covered	domain_suffix	ikea.cn	cn
+covered	domain_suffix	ikstatic.cn	cn
+covered	domain_suffix	imc-oneaccess.cn	cn
+covered	domain_suffix	imdada.cn	cn
+covered	domain_suffix	img-x.jd.com	jd.com
+covered	domain_suffix	imgstat.baidu.com	baidu.com
+covered	domain_suffix	immersivetranslate.cn	cn
+covered	domain_suffix	imp.go.sohu.com	sohu.com
+covered	domain_suffix	inanguapi.cn	cn
+covered	domain_suffix	inewsweek.cn	cn
+covered	domain_suffix	infineon.cn	cn
+covered	domain_suffix	infoq.cn	cn
+covered	domain_suffix	ingka-dt.cn	cn
+covered	domain_suffix	ingka-internal.cn	cn
+covered	domain_suffix	ingka-system.cn	cn
+covered	domain_suffix	inke.cn	cn
+covered	domain_suffix	insidear.cn	cn
+covered	domain_suffix	inspirecloud.cn	cn
+covered	domain_suffix	inte.sogou.com	sogou.com
+covered	domain_suffix	inte.sogoucdn.com	sogoucdn.com
+covered	domain_suffix	intel.cn	cn
+covered	domain_suffix	intime.com.cn	cn
+covered	domain_suffix	ioppo.com.cn	cn
+covered	domain_suffix	ipanda.cn	cn
+covered	domain_suffix	ipanda.com.cn	cn
+covered	domain_suffix	iphone-8.com.cn	cn
+covered	domain_suffix	ipify.cn	cn
+covered	domain_suffix	ipod.com.cn	cn
+covered	domain_suffix	iprintworks.cn	cn
+covered	domain_suffix	ipw.cn	cn
+covered	domain_suffix	iresearch.cn	cn
+covered	domain_suffix	is-cool.cn	cn
+covered	domain_suffix	is-cool.com.cn	cn
+covered	domain_suffix	iscas.ac.cn	cn
+covered	domain_suffix	isdspeed.qq.com	qq.com
+covered	domain_suffix	istv.cn	cn
+covered	domain_suffix	itc.cn	cn
+covered	domain_suffix	itdog.cn	cn
+covered	domain_suffix	itellyou.cn	cn
+covered	domain_suffix	itunes-apple.cn	cn
+covered	domain_suffix	itunesapple.cn	cn
+covered	domain_suffix	itunesradio.cn	cn
+covered	domain_suffix	itunesradio.com.cn	cn
+covered	domain_suffix	ivolces.cn	cn
+covered	domain_suffix	ivwi3.cn	cn
+covered	domain_suffix	iwanad.baidu.com	baidu.com
+covered	domain_suffix	ixiaochuan.cn	cn
+covered	domain_suffix	izto.com.cn	cn
+covered	domain_suffix	ja.gamersky.com	gamersky.com
+covered	domain_suffix	ja1.gamersky.com	gamersky.com
+covered	domain_suffix	ja2.gamersky.com	gamersky.com
+covered	domain_suffix	japps.cn	cn
+covered	domain_suffix	jd-ex.cn	cn
+covered	domain_suffix	jd-ex.com.cn	cn
+covered	domain_suffix	jd.cn	cn
+covered	domain_suffix	jd.com.cn	cn
+covered	domain_suffix	jdl.cn	cn
+covered	domain_suffix	jdl.com.cn	cn
+covered	domain_suffix	jdlike.cn	cn
+covered	domain_suffix	jetbrains.com.cn	cn
+covered	domain_suffix	jfdaily.com.cn	cn
+covered	domain_suffix	jhwan.com.cn	cn
+covered	domain_suffix	jhzq.com.cn	cn
+covered	domain_suffix	jiaoyimao.cn	cn
+covered	domain_suffix	jiemian.com.cn	cn
+covered	domain_suffix	jiguang.cn	cn
+covered	domain_suffix	jinantimes.com.cn	cn
+covered	domain_suffix	jingdonghealth.cn	cn
+covered	domain_suffix	jingjiribao.cn	cn
+covered	domain_suffix	jinjianghotels.com.cn	cn
+covered	domain_suffix	jisilu.cn	cn
+covered	domain_suffix	jjrbs.cn	cn
+covered	domain_suffix	jlc-3dp.cn	cn
+covered	domain_suffix	jlc3dp.cn	cn
+covered	domain_suffix	jlceda.cn	cn
+covered	domain_suffix	jlcgroup.cn	cn
+covered	domain_suffix	jnt-express.com.cn	cn
+covered	domain_suffix	jokecommunity.cn	cn
+covered	domain_suffix	jomocdn.cn	cn
+covered	domain_suffix	jomodns.cn	cn
+covered	domain_suffix	jpush.cn	cn
+covered	domain_suffix	jrj.com.cn	cn
+covered	domain_suffix	jrjimg.cn	cn
+covered	domain_suffix	jrzk.net.cn	cn
+covered	domain_suffix	jsctyiptv.cn	cn
+covered	domain_suffix	jsfund.cn	cn
+covered	domain_suffix	jsterp.cn	cn
+covered	domain_suffix	jsurvey.cn	cn
+covered	domain_suffix	jtexpress.cn	cn
+covered	domain_suffix	jtexpress.com.cn	cn
+covered	domain_suffix	jtfulfillment.cn	cn
+covered	domain_suffix	juejin.cn	cn
+covered	domain_suffix	juhuiwan.com.cn	cn
+covered	domain_suffix	jushuitan.cn	cn
+covered	domain_suffix	just-do-it.cn	cn
+covered	domain_suffix	jvcsmart.cn	cn
+covered	domain_suffix	jvcsmart.com.cn	cn
+covered	domain_suffix	jvoice.cn	cn
+covered	domain_suffix	jxnews.com.cn	cn
+covered	domain_suffix	jyzq.cn	cn
+covered	domain_suffix	jzt.jd.com	jd.com
+covered	domain_suffix	ka9bv.cn	cn
+covered	domain_suffix	kafan.cn	cn
+covered	domain_suffix	kaipuyun.cn	cn
+covered	domain_suffix	kaipuyun.com.cn	cn
+covered	domain_suffix	kancloud.cn	cn
+covered	domain_suffix	kaspersky.com.cn	cn
+covered	domain_suffix	kata.com.cn	cn
+covered	domain_suffix	kc9.cn	cn
+covered	domain_suffix	kdocs.cn	cn
+covered	domain_suffix	keep.com.cn	cn
+covered	domain_suffix	keke.cn	cn
+covered	domain_suffix	kemen.cn	cn
+covered	domain_suffix	kepuchina.cn	cn
+covered	domain_suffix	kf.cn	cn
+covered	domain_suffix	kfc.com.cn	cn
+covered	domain_suffix	kfomn.cn	cn
+covered	domain_suffix	kg.qq.com	qq.com
+covered	domain_suffix	kgdc.cn	cn
+covered	domain_suffix	kglink.cn	cn
+covered	domain_suffix	kgtest.cn	cn
+covered	domain_suffix	kijijidns.cn	cn
+covered	domain_suffix	kijijidns.com.cn	cn
+covered	domain_suffix	kimg.cn	cn
+covered	domain_suffix	kindle.cn	cn
+covered	domain_suffix	kindleoasis.cn	cn
+covered	domain_suffix	kindleoasis.com.cn	cn
+covered	domain_suffix	kjrb.com.cn	cn
+covered	domain_suffix	kkj.cn	cn
+covered	domain_suffix	km6g.cn	cn
+covered	domain_suffix	km7g.cn	cn
+covered	domain_suffix	km8g.cn	cn
+covered	domain_suffix	km9g.cn	cn
+covered	domain_suffix	kma1g.cn	cn
+covered	domain_suffix	kmcb-cn-east-3.cn	cn
+covered	domain_suffix	kmcb-cn-north-4.cn	cn
+covered	domain_suffix	kmop-cn-east-3.cn	cn
+covered	domain_suffix	kmop-cn-north-4.cn	cn
+covered	domain_suffix	knet.cn	cn
+covered	domain_suffix	kolbuyer.cn	cn
+covered	domain_suffix	koowo.cn	cn
+covered	domain_suffix	krcom.cn	cn
+covered	domain_suffix	kshbank.cn	cn
+covered	domain_suffix	kuaishou.cn	cn
+covered	domain_suffix	kuwo.cn	cn
+covered	domain_suffix	kysec.cn	cn
+covered	domain_suffix	labycore.cn	cn
+covered	domain_suffix	lackvc.cn	cn
+covered	domain_suffix	langeasy.cn	cn
+covered	domain_suffix	langeasy.com.cn	cn
+covered	domain_suffix	lark.cn	cn
+covered	domain_suffix	larkmeetings.cn	cn
+covered	domain_suffix	larkrooms.cn	cn
+covered	domain_suffix	las.ac.cn	cn
+covered	domain_suffix	lawtime.cn	cn
+covered	domain_suffix	lceda.cn	cn
+covered	domain_suffix	le5vb.cn	cn
+covered	domain_suffix	leagueoflegends.cn	cn
+covered	domain_suffix	learnywhere.cn	cn
+covered	domain_suffix	learnywhere.com.cn	cn
+covered	domain_suffix	lebo.cn	cn
+covered	domain_suffix	lebo.com.cn	cn
+covered	domain_suffix	leetcode.cn	cn
+covered	domain_suffix	legendofzelda.cn	cn
+covered	domain_suffix	legendofzelda.com.cn	cn
+covered	domain_suffix	leigod.cn	cn
+covered	domain_suffix	lenovo.cn	cn
+covered	domain_suffix	lenovo.com.cn	cn
+covered	domain_suffix	lenovocare.com.cn	cn
+covered	domain_suffix	lenovocust.cn	cn
+covered	domain_suffix	lenovoimage.cn	cn
+covered	domain_suffix	lenovomm.cn	cn
+covered	domain_suffix	lenovoprinter.com.cn	cn
+covered	domain_suffix	lenovovip.com.cn	cn
+covered	domain_suffix	leso.cn	cn
+covered	domain_suffix	liangtv.cn	cn
+covered	domain_suffix	lianmeng.360.cn	cn
+covered	domain_suffix	liebao.cn	cn
+covered	domain_suffix	lifeweek.com.cn	cn
+covered	domain_suffix	limestart.cn	cn
+covered	domain_suffix	linakesi.cn	cn
+covered	domain_suffix	lingkou.cn	cn
+covered	domain_suffix	linyaps.org.cn	cn
+covered	domain_suffix	litessl.cn	cn
+covered	domain_suffix	livechina.cn	cn
+covered	domain_suffix	livehwc3.cn	cn
+covered	domain_suffix	livephotos.cn	cn
+covered	domain_suffix	livephotos.com.cn	cn
+covered	domain_suffix	lofter.httpdns.c.163.com	163.com
+covered	domain_suffix	log-upload.mihoyo.com	mihoyo.com
+covered	domain_suffix	log.hunantv.com	hunantv.com
+covered	domain_suffix	log.mix.sina.com.cn	cn
+covered	domain_suffix	log.sina.cn	cn
+covered	domain_suffix	log.tbs.qq.com	qq.com
+covered	domain_suffix	log.umtrack.com	umtrack.com
+covered	domain_suffix	log.v2.hunantv.com	hunantv.com
+covered	domain_suffix	log.zijieapi.com	zijieapi.com
+covered	domain_suffix	log2.sina.cn	cn
+covered	domain_suffix	logger.qmai.cn	cn
+covered	domain_suffix	logs.amap.com	amap.com
+covered	domain_suffix	logupdate.avlyun.sec.miui.com	miui.com
+covered	domain_suffix	longone.com.cn	cn
+covered	domain_suffix	loongair.cn	cn
+covered	domain_suffix	louisvuitton.cn	cn
+covered	domain_suffix	lpl.com.cn	cn
+covered	domain_suffix	ls66.cn	cn
+covered	domain_suffix	lstat.youku.com	youku.com
+covered	domain_suffix	lu.sogou.com	sogou.com
+covered	domain_suffix	lu.sogoucdn.com	sogoucdn.com
+covered	domain_suffix	lu1da.cn	cn
+covered	domain_suffix	ludosuperstar.cn	cn
+covered	domain_suffix	luhua.cn	cn
+covered	domain_suffix	lulian.cn	cn
+covered	domain_suffix	luogu.com.cn	cn
+covered	domain_suffix	lxdns.cn	cn
+covered	domain_suffix	lxzjjt.cn	cn
+covered	domain_suffix	lydaas.cn	cn
+covered	domain_suffix	lydaas.com.cn	cn
+covered	domain_suffix	lydass.cn	cn
+covered	domain_suffix	lydass.com.cn	cn
+covered	domain_suffix	lync.cn	cn
+covered	domain_suffix	m-adash.m.taobao.com	taobao.com
+covered	domain_suffix	m-now.cn	cn
+covered	domain_suffix	m.aty.sohu.com	sohu.com
+covered	domain_suffix	m1905.cn	cn
+covered	domain_suffix	macbookair.cn	cn
+covered	domain_suffix	macbookair.com.cn	cn
+covered	domain_suffix	mafengwo.cn	cn
+covered	domain_suffix	magnoliaav.com.cn	cn
+covered	domain_suffix	mahjongcup.cn	cn
+covered	domain_suffix	maimai.cn	cn
+covered	domain_suffix	makerworld.com.cn	cn
+covered	domain_suffix	mala.cn	cn
+covered	domain_suffix	mama.cn	cn
+covered	domain_suffix	mamayz.cn	cn
+covered	domain_suffix	management-azure-devices-provisioning.cn	cn
+covered	domain_suffix	management-azure-devices.cn	cn
+covered	domain_suffix	maoyuncloud.cn	cn
+covered	domain_suffix	mariokart.cn	cn
+covered	domain_suffix	mariokart.com.cn	cn
+covered	domain_suffix	marketing.alibaba.com	alibaba.com
+covered	domain_suffix	marscode.cn	cn
+covered	domain_suffix	marscode.com.cn	cn
+covered	domain_suffix	mashort.cn	cn
+covered	domain_suffix	maxadmin.cn	cn
+covered	domain_suffix	mbdlog.iqiyi.com	iqiyi.com
+covered	domain_suffix	mcadn.cn	cn
+covered	domain_suffix	mcd.cn	cn
+covered	domain_suffix	mcdonalds.com.cn	cn
+covered	domain_suffix	mcmod.cn	cn
+covered	domain_suffix	mcprev.cn	cn
+covered	domain_suffix	mcs.snssdk.com	snssdk.com
+covered	domain_suffix	mdcdn.cn	cn
+covered	domain_suffix	mdt.qq.com	qq.com
+covered	domain_suffix	medalink.cn	cn
+covered	domain_suffix	medlive.cn	cn
+covered	domain_suffix	meipian.cn	cn
+covered	domain_suffix	meizu.cn	cn
+covered	domain_suffix	mengniu.com.cn	cn
+covered	domain_suffix	mercurycom.com.cn	cn
+covered	domain_suffix	metaso.cn	cn
+covered	domain_suffix	mfuns.cn	cn
+covered	domain_suffix	mgmt-azure-api.cn	cn
+covered	domain_suffix	mhyurl.cn	cn
+covered	domain_suffix	miaoda.cn	cn
+covered	domain_suffix	miaowu.baidu.com	baidu.com
+covered	domain_suffix	miaoya.cn	cn
+covered	domain_suffix	microsoft-smb.cn	cn
+covered	domain_suffix	microsoftazurestatus.cn	cn
+covered	domain_suffix	microsoftmetrics.cn	cn
+covered	domain_suffix	microsoftnews.cn	cn
+covered	domain_suffix	microsoftonline-i.cn	cn
+covered	domain_suffix	microsoftonline-m-i.cn	cn
+covered	domain_suffix	microsoftonline-m.cn	cn
+covered	domain_suffix	microsoftonline-p-i.cn	cn
+covered	domain_suffix	microsoftonline-p-i.net.cn	cn
+covered	domain_suffix	microsoftonline-p.cn	cn
+covered	domain_suffix	microsoftonline-p.net.cn	cn
+covered	domain_suffix	microsoftonline.cn	cn
+covered	domain_suffix	microsoftreactor.cn	cn
+covered	domain_suffix	microsoftreactor.com.cn	cn
+covered	domain_suffix	microsoftstore.com.cn	cn
+covered	domain_suffix	microsofttranslator-int.cn	cn
+covered	domain_suffix	midea.cn	cn
+covered	domain_suffix	midea.com.cn	cn
+covered	domain_suffix	mifile.cn	cn
+covered	domain_suffix	migu.cn	cn
+covered	domain_suffix	miitomo.com.cn	cn
+covered	domain_suffix	mil.cn	cn
+covered	domain_suffix	mindspore.cn	cn
+covered	domain_suffix	miniso.cn	cn
+covered	domain_suffix	minisohome.cn	cn
+covered	domain_suffix	minsio.cn	cn
+covered	domain_suffix	mioffice.cn	cn
+covered	domain_suffix	mipcache.bdstatic.com	bdstatic.com
+covered	domain_suffix	mirrorcast.cn	cn
+covered	domain_suffix	misc.in.duokanbox.com	duokanbox.com
+covered	domain_suffix	mixer.sina.cn	cn
+covered	domain_suffix	mle5p.cn	cn
+covered	domain_suffix	mlzt.com.cn	cn
+covered	domain_suffix	mmbizurl.cn	cn
+covered	domain_suffix	mncmsidlab1.cn	cn
+covered	domain_suffix	mnw.cn	cn
+covered	domain_suffix	mobads-logs.baidu.com	baidu.com
+covered	domain_suffix	mobads-pre-config.cdn.bcebos.com	bcebos.com
+covered	domain_suffix	mobads.baidu.com	baidu.com
+covered	domain_suffix	mobileinternational.com.cn	cn
+covered	domain_suffix	mobilemsg.youku.com	youku.com
+covered	domain_suffix	modelarts-infer.cn	cn
+covered	domain_suffix	modelarts-maas.cn	cn
+covered	domain_suffix	modelers.cn	cn
+covered	domain_suffix	modernjs.cn	cn
+covered	domain_suffix	modex.com.cn	cn
+covered	domain_suffix	moegirl.org.cn	cn
+covered	domain_suffix	moer.cn	cn
+covered	domain_suffix	monitor.music.qq.com	qq.com
+covered	domain_suffix	monitor.uu.qq.com	qq.com
+covered	domain_suffix	mooc.cn	cn
+covered	domain_suffix	moonshot.cn	cn
+covered	domain_suffix	mountain.zhidao.baidu.com	baidu.com
+covered	domain_suffix	mpush.qq.com	qq.com
+covered	domain_suffix	mryys.cn	cn
+covered	domain_suffix	ms-bank.cn	cn
+covered	domain_suffix	ms2tg.cn	cn
+covered	domain_suffix	msappproxy.cn	cn
+covered	domain_suffix	msauth.cn	cn
+covered	domain_suffix	msauthimages.cn	cn
+covered	domain_suffix	msftauth.cn	cn
+covered	domain_suffix	msftauthimages.cn	cn
+covered	domain_suffix	msftcloudes.cn	cn
+covered	domain_suffix	msg.video.qiyi.com	qiyi.com
+covered	domain_suffix	msg.youku.com	youku.com
+covered	domain_suffix	msg2.video.qiyi.com	qiyi.com
+covered	domain_suffix	msidentity.cn	cn
+covered	domain_suffix	msidlabpbmc.cn	cn
+covered	domain_suffix	msjyfund.com.cn	cn
+covered	domain_suffix	msmartlife.cn	cn
+covered	domain_suffix	msn.cn	cn
+covered	domain_suffix	mspil.cn	cn
+covered	domain_suffix	msra.cn	cn
+covered	domain_suffix	mszdld.cn	cn
+covered	domain_suffix	mtime.cn	cn
+covered	domain_suffix	mtrace.qq.com	qq.com
+covered	domain_suffix	muji.com.cn	cn
+covered	domain_suffix	music.httpdns.c.163.com	163.com
+covered	domain_suffix	music.qq.com	qq.com
+covered	domain_suffix	mybank.cn	cn
+covered	domain_suffix	myhsw.cn	cn
+covered	domain_suffix	myhuaweicloud-custom.cn	cn
+covered	domain_suffix	myhuaweicloud-koodrive.cn	cn
+covered	domain_suffix	myhuaweicloud-obs.cn	cn
+covered	domain_suffix	myhuaweicloud.cn	cn
+covered	domain_suffix	myhwcdn.cn	cn
+covered	domain_suffix	myhwclouds.cn	cn
+covered	domain_suffix	myhwclouds.com.cn	cn
+# ... 已截断: 共 2885 行, 仅保留前 2000 行 (完整清单见 report/.full/direct-domain.txt)
