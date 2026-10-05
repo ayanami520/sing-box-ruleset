@@ -484,15 +484,16 @@ done
 	printf '|---|---|---|---|---|---|---|---|\n'
 	cat "$SUMMARY"
 	printf '\n- `原始条目` = 各上游条目直接相加（含重复）；`最终条目` 才是写进 `.srs` 的条数。\n'
-	printf '- `覆盖删除` = 被更短的 `domain_suffix` 覆盖而剔除的条目（语义等价）。\n'
-	printf '- `与上次` = 相对**上次提交的 `dist/*.srs`** 的新增/移除条数（`.srs` 是二进制，这里是它唯一的人类可读 diff）。\n'
+	# 注意: 格式串不能以 "-" 开头 —— dash 的 printf 会把它当选项 (busybox 不会, 所以本地测不出来)
+	printf '%s\n' '- `覆盖删除` = 被更短的 `domain_suffix` 覆盖而剔除的条目（语义等价）。'
+	printf '%s\n' '- `与上次` = 相对**上次提交的 `dist/*.srs`** 的新增/移除条数（`.srs` 是二进制，这里是它唯一的人类可读 diff）。'
 	printf '\n## 匹配器体检\n\n'
 	printf '| 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |\n'
 	printf '|---|---|---|---|---|---|---|---|\n'
 	cat "$INSPECT"
 	printf '\n- `domain` / `domain_suffix`：简洁字典树查找，**耗时与条数无关**，只看域名长度 ⇒ 放多少条都基本不影响速度。\n'
-	printf '- `domain_keyword`（阈值 %s）：源码为 `for` 循环 + `strings.Contains`，**随条数线性变慢**。\n' "$WARN_KEYWORD_MAX"
-	printf '- `domain_regex`（阈值 %s）：源码为 `for` 循环 + `MatchString`，**最慢**，尽量改用 `domain_suffix`。\n' "$WARN_REGEX_MAX"
+	printf '%s\n' '- `domain_keyword`（阈值 '"$WARN_KEYWORD_MAX"'）：源码为 `for` 循环 + `strings.Contains`，**随条数线性变慢**。'
+	printf '%s\n' '- `domain_regex`（阈值 '"$WARN_REGEX_MAX"'）：源码为 `for` 循环 + `MatchString`，**最慢**，尽量改用 `domain_suffix`。'
 	printf '\n## 告警\n\n'
 	if [ "$WARN_COUNT" -eq 0 ]; then
 		printf '无\n'
@@ -501,7 +502,9 @@ done
 	fi
 	printf '\n## 各规则集明细\n'
 	cat "$DETAILS"
-} > "$REPORT_DIR/report.md"
+} > "$RPT/report.md"
+# 原子落盘: 中途失败时不会留下半个报告
+mv "$RPT/report.md" "$REPORT_DIR/report.md"
 
 # ---- 12) 原子替换: dist/ 内只保留成品 .srs ----
 rm -rf "$OUT_DIR"
