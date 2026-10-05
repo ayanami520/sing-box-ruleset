@@ -1,12 +1,32 @@
 # 直连 - 域名类
-# 一行一个上游 .srs 地址, # 开头为注释
+# 一行一个上游地址, # 开头为注释。支持 .srs(二进制) 与 .json(源格式) 混用。
 # 合并结果: dist/direct-domain.srs
 
-# 中国大陆域名 (v2fly domain-list-community 的 geosite:cn)
+# ── 中国大陆域名 ────────────────────────────────────────────────
+# v2fly domain-list-community 的 geosite:cn
 https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs
 
-# PT 站 (馒头/chdbits/hdsky/ttg/ourbits/pterclub/柠檬... 约 130 站)
+# ── PT 站 ──────────────────────────────────────────────────────
+# 馒头 / chdbits / hdsky / ttg / ourbits / pterclub / 柠檬 ... 约 130 站
+# 注: PT 站普遍禁止经由代理访问, 必须直连
 https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-pt.srs
 
-# 游戏平台中国区下载 CDN (Steam/Epic/暴雪/育碧/Xbox 的国内节点)
+# ── 游戏平台中国区下载 CDN ─────────────────────────────────────
+# Steam / Epic / 暴雪 / 育碧 / Xbox 的国内节点
 https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-game-platforms-download@cn.srs
+
+# ── 国内应用与服务（来源: lyc8503 / MetaCubeX）───────────────────
+# 115 网盘
+https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-115.srs
+# Apple 中国区服务
+https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple-cn.srs
+# Apple Music 中国区
+https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple-music@cn.srs
+# AWS 中国区
+https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/aws-cn.srs
+# 哔哩哔哩 CDN
+https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/bilibili-cdn.srs
+# 哔哩哔哩主站
+https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/bilibili.srs
+# 哔哩哔哩补充
+https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/bilibili2.srs

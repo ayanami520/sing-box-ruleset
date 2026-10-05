@@ -2,8 +2,8 @@
 #
 # 合并 + 去重 构建器
 #
-#   sources/<name>.txt   (每行一个上游 .srs 地址, # 开头为注释)
-#        |
+#   sources/<name>.txt   (每行一个上游地址, # 开头为注释)
+#        |                 支持 .srs(二进制) 与 .json(源格式) 混用
 #        v
 #   dist/<name>.srs      (合并去重后的成品, 目录内只有 .srs)
 #
@@ -62,7 +62,7 @@ for list in "$SRC_DIR"/*.txt; do
 	name=$(basename "$list" .txt)
 	log "构建 $name"
 
-	# ---- 1) 逐个上游下载 + 反编译成源 JSON ----
+	# ---- 1) 逐个上游下载, 统一得到"源格式 JSON" ----
 	count=0
 	inputs=""
 	while IFS= read -r url || [ -n "$url" ]; do
@@ -74,15 +74,27 @@ for list in "$SRC_DIR"/*.txt; do
 			'' | '#'*) continue ;;
 		esac
 		count=$((count + 1))
-		raw="$PARTS/$name.$count.srs"
+		raw="$PARTS/$name.$count.raw"
 		json="$PARTS/$name.$count.json"
 
 		[ "$count" -le 1 ] || log "  + 上游 #$count"
 		fetch "$url" "$raw" || die "[$name] 下载失败: $url"
 		[ -s "$raw" ] || die "[$name] 上游为空文件: $url"
 
-		"$SING_BOX" rule-set decompile "$raw" -o "$json" >/dev/null 2>&1 ||
-			die "[$name] decompile 失败: $url"
+		case "$url" in
+			*.json | *.JSON)
+				# 上游 .json 多为源格式, 但普遍缺少 version 字段,
+				# 而 sing-box 的 compile/merge 要求必须有 (报 missing rule-set version)。
+				# 注意 rule-set upgrade 对"没有 version"的文件同样会失败, 所以只能自己补。
+				jq 'if has("version") then . else . + {version: 1} end' "$raw" > "$json" ||
+					die "[$name] 上游 JSON 无法解析: $url"
+				;;
+			*)
+				# .srs 二进制先反编译成源格式 JSON
+				"$SING_BOX" rule-set decompile "$raw" -o "$json" ||
+					die "[$name] decompile 失败: $url"
+				;;
+		esac
 
 		inputs="$inputs $json"
 	done < "$list"
@@ -94,10 +106,13 @@ for list in "$SRC_DIR"/*.txt; do
 	if [ "$count" -eq 1 ]; then
 		cp "$PARTS/$name.1.json" "$merged"
 	else
+		# merge 成功时会把输出路径打到 stdout, 所以重定向到日志, 失败时才回显
 		# shellcheck disable=SC2086
-		"$SING_BOX" rule-set merge "$merged" \
-			$(for f in $inputs; do printf -- '-c %s ' "$f"; done) >/dev/null 2>&1 ||
+		if ! "$SING_BOX" rule-set merge "$merged" \
+			$(for f in $inputs; do printf -- '-c %s ' "$f"; done) > "$PARTS/$name.merge.log" 2>&1; then
+			cat "$PARTS/$name.merge.log" >&2
 			die "[$name] merge 失败"
+		fi
 	fi
 
 	# ---- 3) 去重 + 排序 (输出稳定 => 内容没变时不会产生多余提交) ----
@@ -112,14 +127,14 @@ for list in "$SRC_DIR"/*.txt; do
 		| .rules |= (unique | sort_by(tostring))
 	' "$merged" > "$normalized" || die "[$name] jq 去重失败"
 
-	# ---- 4) 编译成 .srs ----
+	# ---- 4) 编译成 .srs (失败时回显真实报错) ----
 	out="$FINAL/$name.srs"
-	"$SING_BOX" rule-set compile "$normalized" -o "$out" >/dev/null 2>&1 ||
+	if ! "$SING_BOX" rule-set compile "$normalized" -o "$out"; then
 		die "[$name] compile 失败"
+	fi
 
 	# ---- 5) 产物校验 ----
-	# 用"实际规则条目数"判断, 不用文件大小 (只有 3 条域名的规则集编译出来也只有 80B,
-	# 早期版本用 100B 阈值会误伤)
+	# 用"实际规则条目数"判断, 不用文件大小 (只有 3 条域名的规则集编译出来也只有 80B)
 	size=$(wc -c < "$out" | tr -d ' ')
 	rules=$(jq '.rules | length' "$normalized")
 	entries=$(count_entries "$normalized")

@@ -1,0 +1,8 @@
+# 美国分组
+#   sources/<name>.txt -> dist/<name>.srs
+#   路由动作: outbound = US（这些站点在 JP 节点上不可用/被拒）
+#
+# 一行一个上游地址, # 开头为注释。支持 .srs(二进制) 与 .json(源格式) 混用。
+
+# 18comic（同人志站点，Cloudflare 对 JP 节点返回 403）
+https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-18comic.srs
