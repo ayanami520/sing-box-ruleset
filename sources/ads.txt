@@ -4,3 +4,5 @@
 
 https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ads-all.srs
 https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblocksingboxlite.srs
+https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-social-media-!cn@ads.srs
+https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-social-media-cn@ads.srs
