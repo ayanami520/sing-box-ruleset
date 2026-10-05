@@ -18,6 +18,7 @@ picks/
   picks.json      # ← 油猴脚本的导出贴这里，CI 自动生效
 tools/
   ruleset-picker.user.js   # 浏览器收集器（Tampermonkey）
+  picktest.js              # 收集器的行为回归测试（node tools/picktest.js）
 dist/             # 产物，由 CI 自动提交（不要手动改）
 report/           # 构建报告（由 CI 自动提交，见下文）
   report.md           # 总览 / 匹配器体检 / 告警 / 与上次的增减
@@ -119,6 +120,30 @@ sh ./scripts/apply-picks.sh && GH_PROXY=https://gh-proxy.com/ sh ./build.sh
 ```
 
 依赖：`curl`、`jq`、`sing-box`（版本建议与路由器一致）。
+
+## 自测（收集器回归）
+
+改 `tools/ruleset-picker.user.js` 之前 / 之后都跑一下：
+
+```sh
+node tools/picktest.js                                  # 测同目录脚本, 期望 21 通过 / 0 失败
+node tools/picktest.js /path/to/旧版脚本.js               # 也可指定文件(测旧版会报红, 见下)
+```
+
+它把测试钩子插在脚本**最后一个 `})();` 之前**（与版本号无关），因此测的是**真实脚本本身**，不是副本。
+覆盖的行为：
+
+| 场景 | 断言 |
+|---|---|
+| 空选择 | 复制 sources / `picks.json` 都**拒绝导出**，剪贴板**一次都不写**，只给提示 |
+| 有选择、未开自动清空 | 导出真实内容、选择保留、**连点第二次仍正确**（原 bug 触发点）|
+| 开启自动清空 | ★「复制 `picks.json`」**仍不清空**；复制 sources 才清空，且快照落 `localStorage` |
+| 清空后再次点击 | 剪贴板**不再被提示句覆盖** |
+| 菜单命令（面板未开）| 走 `alert` 兜底，剪贴板不被污染 |
+
+> 对 **1.1.0 及更早**的脚本运行本测试会**红**，并打印出它的真实行为，例如：
+> `❌ 剪贴板没有被写入提示文本 —— 剪贴板内容=["(没有选中任何规则集)"]`
+> 这正是 v1.1.0 那个 bug（导出后无条件清空 + 空选择把提示文本写进剪贴板）。
 
 ## 构建报告与日志（`report/`）
 
