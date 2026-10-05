@@ -4,7 +4,7 @@
 #   dup     = 上游之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/ads.txt (不提交, 随 CI artifact 上传)
-# 本次共 358 行 (dup=303, covered=55); 提交版上限 2000 行
+# 本次共 360 行 (dup=304, covered=56); 提交版上限 2000 行
 dup	domain	adblogger.vk.com
 dup	domain	adblogger.vk.ru
 dup	domain	ads.vk.com
@@ -198,6 +198,7 @@ dup	domain_suffix	imgstat.baidu.com
 dup	domain_suffix	imp.go.sohu.com
 dup	domain_suffix	ipinyou.com
 dup	domain_suffix	ipinyou.com.cn
+dup	domain_suffix	ja2.gamersky.com
 dup	domain_suffix	jzt.jd.com
 dup	domain_suffix	kuyun.com
 dup	domain_suffix	lianmeng.360.cn
@@ -325,6 +326,7 @@ covered	domain	p3-ad-sign.byteimg.com	p3-ad-sign.byteimg.com
 covered	domain	p6-ad-sign.byteimg.com	p6-ad-sign.byteimg.com
 covered	domain	p9-ad-sign.byteimg.com	p9-ad-sign.byteimg.com
 covered	domain	rtlog3-applog-hl.fqnovel.com	rtlog3-applog-hl.fqnovel.com
+covered	domain	rtlog3-applog.fqnovel.com	rtlog3-applog.fqnovel.com
 covered	domain	rtlog5-applog-hl.fqnovel.com	rtlog5-applog-hl.fqnovel.com
 covered	domain	rtlog5-applog.fqnovel.com	rtlog5-applog.fqnovel.com
 covered	domain	wlog.kuaishou.com	wlog.kuaishou.com
