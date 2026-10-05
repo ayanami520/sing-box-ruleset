@@ -3,11 +3,16 @@
 # 把 picks/picks.json（油猴脚本导出）写进 sources/<分组>.txt 的"自动块"
 #
 #   # >>> picks:auto  (由 picks/picks.json 自动生成, 请勿手改)
-#   https://.../geosite-xxx.srs
+#   # 条目: geosite-115.srs
+#   https://.../geosite-115.srs
 #   # <<< picks:auto
 #
-# 自动块之外的内容完全保留, 可以继续手工维护。
-# picks 为空时会清掉所有自动块。
+# ⚠️ 自动块每次都会整体重写 —— 想手写备注请写在块【之外】，
+#    或者用收集器的「复制 sources 片段」导出到块外。
+#
+# 自动块之外的内容完全保留。picks 为空时会清掉所有自动块。
+# 某个分组只有 picks 时会自动创建对应 sources/<group>.txt；
+# 失去全部内容时会自动删除，避免空规则集卡住构建。
 #
 # 环境变量:
 #   PICKS     输入文件 (默认 picks/picks.json)
@@ -42,18 +47,24 @@ for pair in direct:direct-domain.txt us:us.txt jp:jp.txt kr:kr.txt block:ads.txt
 	act=${pair%%:*}
 	grp=${pair##*:}
 
-	urls=$(jq -r --arg a "$act" '.items[]? | select(.action == $a) | .url' "$PICKS" 2>/dev/null | sort -u || true)
-	[ -n "$urls" ] || continue
+	# 用 jq 直接生成带注释的条目（按 url 去重），避免 shell 循环
+	jq -r --arg a "$act" '
+		[ .items[]? | select(.action == $a) ] | unique_by(.url)
+		| .[] | "# \(.note // ("条目: " + ((.name // .url) | split("/") | last)))\n\(.url)"
+	' "$PICKS" > "$TMP" 2>/dev/null || : > "$TMP"
+
+	[ -s "$TMP" ] || continue
 
 	f="$SRC_DIR/$grp"
 	[ -f "$f" ] || : > "$f"
 
 	printf '\n%s  (由 picks/picks.json 自动生成, 请勿手改)\n' "$BM" >> "$f"
-	printf '%s\n' "$urls" >> "$f"
+	cat "$TMP" >> "$f"
 	printf '%s\n' "$EM" >> "$f"
 
-	echo "  -> $f  追加 $(printf '%s\n' "$urls" | wc -l | tr -d ' ') 条"
+	echo "  -> $f  追加 $(grep -c '^http' "$TMP") 条"
 done
+rm -f "$TMP"
 
 # ---- 3) 报告未识别的 action ----
 jq -r '.items[]? | .action // ""' "$PICKS" 2>/dev/null | sort -u | while read -r a; do
