@@ -19,6 +19,11 @@ picks/
 tools/
   ruleset-picker.user.js   # 浏览器收集器（Tampermonkey）
 dist/             # 产物，由 CI 自动提交（不要手动改）
+report/           # 构建报告（由 CI 自动提交，见下文）
+  report.md           # 总览 / 匹配器体检 / 告警 / 与上次的增减
+  removed/<name>.txt  # 删除明细（每次覆盖写 ⇒ git diff 就是增量）
+  .full/<name>.txt    # 未截断完整明细（gitignore，随 CI artifact 上传）
+  build.log           # 完整构建日志（gitignore）
 .github/workflows/build.yml
 ```
 
@@ -102,6 +107,77 @@ sh ./scripts/apply-picks.sh && GH_PROXY=https://gh-proxy.com/ sh ./build.sh
 
 依赖：`curl`、`jq`、`sing-box`（版本建议与路由器一致）。
 
+## 构建报告与日志（`report/`）
+
+| 文件 | 提交 | 内容 |
+|---|---|---|
+| `report/report.md` | ✅ | 总览（原始 / 重复删除 / 覆盖删除 / 最终条目 / 与上次的增减）、匹配器体检、告警、各规则集明细 |
+| `report/removed/<name>.txt` | ✅ | 删除明细：`dup`（上游之间重复）与 `covered`（被更短后缀覆盖），**每次覆盖写 ⇒ 这个文件的 `git diff` 就是增量** |
+| `report/.full/<name>.txt` | ❌ gitignore | 未截断的完整明细，随 CI artifact `build-report` 上传 |
+| `report/build.log` | ❌ gitignore | 完整构建日志；CI 里同时把报告与日志尾部打进 Step Summary |
+
+设计要点：
+
+- **报告不含时间戳** ⇒ 上游没变化时报告逐字节不变 ⇒ 工作流里 `git diff --staged --quiet` 成立，
+  **不会产生空提交**（实测：连跑两次，`dist/*.srs` 指纹完全一致）。
+- `.srs` 是二进制 —— `report/removed/*.txt` 和报告里的「与上次」是它**唯一的人类可读 diff**。
+- 删除明细**只列值、不列重复次数**（同一值重复多次只占 1 行），总重复条数看报告「重复删除」列。
+- 构建失败时 `.build/` 与报告一起上传，便于排查。
+
+### 阈值（环境变量）
+
+| 变量 | 默认 | 作用 |
+|---|---|---|
+| `WARN_KEYWORD_MAX` | 300 | `domain_keyword` 超过即告警（该字段是线性扫描，见下文）|
+| `WARN_REGEX_MAX` | 50 | `domain_regex` 超过即告警（最慢，建议改写）|
+| `WARN_SHRINK_PCT` | 30 | 产物体积比上次缩小超过该比例即告警（上游被截断的征兆）|
+| `DETAIL_MAX` | 2000 | **提交版**删除明细每规则集的行数上限（超出截断，完整版在 `.full/`）|
+| `STRICT` | 0 | `1` = 出现任何告警即让构建失败 |
+
+## 覆盖过滤（报告里的「覆盖删除」）
+
+`build.sh` 会剔除**语义完全等价**的条目，只减内存、不改命中结果：
+
+| 被删条目 | 覆盖者 | 为什么等价 |
+|---|---|---|
+| `domain a.b.com` | `domain_suffix b.com` | 后缀匹配本来就会命中 `a.b.com` |
+| `domain_suffix a.b.com` | `domain_suffix b.com` / `com` | 后缀匹配按域名段边界判定，`a.b.com` 以 `.b.com` 结尾 |
+| `domain x.com` | `domain_suffix com` | 同上 |
+
+实测（本仓库当场构建，11 个上游）：
+
+```
+direct-domain: 原始 9752 → 去重 9441 → 覆盖删除 2588 → 最终 6853 条
+               产物 53 KB → 39 KB
+```
+
+**正确性验证**：被删条目在产物中已不存在（出现次数 0），但仍能命中（由保留下来的覆盖者匹配）。
+另外 `domain` / `domain_suffix` 之外的字段（`domain_keyword` / `domain_regex` / `ip_cidr`）**永不改动** —— 改了语义会变。
+
+## 性能：规则条数影响有多大？
+
+实测于 Netcore N60 Pro / sing-box 1.12.25，结论有源码依据（`sing/common/domain`）：
+
+| 匹配器 | 实现 | 复杂度 | 条数影响 |
+|---|---|---|---|
+| `domain` / `domain_suffix` | 简洁字典树（LOUDS，按反转域名索引）| O(域名长度) | **几乎无影响** |
+| `domain_keyword` | `for` + `strings.Contains` | O(关键词数 × 长度) | **线性变慢** |
+| `domain_regex` | `for` + `MatchString` | O(正则数 × 单次开销) | **最慢** |
+
+内存实测（独立实例 A/B，同一份配置只换规则集）：
+
+| 规则集 | 条目 | 实例 VmRSS | 峰值 |
+|---|---|---|---|
+| `direct-domain.srs`（真实数据）| 9,735 | 28,072 kB | 28,072 kB |
+| 合成 10 万条 `domain_suffix` | 100,000 | 29,932 kB | 32,000 kB |
+| **差值** | +90,265 | **+1.9 MB** | **+3.9 MB** |
+
+约 21 B/条；合成数据共享后缀偏乐观，真实列表按 3~5 倍估 ⇒ **10 万条约 5~15 MB**。
+
+**结论**：域名多的广告列表**不会拖慢正常访问**（查找是字典树、与条数无关）；
+真正要避开的是**塞满 `domain_regex` 的列表** —— 这正是 CI 体检要拦的东西。
+编译耗时另算（路由器上 10 万条 `compile` 需 36 秒），所以**大列表只在 CI 编译**，路由器只拉成品。
+
 ## 注意事项
 
 1. **域名规则与 IP 规则必须分开文件**
@@ -118,8 +194,9 @@ sh ./scripts/apply-picks.sh && GH_PROXY=https://gh-proxy.com/ sh ./build.sh
    `FATAL: rule-set not found`。改完 tag 后务必看日志确认。
    （注意：`dns.rules` 里也会引用 rule_set，改 tag 时别漏）
 
-4. **CI 每次只提交 `dist/` 与 `sources/`**
-   不把上游原始文件提交进仓库（否则仓库会迅速膨胀到 GB 级）。
+4. **CI 只提交 `dist/`、`sources/` 与 `report/`**
+   不把上游原始文件、完整构建日志、未截断的删除明细提交进仓库
+   （否则仓库会迅速膨胀到 GB 级；这些完整版都走 CI artifact）。
 
 5. **`build.sh` 先在临时目录构建，全部成功后才替换 `dist/`**
    避免失败时留下半成品产物。

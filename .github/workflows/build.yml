@@ -56,6 +56,38 @@ jobs:
           set -Eeuo pipefail
           sh ./build.sh
 
+      - name: Report to step summary
+        # 失败时也要看到报告/日志, 否则排查只能靠翻 raw log
+        if: always()
+        run: |
+          set -Eeuo pipefail
+          if [ -f report/report.md ]; then
+            cat report/report.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo '### 未生成 report/report.md (构建早期失败)' >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ -f report/build.log ]; then
+            {
+              echo ''
+              echo '### 构建日志 (末尾 80 行)'
+              echo ''
+              echo '```'
+              tail -n 80 report/build.log
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload report
+        # 删除明细未截断的完整版 + 中间产物都在这里
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-report
+          if-no-files-found: ignore
+          path: |
+            report/
+            .build/
+
       - name: Verify artifacts
         run: |
           set -Eeuo pipefail
@@ -94,8 +126,8 @@ jobs:
           set -Eeuo pipefail
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # sources/ 可能被 apply-picks 改写（自动块），一并提交
-          git add dist/ sources/
+          # sources/ 可能被 apply-picks 改写（自动块），report/ 是构建报告，一并提交
+          git add dist/ sources/ report/
           if git diff --staged --quiet; then
             echo "内容无变化, 跳过提交"
             exit 0

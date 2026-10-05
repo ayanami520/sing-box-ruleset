@@ -1,3 +1,9 @@
+
 .build/
 *.tar.gz
 tmp/
+
+# 完整构建日志 / 未截断的删除明细: 只留在本机与 CI artifact, 不提交
+# (提交版是 report/removed/*.txt, 超过 DETAIL_MAX 行会截断)
+report/build.log
+report/.full/
