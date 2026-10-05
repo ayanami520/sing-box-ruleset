@@ -1,0 +1,42 @@
+name: Test picker userscript
+
+# 只盯 tools/ 下的收集器脚本：改坏了立刻红（约 2 秒），
+# 与规则集构建（build.yml）互不干扰 —— 不改动构建流水线。
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/**'
+      - '.github/workflows/test.yml'
+  pull_request:
+    paths:
+      - 'tools/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: picktest-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  picktest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node version
+        run: node --version
+
+      - name: Syntax check
+        run: |
+          set -Eeuo pipefail
+          node --check tools/ruleset-picker.user.js
+          node --check tools/picktest.js
+
+      - name: Behaviour regression test
+        run: |
+          set -Eeuo pipefail
+          node tools/picktest.js
