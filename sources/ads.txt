@@ -3,3 +3,4 @@
 # 路由动作: outbound = block
 
 https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ads-all.srs
+https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblocksingboxlite.srs
