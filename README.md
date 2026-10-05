@@ -28,6 +28,7 @@ dist/             # 产物，由 CI 自动提交（不要手动改）
 | `dist/ads.srs` | `geosite-category-ads-all` | `block` |
 | `dist/ai.srs` | `geosite-category-ai-!cn` | AI 出站分组 |
 | `dist/google.srs` | `geosite-google` | 指定出站 / urltest 分组 |
+| `dist/tailscale.srs` | `geosite-tailscale` | `direct`（否则 Tailscale 打洞端点会变成节点 IP）|
 
 ## 新增一个分类
 

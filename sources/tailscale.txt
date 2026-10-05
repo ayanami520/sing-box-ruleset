@@ -1,0 +1,11 @@
+# Tailscale（控制面 controlplane / DERP 中继 / MagicDNS ts.net）
+# 合并结果: dist/tailscale.srs
+# 路由动作: direct
+#
+# 为什么必须直连:
+#   Tailscale 的 WireGuard 走公网 UDP（对端 41641 / STUN 3478）。
+#   若被代理，Tailscale 上报的公网端点会变成代理节点的地址，
+#   导致对端无法回连、NAT 打洞效率下降，且节点一挂 Tailscale 即断。
+#   实测(未修正前) netcheck 报告的公网端点为日本节点 IP。
+
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-tailscale.srs
