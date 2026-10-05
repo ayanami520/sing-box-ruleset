@@ -18,6 +18,10 @@ https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-categor
 # ── 国内应用与服务（来源: lyc8503 / MetaCubeX）───────────────────
 # 115 网盘
 https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-115.srs
+# 国内网盘
+https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-netdisk-cn.srs
+# 国内社交媒体
+https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-social-media-cn.srs
 # speedtest 国内测速
 https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-category-speedtest@cn.srs
 # Apple 中国区服务
