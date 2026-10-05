@@ -52,13 +52,31 @@ jobs:
       - name: Verify artifacts
         run: |
           set -Eeuo pipefail
+          # 真正的规则校验(条目数)在 build.sh 里做; 这里只做结构性与文件级检查:
+          #   1) 每个 sources/<name>.txt 都必须有对应的 dist/<name>.srs
+          #   2) 不允许出现没有来源的孤立产物
+          #   3) 文件不得小于 32B (空 .srs 约 20B)
           fail=0
-          for f in dist/*.srs; do
-            [ -e "$f" ] || { echo "没有生成任何 .srs"; exit 1; }
+          for src in sources/*.txt; do
+            name=$(basename "$src" .txt)
+            f="dist/$name.srs"
+            if [ ! -s "$f" ]; then
+              echo "::error::缺少产物 $f"
+              fail=1
+              continue
+            fi
             size=$(wc -c < "$f")
             echo "$f  ${size}B"
-            if [ "$size" -lt 100 ]; then
-              echo "::error::产物 $f 过小 (${size}B), 疑似为空"
+            if [ "$size" -lt 32 ]; then
+              echo "::error::$f 文件异常 (${size}B)"
+              fail=1
+            fi
+          done
+          for f in dist/*.srs; do
+            [ -e "$f" ] || { echo "::error::没有生成任何 .srs"; exit 1; }
+            name=$(basename "$f" .srs)
+            if [ ! -f "sources/$name.txt" ]; then
+              echo "::error::产物 $f 没有对应的 sources/$name.txt"
               fail=1
             fi
           done
