@@ -23,12 +23,13 @@ dist/             # 产物，由 CI 自动提交（不要手动改）
 
 | 产物 | 上游 | 路由动作 |
 |---|---|---|
-| `dist/direct-domain.srs` | `geosite-cn` + `geosite-category-pt` + `geosite-category-game-platforms-download@cn` | `direct` |
+| `dist/direct-domain.srs` | SagerNet: `geosite-cn`/`category-pt`/`game-platforms-download@cn` + lyc8503: `115` + MetaCubeX: `apple-cn`/`apple-music@cn`/`aws-cn`/`bilibili`/`bilibili2`/`bilibili-cdn` | `direct` |
 | `dist/direct-ip.srs` | `geoip-cn` | `direct` |
 | `dist/ads.srs` | `geosite-category-ads-all` | `block` |
 | `dist/ai.srs` | `geosite-category-ai-!cn` | AI 出站分组 |
 | `dist/google.srs` | `geosite-google` | 指定出站 / urltest 分组 |
 | `dist/tailscale.srs` | `geosite-tailscale` | `direct`（否则 Tailscale 打洞端点会变成节点 IP）|
+| `dist/us.srs` | lyc8503: `18comic` | US 分组（JP 节点被 Cloudflare 拒）|
 
 ## 新增一个分类
 
