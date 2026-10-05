@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         规则集收集器 (sing-box-ruleset picker)
 // @namespace    ayanami520/sing-box-ruleset
-// @version      1.1.0
+// @version      1.2.0
 // @description  在 GitHub 上浏览规则集仓库时，直接标注每条规则集走哪个出站，一键导出 picks.json / sources 片段
 // @author       ayanami520
 // @match        https://github.com/*
@@ -50,6 +50,13 @@
   const LS_OWNED = 'owned.v1';
   const LS_TREE = 'tree.v2.';
   const LS_PREVIEW = 'preview.v1.';
+  const LS_UNDO = 'undo.v1';        // 「撤销清空」快照（持久化：刷新页面也能救回）
+  const LS_AUTOCLEAR = 'autoclear.v1';
+
+  // ★ 导出后是否自动清空已选。默认【关】。
+  //   1.1.0 默认开启且无条件清空，导致误触一次后第二次导出内容为空
+  //   （并且空选择时会把提示文本写进剪贴板）。页脚有开关，勾选后持久化。
+  const AUTO_CLEAR_DEFAULT = false;
 
   // ─────────────────────────────────────────────────────────────
   // 工具
@@ -169,7 +176,8 @@
   // ─────────────────────────────────────────────────────────────
 
   let picks = store.get(LS_PICKS, {});
-  let lastExport = null;          // { text, picksSnapshot, kind }
+  let lastExport = store.get(LS_UNDO, null);   // { kind, at, snapshot } —— 持久化，刷新后仍可撤销
+  let autoClear = store.get(LS_AUTOCLEAR, AUTO_CLEAR_DEFAULT);
   let owned = new Set();
   let items = [];
   let filter = '';
@@ -189,20 +197,22 @@
   }
 
   function exportPicksJson() {
+    const list = sortedPicks();
+    if (!list.length) return null;      // ★ 空选择一律返回 null，调用方据此拒绝导出
     const byAction = {};
-    sortedPicks().forEach((p) => { byAction[p.action] = (byAction[p.action] || 0) + 1; });
+    list.forEach((p) => { byAction[p.action] = (byAction[p.action] || 0) + 1; });
     return JSON.stringify({
       generated_at: new Date().toISOString(),
       generator: 'ruleset-picker.user.js',
       summary: byAction,
-      items: sortedPicks(),
+      items: list,
     }, null, 2);
   }
 
   // ★ 手动片段：带粘贴位置提示 + 每条一个占位备注
   function exportSourcesManual() {
     const list = sortedPicks();
-    if (!list.length) return '(没有选中任何规则集)';
+    if (!list.length) return null;     // ★ 以前返回提示文本，会被当成内容写进剪贴板
     const byGroup = {};
     list.forEach((p) => {
       const a = ACTION_MAP[p.action];
@@ -235,7 +245,7 @@
   // 供 CI 全自动消费的格式（备注字段留空，由用户自行决定是否手改）
   function exportSourcesAuto() {
     const list = sortedPicks();
-    if (!list.length) return '(没有选中任何规则集)';
+    if (!list.length) return null;     // ★ 同上
     const byGroup = {};
     list.forEach((p) => {
       const a = ACTION_MAP[p.action];
@@ -291,6 +301,8 @@
   #rsp-foot{border-top:1px solid #d0d7de;padding:7px 10px;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
   #rsp-root.rsp-dark #rsp-foot{border-color:#30363d}
   #rsp-foot .rsp-primary{background:#1f6feb;border-color:#1f6feb;color:#fff;font-weight:600}
+  #rsp-autoclear-wrap{display:inline-flex;align-items:center;gap:3px;font-size:11px;opacity:.85;cursor:pointer;user-select:none}
+  #rsp-autoclear-wrap input{margin:0}
   #rsp-toast{margin-left:auto;font-size:11px;opacity:0;transition:opacity .2s;max-width:230px}
   #rsp-fab{position:fixed;right:16px;bottom:20px;z-index:2147483000;padding:8px 12px;border-radius:20px;
     background:#1f6feb;color:#fff;border:none;box-shadow:0 4px 14px rgba(0,0,0,.3);cursor:pointer;
@@ -321,6 +333,9 @@
         <button id="rsp-dlman">下载片段.txt</button>
         <button id="rsp-undo" style="display:none">撤销清空</button>
         <button id="rsp-clear">清空</button>
+        <label id="rsp-autoclear-wrap" title="勾选后：复制 / 下载 sources 片段成功后自动清空已选（「复制 picks.json」永不清空）">
+          <input type="checkbox" id="rsp-autoclear">导出后清空
+        </label>
         <span id="rsp-toast"></span>
       </div>`;
     document.body.appendChild(root);
@@ -335,7 +350,7 @@
     return {
       root, fab,
       list: $('#rsp-list'), search: $('#rsp-search'), cnt: $('#rsp-cnt'), toast: $('#rsp-toast'),
-      undo: $('#rsp-undo'), toastTimer: null,
+      undo: $('#rsp-undo'), autoclear: $('#rsp-autoclear'), toastTimer: null,
     };
   }
 
@@ -396,6 +411,11 @@
       ui.list.appendChild(div);
     });
     ui.undo.style.display = lastExport ? '' : 'none';
+    if (lastExport) {
+      const n = Object.keys(lastExport.snapshot || {}).length;
+      ui.undo.textContent = n ? `撤销清空 (${n})` : '撤销清空';
+    }
+    ui.autoclear.checked = autoClear;
   }
 
   function makeDraggable(el, handle) {
@@ -424,32 +444,55 @@
     ui.toastTimer = setTimeout(() => { ui.toast.style.opacity = '0'; }, 3400);
   }
 
-  // 复制/下载成功后：记录一份快照供撤销，并清空选择
-  function afterExport(kind, text) {
-    lastExport = { kind, text, snapshot: JSON.parse(JSON.stringify(picks)) };
+  // ─────────────────────────────────────────────────────────────
+  // 交付（复制 / 下载） —— 三条铁律
+  //   1) 空选择 => 什么都不做: 不写剪贴板、不写文件、不清空
+  //      (1.1.0 会把 '(没有选中任何规则集)' 这句提示写进剪贴板)
+  //   2) 只有 autoClear 开启时才清空; 「复制 picks.json」永不清空
+  //      (1.1.0 无条件清空, 连复制 picks.json 都会把选择清光)
+  //   3) 清空前先把快照写进 localStorage, 刷新页面也能撤销
+  // ─────────────────────────────────────────────────────────────
+
+  const EMPTY_HINT = '没有选中任何规则集：请先点规则集右侧的「直连 / US / JP / 拒绝 …」按钮标注';
+
+  // 面板没打开时(菜单命令) toast 是 no-op, 必须 alert, 否则用户只看到剪贴板被改却毫无提示
+  function notify(msg, isErr) {
+    if (ui) toast(msg, isErr);
+    else alert(`[规则集收集器] ${msg}`);
+  }
+
+  function clearWithUndo() {
+    lastExport = { kind: '清空', at: Date.now(), snapshot: JSON.parse(JSON.stringify(picks)) };
+    store.set(LS_UNDO, lastExport);
     picks = {};
     savePicks();
     render();
-    toast(`已${kind === 'clip' ? '复制' : '下载'}，选择已自动清空（可点「撤销清空」找回）`);
   }
 
-  function copyText(text, kind) {
-    try {
-      GM_setClipboard(text, 'text');
-      afterExport(kind || 'clip', text);
-    } catch (e) {
-      toast('复制失败，选择已保留', true);
+  // canClear: 这一路导出是否"有权"清空选择
+  //   只有 sources 片段（复制/下载）允许清空；
+  //   「复制 picks.json」永远传 false —— 它只是给 CI 的元数据，清空选择毫无道理
+  function deliver(text, kind, filename, canClear) {
+    if (!text) { notify(EMPTY_HINT, true); return false; }      // 铁律 1
+    const n = pickCount();
+    if (kind === '下载') {
+      const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = filename;
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+    } else {
+      try { GM_setClipboard(text, 'text'); }
+      catch (e) { notify(`复制失败（选择已保留）：${e.message}`, true); return false; }
     }
-  }
-
-  function downloadText(filename, text) {
-    const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = filename;
-    a.click();
-    setTimeout(() => URL.revokeObjectURL(a.href), 5000);
-    afterExport('下载', text);
+    if (autoClear && canClear) {                                // 铁律 2
+      clearWithUndo();
+      notify(`已${kind} ${n} 条，选择已自动清空（可点「撤销清空」找回）`);
+    } else {
+      notify(`已${kind} ${n} 条（选择已保留）`);
+    }
+    return true;
   }
 
   // ─────────────────────────────────────────────────────────────
@@ -532,22 +575,32 @@
       items.forEach((it) => { it.owned = owned.has(it.raw); });
       render();
     });
-    ui.root.querySelector('#rsp-copyman').addEventListener('click', () => copyText(exportSourcesManual()));
-    ui.root.querySelector('#rsp-copyjson').addEventListener('click', () => copyText(exportPicksJson()));
+    ui.root.querySelector('#rsp-copyman').addEventListener('click', () => deliver(exportSourcesManual(), '复制', null, true));
+    // ★ 「复制 picks.json」不清空（第 4 参数 false）：它只是给 CI 的元数据
+    ui.root.querySelector('#rsp-copyjson').addEventListener('click', () => deliver(exportPicksJson(), '复制', null, false));
     ui.root.querySelector('#rsp-dlman').addEventListener('click', () => {
       const d = new Date().toISOString().slice(0, 10);
-      downloadText(`pick-sources-${d}.txt`, exportSourcesManual());
+      deliver(exportSourcesManual(), '下载', `pick-sources-${d}.txt`, true);
     });
     ui.root.querySelector('#rsp-undo').addEventListener('click', () => {
       if (!lastExport) return;
-      picks = lastExport.snapshot;
+      const n = Object.keys(lastExport.snapshot || {}).length;
+      picks = lastExport.snapshot || {};
       savePicks();
       lastExport = null;
+      store.del(LS_UNDO);
       render();
-      toast('已恢复上次导出的选择');
+      notify(`已恢复 ${n} 条选择`);
     });
     ui.root.querySelector('#rsp-clear').addEventListener('click', () => {
-      if (confirm('清空已选？')) { picks = {}; savePicks(); lastExport = null; render(); }
+      const n = pickCount();
+      if (!n) { notify('本来就没有选中任何规则集'); return; }
+      if (confirm(`清空已选的 ${n} 条？（可撤销）`)) { clearWithUndo(); notify('已清空，可点「撤销清空」找回'); }
+    });
+    ui.autoclear.addEventListener('change', () => {
+      autoClear = ui.autoclear.checked;
+      store.set(LS_AUTOCLEAR, autoClear);
+      notify(autoClear ? '已开启：导出 sources 片段后清空已选（可撤销）' : '已关闭：导出后保留已选');
     });
     ui.fab.addEventListener('click', openPanel);
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -578,8 +631,8 @@
   maybeShow();
 
   GM_registerMenuCommand('打开 规则集收集器', () => { initUIOnce(); openPanel(); const c = parseGithubUrl(location.pathname); if (c) loadItems(c); });
-  GM_registerMenuCommand('复制 sources 片段（推荐）', () => copyText(exportSourcesManual()));
-  GM_registerMenuCommand('复制 picks.json', () => copyText(exportPicksJson()));
+  GM_registerMenuCommand('复制 sources 片段（推荐）', () => deliver(exportSourcesManual(), '复制', null, true));
+  GM_registerMenuCommand('复制 picks.json', () => deliver(exportPicksJson(), '复制', null, false));
 
-  log('loaded v1.1.0');
+  log('loaded v1.2.0');
 })();
