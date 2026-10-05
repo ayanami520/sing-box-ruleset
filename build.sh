@@ -42,8 +42,15 @@ fetch() {
 	fi
 }
 
+# 统计归一化 JSON 里的实际规则条目数
+# (取每条规则中所有"数组型"字段的长度之和, 不依赖固定字段名,
+#  因此 port 这类标量字段也不会让它出错)
+count_entries() {
+	jq '[ .rules[] | [ .[] | select(type == "array") | length ] | add // 0 ] | add // 0' "$1"
+}
+
 # 中间产物与成品分开目录: dist/ 里最终只会出现 dist/<name>.srs
-#   全部构建成功后才替换 dist/, 失败不会留下半成品
+# 全部构建成功后才替换 dist/, 失败不会留下半成品
 PARTS="$WORK_DIR/parts"
 FINAL="$WORK_DIR/final"
 rm -rf "$WORK_DIR"
@@ -110,13 +117,18 @@ for list in "$SRC_DIR"/*.txt; do
 	"$SING_BOX" rule-set compile "$normalized" -o "$out" >/dev/null 2>&1 ||
 		die "[$name] compile 失败"
 
-	# ---- 5) 产物校验 (太小 = 规则丢了, 必须拦住) ----
+	# ---- 5) 产物校验 ----
+	# 用"实际规则条目数"判断, 不用文件大小 (只有 3 条域名的规则集编译出来也只有 80B,
+	# 早期版本用 100B 阈值会误伤)
 	size=$(wc -c < "$out" | tr -d ' ')
 	rules=$(jq '.rules | length' "$normalized")
-	[ "$size" -ge 100 ] || die "[$name] 产物仅 ${size}B, 疑似为空, 已中止"
-	[ "$rules" -ge 1 ] || die "[$name] 规则条目为 0, 已中止"
+	entries=$(count_entries "$normalized")
 
-	log "  -> dist/$name.srs  ${size}B  规则条目=$rules  上游数=$count"
+	[ "$size" -ge 32 ] || die "[$name] 产物仅 ${size}B, 文件级别异常, 已中止"
+	[ "$rules" -ge 1 ] || die "[$name] 规则条目为 0, 已中止"
+	[ "$entries" -ge 1 ] || die "[$name] 实际规则条目为 0 (空规则集), 已中止"
+
+	log "  -> dist/$name.srs  ${size}B  规则=$rules  实际条目=$entries  上游数=$count"
 	total=$((total + 1))
 done
 
