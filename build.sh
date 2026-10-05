@@ -109,9 +109,10 @@ compose_counts() {
 		{ c[$1]++ }
 		END {
 			known = c["domain"] + c["domain_suffix"] + c["domain_keyword"] + c["domain_regex"] + c["ip_cidr"]
-			s = "domain=" c["domain"] ", domain_suffix=" c["domain_suffix"] \
-			    ", domain_keyword=" c["domain_keyword"] ", domain_regex=" c["domain_regex"] \
-			    ", ip_cidr=" c["ip_cidr"]
+			# 数组未出现的键在 awk 里是空串, 直接拼接会显示成 "domain_keyword=" —— 加 0 归一成数字
+			s = "domain=" (c["domain"] + 0) ", domain_suffix=" (c["domain_suffix"] + 0) \
+			    ", domain_keyword=" (c["domain_keyword"] + 0) ", domain_regex=" (c["domain_regex"] + 0) \
+			    ", ip_cidr=" (c["ip_cidr"] + 0)
 			total = 0
 			for (k in c) total += c[k]
 			if (total > known) s = s ", 其它=" (total - known)
