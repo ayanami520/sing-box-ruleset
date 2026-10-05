@@ -9,7 +9,7 @@
 |---|---|---|---|---|---|---|---|
 | `ads` | 2 | 50973 | 6402 | 282 | 55 | 6065 | = 无变化 |
 | `ai` | 1 | 2053 | 188 | 0 | 0 | 188 | = 无变化 |
-| `direct-domain` | 11 | 39168 | 9752 | 311 | 2588 | 6853 | = 无变化 |
+| `direct-domain` | 13 | 40009 | 9897 | 456 | 2588 | 6853 | = 无变化 |
 | `direct-ip` | 1 | 34185 | 8045 | 0 | 0 | 8045 | = 无变化 |
 | `google` | 1 | 7091 | 938 | 0 | 76 | 862 | = 无变化 |
 | `tailscale` | 1 | 80 | 3 | 0 | 0 | 3 | = 无变化 |
@@ -86,10 +86,10 @@
 
 | 项 | 值 |
 |---|---|
-| 上游数 | 11 |
-| 产物 | `dist/direct-domain.srs` — 39168 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 9752 / 9441 / 6853 |
-| 删除: 上游重复 / 被覆盖 | 311 / 2588 |
+| 上游数 | 13 |
+| 产物 | `dist/direct-domain.srs` — 40009 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 9897 / 9441 / 6853 |
+| 删除: 上游重复 / 被覆盖 | 456 / 2588 |
 | 匹配器 | domain=520, domain_suffix=6325, domain_keyword=0, domain_regex=8, ip_cidr=0 |
 | 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/direct-domain.txt`](removed/direct-domain.txt) |
@@ -102,6 +102,8 @@
 | `geosite-category-pt.srs` | 1160 B | 126 |
 | `geosite-category-game-platforms-download@cn.srs` | 431 B | 24 |
 | `geosite-115.srs` | 172 B | 14 |
+| `geosite-category-netdisk-cn.srs` | 770 B | 91 |
+| `geosite-category-social-media-cn.srs` | 518 B | 54 |
 | `geosite-category-speedtest@cn.srs` | 224 B | 17 |
 | `apple-cn.srs` | 1306 B | 165 |
 | `apple-music@cn.srs` | 115 B | 7 |

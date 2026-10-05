@@ -4,7 +4,7 @@
 #   dup     = 上游之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/direct-domain.txt (不提交, 随 CI artifact 上传)
-# 本次共 2885 行 (dup=297, covered=2588); 提交版上限 2000 行
+# 本次共 3016 行 (dup=428, covered=2588); 提交版上限 2000 行
 dup	domain	a1.mzstatic.com
 dup	domain	a2.mzstatic.com
 dup	domain	a3.mzstatic.com
@@ -208,9 +208,28 @@ dup	domain_suffix	115vod.com
 dup	domain_suffix	116cd.cn
 dup	domain_suffix	116cd.com
 dup	domain_suffix	116cd.net
+dup	domain_suffix	123245.com
+dup	domain_suffix	123254.com
+dup	domain_suffix	123278.com
+dup	domain_suffix	123294.com
+dup	domain_suffix	123624.com
+dup	domain_suffix	123641.com
+dup	domain_suffix	123842.com
+dup	domain_suffix	123860.com
+dup	domain_suffix	123912.com
+dup	domain_suffix	123952.com
+dup	domain_suffix	123957.com
+dup	domain_suffix	123pan.cn
+dup	domain_suffix	123pan.com
+dup	domain_suffix	123panpay.com
 dup	domain_suffix	a2z.org.cn
 dup	domain_suffix	acg.tv
 dup	domain_suffix	acgvideo.com
+dup	domain_suffix	alicloudccp.com
+dup	domain_suffix	alipan.com
+dup	domain_suffix	aliyundrive.cloud
+dup	domain_suffix	aliyundrive.com
+dup	domain_suffix	aliyundrive.net
 dup	domain_suffix	amazonaws.cn
 dup	domain_suffix	amazonaws.com.cn
 dup	domain_suffix	amazonwebservices.cn
@@ -233,6 +252,8 @@ dup	domain_suffix	awsapps.cn
 dup	domain_suffix	awsapps.com.cn
 dup	domain_suffix	awsstatic.cn
 dup	domain_suffix	b23.tv
+dup	domain_suffix	baidupan.com
+dup	domain_suffix	baihe.com
 dup	domain_suffix	bigfun.cn
 dup	domain_suffix	bigfunapp.cn
 dup	domain_suffix	bili22.cn
@@ -265,24 +286,100 @@ dup	domain_suffix	biliimg.com
 dup	domain_suffix	bilivideo.cn
 dup	domain_suffix	bilivideo.com
 dup	domain_suffix	bilivideo.net
+dup	domain_suffix	c-t.work
+dup	domain_suffix	cloud.189.cn
 dup	domain_suffix	cloudfront-cn.net
 dup	domain_suffix	cloudfront-test.cn
 dup	domain_suffix	cloudfront.cn
 dup	domain_suffix	cnspeedtest.cn
+dup	domain_suffix	coolapk.com
+dup	domain_suffix	coolapkmarket.com
+dup	domain_suffix	coolapkmarket.net
+dup	domain_suffix	cowcs.com
+dup	domain_suffix	cowtransfer.com
+dup	domain_suffix	crash2.zhihu.com
+dup	domain_suffix	ctfile.com
+dup	domain_suffix	dandan818.com
+dup	domain_suffix	dandanvoice.com
+dup	domain_suffix	douban.com
+dup	domain_suffix	douban.fm
+dup	domain_suffix	doubanio.com
+dup	domain_suffix	duoduo.link
+dup	domain_suffix	fanfou.com
+dup	domain_suffix	feimaoyun.com
+dup	domain_suffix	filez.com
+dup	domain_suffix	gracg.com
+dup	domain_suffix	guangyacdn.com
+dup	domain_suffix	guangyapan.com
+dup	domain_suffix	hammi.cn
 dup	domain_suffix	hdslb.com
 dup	domain_suffix	hdslb.org
+dup	domain_suffix	hoopchina.com.cn
 dup	domain_suffix	huasheng.cn
+dup	domain_suffix	hupu.com
+dup	domain_suffix	hupucdn.com
+dup	domain_suffix	ilanzou.com
 dup	domain_suffix	im9.com
+dup	domain_suffix	immomo.com
+dup	domain_suffix	ivwen.com
+dup	domain_suffix	ixiaochuan.cn
+dup	domain_suffix	izuiyou.com
+dup	domain_suffix	jianguoyun.com
+dup	domain_suffix	jiayuan.com
+dup	domain_suffix	jike.city
+dup	domain_suffix	jikecdn.com
+dup	domain_suffix	laiyagushi.com
+dup	domain_suffix	lanosso.com
+dup	domain_suffix	lanrar.com
+dup	domain_suffix	lanzou.com
+dup	domain_suffix	lanzoub.com
+dup	domain_suffix	lanzouc.com
+dup	domain_suffix	lanzoue.com
+dup	domain_suffix	lanzouf.com
+dup	domain_suffix	lanzoug.com
+dup	domain_suffix	lanzouh.com
+dup	domain_suffix	lanzoui.com
+dup	domain_suffix	lanzouj.com
+dup	domain_suffix	lanzouk.com
+dup	domain_suffix	lanzoul.com
+dup	domain_suffix	lanzoum.com
+dup	domain_suffix	lanzouo.com
+dup	domain_suffix	lanzoup.com
+dup	domain_suffix	lanzouq.com
+dup	domain_suffix	lanzous.com
+dup	domain_suffix	lanzout.com
+dup	domain_suffix	lanzouu.com
+dup	domain_suffix	lanzouv.com
+dup	domain_suffix	lanzouw.com
+dup	domain_suffix	lanzoux.com
+dup	domain_suffix	lanzouy.com
+dup	domain_suffix	lanzov.com
+dup	domain_suffix	maimai.cn
 dup	domain_suffix	maoer.com
 dup	domain_suffix	maoercdn.com
+dup	domain_suffix	meipian.cn
+dup	domain_suffix	meipian.me
 dup	domain_suffix	mincdn.com
 dup	domain_suffix	missevan.com
+dup	domain_suffix	momocdn.com
 dup	domain_suffix	nwcdcloud.cn
 dup	domain_suffix	nwcdcloud.com.cn
 dup	domain_suffix	nwcddns.cn
 dup	domain_suffix	nwcdinfosec.cn
+dup	domain_suffix	okjike.com
+dup	domain_suffix	okjk.co
+dup	domain_suffix	pan.baidu.com
+dup	domain_suffix	pan.quark.cn
+dup	domain_suffix	pan.xunlei.com
+dup	domain_suffix	procg.cn
+dup	domain_suffix	qianliaowang.com
+dup	domain_suffix	qlchat.com
 dup	domain_suffix	route53.cn
+dup	domain_suffix	ruguoapp.com
 dup	domain_suffix	sagemaker.com.cn
+dup	domain_suffix	share123.top
+dup	domain_suffix	shihuo.cn
+dup	domain_suffix	soulapp.cn
 dup	domain_suffix	speed.neu6.edu.cn
 dup	domain_suffix	speed.nju.edu.cn
 dup	domain_suffix	speed.nuaa.edu.cn
@@ -295,13 +392,47 @@ dup	domain_suffix	speedtest.shu.edu.cn
 dup	domain_suffix	speedtest.xaut.edu.cn
 dup	domain_suffix	speedtest6.shu.edu.cn
 dup	domain_suffix	sq.cc
+dup	domain_suffix	tancdn.com
+dup	domain_suffix	tantanapp.com
+dup	domain_suffix	taou.com
 dup	domain_suffix	test.nju.edu.cn
 dup	domain_suffix	test.ustc.edu.cn
 dup	domain_suffix	test6.nju.edu.cn
 dup	domain_suffix	test6.ustc.edu.cn
+dup	domain_suffix	tieba.baidu.com
+dup	domain_suffix	tieba.com
+dup	domain_suffix	uboxs.com
+dup	domain_suffix	uneed.com
+dup	domain_suffix	uneedx.com
 dup	domain_suffix	updream.cn
+dup	domain_suffix	vzuu.com
+dup	domain_suffix	weiyun.com
+dup	domain_suffix	wenshushu.cn
+dup	domain_suffix	wenshushu.com
+dup	domain_suffix	wenxiaozhan.cn
+dup	domain_suffix	wenxiaozhan.com
+dup	domain_suffix	wenxiaozhan.net
+dup	domain_suffix	woozooo.com
+dup	domain_suffix	wss.cc
+dup	domain_suffix	wss.email
+dup	domain_suffix	wss.ink
+dup	domain_suffix	wss.pet
+dup	domain_suffix	wss.show
+dup	domain_suffix	wss.zone
+dup	domain_suffix	wss1.cn
+dup	domain_suffix	xiaochuankeji.cn
 dup	domain_suffix	xnfz.seu.edu.cn
 dup	domain_suffix	yo9.com
+dup	domain_suffix	yun.139.com
+dup	domain_suffix	yunpan.aliyun.com
+dup	domain_suffix	yunpan.com
+dup	domain_suffix	zastatic.com
+dup	domain_suffix	zhenai.com
+dup	domain_suffix	zhihu-web-analytics.zhihu.com
+dup	domain_suffix	zhihu.com
+dup	domain_suffix	zhimg.com
+dup	domain_suffix	zsxq.com
+dup	domain_suffix	zuiyou.tv
 covered	domain	ads3-normal-hl.zijieapi.com	zijieapi.com
 covered	domain	ads3-normal.zijieapi.com	zijieapi.com
 covered	domain	ads5-normal-hl.zijieapi.com	zijieapi.com
@@ -1874,135 +2005,4 @@ covered	domain_suffix	lync.cn	cn
 covered	domain_suffix	m-adash.m.taobao.com	taobao.com
 covered	domain_suffix	m-now.cn	cn
 covered	domain_suffix	m.aty.sohu.com	sohu.com
-covered	domain_suffix	m1905.cn	cn
-covered	domain_suffix	macbookair.cn	cn
-covered	domain_suffix	macbookair.com.cn	cn
-covered	domain_suffix	mafengwo.cn	cn
-covered	domain_suffix	magnoliaav.com.cn	cn
-covered	domain_suffix	mahjongcup.cn	cn
-covered	domain_suffix	maimai.cn	cn
-covered	domain_suffix	makerworld.com.cn	cn
-covered	domain_suffix	mala.cn	cn
-covered	domain_suffix	mama.cn	cn
-covered	domain_suffix	mamayz.cn	cn
-covered	domain_suffix	management-azure-devices-provisioning.cn	cn
-covered	domain_suffix	management-azure-devices.cn	cn
-covered	domain_suffix	maoyuncloud.cn	cn
-covered	domain_suffix	mariokart.cn	cn
-covered	domain_suffix	mariokart.com.cn	cn
-covered	domain_suffix	marketing.alibaba.com	alibaba.com
-covered	domain_suffix	marscode.cn	cn
-covered	domain_suffix	marscode.com.cn	cn
-covered	domain_suffix	mashort.cn	cn
-covered	domain_suffix	maxadmin.cn	cn
-covered	domain_suffix	mbdlog.iqiyi.com	iqiyi.com
-covered	domain_suffix	mcadn.cn	cn
-covered	domain_suffix	mcd.cn	cn
-covered	domain_suffix	mcdonalds.com.cn	cn
-covered	domain_suffix	mcmod.cn	cn
-covered	domain_suffix	mcprev.cn	cn
-covered	domain_suffix	mcs.snssdk.com	snssdk.com
-covered	domain_suffix	mdcdn.cn	cn
-covered	domain_suffix	mdt.qq.com	qq.com
-covered	domain_suffix	medalink.cn	cn
-covered	domain_suffix	medlive.cn	cn
-covered	domain_suffix	meipian.cn	cn
-covered	domain_suffix	meizu.cn	cn
-covered	domain_suffix	mengniu.com.cn	cn
-covered	domain_suffix	mercurycom.com.cn	cn
-covered	domain_suffix	metaso.cn	cn
-covered	domain_suffix	mfuns.cn	cn
-covered	domain_suffix	mgmt-azure-api.cn	cn
-covered	domain_suffix	mhyurl.cn	cn
-covered	domain_suffix	miaoda.cn	cn
-covered	domain_suffix	miaowu.baidu.com	baidu.com
-covered	domain_suffix	miaoya.cn	cn
-covered	domain_suffix	microsoft-smb.cn	cn
-covered	domain_suffix	microsoftazurestatus.cn	cn
-covered	domain_suffix	microsoftmetrics.cn	cn
-covered	domain_suffix	microsoftnews.cn	cn
-covered	domain_suffix	microsoftonline-i.cn	cn
-covered	domain_suffix	microsoftonline-m-i.cn	cn
-covered	domain_suffix	microsoftonline-m.cn	cn
-covered	domain_suffix	microsoftonline-p-i.cn	cn
-covered	domain_suffix	microsoftonline-p-i.net.cn	cn
-covered	domain_suffix	microsoftonline-p.cn	cn
-covered	domain_suffix	microsoftonline-p.net.cn	cn
-covered	domain_suffix	microsoftonline.cn	cn
-covered	domain_suffix	microsoftreactor.cn	cn
-covered	domain_suffix	microsoftreactor.com.cn	cn
-covered	domain_suffix	microsoftstore.com.cn	cn
-covered	domain_suffix	microsofttranslator-int.cn	cn
-covered	domain_suffix	midea.cn	cn
-covered	domain_suffix	midea.com.cn	cn
-covered	domain_suffix	mifile.cn	cn
-covered	domain_suffix	migu.cn	cn
-covered	domain_suffix	miitomo.com.cn	cn
-covered	domain_suffix	mil.cn	cn
-covered	domain_suffix	mindspore.cn	cn
-covered	domain_suffix	miniso.cn	cn
-covered	domain_suffix	minisohome.cn	cn
-covered	domain_suffix	minsio.cn	cn
-covered	domain_suffix	mioffice.cn	cn
-covered	domain_suffix	mipcache.bdstatic.com	bdstatic.com
-covered	domain_suffix	mirrorcast.cn	cn
-covered	domain_suffix	misc.in.duokanbox.com	duokanbox.com
-covered	domain_suffix	mixer.sina.cn	cn
-covered	domain_suffix	mle5p.cn	cn
-covered	domain_suffix	mlzt.com.cn	cn
-covered	domain_suffix	mmbizurl.cn	cn
-covered	domain_suffix	mncmsidlab1.cn	cn
-covered	domain_suffix	mnw.cn	cn
-covered	domain_suffix	mobads-logs.baidu.com	baidu.com
-covered	domain_suffix	mobads-pre-config.cdn.bcebos.com	bcebos.com
-covered	domain_suffix	mobads.baidu.com	baidu.com
-covered	domain_suffix	mobileinternational.com.cn	cn
-covered	domain_suffix	mobilemsg.youku.com	youku.com
-covered	domain_suffix	modelarts-infer.cn	cn
-covered	domain_suffix	modelarts-maas.cn	cn
-covered	domain_suffix	modelers.cn	cn
-covered	domain_suffix	modernjs.cn	cn
-covered	domain_suffix	modex.com.cn	cn
-covered	domain_suffix	moegirl.org.cn	cn
-covered	domain_suffix	moer.cn	cn
-covered	domain_suffix	monitor.music.qq.com	qq.com
-covered	domain_suffix	monitor.uu.qq.com	qq.com
-covered	domain_suffix	mooc.cn	cn
-covered	domain_suffix	moonshot.cn	cn
-covered	domain_suffix	mountain.zhidao.baidu.com	baidu.com
-covered	domain_suffix	mpush.qq.com	qq.com
-covered	domain_suffix	mryys.cn	cn
-covered	domain_suffix	ms-bank.cn	cn
-covered	domain_suffix	ms2tg.cn	cn
-covered	domain_suffix	msappproxy.cn	cn
-covered	domain_suffix	msauth.cn	cn
-covered	domain_suffix	msauthimages.cn	cn
-covered	domain_suffix	msftauth.cn	cn
-covered	domain_suffix	msftauthimages.cn	cn
-covered	domain_suffix	msftcloudes.cn	cn
-covered	domain_suffix	msg.video.qiyi.com	qiyi.com
-covered	domain_suffix	msg.youku.com	youku.com
-covered	domain_suffix	msg2.video.qiyi.com	qiyi.com
-covered	domain_suffix	msidentity.cn	cn
-covered	domain_suffix	msidlabpbmc.cn	cn
-covered	domain_suffix	msjyfund.com.cn	cn
-covered	domain_suffix	msmartlife.cn	cn
-covered	domain_suffix	msn.cn	cn
-covered	domain_suffix	mspil.cn	cn
-covered	domain_suffix	msra.cn	cn
-covered	domain_suffix	mszdld.cn	cn
-covered	domain_suffix	mtime.cn	cn
-covered	domain_suffix	mtrace.qq.com	qq.com
-covered	domain_suffix	muji.com.cn	cn
-covered	domain_suffix	music.httpdns.c.163.com	163.com
-covered	domain_suffix	music.qq.com	qq.com
-covered	domain_suffix	mybank.cn	cn
-covered	domain_suffix	myhsw.cn	cn
-covered	domain_suffix	myhuaweicloud-custom.cn	cn
-covered	domain_suffix	myhuaweicloud-koodrive.cn	cn
-covered	domain_suffix	myhuaweicloud-obs.cn	cn
-covered	domain_suffix	myhuaweicloud.cn	cn
-covered	domain_suffix	myhwcdn.cn	cn
-covered	domain_suffix	myhwclouds.cn	cn
-covered	domain_suffix	myhwclouds.com.cn	cn
-# ... 已截断: 共 2885 行, 仅保留前 2000 行 (完整清单见 report/.full/direct-domain.txt)
+# ... 已截断: 共 3016 行, 仅保留前 2000 行 (完整清单见 report/.full/direct-domain.txt)
