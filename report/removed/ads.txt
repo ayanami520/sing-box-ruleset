@@ -4,7 +4,16 @@
 #   dup     = 上游之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/ads.txt (不提交, 随 CI artifact 上传)
-# 本次共 337 行 (dup=282, covered=55); 提交版上限 2000 行
+# 本次共 358 行 (dup=303, covered=55); 提交版上限 2000 行
+dup	domain	adblogger.vk.com
+dup	domain	adblogger.vk.ru
+dup	domain	ads.vk.com
+dup	domain	ads.vk.ru
+dup	domain	adv.vk.ru
+dup	domain	advk.vk.ru
+dup	domain	analytics.vk.ru
+dup	domain	stats.vk-portal.net
+dup	domain	target.vk.com
 dup	domain_suffix	2mdn-cn.net
 dup	domain_suffix	51.la
 dup	domain_suffix	a.youdao.com
@@ -39,6 +48,7 @@ dup	domain_suffix	adfilter.imtt.qq.com
 dup	domain_suffix	adimg.mobile.sina.cn
 dup	domain_suffix	admob-cn.com
 dup	domain_suffix	adping.qq.com
+dup	domain_suffix	ads-twitter.com
 dup	domain_suffix	ads-union.jd.com
 dup	domain_suffix	ads.api.my7v.com
 dup	domain_suffix	ads.huan.tv
@@ -69,6 +79,7 @@ dup	domain_suffix	adv-sv-show.focus.cn
 dup	domain_suffix	adv-sv-stat.focus.cn
 dup	domain_suffix	adv.sec.intl.miui.com
 dup	domain_suffix	adv.sec.miui.com
+dup	domain_suffix	adv.vk.com
 dup	domain_suffix	adview.cn
 dup	domain_suffix	adx.36kr.com
 dup	domain_suffix	adx.xiaodutv.com
@@ -77,7 +88,9 @@ dup	domain_suffix	afdconf.baidu.com
 dup	domain_suffix	alimama.alicdn.com
 dup	domain_suffix	alitui.weibo.com
 dup	domain_suffix	analytics.163.com
+dup	domain_suffix	analytics.facebook.com
 dup	domain_suffix	analytics.umetrip.com
+dup	domain_suffix	analytics.vk.com
 dup	domain_suffix	app-analytics-services-att.com
 dup	domain_suffix	app-analytics-services.com
 dup	domain_suffix	app-measurement-cn.com
@@ -134,6 +147,7 @@ dup	domain_suffix	eduad.baidu.com
 dup	domain_suffix	eiv.baidu.com
 dup	domain_suffix	euads-o.api.leiniao.com
 dup	domain_suffix	extlog.snssdk.com
+dup	domain_suffix	facebookads.com
 dup	domain_suffix	fclick.baidu.com
 dup	domain_suffix	fclog.baidu.com
 dup	domain_suffix	fenxi.com
@@ -159,6 +173,8 @@ dup	domain_suffix	googletagmanager.com
 dup	domain_suffix	googletagservices-cn.com
 dup	domain_suffix	googletraveladservices.com
 dup	domain_suffix	googlevads-cn.com
+dup	domain_suffix	graph-fallback.instagram.com
+dup	domain_suffix	graph.instagram.com
 dup	domain_suffix	growingio.com
 dup	domain_suffix	gz-data.com
 dup	domain_suffix	h-adashx.ut.ele.me
@@ -212,6 +228,8 @@ dup	domain_suffix	mobads-pre-config.cdn.bcebos.com
 dup	domain_suffix	mobads.baidu.com
 dup	domain_suffix	monitor.music.qq.com
 dup	domain_suffix	mountain.zhidao.baidu.com
+dup	domain_suffix	ms.vk.com
+dup	domain_suffix	ms.vk.ru
 dup	domain_suffix	msg.video.qiyi.com
 dup	domain_suffix	msg.youku.com
 dup	domain_suffix	msg2.video.qiyi.com
@@ -226,6 +244,7 @@ dup	domain_suffix	partnerad.l.google.com
 dup	domain_suffix	pgdt.gtimg.cn
 dup	domain_suffix	pimlog.baidu.com
 dup	domain_suffix	pingjs.qq.com
+dup	domain_suffix	pixel.facebook.com
 dup	domain_suffix	pmir.3g.qq.com
 dup	domain_suffix	policy.video.iqiyi.com
 dup	domain_suffix	pos.baidu.com
@@ -257,6 +276,7 @@ dup	domain_suffix	sngmta.qq.com
 dup	domain_suffix	stat.m.jd.com
 dup	domain_suffix	stats.music.xiaomi.com
 dup	domain_suffix	syh.zybang.com
+dup	domain_suffix	target.vk.ru
 dup	domain_suffix	tcbox.baidu.com
 dup	domain_suffix	tce.alicdn.com
 dup	domain_suffix	theta.sogoucdn.com
@@ -275,6 +295,7 @@ dup	domain_suffix	ugdtimg.com
 dup	domain_suffix	union.baidu.com
 dup	domain_suffix	unionimage.baidu.com
 dup	domain_suffix	unityads.unitychina.cn
+dup	domain_suffix	vk-analytics.ru
 dup	domain_suffix	wangmeng.baidu.com
 dup	domain_suffix	wbclick.mobile.sina.cn
 dup	domain_suffix	wkctj.baidu.com

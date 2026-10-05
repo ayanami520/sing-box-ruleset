@@ -7,7 +7,7 @@
 
 | 规则集 | 上游 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 2 | 50973 | 6402 | 282 | 55 | 6065 | = 无变化 |
+| `ads` | 4 | 51268 | 6425 | 305 | 55 | 6065 | = 无变化 |
 | `ai` | 1 | 2053 | 188 | 0 | 0 | 188 | = 无变化 |
 | `direct-domain` | 13 | 40009 | 9897 | 456 | 2588 | 6853 | = 无变化 |
 | `direct-ip` | 1 | 34185 | 8045 | 0 | 0 | 8045 | = 无变化 |
@@ -45,10 +45,10 @@
 
 | 项 | 值 |
 |---|---|
-| 上游数 | 2 |
-| 产物 | `dist/ads.srs` — 50973 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 6402 / 6120 / 6065 |
-| 删除: 上游重复 / 被覆盖 | 282 / 55 |
+| 上游数 | 4 |
+| 产物 | `dist/ads.srs` — 51268 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 6425 / 6120 / 6065 |
+| 删除: 上游重复 / 被覆盖 | 305 / 55 |
 | 匹配器 | domain=142, domain_suffix=5923, domain_keyword=0, domain_regex=0, ip_cidr=0 |
 | 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
@@ -59,6 +59,8 @@
 |---|---|---|
 | `geosite-category-ads-all.srs` | 8244 B | 910 |
 | `adblocksingboxlite.srs` | 43563 B | 5492 |
+| `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
+| `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
 
 </details>
 
