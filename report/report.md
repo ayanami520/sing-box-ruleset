@@ -7,7 +7,7 @@
 
 | 规则集 | 上游 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 4 | 52014 | 6514 | 306 | 56 | 6152 | +91 / -4 |
+| `ads` | 4 | 52014 | 6514 | 306 | 56 | 6152 | = 无变化 |
 | `ai` | 1 | 2053 | 188 | 0 | 0 | 188 | = 无变化 |
 | `direct-domain` | 13 | 40009 | 9897 | 456 | 2588 | 6853 | = 无变化 |
 | `direct-ip` | 1 | 34185 | 8045 | 0 | 0 | 8045 | = 无变化 |
@@ -50,7 +50,7 @@
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 6514 / 6208 / 6152 |
 | 删除: 上游重复 / 被覆盖 | 306 / 56 |
 | 匹配器 | domain=141, domain_suffix=6011, domain_keyword=0, domain_regex=0, ip_cidr=0 |
-| 与上次提交对比 | +91 / -4 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
@@ -63,30 +63,6 @@
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
 
 </details>
-
-与上次相比 **移除 4 条**（前 10 条，完整见明细文件）：
-
-```
-domain	rtlog3-applog.fqnovel.com
-domain_suffix	ad.mingruidata.com
-domain_suffix	bduserlog.eastmoney.com
-domain_suffix	rest-argus-ad.agoralab.co
-```
-
-与上次相比 **新增 91 条**（前 10 条）：
-
-```
-domain_suffix	0x2beace.com
-domain_suffix	43366.cn
-domain_suffix	5166.info
-domain_suffix	ad-cmp.hismarttv.com
-domain_suffix	ad.jiemoselect.com
-domain_suffix	ad.open.api.jihuoniao.com
-domain_suffix	ad.xhey.top
-domain_suffix	adimage.bwton.com.w.kunluncan.com
-domain_suffix	ads.games.laohu.com
-domain_suffix	adv.peasun.net
-```
 
 ### ai
 
