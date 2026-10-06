@@ -5,8 +5,11 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    # 每天 UTC 18:00 (北京时间 02:00) 自动重建
-    - cron: '0 18 * * *'
+    # 每天 UTC 17:00 (北京时间 01:00) 自动重建
+    # 注: GitHub 的 schedule 是"尽力而为", 实测迟到过 5 小时 35 分,
+    #     所以这里的时刻只保证"尽量早", 真正的新鲜度靠路由器侧的重启对齐
+    #     (见 README「定时重建与路由器刷新节奏」)。
+    - cron: '0 17 * * *'
 
 permissions:
   contents: write

@@ -106,6 +106,37 @@ https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosit
 - `update_interval` 建议 `1d`，不要更短
 - 通过 `gh-proxy.com` 前缀拉取，避免 GitHub 直连不稳定
 
+## 定时重建与路由器刷新节奏
+
+两端的时间**不是**硬对齐的，机制如下（源码依据：`route/rule/rule_set_remote.go`）：
+
+| 环节 | 时机 | 说明 |
+|---|---|---|
+| 本仓库构建 | **每天 01:00（北京）**，即 `cron: '0 17 * * *'` | GitHub 的 `schedule` 是**尽力而为**：实测迟到过 **5 小时 35 分**；构建本身只要 10~45 秒 |
+| 路由器拉取 | **上次拉取 + `update_interval`**；或**重启时缓存已过期则立即拉取** | 不是固定钟点，`update_interval` 默认 `1d` |
+| 要重启才生效吗 | **不需要** ✓ | 拉取后 `loadBytes()` 直接替换内存中的规则，**对新连接立即生效**；已建立的连接保持原判 |
+
+因此实际节奏（`update_interval: 1d` + 路由器每天 05:30 自动重启）：
+
+```
+01:00（可能延后）  仓库构建
+05:30              路由器重启 → 缓存已过期 → 立即拉取 ✓
+⇒ 内容最长滞后约 24 小时，且与 GitHub 的调度延迟无关
+```
+
+想让内容更新鲜，把路由器侧 `update_interval` 改成 `12h`，即一天两次拉取、滞后 ≤12h。
+
+**怎么验证真的拉了**（`log.level: info` 即可看到）：
+
+```sh
+logread | grep -iE 'sing-box\[' | grep -iE 'updated rule-set|update rule-set'
+#   updated rule-set ads                 ← 拉到新内容
+#   update rule-set ads: not modified    ← 内容没变（ETag 命中）
+```
+
+> ⚠️ 用 `sing-box-easy` 之类的面板时注意：**面板自己在数据库里存了一份 rule_set 配置**，
+> 在面板里保存会按它那份重写 `config.json` —— 手改过的 `update_interval` / `dns.rules` 要**在面板里也改一遍**。
+
 ## 本地手动构建
 
 ```sh
