@@ -7,7 +7,7 @@
 
 | 规则集 | 上游 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 4 | 51624 | 6463 | 306 | 56 | 6101 | +17 / -68 |
+| `ads` | 4 | 51705 | 6474 | 308 | 56 | 6110 | +25 / -16 |
 | `ai` | 1 | 2053 | 188 | 0 | 0 | 188 | = 无变化 |
 | `direct-domain` | 13 | 40009 | 9897 | 456 | 2588 | 6853 | = 无变化 |
 | `direct-ip` | 1 | 34185 | 8045 | 0 | 0 | 8045 | = 无变化 |
@@ -23,7 +23,7 @@
 
 | 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 142 | 5959 | 0 | 0 | 0 | 0 | ✅ |
+| `ads` | 142 | 5968 | 0 | 0 | 0 | 0 | ✅ |
 | `ai` | 30 | 158 | 0 | 0 | 0 | 0 | ✅ |
 | `direct-domain` | 520 | 6325 | 0 | 8 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8045 | 0 | ✅ |
@@ -46,11 +46,11 @@
 | 项 | 值 |
 |---|---|
 | 上游数 | 4 |
-| 产物 | `dist/ads.srs` — 51624 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 6463 / 6157 / 6101 |
-| 删除: 上游重复 / 被覆盖 | 306 / 56 |
-| 匹配器 | domain=142, domain_suffix=5959, domain_keyword=0, domain_regex=0, ip_cidr=0 |
-| 与上次提交对比 | +17 / -68 |
+| 产物 | `dist/ads.srs` — 51705 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 6474 / 6166 / 6110 |
+| 删除: 上游重复 / 被覆盖 | 308 / 56 |
+| 匹配器 | domain=142, domain_suffix=5968, domain_keyword=0, domain_regex=0, ip_cidr=0 |
+| 与上次提交对比 | +25 / -16 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
@@ -58,40 +58,40 @@
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
 | `geosite-category-ads-all.srs` | 8244 B | 910 |
-| `adblocksingboxlite.srs` | 43987 B | 5530 |
+| `adblocksingboxlite.srs` | 44073 B | 5541 |
 | `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
 
 </details>
 
-与上次相比 **移除 68 条**（前 10 条，完整见明细文件）：
+与上次相比 **移除 16 条**（前 10 条，完整见明细文件）：
 
 ```
-domain_suffix	43366.cn
-domain_suffix	5166.info
-domain_suffix	ad-cmp.hismarttv.com
-domain_suffix	ad-ggtg-api.37.com.cn
-domain_suffix	ad.data.peasun.net
-domain_suffix	ad.jiemoselect.com
-domain_suffix	ad.open.api.jihuoniao.com
-domain_suffix	ad.xhey.top
-domain_suffix	adimage.bwton.com.w.kunluncan.com
-domain_suffix	adsmis.duxiaoman.com
+domain_suffix	123.ywxww.net
+domain_suffix	4fizjoslp.shop
+domain_suffix	7xi9g1.com1.z0.glb.clouddn.com
+domain_suffix	api-gps-na.hismarttv.com
+domain_suffix	auth-launcher-jp.hismarttv.com
+domain_suffix	btrace.ysp.cctv.cn
+domain_suffix	dgrj.com.cn
+domain_suffix	disk.accord1key.cn
+domain_suffix	down.54nb.com
+domain_suffix	down.qqfarmer.com.cn
 ```
 
-与上次相比 **新增 17 条**（前 10 条）：
+与上次相比 **新增 25 条**（前 10 条）：
 
 ```
-domain	rtlog3-applog.fqnovel.com
-domain_suffix	2kij3uhj3.cyou
-domain_suffix	adpublish.ydstatic.com
-domain_suffix	analytic.kenhub.cn
-domain_suffix	apm.volccdn.com
-domain_suffix	apmplus.volces.com
-domain_suffix	cc.m.jd.com
-domain_suffix	fishhd.cn
-domain_suffix	hm.cname.q3fa0.cn
-domain_suffix	hmcdns.5zw6y.com
+domain_suffix	adx-drru.op.dbankcloud.com
+domain_suffix	analytics.xdiarys.com
+domain_suffix	analytics2.xdiarys.com
+domain_suffix	aoqinglv.cn
+domain_suffix	api-ad-adapter-mb.wps.com
+domain_suffix	co-domaincfg.vivoglobal.com
+domain_suffix	co-stsdk.vivoglobal.com
+domain_suffix	co-timesync.vivoglobal.com
+domain_suffix	co-vcode-or.vivoglobal.com
+domain_suffix	darm.cn
 ```
 
 ### ai
