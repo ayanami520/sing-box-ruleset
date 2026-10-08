@@ -7,7 +7,7 @@
 
 | 规则集 | 上游 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 4 | 51705 | 6474 | 308 | 56 | 6110 | +25 / -16 |
+| `ads` | 4 | 51921 | 6488 | 308 | 56 | 6124 | +26 / -12 |
 | `ai` | 1 | 2053 | 188 | 0 | 0 | 188 | = 无变化 |
 | `direct-domain` | 13 | 40009 | 9897 | 456 | 2588 | 6853 | = 无变化 |
 | `direct-ip` | 1 | 34185 | 8045 | 0 | 0 | 8045 | = 无变化 |
@@ -23,7 +23,7 @@
 
 | 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 142 | 5968 | 0 | 0 | 0 | 0 | ✅ |
+| `ads` | 142 | 5982 | 0 | 0 | 0 | 0 | ✅ |
 | `ai` | 30 | 158 | 0 | 0 | 0 | 0 | ✅ |
 | `direct-domain` | 520 | 6325 | 0 | 8 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8045 | 0 | ✅ |
@@ -46,11 +46,11 @@
 | 项 | 值 |
 |---|---|
 | 上游数 | 4 |
-| 产物 | `dist/ads.srs` — 51705 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 6474 / 6166 / 6110 |
+| 产物 | `dist/ads.srs` — 51921 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 6488 / 6180 / 6124 |
 | 删除: 上游重复 / 被覆盖 | 308 / 56 |
-| 匹配器 | domain=142, domain_suffix=5968, domain_keyword=0, domain_regex=0, ip_cidr=0 |
-| 与上次提交对比 | +25 / -16 |
+| 匹配器 | domain=142, domain_suffix=5982, domain_keyword=0, domain_regex=0, ip_cidr=0 |
+| 与上次提交对比 | +26 / -12 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
@@ -58,40 +58,40 @@
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
 | `geosite-category-ads-all.srs` | 8244 B | 910 |
-| `adblocksingboxlite.srs` | 44073 B | 5541 |
+| `adblocksingboxlite.srs` | 44190 B | 5555 |
 | `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
 
 </details>
 
-与上次相比 **移除 16 条**（前 10 条，完整见明细文件）：
+与上次相比 **移除 12 条**（前 10 条，完整见明细文件）：
 
 ```
-domain_suffix	123.ywxww.net
-domain_suffix	4fizjoslp.shop
+domain_suffix	0x2beace.com
+domain_suffix	126.cn
+domain_suffix	canjearppuntos.click
+domain_suffix	cn-feed-whatsapp.com.cn
+domain_suffix	cn-gui-whatsapp.com.cn
+domain_suffix	cn-peer-whatsapp.com.cn
+domain_suffix	cn-ping-whatsapp.com.cn
+domain_suffix	cstaticdun.126.net
+domain_suffix	furniture-store.shop
+domain_suffix	mmda-mayhulika-ph.com
+```
+
+与上次相比 **新增 26 条**（前 10 条）：
+
+```
 domain_suffix	7xi9g1.com1.z0.glb.clouddn.com
-domain_suffix	api-gps-na.hismarttv.com
-domain_suffix	auth-launcher-jp.hismarttv.com
-domain_suffix	btrace.ysp.cctv.cn
-domain_suffix	dgrj.com.cn
-domain_suffix	disk.accord1key.cn
-domain_suffix	down.54nb.com
-domain_suffix	down.qqfarmer.com.cn
-```
-
-与上次相比 **新增 25 条**（前 10 条）：
-
-```
-domain_suffix	adx-drru.op.dbankcloud.com
-domain_suffix	analytics.xdiarys.com
-domain_suffix	analytics2.xdiarys.com
-domain_suffix	aoqinglv.cn
-domain_suffix	api-ad-adapter-mb.wps.com
-domain_suffix	co-domaincfg.vivoglobal.com
-domain_suffix	co-stsdk.vivoglobal.com
-domain_suffix	co-timesync.vivoglobal.com
-domain_suffix	co-vcode-or.vivoglobal.com
-domain_suffix	darm.cn
+domain_suffix	8ieu7ue.cyou
+domain_suffix	adserver.yaboo.com
+domain_suffix	adsmis.duxiaoman.com
+domain_suffix	adwbs.ximalaya.com
+domain_suffix	api-gps-em.hismarttv.com
+domain_suffix	canjepuntostotal.click
+domain_suffix	canjepuntosvip.click
+domain_suffix	changyan.sohu.com
+domain_suffix	co-cota.vivoglobal.com
 ```
 
 ### ai
@@ -130,7 +130,7 @@ domain_suffix	darm.cn
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-cn.srs` | 56145 B | 9303 |
+| `geosite-cn.srs` | 56144 B | 9303 |
 | `geosite-category-pt.srs` | 1160 B | 126 |
 | `geosite-category-game-platforms-download@cn.srs` | 431 B | 24 |
 | `geosite-115.srs` | 172 B | 14 |
