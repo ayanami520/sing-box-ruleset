@@ -7,7 +7,7 @@
 
 | 规则集 | 上游 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 4 | 51921 | 6488 | 308 | 56 | 6124 | +26 / -12 |
+| `ads` | 4 | 70720 | 9270 | 308 | 56 | 8906 | +2800 / -18 |
 | `ai` | 1 | 2053 | 188 | 0 | 0 | 188 | = 无变化 |
 | `direct-domain` | 13 | 40009 | 9897 | 456 | 2588 | 6853 | = 无变化 |
 | `direct-ip` | 1 | 34185 | 8045 | 0 | 0 | 8045 | = 无变化 |
@@ -23,7 +23,7 @@
 
 | 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 142 | 5982 | 0 | 0 | 0 | 0 | ✅ |
+| `ads` | 138 | 8768 | 0 | 0 | 0 | 0 | ✅ |
 | `ai` | 30 | 158 | 0 | 0 | 0 | 0 | ✅ |
 | `direct-domain` | 520 | 6325 | 0 | 8 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8045 | 0 | ✅ |
@@ -46,52 +46,52 @@
 | 项 | 值 |
 |---|---|
 | 上游数 | 4 |
-| 产物 | `dist/ads.srs` — 51921 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 6488 / 6180 / 6124 |
+| 产物 | `dist/ads.srs` — 70720 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 9270 / 8962 / 8906 |
 | 删除: 上游重复 / 被覆盖 | 308 / 56 |
-| 匹配器 | domain=142, domain_suffix=5982, domain_keyword=0, domain_regex=0, ip_cidr=0 |
-| 与上次提交对比 | +26 / -12 |
+| 匹配器 | domain=138, domain_suffix=8768, domain_keyword=0, domain_regex=0, ip_cidr=0 |
+| 与上次提交对比 | +2800 / -18 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-category-ads-all.srs` | 8244 B | 910 |
-| `adblocksingboxlite.srs` | 44190 B | 5555 |
+| `geosite-category-ads-all.srs` | 8126 B | 903 |
+| `adblocksingboxlite.srs` | 62593 B | 8344 |
 | `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
 
 </details>
 
-与上次相比 **移除 12 条**（前 10 条，完整见明细文件）：
+与上次相比 **移除 18 条**（前 10 条，完整见明细文件）：
 
 ```
-domain_suffix	0x2beace.com
-domain_suffix	126.cn
-domain_suffix	canjearppuntos.click
-domain_suffix	cn-feed-whatsapp.com.cn
-domain_suffix	cn-gui-whatsapp.com.cn
-domain_suffix	cn-peer-whatsapp.com.cn
-domain_suffix	cn-ping-whatsapp.com.cn
-domain_suffix	cstaticdun.126.net
-domain_suffix	furniture-store.shop
-domain_suffix	mmda-mayhulika-ph.com
+domain	copilot-telemetry-service.githubusercontent.com
+domain	copilot-telemetry.githubusercontent.com
+domain	incoming-telemetry.thunderbird.net
+domain	incoming.telemetry.mozilla.org
+domain_suffix	ads-i3.xhscdn.com.a.bdydns.com
+domain_suffix	adsclick.yx.js.cn
+domain_suffix	analysis.shixunsuda.com
+domain_suffix	cdn-new-ad.wtzw.com
+domain_suffix	collector.github.com
+domain_suffix	consultarenvio.click
 ```
 
-与上次相比 **新增 26 条**（前 10 条）：
+与上次相比 **新增 2800 条**（前 10 条）：
 
 ```
-domain_suffix	7xi9g1.com1.z0.glb.clouddn.com
-domain_suffix	8ieu7ue.cyou
-domain_suffix	adserver.yaboo.com
-domain_suffix	adsmis.duxiaoman.com
-domain_suffix	adwbs.ximalaya.com
-domain_suffix	api-gps-em.hismarttv.com
-domain_suffix	canjepuntostotal.click
-domain_suffix	canjepuntosvip.click
-domain_suffix	changyan.sohu.com
-domain_suffix	co-cota.vivoglobal.com
+domain_suffix	00k456wyh.com
+domain_suffix	011qt7cln.com
+domain_suffix	0171pjx5q.com
+domain_suffix	01anf08rf.com
+domain_suffix	02exl1ql2l.com
+domain_suffix	03in08p3r1.com
+domain_suffix	03mhpavj25.com
+domain_suffix	03mnj87wir.com
+domain_suffix	049bv1hdzn.com
+domain_suffix	063rpyn37z.com
 ```
 
 ### ai
@@ -130,7 +130,7 @@ domain_suffix	co-cota.vivoglobal.com
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-cn.srs` | 56144 B | 9303 |
+| `geosite-cn.srs` | 56146 B | 9303 |
 | `geosite-category-pt.srs` | 1160 B | 126 |
 | `geosite-category-game-platforms-download@cn.srs` | 431 B | 24 |
 | `geosite-115.srs` | 172 B | 14 |
