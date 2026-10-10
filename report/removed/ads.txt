@@ -4,7 +4,7 @@
 #   dup     = 上游之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/ads.txt (不提交, 随 CI artifact 上传)
-# 本次共 362 行 (dup=306, covered=56); 提交版上限 2000 行
+# 本次共 365 行 (dup=309, covered=56); 提交版上限 2000 行
 dup	domain	adblogger.vk.com
 dup	domain	adblogger.vk.ru
 dup	domain	ads.vk.com
@@ -59,6 +59,7 @@ dup	domain_suffix	ads.sina.com
 dup	domain_suffix	ads.sohu.com
 dup	domain_suffix	ads.uc.cn
 dup	domain_suffix	ads.union.jd.com
+dup	domain_suffix	ads.unitychina.cn
 dup	domain_suffix	adscdn.baidu.com
 dup	domain_suffix	adsclick.qq.com
 dup	domain_suffix	adse.wsa.ximalaya.com
@@ -171,6 +172,7 @@ dup	domain_suffix	googlesyndication.com
 dup	domain_suffix	googletagmanager-cn.com
 dup	domain_suffix	googletagmanager.com
 dup	domain_suffix	googletagservices-cn.com
+dup	domain_suffix	googletraveladservices-cn.com
 dup	domain_suffix	googletraveladservices.com
 dup	domain_suffix	googlevads-cn.com
 dup	domain_suffix	graph-fallback.instagram.com
@@ -276,6 +278,7 @@ dup	domain_suffix	shuzilm.cn
 dup	domain_suffix	sigmob.com
 dup	domain_suffix	slog.sina.com.cn
 dup	domain_suffix	sngmta.qq.com
+dup	domain_suffix	splash-ads.unitychina.cn
 dup	domain_suffix	stat.m.jd.com
 dup	domain_suffix	stats.music.xiaomi.com
 dup	domain_suffix	syh.zybang.com

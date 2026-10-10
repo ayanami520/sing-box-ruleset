@@ -7,9 +7,9 @@
 
 | 规则集 | 上游 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 4 | 70720 | 9270 | 308 | 56 | 8906 | +2800 / -18 |
-| `ai` | 1 | 2053 | 188 | 0 | 0 | 188 | = 无变化 |
-| `direct-domain` | 13 | 40009 | 9897 | 456 | 2588 | 6853 | = 无变化 |
+| `ads` | 4 | 70719 | 9278 | 311 | 56 | 8911 | +52 / -47 |
+| `ai` | 1 | 2069 | 189 | 0 | 0 | 189 | +1 / -0 |
+| `direct-domain` | 13 | 40009 | 9898 | 456 | 2589 | 6853 | = 无变化 |
 | `direct-ip` | 1 | 34185 | 8045 | 0 | 0 | 8045 | = 无变化 |
 | `google` | 1 | 7091 | 938 | 0 | 76 | 862 | = 无变化 |
 | `tailscale` | 1 | 80 | 3 | 0 | 0 | 3 | = 无变化 |
@@ -23,8 +23,8 @@
 
 | 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 138 | 8768 | 0 | 0 | 0 | 0 | ✅ |
-| `ai` | 30 | 158 | 0 | 0 | 0 | 0 | ✅ |
+| `ads` | 138 | 8773 | 0 | 0 | 0 | 0 | ✅ |
+| `ai` | 30 | 159 | 0 | 0 | 0 | 0 | ✅ |
 | `direct-domain` | 520 | 6325 | 0 | 8 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8045 | 0 | ✅ |
 | `google` | 31 | 829 | 0 | 2 | 0 | 0 | ✅ |
@@ -46,52 +46,52 @@
 | 项 | 值 |
 |---|---|
 | 上游数 | 4 |
-| 产物 | `dist/ads.srs` — 70720 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 9270 / 8962 / 8906 |
-| 删除: 上游重复 / 被覆盖 | 308 / 56 |
-| 匹配器 | domain=138, domain_suffix=8768, domain_keyword=0, domain_regex=0, ip_cidr=0 |
-| 与上次提交对比 | +2800 / -18 |
+| 产物 | `dist/ads.srs` — 70719 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 9278 / 8967 / 8911 |
+| 删除: 上游重复 / 被覆盖 | 311 / 56 |
+| 匹配器 | domain=138, domain_suffix=8773, domain_keyword=0, domain_regex=0, ip_cidr=0 |
+| 与上次提交对比 | +52 / -47 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-category-ads-all.srs` | 8126 B | 903 |
-| `adblocksingboxlite.srs` | 62593 B | 8344 |
+| `geosite-category-ads-all.srs` | 8121 B | 902 |
+| `adblocksingboxlite.srs` | 62629 B | 8353 |
 | `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
 
 </details>
 
-与上次相比 **移除 18 条**（前 10 条，完整见明细文件）：
+与上次相比 **移除 47 条**（前 10 条，完整见明细文件）：
 
 ```
-domain	copilot-telemetry-service.githubusercontent.com
-domain	copilot-telemetry.githubusercontent.com
-domain	incoming-telemetry.thunderbird.net
-domain	incoming.telemetry.mozilla.org
-domain_suffix	ads-i3.xhscdn.com.a.bdydns.com
-domain_suffix	adsclick.yx.js.cn
-domain_suffix	analysis.shixunsuda.com
-domain_suffix	cdn-new-ad.wtzw.com
-domain_suffix	collector.github.com
-domain_suffix	consultarenvio.click
+domain_suffix	51experience.cn
+domain_suffix	745c.cn
+domain_suffix	7xi9g1.com1.z0.glb.clouddn.com
+domain_suffix	aixuntupian.oss-cn-hongkong.aliyuncs.com
+domain_suffix	analytics2.xdiarys.com
+domain_suffix	bbt114.cn
+domain_suffix	cmmob.cn
+domain_suffix	cxad.cn
+domain_suffix	darren01.oss-cn-beijing.aliyuncs.com
+domain_suffix	dashantechan.cn
 ```
 
-与上次相比 **新增 2800 条**（前 10 条）：
+与上次相比 **新增 52 条**（前 10 条）：
 
 ```
-domain_suffix	00k456wyh.com
-domain_suffix	011qt7cln.com
-domain_suffix	0171pjx5q.com
-domain_suffix	01anf08rf.com
-domain_suffix	02exl1ql2l.com
-domain_suffix	03in08p3r1.com
-domain_suffix	03mhpavj25.com
-domain_suffix	03mnj87wir.com
-domain_suffix	049bv1hdzn.com
-domain_suffix	063rpyn37z.com
+domain_suffix	0tqxca0k35.com
+domain_suffix	1jlbewhnp5.com
+domain_suffix	3wrv1uzotr.com
+domain_suffix	42mu2c4akt.com
+domain_suffix	6cq8d7xyk.com
+domain_suffix	6k1alauto.com
+domain_suffix	api-flow.flyme.cn
+domain_suffix	appstore.pandora.xiaomi.com
+domain_suffix	bdogfb.com
+domain_suffix	bpifiil.com
 ```
 
 ### ai
@@ -99,20 +99,26 @@ domain_suffix	063rpyn37z.com
 | 项 | 值 |
 |---|---|
 | 上游数 | 1 |
-| 产物 | `dist/ai.srs` — 2053 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 188 / 188 / 188 |
+| 产物 | `dist/ai.srs` — 2069 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 189 / 189 / 189 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
-| 匹配器 | domain=30, domain_suffix=158, domain_keyword=0, domain_regex=0, ip_cidr=0 |
-| 与上次提交对比 | = 无变化 |
+| 匹配器 | domain=30, domain_suffix=159, domain_keyword=0, domain_regex=0, ip_cidr=0 |
+| 与上次提交对比 | +1 / -0 |
 | 明细 | [`report/removed/ai.txt`](removed/ai.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-category-ai-!cn.srs` | 2053 B | 188 |
+| `geosite-category-ai-!cn.srs` | 2069 B | 189 |
 
 </details>
+
+与上次相比 **新增 1 条**（前 10 条）：
+
+```
+domain_suffix	syntx.ai
+```
 
 ### direct-domain
 
@@ -120,8 +126,8 @@ domain_suffix	063rpyn37z.com
 |---|---|
 | 上游数 | 13 |
 | 产物 | `dist/direct-domain.srs` — 40009 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 9897 / 9441 / 6853 |
-| 删除: 上游重复 / 被覆盖 | 456 / 2588 |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 9898 / 9442 / 6853 |
+| 删除: 上游重复 / 被覆盖 | 456 / 2589 |
 | 匹配器 | domain=520, domain_suffix=6325, domain_keyword=0, domain_regex=8, ip_cidr=0 |
 | 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/direct-domain.txt`](removed/direct-domain.txt) |
@@ -130,7 +136,7 @@ domain_suffix	063rpyn37z.com
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-cn.srs` | 56146 B | 9303 |
+| `geosite-cn.srs` | 56189 B | 9304 |
 | `geosite-category-pt.srs` | 1160 B | 126 |
 | `geosite-category-game-platforms-download@cn.srs` | 431 B | 24 |
 | `geosite-115.srs` | 172 B | 14 |
