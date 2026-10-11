@@ -1,0 +1,20 @@
+# 美国分组 —— 本地手写条目
+#
+# 本文件与 sources/us.txt 的上游合并后, 一起编译进 dist/us.srs。
+# 路由器侧动作 (config.json 里已有的第 9 条):
+#   {"action":"route","rule_set":["us"],"outbound":"US"}
+#
+# 格式 (详见 README「本地手写分组」):
+#   裸值 = domain_suffix  |  suffix:  |  full:  |  keyword:  |  regex:  |  ip:
+#   只支持整行 # 注释, 不支持行尾注释; 值里出现空白会直接报错
+
+# buondua: 一批镜像站共用这个字符串, 用关键词覆盖
+keyword:buondua
+
+# JavDB: 主站 + 静态资源
+javdb.com
+jdbstatic.com
+
+# Hanime: 在 JP 节点上被拒, 必须走 US
+hanime1.me
+hanimeone.me

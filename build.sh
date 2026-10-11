@@ -3,6 +3,7 @@
 # 合并 + 去重 + 覆盖过滤 构建器
 #
 #   sources/<name>.txt   (每行一个上游地址, # 开头为注释)
+#   local/<name>.txt     (每行一条手写规则, 与同名上游合并; 见下方「本地条目」)
 #        |                 支持 .srs(二进制) 与 .json(源格式) 混用
 #        v
 #   dist/<name>.srs        成品 (dist/ 内只会有 .srs)
@@ -13,9 +14,20 @@
 # 依赖: curl, jq, sing-box, awk, grep, sed, sort, wc, cut, tr
 # 可在 GitHub Actions (ubuntu) 与 OpenWrt (ash/busybox) 上运行。
 #
+# 本地条目 (local/<name>.txt) —— 手写规则, 不依赖任何上游:
+#   example.com             domain_suffix (裸值; 开头的 "*." 与 "." 会被去掉)
+#   suffix:example.com      domain_suffix
+#   full:www.example.com    domain        (完全匹配)
+#   keyword:302kodo         domain_keyword
+#   regex:^a[^.]*302.*$     domain_regex
+#   ip:1.2.3.0/24           ip_cidr
+#   # 开头为注释; 不支持行尾注释 (值里出现空白会直接报错)
+#   local/ 可以单独成组: 没有同名 sources/<name>.txt 也能构建。
+#
 # 环境变量:
 #   SING_BOX          sing-box 可执行文件   (默认 sing-box)
-#   SRC_DIR           输入目录              (默认 sources)
+#   SRC_DIR           上游清单目录          (默认 sources)
+#   LOCAL_DIR         本地条目目录          (默认 local)
 #   OUT_DIR           输出目录              (默认 dist)
 #   WORK_DIR          临时目录              (默认 .build)
 #   REPORT_DIR        报告目录              (默认 report)
@@ -30,6 +42,7 @@ set -eu
 
 SING_BOX="${SING_BOX:-sing-box}"
 SRC_DIR="${SRC_DIR:-sources}"
+LOCAL_DIR="${LOCAL_DIR:-local}"
 OUT_DIR="${OUT_DIR:-dist}"
 WORK_DIR="${WORK_DIR:-.build}"
 REPORT_DIR="${REPORT_DIR:-report}"
@@ -69,7 +82,7 @@ command -v curl >/dev/null 2>&1 || die "缺少 curl"
 command -v jq   >/dev/null 2>&1 || die "缺少 jq"
 command -v awk  >/dev/null 2>&1 || die "缺少 awk"
 command -v "$SING_BOX" >/dev/null 2>&1 || die "缺少 sing-box ($SING_BOX)"
-[ -d "$SRC_DIR" ] || die "找不到输入目录 $SRC_DIR"
+[ -d "$SRC_DIR" ] || [ -d "$LOCAL_DIR" ] || die "找不到输入目录 $SRC_DIR 或 $LOCAL_DIR"
 
 fetch() {
 	# fetch <url> <输出文件>
@@ -86,14 +99,19 @@ shortname() {
 }
 
 # 把"源格式 JSON"摊平成 "字段<TAB>值" 行, 去重 + 排序
-# (只取数组型字段; port/invert/mode 这类标量字段不会出现也不会报错)
+#   数组字段逐项展开; 标量值按 1 条计 —— 因为 rule-set merge 会把【单元素数组压成标量】,
+#   两种形态必须等价, 否则"原始 - 去重 = 重复"会算出根本不存在的重复条目。
+#   (布尔/对象这类非字符串标量忽略: invert / mode 之类既不参与统计也不参与覆盖过滤)
 # 摊平后是稳定的文本, 因此可以逐行 diff —— 这正是"增量日志"的基础。
 flatten() {
 	jq -r '
 		[ (.rules // [])[]
 		  | to_entries[]
-		  | select(.value | type == "array")
-		  | .key as $k | .value[] | "\($k)\t\(. | tostring)"
+		  | .key as $k
+		  | .value
+		  | if type == "array" then .[] else . end
+		  | select(type == "string" or type == "number")
+		  | "\($k)\t\(. | tostring)"
 		] | unique | sort | .[]
 	' "$1"
 }
@@ -154,16 +172,35 @@ WARNS="$RPT/warns.md"
 WARN_COUNT=0
 total=0
 
-for list in "$SRC_DIR"/*.txt; do
-	[ -e "$list" ] || die "$SRC_DIR 下没有找到任何 *.txt"
-	name=$(basename "$list" .txt)
-	log "构建 $name"
+# 构建目标 = sources/*.txt 与 local/*.txt 的并集 (分组名 = 文件名去掉 .txt)
+# 排序保证构建顺序稳定 => 报告内容稳定 => 上游没变时不会产生多余提交
+groups=$(
+	for f in "$SRC_DIR"/*.txt "$LOCAL_DIR"/*.txt; do
+		[ -e "$f" ] || continue
+		basename "$f" .txt
+	done | sort -u
+)
+[ -n "$groups" ] || die "$SRC_DIR 与 $LOCAL_DIR 下都没有找到任何 *.txt"
+
+# shellcheck disable=SC2086
+for name in $groups; do
+	# 同名分组: sources 是上游清单, local 是手写条目, 两者可同时存在
+	src="$SRC_DIR/$name.txt"
+	lcl="$LOCAL_DIR/$name.txt"
+	[ -e "$src" ] || src=""
+	[ -e "$lcl" ] || lcl=""
+	only_local=""
+	if [ -z "$src" ]; then only_local=" (仅本地条目)"; fi
+	log "构建 $name$only_local"
 
 	# ---- 1) 逐个上游下载, 统一得到"源格式 JSON", 并摊平成条目表 ----
 	count=0
 	inputs=""
 	flats=""
 	: > "$RPT/src.$name.md"
+	# 只有 local 条目的分组没有上游可读, 指向 /dev/null 让循环空转
+	urllist="$src"
+	[ -n "$urllist" ] || urllist=/dev/null
 	while IFS= read -r url || [ -n "$url" ]; do
 		# 剥离可能的 CR (Windows 行尾), 否则 curl 报 "URL rejected"
 		url=$(printf '%s' "$url" | tr -d '\r')
@@ -204,14 +241,105 @@ for list in "$SRC_DIR"/*.txt; do
 
 		inputs="$inputs $json"
 		flats="$flats $flat"
-	done < "$list"
+	done < "$urllist"
 
-	[ "$count" -gt 0 ] || die "[$name] 没有任何有效上游地址"
+	# ---- 1b) 本地手写条目 (local/<name>.txt) ----
+	# 与同名上游合并成同一个规则集; 不合法时整组失败, 不要"跳过坏行"静默降级
+	local_n=0
+	local_json=""
+	if [ -n "$lcl" ]; then
+		ltsv="$PARTS/$name.local.tsv"
+		lwarn="$PARTS/$name.local.warn"
+		: > "$lwarn"
+		awk -v src="$lcl" -v warnf="$lwarn" '
+			function bad(msg) {
+				printf "%s:%d: %s\n", src, NR, msg > "/dev/stderr"
+				bad_count++
+			}
+			{
+				line = $0
+				sub(/\r$/, "", line)
+				sub(/^[ \t]+/, "", line)
+				sub(/[ \t]+$/, "", line)
+				if (line == "" || substr(line, 1, 1) == "#") next
+				if (line ~ /[ \t]/) {
+					bad("值里出现空白 (不支持行尾注释, 说明请单独写成 # 注释行)")
+					next
+				}
+				field = "domain_suffix"
+				value = line
+				pos = index(line, ":")
+				if (pos > 0) {
+					pfx = tolower(substr(line, 1, pos - 1))
+					value = substr(line, pos + 1)
+					if (pfx == "suffix") field = "domain_suffix"
+					else if (pfx == "full") field = "domain"
+					else if (pfx == "keyword") field = "domain_keyword"
+					else if (pfx == "regex") field = "domain_regex"
+					else if (pfx == "ip") field = "ip_cidr"
+					else {
+						bad("未知前缀 \"" pfx ":\" (可用 suffix/full/keyword/regex/ip)")
+						next
+					}
+				}
+				if (value == "") { bad("值为空"); next }
+				if (field == "domain_suffix") {
+					sub(/^\*\./, "", value)
+					sub(/^\./, "", value)
+				}
+				if (field == "domain" || field == "domain_suffix" || field == "domain_keyword") {
+					if (value ~ /[\/:]/) { bad("域名里出现 / 或 : (是不是想写 ip: ?)"); next }
+					if (value !~ /\./) printf "%s:%d: \"%s\" 不含 \".\", 会匹配得非常宽\n", src, NR, value > warnf
+					if (value ~ /[A-Z]/) printf "%s:%d: \"%s\" 含大写字母 (已按原样写入, 建议全小写)\n", src, NR, value > warnf
+				}
+				if (field == "ip_cidr" && value !~ /^[0-9a-fA-F:.]+(\/[0-9]{1,3})?$/) {
+					bad("不是合法的 IP 或 CIDR")
+					next
+				}
+				print field "\t" value
+			}
+			END { if (bad_count > 0) exit 1 }
+		' "$lcl" > "$ltsv" || die "[$name] 本地条目有误 (见上方 文件:行号): $lcl"
+
+		local_n=$(wc -l < "$ltsv" | tr -d ' ')
+		if [ -s "$lwarn" ]; then
+			while IFS= read -r w; do
+				printf '%s\n' "      ! $w"
+				printf '%s\n' "      ! $w" >> "$BUILD_LOG"
+			done < "$lwarn"
+		fi
+		if [ "$local_n" -gt 0 ]; then
+			local_json="$PARTS/$name.local.json"
+			jq -R -s '
+				split("\n")
+				| map(select(length > 0) | split("\t"))
+				| group_by(.[0])
+				| map({ key: .[0][0], value: ([ .[][1] ] | unique | sort) })
+				| from_entries as $g
+				| { version: 1, rules: [ ($g | to_entries[] | { (.key): .value })] }
+			' "$ltsv" > "$local_json" || die "[$name] 本地条目转 JSON 失败"
+			inputs="$inputs $local_json"
+			# 与上游条目一起参与"重复"统计: 本地与上游写重了也能在明细里看到
+			flats="$flats $ltsv"
+			printf '| `local/%s.txt` (本地手写) | - | %s |\n' "$name" "$local_n" >> "$RPT/src.$name.md"
+			log "      本地条目 local/$name.txt  $local_n 条"
+		fi
+	fi
+
+	[ "$count" -gt 0 ] || [ "$local_n" -gt 0 ] || die "[$name] 既没有有效上游地址, 也没有本地条目"
+	# 参与合并的输入个数: 上游数 + (有本地条目时的 1)
+	n_inputs=$count
+	if [ "$local_n" -gt 0 ]; then n_inputs=$((count + 1)); fi
 
 	# ---- 2) 合并 (只有一个上游时直接用) ----
 	merged="$PARTS/$name.merged.json"
-	if [ "$count" -eq 1 ]; then
-		cp "$PARTS/$name.1.json" "$merged"
+	if [ "$n_inputs" -eq 1 ]; then
+		if [ "$count" -eq 1 ]; then
+			cp "$PARTS/$name.1.json" "$merged"
+		else
+			# 只有本地条目: 直接用
+			cp "$local_json" "$merged"
+		fi
 	else
 		# merge 成功时会把输出路径打到 stdout, 所以重定向到日志, 失败时才回显
 		# shellcheck disable=SC2086
@@ -338,7 +466,11 @@ for list in "$SRC_DIR"/*.txt; do
 	fi
 
 	out="$FINAL/$name.srs"
-	if ! "$SING_BOX" rule-set compile "$kept_json" -o "$out"; then
+	if ! "$SING_BOX" rule-set compile "$kept_json" -o "$out" > "$PARTS/$name.compile.log" 2>&1; then
+		# 本地条目写错(或者正则不合法)时, sing-box 的报错是唯一线索, 必须打出来
+		cat "$PARTS/$name.compile.log" >&2
+		printf '%s\n' "--- 编译输入 JSON 末尾 15 行 ---" >&2
+		tail -n 15 "$kept_json" >&2
 		die "[$name] compile 失败"
 	fi
 
@@ -351,7 +483,7 @@ for list in "$SRC_DIR"/*.txt; do
 	[ "$rules" -ge 1 ] || die "[$name] 规则条目为 0, 已中止"
 	[ "$kept_total" -ge 1 ] || die "[$name] 实际规则条目为 0 (空规则集), 已中止"
 
-	log "  -> dist/$name.srs  ${size}B  规则=$rules  条目=$kept_total(原始 $raw_total / 去重 $norm_total / 覆盖删除 $covered)  上游数=$count"
+	log "  -> dist/$name.srs  ${size}B  规则=$rules  条目=$kept_total(原始 $raw_total / 去重 $norm_total / 覆盖删除 $covered)  上游数=$count  本地=$local_n"
 
 	# ---- 7) 与上次提交的产物对比 (增量) ----
 	prev="$OUT_DIR/$name.srs"
@@ -399,7 +531,7 @@ for list in "$SRC_DIR"/*.txt; do
 		printf '# %s —— 本次构建删除明细\n' "$name"
 		printf '# 每次构建【覆盖写, 不追加】 => 本文件的 git diff 就是"增量变更"\n'
 		printf '# 列: 原因<TAB>字段<TAB>值[<TAB>覆盖它的后缀]\n'
-		printf '#   dup     = 上游之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列\n'
+		printf '#   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列\n'
 		printf '#   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变\n'
 		printf '# 完整未截断清单: report/.full/%s.txt (不提交, 随 CI artifact 上传)\n' "$name"
 		printf '# 本次共 %s 行 (dup=%s, covered=%s); 提交版上限 %s 行\n' \
@@ -434,8 +566,8 @@ for list in "$SRC_DIR"/*.txt; do
 	fi
 
 	# ---- 10) 汇总表 / 明细 / 体检表 ----
-	printf '| `%s` | %s | %s | %s | %s | %s | %s | %s |\n' \
-		"$name" "$count" "$size" "$raw_total" "$dup_removed" "$covered" "$kept_total" "$changesum" \
+	printf '| `%s` | %s | %s | %s | %s | %s | %s | %s | %s |\n' \
+		"$name" "$count" "$local_n" "$size" "$raw_total" "$dup_removed" "$covered" "$kept_total" "$changesum" \
 		>> "$SUMMARY"
 	printf '| `%s` | %s | %s | %s | %s | %s | %s | %s |\n' \
 		"$name" \
@@ -450,7 +582,7 @@ for list in "$SRC_DIR"/*.txt; do
 	{
 		printf '\n### %s\n\n' "$name"
 		printf '| 项 | 值 |\n|---|---|\n'
-		printf '| 上游数 | %s |\n' "$count"
+		printf '| 上游数 / 本地条目 | %s / %s |\n' "$count" "$local_n"
 		printf '| 产物 | `dist/%s.srs` — %s B |\n' "$name" "$size"
 		printf '| 条目: 原始 / 去重后 / 覆盖过滤后 | %s / %s / %s |\n' "$raw_total" "$norm_total" "$kept_total"
 		printf '| 删除: 上游重复 / 被覆盖 | %s / %s |\n' "$dup_removed" "$covered"
@@ -481,10 +613,10 @@ done
 	printf '> 由 `build.sh` 自动生成。**不含时间戳**：内容不变时不会产生提交。\n'
 	printf '> 删除明细见 `report/removed/*.txt`（未截断完整版在 `report/.full/`，不提交）；完整构建日志见 `report/build.log`。\n\n'
 	printf '## 总览\n\n'
-	printf '| 规则集 | 上游 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |\n'
-	printf '|---|---|---|---|---|---|---|---|\n'
+	printf '| 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |\n'
+	printf '|---|---|---|---|---|---|---|---|---|\n'
 	cat "$SUMMARY"
-	printf '\n- `原始条目` = 各上游条目直接相加（含重复）；`最终条目` 才是写进 `.srs` 的条数。\n'
+	printf '\n- `原始条目` = 各上游条目直接相加（`local/` 手写条目也算在内，含重复）；`最终条目` 才是写进 `.srs` 的条数。\n'
 	# 注意: 格式串不能以 "-" 开头 —— dash 的 printf 会把它当选项 (busybox 不会, 所以本地测不出来)
 	printf '%s\n' '- `覆盖删除` = 被更短的 `domain_suffix` 覆盖而剔除的条目（语义等价）。'
 	printf '%s\n' '- `与上次` = 相对**上次提交的 `dist/*.srs`** 的新增/移除条数（`.srs` 是二进制，这里是它唯一的人类可读 diff）。'

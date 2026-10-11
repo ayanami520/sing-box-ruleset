@@ -11,6 +11,8 @@
 sources/          # 声明式输入：每个 .txt = 一个成品规则集，一行一个上游 URL
   direct-domain.txt   direct-ip.txt   ads.txt   ai.txt
   google.txt          tailscale.txt   us.txt
+local/            # 手写条目：每个 .txt = 同名分组的补充规则（与上游合并后一起编译）
+  us.txt
 build.sh          # 构建脚本（POSIX sh，CI 与路由器都能跑）
 scripts/
   apply-picks.sh  # 把 picks/picks.json 写进 sources/*.txt 的自动块
@@ -40,6 +42,8 @@ report/           # 构建报告（由 CI 自动提交，见下文）
 | `dist/tailscale.srs` | `geosite-tailscale` | `direct`（否则 Tailscale 打洞端点会变成节点 IP）|
 | `dist/us.srs` | lyc8503: `18comic` | US 分组（JP 节点被 Cloudflare 拒）|
 
+> 每个产物都可以再叠加 `local/<name>.txt` 的手写条目（见「本地手写分组」一节）。
+
 ## ① 新增分类（手工方式）
 
 1. 在 `sources/` 下新建 `xxx.txt`，写入上游地址（一行一个，`#` 注释）
@@ -47,7 +51,40 @@ report/           # 构建报告（由 CI 自动提交，见下文）
 3. CI 构建后会把 `dist/xxx.srs` 提交回来
 4. 在路由器上引用它（首次需要加一条规则集）
 
-## ② 浏览器收集器（推荐方式）
+## ② 本地手写分组（`local/`）
+
+有些规则**上游找不到**（自己踩坑发现的域名、某个站点的镜像站）。这类条目写进 `local/<name>.txt`，
+会与同名 `sources/<name>.txt` 的上游**合并进同一个产物**：
+
+```
+local/us.txt  ─┐
+               ├─► dist/us.srs   （合并 + 去重 + 覆盖过滤 + 编译）
+sources/us.txt ┘
+```
+
+格式（一行一条，`#` 开头是注释，**不支持行尾注释**）：
+
+| 写法 | 变成 | 说明 |
+|---|---|---|
+| `example.com` | `domain_suffix` | 裸值就是后缀匹配（`www.example.com` 也会命中）|
+| `suffix:example.com` | `domain_suffix` | 同上，写出来更明确 |
+| `full:www.example.com` | `domain` | 完全匹配（只命中这一个域名）|
+| `keyword:302kodo` | `domain_keyword` | 子串匹配；**线性扫描，别写多**（超过阈值会告警）|
+| `regex:^a[^.]*302.*$` | `domain_regex` | 正则；**最慢**，非必要不用 |
+| `ip:1.2.3.0/24` | `ip_cidr` | IP 段（⚠️ 与域名**不要**混在同一分组，见「注意事项」1）|
+
+细节：
+
+- 裸值开头的 `*.` 与 `.` 会自动去掉（`*.example.com`、`.example.com` 都按 `example.com` 处理）
+- 值里出现空白（例如想写行尾注释）**直接报错**：宁可构建失败，也不要悄悄少一条规则
+- 未知前缀（`foo:bar`）、非法 `ip:` 同样报错，并给出 `文件:行号`
+- `local/` 可以**单独成组**：没有同名 `sources/<name>.txt` 也能构建（报告里会标注「仅本地条目」）
+- 手写条目与上游重复时，会出现在 `report/removed/<name>.txt` 的 `dup` 明细里
+
+> 与 `sources/` 的分工：`apply-picks.sh` **只维护 `sources/*.txt` 里的自动块**，
+> `local/` 永远是手写区，不会被任何脚本改写。
+
+## ③ 浏览器收集器（推荐方式）
 
 装 `tools/ruleset-picker.user.js` 到 Tampermonkey 后：
 
@@ -152,6 +189,9 @@ sh ./scripts/apply-picks.sh && GH_PROXY=https://gh-proxy.com/ sh ./build.sh
 
 依赖：`curl`、`jq`、`sing-box`（版本建议与路由器一致）。
 
+目录可用环境变量改：`SRC_DIR`（默认 `sources`）、`LOCAL_DIR`（默认 `local`）、`OUT_DIR`（默认 `dist`）、
+`REPORT_DIR`（默认 `report`）、`WORK_DIR`（默认 `.build`）。
+
 ## 自测（收集器回归）
 
 改 `tools/ruleset-picker.user.js` 之前 / 之后都跑一下：
@@ -180,7 +220,7 @@ node tools/picktest.js /path/to/旧版脚本.js               # 也可指定文�
 
 | 文件 | 提交 | 内容 |
 |---|---|---|
-| `report/report.md` | ✅ | 总览（原始 / 重复删除 / 覆盖删除 / 最终条目 / 与上次的增减）、匹配器体检、告警、各规则集明细 |
+| `report/report.md` | ✅ | 总览（上游数 / 本地条目 / 原始 / 重复删除 / 覆盖删除 / 最终条目 / 与上次的增减）、匹配器体检、告警、各规则集明细 |
 | `report/removed/<name>.txt` | ✅ | 删除明细：`dup`（上游之间重复）与 `covered`（被更短后缀覆盖），**每次覆盖写 ⇒ 这个文件的 `git diff` 就是增量** |
 | `report/.full/<name>.txt` | ❌ gitignore | 未截断的完整明细，随 CI artifact `build-report` 上传 |
 | `report/build.log` | ❌ gitignore | 完整构建日志；CI 里同时把报告与日志尾部打进 Step Summary |
@@ -191,6 +231,9 @@ node tools/picktest.js /path/to/旧版脚本.js               # 也可指定文�
   **不会产生空提交**（实测：连跑两次，`dist/*.srs` 指纹完全一致）。
 - `.srs` 是二进制 —— `report/removed/*.txt` 和报告里的「与上次」是它**唯一的人类可读 diff**。
 - 删除明细**只列值、不列重复次数**（同一值重复多次只占 1 行），总重复条数看报告「重复删除」列。
+- **统计口径**：`flatten` 把数组字段逐项展开、**标量值按 1 条计** —— `rule-set merge` 会把单元素数组
+  压成标量（`{"domain_keyword":["x"]}` → `"x"`），两种形态必须按同一条数统计，
+  否则「原始条目 − 去重后」会算出根本不存在的重复条目。
 - 构建失败时 `.build/` 与报告一起上传，便于排查。
 
 ### 阈值（环境变量）
@@ -274,6 +317,11 @@ direct-domain: 原始 9752 → 去重 9441 → 覆盖删除 2588 → 最终 6853
    lyc8503 / MetaCubeX 的 `.json` 都是 `{"rules":[...]}`，而 sing-box 的
    `compile` / `merge` 要求必须有 version（且 `rule-set upgrade` 对无 version 的文件
    同样报错）。`build.sh` 会自动补 `version: 1`。
+
+7. **`local/` 里的坏行会让构建失败（故意的）**
+   手写条目在编译前先做格式校验：未知前缀、值里带空格、非法 IP 都会报错并给出 `文件:行号`；
+   `sing-box compile` 自身的报错也会原样打印。**不做「跳过坏行」的静默降级** ——
+   少一条规则很难查，多一条错规则更危险。
 
 ## 致谢
 
