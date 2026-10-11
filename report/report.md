@@ -7,13 +7,13 @@
 
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
-| `ads` | 4 | 0 | 70765 | 9297 | 311 | 57 | 8929 | +29 / -12 |
+| `ads` | 4 | 0 | 70765 | 9297 | 311 | 57 | 8929 | = 无变化 |
 | `ai` | 1 | 0 | 2069 | 190 | 0 | 0 | 190 | = 无变化 |
 | `direct-domain` | 13 | 0 | 40009 | 9901 | 457 | 2589 | 6855 | = 无变化 |
 | `direct-ip` | 1 | 0 | 34185 | 8045 | 0 | 0 | 8045 | = 无变化 |
 | `google` | 1 | 0 | 7091 | 938 | 0 | 76 | 862 | = 无变化 |
 | `tailscale` | 1 | 0 | 80 | 3 | 0 | 0 | 3 | = 无变化 |
-| `us` | 1 | 5 | 690 | 56 | 0 | 0 | 56 | +5 / -0 |
+| `us` | 1 | 5 | 690 | 56 | 0 | 0 | 56 | = 无变化 |
 
 - `原始条目` = 各上游条目直接相加（`local/` 手写条目也算在内，含重复）；`最终条目` 才是写进 `.srs` 的条数。
 - `覆盖删除` = 被更短的 `domain_suffix` 覆盖而剔除的条目（语义等价）。
@@ -50,7 +50,7 @@
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 9297 / 8986 / 8929 |
 | 删除: 上游重复 / 被覆盖 | 311 / 57 |
 | 匹配器 | domain=137, domain_suffix=8791, domain_keyword=0, domain_regex=1, ip_cidr=0 |
-| 与上次提交对比 | +29 / -12 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
@@ -63,36 +63,6 @@
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
 
 </details>
-
-与上次相比 **移除 12 条**（前 10 条，完整见明细文件）：
-
-```
-domain	rtlog3-applog.fqnovel.com
-domain_suffix	124to81tc.com
-domain_suffix	ad.thsi.cn
-domain_suffix	dgrj.com.cn
-domain_suffix	postut.cn
-domain_suffix	r6.mo.baidu.com
-domain_suffix	rest-argus-ad.agoralab.co
-domain_suffix	sentry.dreambig.work
-domain_suffix	t7z.cupid.ptqy.gitv.tv
-domain_suffix	v95-aw-reading-ad.qznovelvod.com
-```
-
-与上次相比 **新增 29 条**（前 10 条）：
-
-```
-domain_suffix	0qry58i9es.com
-domain_suffix	126.cn
-domain_suffix	5166.info
-domain_suffix	7istqn6fh.com
-domain_suffix	7xi9g1.com1.z0.glb.clouddn.com
-domain_suffix	ad.51wnl-cq.com
-domain_suffix	agoodm.m.taobao.com
-domain_suffix	btrace.ysp.cctv.cn
-domain_suffix	dn-growing.qbox.me
-domain_suffix	gamebox.sec.miui.com
-```
 
 ### ai
 
@@ -215,7 +185,7 @@ domain_suffix	gamebox.sec.miui.com
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 56 / 56 / 56 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
 | 匹配器 | domain=0, domain_suffix=55, domain_keyword=1, domain_regex=0, ip_cidr=0 |
-| 与上次提交对比 | +5 / -0 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/us.txt`](removed/us.txt) |
 
 <details><summary>上游明细</summary>
@@ -226,13 +196,3 @@ domain_suffix	gamebox.sec.miui.com
 | `local/us.txt` (本地手写) | - | 5 |
 
 </details>
-
-与上次相比 **新增 5 条**（前 10 条）：
-
-```
-domain_keyword	buondua
-domain_suffix	hanime1.me
-domain_suffix	hanimeone.me
-domain_suffix	javdb.com
-domain_suffix	jdbstatic.com
-```
