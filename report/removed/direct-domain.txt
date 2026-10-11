@@ -1,10 +1,10 @@
 # direct-domain —— 本次构建删除明细
 # 每次构建【覆盖写, 不追加】 => 本文件的 git diff 就是"增量变更"
 # 列: 原因<TAB>字段<TAB>值[<TAB>覆盖它的后缀]
-#   dup     = 上游之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
+#   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/direct-domain.txt (不提交, 随 CI artifact 上传)
-# 本次共 3017 行 (dup=428, covered=2589); 提交版上限 2000 行
+# 本次共 3018 行 (dup=429, covered=2589); 提交版上限 2000 行
 dup	domain	a1.mzstatic.com
 dup	domain	a2.mzstatic.com
 dup	domain	a3.mzstatic.com
@@ -183,6 +183,7 @@ dup	domain	updates-http.cdn-apple.com
 dup	domain	updates-http.cdn-apple.com.akadns.net
 dup	domain	updates.cdn-apple.com
 dup	domain	uplaypc-s-ubisoft.cdn.ubionline.com.cn
+dup	domain	upos-hz-mirrorakam.akamaized.net
 dup	domain	valid.apple.com
 dup	domain	valid.origin-apple.com.akadns.net
 dup	domain	weather-data.apple.com
@@ -2004,5 +2005,4 @@ covered	domain_suffix	lydass.com.cn	cn
 covered	domain_suffix	lync.cn	cn
 covered	domain_suffix	m-adash.m.taobao.com	taobao.com
 covered	domain_suffix	m-now.cn	cn
-covered	domain_suffix	m.aty.sohu.com	sohu.com
-# ... 已截断: 共 3017 行, 仅保留前 2000 行 (完整清单见 report/.full/direct-domain.txt)
+# ... 已截断: 共 3018 行, 仅保留前 2000 行 (完整清单见 report/.full/direct-domain.txt)
