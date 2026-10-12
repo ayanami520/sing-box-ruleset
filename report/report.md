@@ -7,10 +7,10 @@
 
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
-| `ads` | 4 | 0 | 70765 | 9297 | 311 | 57 | 8929 | = 无变化 |
+| `ads` | 4 | 0 | 71143 | 9355 | 311 | 57 | 8987 | +75 / -17 |
 | `ai` | 1 | 0 | 2069 | 190 | 0 | 0 | 190 | = 无变化 |
 | `direct-domain` | 13 | 0 | 40009 | 9901 | 457 | 2589 | 6855 | = 无变化 |
-| `direct-ip` | 1 | 0 | 34185 | 8045 | 0 | 0 | 8045 | = 无变化 |
+| `direct-ip` | 1 | 0 | 34268 | 8113 | 0 | 0 | 8113 | +95 / -27 |
 | `google` | 1 | 0 | 7091 | 938 | 0 | 76 | 862 | = 无变化 |
 | `tailscale` | 1 | 0 | 80 | 3 | 0 | 0 | 3 | = 无变化 |
 | `us` | 1 | 5 | 690 | 56 | 0 | 0 | 56 | = 无变化 |
@@ -23,10 +23,10 @@
 
 | 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 137 | 8791 | 0 | 1 | 0 | 0 | ✅ |
+| `ads` | 137 | 8849 | 0 | 1 | 0 | 0 | ✅ |
 | `ai` | 30 | 159 | 0 | 1 | 0 | 0 | ✅ |
 | `direct-domain` | 521 | 6325 | 0 | 9 | 0 | 0 | ✅ |
-| `direct-ip` | 0 | 0 | 0 | 0 | 8045 | 0 | ✅ |
+| `direct-ip` | 0 | 0 | 0 | 0 | 8113 | 0 | ✅ |
 | `google` | 31 | 829 | 0 | 2 | 0 | 0 | ✅ |
 | `tailscale` | 0 | 3 | 0 | 0 | 0 | 0 | ✅ |
 | `us` | 0 | 55 | 1 | 0 | 0 | 0 | ✅ |
@@ -46,11 +46,11 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 4 / 0 |
-| 产物 | `dist/ads.srs` — 70765 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 9297 / 8986 / 8929 |
+| 产物 | `dist/ads.srs` — 71143 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 9355 / 9044 / 8987 |
 | 删除: 上游重复 / 被覆盖 | 311 / 57 |
-| 匹配器 | domain=137, domain_suffix=8791, domain_keyword=0, domain_regex=1, ip_cidr=0 |
-| 与上次提交对比 | = 无变化 |
+| 匹配器 | domain=137, domain_suffix=8849, domain_keyword=0, domain_regex=1, ip_cidr=0 |
+| 与上次提交对比 | +75 / -17 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
@@ -58,11 +58,41 @@
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
 | `geosite-category-ads-all.srs` | 8121 B | 903 |
-| `adblocksingboxlite.srs` | 62708 B | 8371 |
+| `adblocksingboxlite.srs` | 63082 B | 8429 |
 | `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
 
 </details>
+
+与上次相比 **移除 17 条**（前 10 条，完整见明细文件）：
+
+```
+domain_suffix	876920.com
+domain_suffix	ad.51wnl-cq.com
+domain_suffix	bd3.chuiyue.com
+domain_suffix	bsyrimw.xyz
+domain_suffix	dn-growing.qbox.me
+domain_suffix	fiehff.com
+domain_suffix	grs.hihonorcloud.com
+domain_suffix	img.taotaosou.cn
+domain_suffix	img01.taotaosou.cn
+domain_suffix	jehudf.com
+```
+
+与上次相比 **新增 75 条**（前 10 条）：
+
+```
+domain_suffix	1.doudouditu.com
+domain_suffix	2mlt7jkbob.com
+domain_suffix	2w7urj3f2.com
+domain_suffix	5jzltt2nx.com
+domain_suffix	6px1vsaq0h.com
+domain_suffix	ad.mingruidata.com
+domain_suffix	adimage.bwton.com.w.kunluncan.com
+domain_suffix	adsdk.yrweb.top
+domain_suffix	adx-dra-op-dbankcloud-com-dra.region.dbankedge.cn
+domain_suffix	agd.p.360.cn
+```
 
 ### ai
 
@@ -121,20 +151,50 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 1 / 0 |
-| 产物 | `dist/direct-ip.srs` — 34185 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 8045 / 8045 / 8045 |
+| 产物 | `dist/direct-ip.srs` — 34268 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 8113 / 8113 / 8113 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
-| 匹配器 | domain=0, domain_suffix=0, domain_keyword=0, domain_regex=0, ip_cidr=8045 |
-| 与上次提交对比 | = 无变化 |
+| 匹配器 | domain=0, domain_suffix=0, domain_keyword=0, domain_regex=0, ip_cidr=8113 |
+| 与上次提交对比 | +95 / -27 |
 | 明细 | [`report/removed/direct-ip.txt`](removed/direct-ip.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geoip-cn.srs` | 34185 B | 8045 |
+| `geoip-cn.srs` | 34268 B | 8113 |
 
 </details>
+
+与上次相比 **移除 27 条**（前 10 条，完整见明细文件）：
+
+```
+ip_cidr	103.116.64.0/22
+ip_cidr	103.218.24.0/24
+ip_cidr	106.110.224.0/21
+ip_cidr	2403:5040::/32
+ip_cidr	240e:3a1:8c30::/47
+ip_cidr	240e:3a1:8c32:2000::/52
+ip_cidr	240e:3a1:8c32:3000::/54
+ip_cidr	240e:3a1:8c32:3400::/55
+ip_cidr	240e:3a1:8c32:3600::/58
+ip_cidr	240e:3a1:8c32:3641::/64
+```
+
+与上次相比 **新增 95 条**（前 10 条）：
+
+```
+ip_cidr	104.167.19.0/24
+ip_cidr	104.167.25.0/24
+ip_cidr	104.207.32.0/19
+ip_cidr	106.110.224.0/26
+ip_cidr	106.110.224.112/29
+ip_cidr	106.110.224.120/31
+ip_cidr	106.110.224.122/32
+ip_cidr	106.110.224.124/30
+ip_cidr	106.110.224.128/25
+ip_cidr	106.110.224.64/27
+```
 
 ### google
 
