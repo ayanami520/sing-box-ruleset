@@ -7,7 +7,7 @@
 
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
-| `ads` | 4 | 0 | 71178 | 9361 | 311 | 57 | 8993 | +43 / -37 |
+| `ads` | 8 | 0 | 172997 | 24406 | 10265 | 221 | 13920 | +4958 / -31 |
 | `ai` | 1 | 0 | 2069 | 190 | 0 | 0 | 190 | = 无变化 |
 | `direct-domain` | 13 | 0 | 40009 | 9901 | 457 | 2589 | 6855 | = 无变化 |
 | `direct-ip` | 1 | 0 | 34268 | 8113 | 0 | 0 | 8113 | = 无变化 |
@@ -23,7 +23,7 @@
 
 | 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 137 | 8855 | 0 | 1 | 0 | 0 | ✅ |
+| `ads` | 136 | 13736 | 25 | 1 | 22 | 0 | ✅ |
 | `ai` | 30 | 159 | 0 | 1 | 0 | 0 | ✅ |
 | `direct-domain` | 521 | 6325 | 0 | 9 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8113 | 0 | ✅ |
@@ -45,12 +45,12 @@
 
 | 项 | 值 |
 |---|---|
-| 上游数 / 本地条目 | 4 / 0 |
-| 产物 | `dist/ads.srs` — 71178 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 9361 / 9050 / 8993 |
-| 删除: 上游重复 / 被覆盖 | 311 / 57 |
-| 匹配器 | domain=137, domain_suffix=8855, domain_keyword=0, domain_regex=1, ip_cidr=0 |
-| 与上次提交对比 | +43 / -37 |
+| 上游数 / 本地条目 | 8 / 0 |
+| 产物 | `dist/ads.srs` — 172997 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 24406 / 14141 / 13920 |
+| 删除: 上游重复 / 被覆盖 | 10265 / 221 |
+| 匹配器 | domain=136, domain_suffix=13736, domain_keyword=25, domain_regex=1, ip_cidr=22 |
+| 与上次提交对比 | +4958 / -31 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
@@ -58,40 +58,44 @@
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
 | `geosite-category-ads-all.srs` | 8121 B | 903 |
-| `adblocksingboxlite.srs` | 63135 B | 8435 |
+| `adblocksingboxlite.srs` | 63112 B | 8428 |
 | `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
+| `BanAD.srs` | 71628 B | 8863 |
+| `BanADCompany.srs` | 1473 B | 131 |
+| `BanEasyListChina.srs` | 33475 B | 5050 |
+| `BanProgramAD.srs` | 7940 B | 1008 |
 
 </details>
 
-与上次相比 **移除 37 条**（前 10 条，完整见明细文件）：
+与上次相比 **移除 31 条**（前 10 条，完整见明细文件）：
 
 ```
-domain_suffix	126.cn
-domain_suffix	5166.info
-domain_suffix	adimage.bwton.com.w.kunluncan.com
-domain_suffix	adpublish.ydstatic.com
-domain_suffix	adx-dra-op-dbankcloud-com-dra.region.dbankedge.cn
-domain_suffix	asyn.cn
-domain_suffix	auth-jp.hismarttv.com
-domain_suffix	btrace.ysp.cctv.cn
-domain_suffix	c.stat.nearme.com.cn
-domain_suffix	cs-feige.iqiyi.com
+domain	adfstat.yandex.ru
+domain	analytics.google.com
+domain	logs.ads.vungle.com
+domain_suffix	ads.trafficjunky.net
+domain_suffix	aicleaner.shouji.360.cn
+domain_suffix	cdn.tanx.com
+domain_suffix	click.tanx.com
+domain_suffix	cms.tanx.com
+domain_suffix	commercial.shouji.360.cn
+domain_suffix	contextual.media.net
 ```
 
-与上次相比 **新增 43 条**（前 10 条）：
+与上次相比 **新增 4958 条**（前 10 条）：
 
 ```
-domain_suffix	051ss3usg.com
-domain_suffix	3tv4botiq.com
-domain_suffix	ad.chuandong.com
-domain_suffix	ad.thsi.cn
-domain_suffix	ads-splash-i1.xhscdn.com
-domain_suffix	ads-splash-i2.xhscdn.com
-domain_suffix	ads-splash-i2.xhscdn.com.w.cdngslb.com
-domain_suffix	advertpay.vip.xunlei.com
-domain_suffix	analytics.amarea.cn
-domain_suffix	analytics.okorder.com
+domain	adsmind.tc.qq.com
+domain	pgdt.gtimg.com
+domain_keyword	admarvel
+domain_keyword	admaster
+domain_keyword	adsage
+domain_keyword	adsensor
+domain_keyword	adsmogo
+domain_keyword	adsrvmedia
+domain_keyword	adsserving
+domain_keyword	adsystem
 ```
 
 ### ai
