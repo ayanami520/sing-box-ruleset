@@ -7,7 +7,7 @@
 
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
-| `ads` | 8 | 0 | 171586 | 24025 | 9847 | 220 | 13958 | +79 / -50 |
+| `ads` | 8 | 0 | 171618 | 24053 | 9853 | 219 | 13981 | +30 / -7 |
 | `ai` | 1 | 0 | 2069 | 190 | 0 | 0 | 190 | = 无变化 |
 | `direct-domain` | 13 | 0 | 40009 | 9901 | 457 | 2589 | 6855 | = 无变化 |
 | `direct-ip` | 1 | 0 | 34268 | 8113 | 0 | 0 | 8113 | = 无变化 |
@@ -23,7 +23,7 @@
 
 | 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 137 | 13773 | 25 | 1 | 22 | 0 | ✅ |
+| `ads` | 137 | 13796 | 25 | 1 | 22 | 0 | ✅ |
 | `ai` | 30 | 159 | 0 | 1 | 0 | 0 | ✅ |
 | `direct-domain` | 521 | 6325 | 0 | 9 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8113 | 0 | ✅ |
@@ -46,11 +46,11 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 8 / 0 |
-| 产物 | `dist/ads.srs` — 171586 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 24025 / 14178 / 13958 |
-| 删除: 上游重复 / 被覆盖 | 9847 / 220 |
-| 匹配器 | domain=137, domain_suffix=13773, domain_keyword=25, domain_regex=1, ip_cidr=22 |
-| 与上次提交对比 | +79 / -50 |
+| 产物 | `dist/ads.srs` — 171618 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 24053 / 14200 / 13981 |
+| 删除: 上游重复 / 被覆盖 | 9853 / 219 |
+| 匹配器 | domain=137, domain_suffix=13796, domain_keyword=25, domain_regex=1, ip_cidr=22 |
+| 与上次提交对比 | +30 / -7 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
@@ -58,44 +58,41 @@
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
 | `geosite-category-ads-all.srs` | 8121 B | 903 |
-| `adblocksingboxlite.srs` | 62225 B | 8241 |
+| `adblocksingboxlite.srs` | 62213 B | 8252 |
 | `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
-| `BanAD.srs` | 70669 B | 8669 |
+| `BanAD.srs` | 70749 B | 8686 |
 | `BanADCompany.srs` | 1473 B | 131 |
 | `BanEasyListChina.srs` | 33475 B | 5050 |
 | `BanProgramAD.srs` | 7940 B | 1008 |
 
 </details>
 
-与上次相比 **移除 50 条**（前 10 条，完整见明细文件）：
+与上次相比 **移除 7 条**（前 10 条，完整见明细文件）：
 
 ```
-domain_suffix	4-fizjos.shop
-domain_suffix	4fiz-jo.shop
-domain_suffix	4fiz-jos.shop
-domain_suffix	4fizjosolp.shop
-domain_suffix	4fizjosport.shop
-domain_suffix	anhko.club
-domain_suffix	auchans.com
-domain_suffix	biedronka-outlet.shop
-domain_suffix	csbase-sentry-aliyun-online.intsig.net
-domain_suffix	dhfs-vn.oppomobile.com
+domain_suffix	crash-reporting.olaparty.com
+domain_suffix	dageyuan.cn
+domain_suffix	eventv1.leidong.rayenergytech.com
+domain_suffix	l17-dev-all-sentry-ghost-sgp.bilibiligame.net
+domain_suffix	sea-log-rcv.vansound.com
+domain_suffix	sentry.findaya.co.id
+domain_suffix	thetechnofreaks.com
 ```
 
-与上次相比 **新增 79 条**（前 10 条）：
+与上次相比 **新增 30 条**（前 10 条）：
 
 ```
-domain	rtlog3-applog.fqnovel.com
-domain_suffix	123.ywxww.net
-domain_suffix	4foutlets.shop
-domain_suffix	4fshopes.shop
-domain_suffix	4fshops.shop
-domain_suffix	4fstores.shop
-domain_suffix	5166.info
-domain_suffix	56pxywt379.com
-domain_suffix	accredencisive.top
-domain_suffix	active.baofeng.com
+domain_suffix	8icep0mqi.com
+domain_suffix	94gjh3cedn.com
+domain_suffix	ad.yicai.com
+domain_suffix	ads-splash-v1.xhscdn.com
+domain_suffix	ads-splash-v2.xhscdn.com
+domain_suffix	ads-vp5-xhscdn.tliveapp.com.cdn.dnsv1.com
+domain_suffix	ads5-normal-xh.zijieapi.com
+domain_suffix	analytics.skywt.cn
+domain_suffix	bjhjw.com.cn
+domain_suffix	blendstressgui.pro
 ```
 
 ### ai

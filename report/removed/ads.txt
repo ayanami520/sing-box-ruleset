@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/ads.txt (不提交, 随 CI artifact 上传)
-# 本次共 8573 行 (dup=8353, covered=220); 提交版上限 2000 行
+# 本次共 8582 行 (dup=8363, covered=219); 提交版上限 2000 行
 dup	domain	adblogger.vk.com
 dup	domain	adblogger.vk.ru
 dup	domain	ads.vk.com
@@ -734,6 +734,7 @@ dup	domain_suffix	8h6whvlpnz.com
 dup	domain_suffix	8h7j79qxm.com
 dup	domain_suffix	8hvq8jskh.com
 dup	domain_suffix	8hx7k0211.com
+dup	domain_suffix	8icep0mqi.com
 dup	domain_suffix	8ieu7ue.cyou
 dup	domain_suffix	8j7tu8vtxx.com
 dup	domain_suffix	8k69vb6421.com
@@ -780,6 +781,7 @@ dup	domain_suffix	9377.com
 dup	domain_suffix	93gtx4pc2w.com
 dup	domain_suffix	93ta.cn
 dup	domain_suffix	93txjw4rt2.com
+dup	domain_suffix	94gjh3cedn.com
 dup	domain_suffix	95d684gnf.com
 dup	domain_suffix	95ktftpt6.com
 dup	domain_suffix	961.com
@@ -1071,6 +1073,7 @@ dup	domain_suffix	ad.xiaomi.com
 dup	domain_suffix	ad.ximalaya.com
 dup	domain_suffix	ad.xuanheng03.cn
 dup	domain_suffix	ad.xunkids.com
+dup	domain_suffix	ad.yicai.com
 dup	domain_suffix	ad.youku.com
 dup	domain_suffix	ad.zhuanzhuan.com
 dup	domain_suffix	ad.zijieapi.com
@@ -1210,12 +1213,15 @@ dup	domain_suffix	ads-shopping.shouqianba.com
 dup	domain_suffix	ads-splash-i1.xhscdn.com
 dup	domain_suffix	ads-splash-i2.xhscdn.com
 dup	domain_suffix	ads-splash-i2.xhscdn.com.w.cdngslb.com
+dup	domain_suffix	ads-splash-v1.xhscdn.com
+dup	domain_suffix	ads-splash-v2.xhscdn.com
 dup	domain_suffix	ads-twitter.com
 dup	domain_suffix	ads-union.jd.com
 dup	domain_suffix	ads-video-al.xhscdn.com
 dup	domain_suffix	ads-video-al.xhscdn.com.w.cdngslb.com
 dup	domain_suffix	ads-video-qc.xhscdn.com
 dup	domain_suffix	ads-vp5-xhscdn.tliveapp.com
+dup	domain_suffix	ads-vp5-xhscdn.tliveapp.com.cdn.dnsv1.com
 dup	domain_suffix	ads-vp5.xhscdn.com
 dup	domain_suffix	ads.17track.net
 dup	domain_suffix	ads.95516.com
@@ -1281,6 +1287,7 @@ dup	domain_suffix	ads5-normal-lf.zijieapi.com
 dup	domain_suffix	ads5-normal-lf.zijieapi.com.c.dsa.cdnbuild.net
 dup	domain_suffix	ads5-normal-lq.zijieapi.com
 dup	domain_suffix	ads5-normal-lq.zijieapi.com.c.dsa.cdnbuild.net
+dup	domain_suffix	ads5-normal-xh.zijieapi.com
 dup	domain_suffix	ads5-normal.zijieapi.com
 dup	domain_suffix	ads5-normal.zijieapi.com.c.dsa.cdnbuild.net
 dup	domain_suffix	adsage.cn
@@ -1480,7 +1487,6 @@ dup	domain_suffix	ali-p2p.pull.yximgs.com
 dup	domain_suffix	ali-web-player-tracker.biliapi.net
 dup	domain_suffix	ali2.a.yximgs.com
 dup	domain_suffix	alimama.alicdn.com
-dup	domain_suffix	alime-pic.oss-cn-hangzhou.aliyuncs.com
 dup	domain_suffix	alimelog.taobao.com
 dup	domain_suffix	alipansou.com
 dup	domain_suffix	alipaylog.com
@@ -1565,6 +1571,7 @@ dup	domain_suffix	analytics.query.yahoo.com
 dup	domain_suffix	analytics.selfboot.cn
 dup	domain_suffix	analytics.shop.hisense.com
 dup	domain_suffix	analytics.sixt.cn
+dup	domain_suffix	analytics.skywt.cn
 dup	domain_suffix	analytics.sve.cc
 dup	domain_suffix	analytics.thinkingcloud.net
 dup	domain_suffix	analytics.tiktok.com
@@ -1998,11 +2005,4 @@ dup	domain_suffix	beacon.tencent.com
 dup	domain_suffix	beacon.tencentwm.com
 dup	domain_suffix	beacon.txfund.com
 dup	domain_suffix	beaconcdn.qq.com
-dup	domain_suffix	beha.ksmobile.com
-dup	domain_suffix	beizi.biz
-dup	domain_suffix	bengbeng.com
-dup	domain_suffix	bes-mtj.baidu.com
-dup	domain_suffix	bespoke-analytics.razerapi.com
-dup	domain_suffix	bestwaypool.club
-dup	domain_suffix	betterzipcn.com
-# ... 已截断: 共 8573 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
+# ... 已截断: 共 8582 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
