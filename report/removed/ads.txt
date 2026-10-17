@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/ads.txt (不提交, 随 CI artifact 上传)
-# 本次共 8582 行 (dup=8363, covered=219); 提交版上限 2000 行
+# 本次共 8647 行 (dup=8427, covered=220); 提交版上限 2000 行
 dup	domain	adblogger.vk.com
 dup	domain	adblogger.vk.ru
 dup	domain	ads.vk.com
@@ -55,6 +55,7 @@ dup	domain_suffix	0elq99i0w.com
 dup	domain_suffix	0etmx4b4o.com
 dup	domain_suffix	0fs3mb0hh7.com
 dup	domain_suffix	0fs6pe6w0j.com
+dup	domain_suffix	0grzr3u2t.com
 dup	domain_suffix	0h9yewgei.com
 dup	domain_suffix	0hagal2csg.com
 dup	domain_suffix	0hagz9mdc.com
@@ -131,6 +132,7 @@ dup	domain_suffix	123.sogou.com
 dup	domain_suffix	123.ywxww.net
 dup	domain_suffix	123cha.com
 dup	domain_suffix	12551-1311572332.cos.ap-shanghai.myqcloud.com
+dup	domain_suffix	126.cn
 dup	domain_suffix	129esrd5q5.com
 dup	domain_suffix	12ypksztq.com
 dup	domain_suffix	12yr3wkwi5.com
@@ -189,6 +191,7 @@ dup	domain_suffix	1mb71rr5oo.com
 dup	domain_suffix	1mpi.com
 dup	domain_suffix	1n4vrzxdms.com
 dup	domain_suffix	1nevsf92q.com
+dup	domain_suffix	1nvnkyg65.com
 dup	domain_suffix	1o0g85u7k1.com
 dup	domain_suffix	1o1nuqbjea.com
 dup	domain_suffix	1o23ptd0sv.com
@@ -384,6 +387,7 @@ dup	domain_suffix	3xeedcdci.com
 dup	domain_suffix	3xeo00tqz.com
 dup	domain_suffix	3ylj411rdn.com
 dup	domain_suffix	3yx95kv3at.com
+dup	domain_suffix	3zmb53.fordmodels.cn
 dup	domain_suffix	40017.cn
 dup	domain_suffix	40nao7anx6.com
 dup	domain_suffix	40vhwswtr6.com
@@ -696,7 +700,6 @@ dup	domain_suffix	7u7jwonbf.com
 dup	domain_suffix	7ue931y0gn.com
 dup	domain_suffix	7usgqu07mk.com
 dup	domain_suffix	7w7kditsz.com
-dup	domain_suffix	7xi9g1.com1.z0.glb.clouddn.com
 dup	domain_suffix	7xkdyg9b8k.com
 dup	domain_suffix	7xm6spgwu.com
 dup	domain_suffix	7xx3jbcil.com
@@ -720,6 +723,7 @@ dup	domain_suffix	8896bhfg6l.com
 dup	domain_suffix	88la.la
 dup	domain_suffix	88r6s1hecp.com
 dup	domain_suffix	89ga0evbha.com
+dup	domain_suffix	89y84ta6xg.com
 dup	domain_suffix	8al17kw6d.com
 dup	domain_suffix	8cj70f905.com
 dup	domain_suffix	8cjk04e7sb.com
@@ -788,6 +792,7 @@ dup	domain_suffix	961.com
 dup	domain_suffix	9613gwqee.com
 dup	domain_suffix	96382zubo66756.com
 dup	domain_suffix	96zddjwn2.com
+dup	domain_suffix	97sky.cn
 dup	domain_suffix	97uvo47k3y.com
 dup	domain_suffix	97vk351gi.com
 dup	domain_suffix	9800.com
@@ -831,6 +836,7 @@ dup	domain_suffix	9qvpcta0t.com
 dup	domain_suffix	9r0v0go0el.com
 dup	domain_suffix	9rkh7nbaj.com
 dup	domain_suffix	9s3g5vd8or.com
+dup	domain_suffix	9sgckbc7e.com
 dup	domain_suffix	9soefyenw.com
 dup	domain_suffix	9swovqnp52.com
 dup	domain_suffix	9t9r2tkr9.com
@@ -844,6 +850,7 @@ dup	domain_suffix	9yspkomgq.com
 dup	domain_suffix	9z6p1shhsh.top
 dup	domain_suffix	a.4aqq.com
 dup	domain_suffix	a.52zxw.com
+dup	domain_suffix	a.ac.qq.com
 dup	domain_suffix	a.armystar.com
 dup	domain_suffix	a.baidinet.com
 dup	domain_suffix	a.baidu.com
@@ -1221,7 +1228,6 @@ dup	domain_suffix	ads-video-al.xhscdn.com
 dup	domain_suffix	ads-video-al.xhscdn.com.w.cdngslb.com
 dup	domain_suffix	ads-video-qc.xhscdn.com
 dup	domain_suffix	ads-vp5-xhscdn.tliveapp.com
-dup	domain_suffix	ads-vp5-xhscdn.tliveapp.com.cdn.dnsv1.com
 dup	domain_suffix	ads-vp5.xhscdn.com
 dup	domain_suffix	ads.17track.net
 dup	domain_suffix	ads.95516.com
@@ -1277,6 +1283,7 @@ dup	domain_suffix	ads3-normal-lf.zijieapi.com.w.cdngslb.com
 dup	domain_suffix	ads3-normal-lq.zijieapi.com
 dup	domain_suffix	ads3-normal-lq.zijieapi.com.queniuiq.com
 dup	domain_suffix	ads3-normal-lq.zijieapi.com.w.cdngslb.com
+dup	domain_suffix	ads3-normal-xh.zijieapi.com
 dup	domain_suffix	ads3-normal.zijieapi.com
 dup	domain_suffix	ads3-normal.zijieapi.com.queniusz.com
 dup	domain_suffix	ads360.cn
@@ -1376,6 +1383,7 @@ dup	domain_suffix	adv.sec.intl.miui.com
 dup	domain_suffix	adv.sec.miui.com
 dup	domain_suffix	adv.vk.com
 dup	domain_suffix	adv.xmmku.com
+dup	domain_suffix	advenueplatform.com
 dup	domain_suffix	adver.pengyou.com
 dup	domain_suffix	advert-server.elecfans.com
 dup	domain_suffix	advert-statistic-vip.xunlei.com
@@ -1407,7 +1415,6 @@ dup	domain_suffix	adx-drru.op.dbankcloud.com
 dup	domain_suffix	adx-drru.op.dbankcloud.ru
 dup	domain_suffix	adx-drru.op.hicloud.com
 dup	domain_suffix	adx-f.ads.heytapmobi.com
-dup	domain_suffix	adx-id-ads.realmemobile.com
 dup	domain_suffix	adx-id.ads.heytapmobi.com
 dup	domain_suffix	adx-in.ads.heytapmobi.com
 dup	domain_suffix	adx-op-sg.heytapmobile.com
@@ -1642,6 +1649,7 @@ dup	domain_suffix	api-analytics.zepp.com
 dup	domain_suffix	api-cn.cdo.heytapmobi.com
 dup	domain_suffix	api-data-collection.insta360.cn
 dup	domain_suffix	api-event.falconnet.app
+dup	domain_suffix	api-flow.flyme.cn
 dup	domain_suffix	api-flow.meizu.com
 dup	domain_suffix	api-fp-retry-bj.fengkongcloud.com
 dup	domain_suffix	api-fp-retry-na.fengkongcloud.com
@@ -1756,7 +1764,6 @@ dup	domain_suffix	app-analytics.jtexpress.com.cn
 dup	domain_suffix	app-log-lab.immomo.com
 dup	domain_suffix	app-log-oversea.immomo.com
 dup	domain_suffix	app-log.dewu.com
-dup	domain_suffix	app-measurement-cn.com
 dup	domain_suffix	app-measurement.com
 dup	domain_suffix	app-monitor.ele.me
 dup	domain_suffix	app-monitor.spacecape.com
@@ -1965,7 +1972,6 @@ dup	domain_suffix	bd1.zuimeitianqi.com
 dup	domain_suffix	bd888.qizuang.com
 dup	domain_suffix	bdad.123pan.cn
 dup	domain_suffix	bdapi-ads.realmemobile.com
-dup	domain_suffix	bdapi-id-ads.realmemobile.com
 dup	domain_suffix	bdapi-id.ads.heytapmobi.com
 dup	domain_suffix	bdapi-in-ads.realmemobile.com
 dup	domain_suffix	bdapi-in.ads.heytapmobi.com
@@ -1999,10 +2005,4 @@ dup	domain_suffix	beacon.cdn.qq.com.cdn.dnsv1.com
 dup	domain_suffix	beacon.credit.xunlei.com
 dup	domain_suffix	beacon.qq.com
 dup	domain_suffix	beacon.sina.com.cn
-dup	domain_suffix	beacon.sparta.mig.tencent-cloud.net
-dup	domain_suffix	beacon.starii-rover.com
-dup	domain_suffix	beacon.tencent.com
-dup	domain_suffix	beacon.tencentwm.com
-dup	domain_suffix	beacon.txfund.com
-dup	domain_suffix	beaconcdn.qq.com
-# ... 已截断: 共 8582 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
+# ... 已截断: 共 8647 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
