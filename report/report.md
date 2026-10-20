@@ -7,8 +7,8 @@
 
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
-| `ads` | 8 | 0 | 167943 | 23378 | 9404 | 210 | 13764 | +172 / -312 |
-| `ai` | 1 | 0 | 2088 | 193 | 0 | 0 | 193 | = 无变化 |
+| `ads` | 8 | 0 | 172019 | 24136 | 9897 | 219 | 14020 | +297 / -41 |
+| `ai` | 1 | 0 | 2098 | 194 | 0 | 0 | 194 | +1 / -0 |
 | `direct-domain` | 13 | 0 | 40009 | 9901 | 457 | 2589 | 6855 | = 无变化 |
 | `direct-ip` | 1 | 0 | 34268 | 8113 | 0 | 0 | 8113 | = 无变化 |
 | `google` | 1 | 0 | 7091 | 938 | 0 | 76 | 862 | = 无变化 |
@@ -23,8 +23,8 @@
 
 | 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 137 | 13579 | 25 | 1 | 22 | 0 | ✅ |
-| `ai` | 30 | 162 | 0 | 1 | 0 | 0 | ✅ |
+| `ads` | 136 | 13836 | 25 | 1 | 22 | 0 | ✅ |
+| `ai` | 30 | 163 | 0 | 1 | 0 | 0 | ✅ |
 | `direct-domain` | 521 | 6325 | 0 | 9 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8113 | 0 | ✅ |
 | `google` | 31 | 829 | 0 | 2 | 0 | 0 | ✅ |
@@ -46,11 +46,11 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 8 / 0 |
-| 产物 | `dist/ads.srs` — 167943 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 23378 / 13974 / 13764 |
-| 删除: 上游重复 / 被覆盖 | 9404 / 210 |
-| 匹配器 | domain=137, domain_suffix=13579, domain_keyword=25, domain_regex=1, ip_cidr=22 |
-| 与上次提交对比 | +172 / -312 |
+| 产物 | `dist/ads.srs` — 172019 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 24136 / 14239 / 14020 |
+| 删除: 上游重复 / 被覆盖 | 9897 / 219 |
+| 匹配器 | domain=136, domain_suffix=13836, domain_keyword=25, domain_regex=1, ip_cidr=22 |
+| 与上次提交对比 | +297 / -41 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
@@ -58,44 +58,44 @@
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
 | `geosite-category-ads-all.srs` | 8121 B | 903 |
-| `adblocksingboxlite.srs` | 59995 B | 7909 |
+| `adblocksingboxlite.srs` | 62395 B | 8295 |
 | `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
-| `BanAD.srs` | 68367 B | 8354 |
+| `BanAD.srs` | 70911 B | 8726 |
 | `BanADCompany.srs` | 1473 B | 131 |
 | `BanEasyListChina.srs` | 33475 B | 5050 |
 | `BanProgramAD.srs` | 7940 B | 1008 |
 
 </details>
 
-与上次相比 **移除 312 条**（前 10 条，完整见明细文件）：
-
-```
-domain_suffix	4fsportspl.shop
-domain_suffix	adm-smc-cn.heytapmobi.com
-domain_suffix	adstage-analytics.herokuapp.com
-domain_suffix	advertising.yahoo.com
-domain_suffix	analytics.laregione.ch
-domain_suffix	ar.fapnado.xxx
-domain_suffix	astat.nikkei.com
-domain_suffix	collector1.xhamster.com
-domain_suffix	congenial-goggles-dpuw9y8aky56.edgeone.dev
-domain_suffix	creditsoffer.blogspot.com
-```
-
-与上次相比 **新增 172 条**（前 10 条）：
+与上次相比 **移除 41 条**（前 10 条，完整见明细文件）：
 
 ```
 domain	wa.gtimg.com
-domain_suffix	0av9w1ubbh.com
-domain_suffix	51015kidpl.shop
-domain_suffix	5j01ouj0l.com
-domain_suffix	86k3uw8q98.com
-domain_suffix	a.hl.mi.com
-domain_suffix	a.rohde-schwarz.com.cn
-domain_suffix	a3.jandan.net
-domain_suffix	abtest-api-data-sg.hoyoverse.com
-domain_suffix	acs4baichuan.m.taobao.com
+domain_suffix	100.admin5.com
+domain_suffix	aapz.com
+domain_suffix	adimage.bwton.com.w.kunluncan.com
+domain_suffix	adsmind.gdtimg.com
+domain_suffix	analysis.shixunsuda.com
+domain_suffix	dc.stat.nearme.com.cn
+domain_suffix	download.pdf00.com
+domain_suffix	emarketing.sina.com.cn
+domain_suffix	error.qiyuan333.cn
+```
+
+与上次相比 **新增 297 条**（前 10 条）：
+
+```
+domain_suffix	039ijdlg8.com
+domain_suffix	1ovzgs15u.com
+domain_suffix	7klc3u75r.com
+domain_suffix	8kbg4gnw32.com
+domain_suffix	ad-incentive.ximalaya.com
+domain_suffix	ad-log-upload-os.hoyoverse.com
+domain_suffix	ad-scope.com.cn
+domain_suffix	ad.51wnl-cq.com
+domain_suffix	ad.bwton.com
+domain_suffix	ad.cyapi.cn
 ```
 
 ### ai
@@ -103,20 +103,26 @@ domain_suffix	acs4baichuan.m.taobao.com
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 1 / 0 |
-| 产物 | `dist/ai.srs` — 2088 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 193 / 193 / 193 |
+| 产物 | `dist/ai.srs` — 2098 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 194 / 194 / 194 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
-| 匹配器 | domain=30, domain_suffix=162, domain_keyword=0, domain_regex=1, ip_cidr=0 |
-| 与上次提交对比 | = 无变化 |
+| 匹配器 | domain=30, domain_suffix=163, domain_keyword=0, domain_regex=1, ip_cidr=0 |
+| 与上次提交对比 | +1 / -0 |
 | 明细 | [`report/removed/ai.txt`](removed/ai.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-category-ai-!cn.srs` | 2088 B | 193 |
+| `geosite-category-ai-!cn.srs` | 2098 B | 194 |
 
 </details>
+
+与上次相比 **新增 1 条**（前 10 条）：
+
+```
+domain_suffix	magnific.com
+```
 
 ### direct-domain
 
@@ -134,7 +140,7 @@ domain_suffix	acs4baichuan.m.taobao.com
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-cn.srs` | 56190 B | 9304 |
+| `geosite-cn.srs` | 56192 B | 9304 |
 | `geosite-category-pt.srs` | 1160 B | 126 |
 | `geosite-category-game-platforms-download@cn.srs` | 431 B | 24 |
 | `geosite-115.srs` | 172 B | 14 |

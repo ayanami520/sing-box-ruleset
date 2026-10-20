@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/ads.txt (不提交, 随 CI artifact 上传)
-# 本次共 8238 行 (dup=8028, covered=210); 提交版上限 2000 行
+# 本次共 8626 行 (dup=8407, covered=219); 提交版上限 2000 行
 dup	domain	adblogger.vk.com
 dup	domain	adblogger.vk.ru
 dup	domain	ads.vk.com
@@ -23,6 +23,7 @@ dup	domain_suffix	01anf08rf.com
 dup	domain_suffix	027dir.com
 dup	domain_suffix	02exl1ql2l.com
 dup	domain_suffix	036e.cn
+dup	domain_suffix	039ijdlg8.com
 dup	domain_suffix	03in08p3r1.com
 dup	domain_suffix	03mhpavj25.com
 dup	domain_suffix	03mnj87wir.com
@@ -195,6 +196,7 @@ dup	domain_suffix	1nvnkyg65.com
 dup	domain_suffix	1o0g85u7k1.com
 dup	domain_suffix	1o1nuqbjea.com
 dup	domain_suffix	1o23ptd0sv.com
+dup	domain_suffix	1ovzgs15u.com
 dup	domain_suffix	1paujqtq9.com
 dup	domain_suffix	1phads.com
 dup	domain_suffix	1phyxws373.com
@@ -683,6 +685,7 @@ dup	domain_suffix	7jf3kxi6bq.com
 dup	domain_suffix	7jqi6um1g.com
 dup	domain_suffix	7k1p812e9l.com
 dup	domain_suffix	7k4c36c1r.com
+dup	domain_suffix	7klc3u75r.com
 dup	domain_suffix	7kqn7qz4g4.com
 dup	domain_suffix	7lavkpncj.com
 dup	domain_suffix	7magjd84rd.com
@@ -705,6 +708,7 @@ dup	domain_suffix	7u7jwonbf.com
 dup	domain_suffix	7ue931y0gn.com
 dup	domain_suffix	7usgqu07mk.com
 dup	domain_suffix	7w7kditsz.com
+dup	domain_suffix	7xi9g1.com1.z0.glb.clouddn.com
 dup	domain_suffix	7xkdyg9b8k.com
 dup	domain_suffix	7xm6spgwu.com
 dup	domain_suffix	7xx3jbcil.com
@@ -750,6 +754,7 @@ dup	domain_suffix	8ieu7ue.cyou
 dup	domain_suffix	8j7tu8vtxx.com
 dup	domain_suffix	8k69vb6421.com
 dup	domain_suffix	8k9ynfczfd.com
+dup	domain_suffix	8kbg4gnw32.com
 dup	domain_suffix	8khgnlxk6.com
 dup	domain_suffix	8le8le.com
 dup	domain_suffix	8lj6g9gz4.com
@@ -925,7 +930,6 @@ dup	domain_suffix	aa52jm08ly.com
 dup	domain_suffix	aa7hzjsow.com
 dup	domain_suffix	aai-id-sentry.advai.net
 dup	domain_suffix	aaoffice.cn
-dup	domain_suffix	aapz.com
 dup	domain_suffix	ab1bhie0c.com
 dup	domain_suffix	ab3de9.gamersky.com
 dup	domain_suffix	ab41q03rvf.com
@@ -933,6 +937,7 @@ dup	domain_suffix	abbyychina.com
 dup	domain_suffix	abc.douguo.com
 dup	domain_suffix	abc.ruodian360.com
 dup	domain_suffix	abc.yebaike.com
+dup	domain_suffix	abcd.zle.com
 dup	domain_suffix	ablink.em.redmart.com
 dup	domain_suffix	abody.39.net
 dup	domain_suffix	abroad-ad.kingsoft-office-service.com
@@ -979,10 +984,13 @@ dup	domain_suffix	ad-files.4pyun.com
 dup	domain_suffix	ad-host-backup-america.oss-us-west-1.aliyuncs.com
 dup	domain_suffix	ad-host-backup-asia.oss-ap-southeast-1.aliyuncs.com
 dup	domain_suffix	ad-host-backup-europe.oss-eu-central-1.aliyuncs.com
+dup	domain_suffix	ad-incentive.ximalaya.com
+dup	domain_suffix	ad-log-upload-os.hoyoverse.com
 dup	domain_suffix	ad-log-upload.mihoyo.com
 dup	domain_suffix	ad-log.didiglobal.com
 dup	domain_suffix	ad-plus.cn
 dup	domain_suffix	ad-r.soulapp.cn
+dup	domain_suffix	ad-scope.com.cn
 dup	domain_suffix	ad-sdk-config.youdao.com
 dup	domain_suffix	ad-sdk.altamob.xiaoying.co
 dup	domain_suffix	ad-sdk.huxiu.com
@@ -998,6 +1006,7 @@ dup	domain_suffix	ad.23.107.112.30.cn
 dup	domain_suffix	ad.23.88.207.28.cn
 dup	domain_suffix	ad.2ocx.60.37.cn
 dup	domain_suffix	ad.3.cn
+dup	domain_suffix	ad.51wnl-cq.com
 dup	domain_suffix	ad.51wnl.com
 dup	domain_suffix	ad.980x.com
 dup	domain_suffix	ad.a.yximgs.com
@@ -1009,6 +1018,7 @@ dup	domain_suffix	ad.api.yyapi.net
 dup	domain_suffix	ad.baihemob.com
 dup	domain_suffix	ad.bignox.com
 dup	domain_suffix	ad.bn.netease.com
+dup	domain_suffix	ad.bwton.com
 dup	domain_suffix	ad.c.ximalaya.com
 dup	domain_suffix	ad.c4.ximalaya.com
 dup	domain_suffix	ad.caiyunapp.com
@@ -1018,6 +1028,7 @@ dup	domain_suffix	ad.cdnjm.cn
 dup	domain_suffix	ad.chuandong.com
 dup	domain_suffix	ad.cj.sina.cn
 dup	domain_suffix	ad.cnr.cn
+dup	domain_suffix	ad.cyapi.cn
 dup	domain_suffix	ad.data.lianjia.com
 dup	domain_suffix	ad.dev.360.cn
 dup	domain_suffix	ad.didi-food.com
@@ -1039,6 +1050,7 @@ dup	domain_suffix	ad.jooancloud.com
 dup	domain_suffix	ad.jschina.com.cn
 dup	domain_suffix	ad.ldplayer.net
 dup	domain_suffix	ad.lelongpp.com
+dup	domain_suffix	ad.life.360.cn
 dup	domain_suffix	ad.lofter.com
 dup	domain_suffix	ad.m.iqiyi.com
 dup	domain_suffix	ad.maoyan.com
@@ -1052,12 +1064,17 @@ dup	domain_suffix	ad.moonton.cn
 dup	domain_suffix	ad.new.oe.hmgreat.com
 dup	domain_suffix	ad.nmjsjs.com
 dup	domain_suffix	ad.nvdvr.cn
+dup	domain_suffix	ad.open.api.jihuoniao.com
 dup	domain_suffix	ad.otomedream.com
 dup	domain_suffix	ad.ourgame.com
 dup	domain_suffix	ad.palmmerchant.com
 dup	domain_suffix	ad.partner.gifshow.com
 dup	domain_suffix	ad.passport.weibo.cn
+dup	domain_suffix	ad.qianfanyun.com
+dup	domain_suffix	ad.qingting.fm
+dup	domain_suffix	ad.qq.com
 dup	domain_suffix	ad.qun.qq.com
+dup	domain_suffix	ad.qyer.com
 dup	domain_suffix	ad.richmob.cn
 dup	domain_suffix	ad.seeyouyima.com
 dup	domain_suffix	ad.shobo.cn
@@ -1071,16 +1088,23 @@ dup	domain_suffix	ad.thsi.cn
 dup	domain_suffix	ad.toutiao.com
 dup	domain_suffix	ad.us.sinaimg.cn
 dup	domain_suffix	ad.v3mh.com
+dup	domain_suffix	ad.weibo.com
 dup	domain_suffix	ad.weplayer.cc
+dup	domain_suffix	ad.winrar.com.cn
 dup	domain_suffix	ad.xiaomi.com
 dup	domain_suffix	ad.ximalaya.com
+dup	domain_suffix	ad.xtdrug.com
 dup	domain_suffix	ad.xuanheng03.cn
 dup	domain_suffix	ad.xunkids.com
 dup	domain_suffix	ad.yicai.com
 dup	domain_suffix	ad.youku.com
 dup	domain_suffix	ad.zhuanzhuan.com
+dup	domain_suffix	ad.zijieapi.com
 dup	domain_suffix	ad.zui.com
+dup	domain_suffix	ad.zuimeitianqi.com
 dup	domain_suffix	ad1.xiaomi.com
+dup	domain_suffix	ad123.ynet.com
+dup	domain_suffix	ad4.sina.com.cn
 dup	domain_suffix	ad7.com
 dup	domain_suffix	ada.baidu.com
 dup	domain_suffix	adadmin.house365.com
@@ -1090,13 +1114,17 @@ dup	domain_suffix	adapi.yynetwk.com
 dup	domain_suffix	adash-c.m.taobao.com
 dup	domain_suffix	adash-c.ut.taobao.com
 dup	domain_suffix	adash-emas.cn-hangzhou.aliyuncs.com
+dup	domain_suffix	adash.m.taobao.com
 dup	domain_suffix	adashbc.m.taobao.com
 dup	domain_suffix	adashbc.ut.taobao.com
 dup	domain_suffix	adashx.m.taobao.com
 dup	domain_suffix	adashx.ut.alibaba.com
 dup	domain_suffix	adashx.ut.amap.com
+dup	domain_suffix	adashx.ut.ele.me
+dup	domain_suffix	adashx.ut.hzshudian.com
 dup	domain_suffix	adashx.ut.lazada.com
 dup	domain_suffix	adashx.ut.taobao.com
+dup	domain_suffix	adashx.ut.uc.cn
 dup	domain_suffix	adashx.ut.youku.com
 dup	domain_suffix	adashx4ae.ut.taobao.com
 dup	domain_suffix	adashx4id.ut.taobao.com
@@ -1106,7 +1134,9 @@ dup	domain_suffix	adashxgc.ut.taobao.com
 dup	domain_suffix	adbd.liuxue86.com
 dup	domain_suffix	adbehavior.wsa.ximalaya.com
 dup	domain_suffix	adbehavior.ximalaya.com
+dup	domain_suffix	adblock.sina.cn
 dup	domain_suffix	adbox.sina.com.cn
+dup	domain_suffix	adcdn.tencentmusic.com
 dup	domain_suffix	adcdn6.tencentmusic.com
 dup	domain_suffix	adclick.tencentmusic.com
 dup	domain_suffix	adcolony.com
@@ -1127,7 +1157,6 @@ dup	domain_suffix	adhdsb.cn
 dup	domain_suffix	adim.pinduoduo.com
 dup	domain_suffix	adimage.blm.net
 dup	domain_suffix	adimage.bwton.com
-dup	domain_suffix	adimage.bwton.com.w.kunluncan.com
 dup	domain_suffix	adimg.163.com
 dup	domain_suffix	adimg.liba.com
 dup	domain_suffix	adimg.mobile.sina.cn
@@ -1142,19 +1171,30 @@ dup	domain_suffix	adl.kkguan.com
 dup	domain_suffix	adlaunch.moji.com
 dup	domain_suffix	adlaunch.qingting.fm
 dup	domain_suffix	adlaunch.qtfm.cn
+dup	domain_suffix	adlink-api.huan.tv
 dup	domain_suffix	adlive.cn
 dup	domain_suffix	adlog.qingting.fm
 dup	domain_suffix	adlog.vivo.com
 dup	domain_suffix	adlog.vivo.com.cn
+dup	domain_suffix	adm-smc-cn.heytapmobi.com
+dup	domain_suffix	adm.10jqka.com.cn
+dup	domain_suffix	adm.52swine.com
+dup	domain_suffix	adm.baidu.com
+dup	domain_suffix	adm.cloud.cnfol.com
+dup	domain_suffix	adm.funshion.com
 dup	domain_suffix	adm.xmfish.com
 dup	domain_suffix	adm.zookingsoft.com
 dup	domain_suffix	adm2.autoimg.cn
 dup	domain_suffix	adm3.autoimg.cn
+dup	domain_suffix	admaster.com.cn
 dup	domain_suffix	admgr.qingting.fm
+dup	domain_suffix	admin5.com
+dup	domain_suffix	admin6.com
 dup	domain_suffix	adminer.com
 dup	domain_suffix	admob-cn.com
 dup	domain_suffix	admob.com
 dup	domain_suffix	admobile.top
+dup	domain_suffix	admon.cn
 dup	domain_suffix	adn-plus.com.cn
 dup	domain_suffix	adnet.sohu.com
 dup	domain_suffix	adnxs.com
@@ -1210,7 +1250,6 @@ dup	domain_suffix	ads.17track.net
 dup	domain_suffix	ads.95516.com
 dup	domain_suffix	ads.adagent.chacha.com
 dup	domain_suffix	ads.adyoung.cn
-dup	domain_suffix	ads.api.my7v.com
 dup	domain_suffix	ads.apple.com
 dup	domain_suffix	ads.bestads.com
 dup	domain_suffix	ads.bestads.com.queniuaa.com
@@ -1221,6 +1260,7 @@ dup	domain_suffix	ads.cup.com.cn
 dup	domain_suffix	ads.didiglobal.com
 dup	domain_suffix	ads.doit.com.cn
 dup	domain_suffix	ads.games.laohu.com
+dup	domain_suffix	ads.google.cn
 dup	domain_suffix	ads.hellosota.com
 dup	domain_suffix	ads.honor.com
 dup	domain_suffix	ads.house365.com
@@ -1235,6 +1275,7 @@ dup	domain_suffix	ads.jianchiapp.com
 dup	domain_suffix	ads.linkedin.cn
 dup	domain_suffix	ads.linkedin.com
 dup	domain_suffix	ads.morefreegame.com
+dup	domain_suffix	ads.music.126.net
 dup	domain_suffix	ads.mykudou.com
 dup	domain_suffix	ads.nubia.com
 dup	domain_suffix	ads.people.com.cn
@@ -1306,6 +1347,7 @@ dup	domain_suffix	adsfilebssdlbig.ali.kugou.com
 dup	domain_suffix	adsfileretry.service.kugou.com
 dup	domain_suffix	adsfs-in.oppomobile.com
 dup	domain_suffix	adsfs-sdkconfig.heytapimage.com
+dup	domain_suffix	adsfs.heytapimage.com
 dup	domain_suffix	adsfs.oppomobile.com
 dup	domain_suffix	adsgroup.qq.com
 dup	domain_suffix	adshare.toutiao.com
@@ -1492,8 +1534,8 @@ dup	domain_suffix	amftsawknf.com
 dup	domain_suffix	amradmin.5173.com
 dup	domain_suffix	an9ynwsct.com
 dup	domain_suffix	analy.qq.com
+dup	domain_suffix	analy.tuniu.cn
 dup	domain_suffix	analysis.chatglm.cn
-dup	domain_suffix	analysis.shixunsuda.com
 dup	domain_suffix	analysis.tratao.com
 dup	domain_suffix	analysis.yozocloud.cn
 dup	domain_suffix	analysys.cn
@@ -1648,6 +1690,7 @@ dup	domain_suffix	api.accelerator.intl.miui.com
 dup	domain_suffix	api.afdback.ppsimg.com
 dup	domain_suffix	api.antibanads.com
 dup	domain_suffix	api.aurogon.intl.miui.com
+dup	domain_suffix	api.browser.intl.miui.com
 dup	domain_suffix	api.brs.intl.miui.com
 dup	domain_suffix	api.bytegle.site
 dup	domain_suffix	api.bytegle.tech
@@ -1788,6 +1831,7 @@ dup	domain_suffix	aries.mzres.com
 dup	domain_suffix	ark.letv.com
 dup	domain_suffix	arpun.com
 dup	domain_suffix	as-datareceiver.aki-game.net
+dup	domain_suffix	as.aplus.pptv.com
 dup	domain_suffix	as.baidu.com
 dup	domain_suffix	as1.m.hao123.com
 dup	domain_suffix	as1.wenku.baidu.com
@@ -1961,48 +2005,4 @@ dup	domain_suffix	bdjs.daziba.cn
 dup	domain_suffix	bdjs.guangyuanol.cn
 dup	domain_suffix	bdjs.uimg.cn
 dup	domain_suffix	bdm.911cha.com
-dup	domain_suffix	bdm.ye-su.cn
-dup	domain_suffix	bdmjs.xywy.com
-dup	domain_suffix	bdogfb.com
-dup	domain_suffix	bds.snssdk.com
-dup	domain_suffix	bdstatic.eastmoney.com
-dup	domain_suffix	bdu.focus.cn
-dup	domain_suffix	bdu1.coozhi.cn
-dup	domain_suffix	bdunion1.suxiazai.com
-dup	domain_suffix	bduserlog.eastmoney.com
-dup	domain_suffix	bdwblog.eastmoney.com
-dup	domain_suffix	bdwmhz.120askimages.com
-dup	domain_suffix	bdx.playnext.cn
-dup	domain_suffix	bea-s.dinghuoche.com
-dup	domain_suffix	beacon-api.aliyuncs.com
-dup	domain_suffix	beacon-api.aliyuncs.com.gds.alibabadns.com
-dup	domain_suffix	beacon.cdn.qq.com
-dup	domain_suffix	beacon.cdn.qq.com.cdn.dnsv1.com
-dup	domain_suffix	beacon.cdnpure.com
-dup	domain_suffix	beacon.credit.xunlei.com
-dup	domain_suffix	beacon.qq.com
-dup	domain_suffix	beacon.sina.com.cn
-dup	domain_suffix	beacon.sparta.mig.tencent-cloud.net
-dup	domain_suffix	beacon.starii-rover.com
-dup	domain_suffix	beacon.tencent.com
-dup	domain_suffix	beacon.tencentwm.com
-dup	domain_suffix	beacon.txfund.com
-dup	domain_suffix	beaconcdn.qq.com
-dup	domain_suffix	beha.ksmobile.com
-dup	domain_suffix	beizi.biz
-dup	domain_suffix	bengbeng.com
-dup	domain_suffix	bes-mtj.baidu.com
-dup	domain_suffix	bespoke-analytics.razerapi.com
-dup	domain_suffix	besthunny.com
-dup	domain_suffix	bestwaypool.club
-dup	domain_suffix	betterzipcn.com
-dup	domain_suffix	betylife.com
-dup	domain_suffix	beyondcompare.cc
-dup	domain_suffix	bfitra1eho.com
-dup	domain_suffix	bfshan.cn
-dup	domain_suffix	bgblsb5s6a.com
-dup	domain_suffix	bgbyvx.icu
-dup	domain_suffix	bgg.baidu.com
-dup	domain_suffix	bgverrhitahtfy.com
-dup	domain_suffix	bh3-sdk-os-static.hoyoverse.com
-# ... 已截断: 共 8238 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
+# ... 已截断: 共 8626 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
