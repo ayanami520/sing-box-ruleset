@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/direct-domain.txt (不提交, 随 CI artifact 上传)
-# 本次共 3018 行 (dup=429, covered=2589); 提交版上限 2000 行
+# 本次共 3049 行 (dup=429, covered=2620); 提交版上限 2000 行
 dup	domain	a1.mzstatic.com
 dup	domain	a2.mzstatic.com
 dup	domain	a3.mzstatic.com
@@ -459,12 +459,16 @@ covered	domain	epicgames-download1-1251447533.file.myqcloud.com	myqcloud.com
 covered	domain	hap.10010.com	10010.com
 covered	domain	hospital.pku.edu.cn	cn
 covered	domain	hs.wosms.cn	cn
+covered	domain	ip.gymcalc.cn	cn
+covered	domain	ip.taobao.com	taobao.com
+covered	domain	ip.webmasterhome.cn	cn
 covered	domain	log-sdk.gifshow.com	gifshow.com
 covered	domain	log3-applog-hl.fqnovel.com	fqnovel.com
 covered	domain	log3-applog.fqnovel.com	fqnovel.com
 covered	domain	log5-applog-hl.fqnovel.com	fqnovel.com
 covered	domain	log5-applog.fqnovel.com	fqnovel.com
 covered	domain	lv.queniujq.cn	cn
+covered	domain	mip.chinaz.com	chinaz.com
 covered	domain	moocs.unipus.cn	cn
 covered	domain	ntp.aliyun.com	aliyun.com
 covered	domain	ntp.tencent.com	tencent.com
@@ -509,6 +513,7 @@ covered	domain	time.izatcloud.net	izatcloud.net
 covered	domain	tlu.dl.delivery.mp.microsoft.com	dl.delivery.mp.microsoft.com
 covered	domain	trts.baishancdnx.cn	cn
 covered	domain	uplaypc-s-ubisoft.cdn.ubionline.com.cn	cn
+covered	domain	v6test.ipgg.cn	cn
 covered	domain	wlog.kuaishou.com	kuaishou.com
 covered	domain	www.entrust.cn	cn
 covered	domain	ykimg.alicdn.com	alicdn.com
@@ -1115,6 +1120,7 @@ covered	domain_suffix	chatqidian.cn	cn
 covered	domain_suffix	chattext.cn	cn
 covered	domain_suffix	chatyuewen.cn	cn
 covered	domain_suffix	chdi.com.cn	cn
+covered	domain_suffix	check-host.cn	cn
 covered	domain_suffix	chei.com.cn	cn
 covered	domain_suffix	chelaile.net.cn	cn
 covered	domain_suffix	chengjiaxiangqin.cn	cn
@@ -1532,6 +1538,7 @@ covered	domain_suffix	gdctyiptv.cn	cn
 covered	domain_suffix	gdt.qq.com	qq.com
 covered	domain_suffix	geforce.cn	cn
 covered	domain_suffix	gefund.com.cn	cn
+covered	domain_suffix	geoip.cn	cn
 covered	domain_suffix	geossl.cn	cn
 covered	domain_suffix	getfeishu.cn	cn
 covered	domain_suffix	getsays.cn	cn
@@ -1619,6 +1626,7 @@ covered	domain_suffix	hammi.cn	cn
 covered	domain_suffix	hangzhouyq.cn	cn
 covered	domain_suffix	hanyi.com.cn	cn
 covered	domain_suffix	hao123union.baidu.com	baidu.com
+covered	domain_suffix	haoip.cn	cn
 covered	domain_suffix	haosou.com.cn	cn
 covered	domain_suffix	happyhorse.cn	cn
 covered	domain_suffix	happyshrimp.cn	cn
@@ -1778,6 +1786,7 @@ covered	domain_suffix	ieshuodong.cn	cn
 covered	domain_suffix	ifacelog.iqiyi.com	iqiyi.com
 covered	domain_suffix	ifanr.cn	cn
 covered	domain_suffix	ifastps.com.cn	cn
+covered	domain_suffix	ifcfg.cn	cn
 covered	domain_suffix	ifeilian.cn	cn
 covered	domain_suffix	igetget.cn	cn
 covered	domain_suffix	ign.com.cn	cn
@@ -1805,12 +1814,28 @@ covered	domain_suffix	inte.sogoucdn.com	sogoucdn.com
 covered	domain_suffix	intel.cn	cn
 covered	domain_suffix	intime.com.cn	cn
 covered	domain_suffix	ioppo.com.cn	cn
+covered	domain_suffix	ip-api.cn	cn
+covered	domain_suffix	ip-api.com.cn	cn
+covered	domain_suffix	ip-check.cn	cn
+covered	domain_suffix	ip.cn	cn
+covered	domain_suffix	ip.com.cn	cn
+covered	domain_suffix	ip00.cn	cn
+covered	domain_suffix	ip111.cn	cn
+covered	domain_suffix	ip120.cn	cn
+covered	domain_suffix	ip9.com.cn	cn
+covered	domain_suffix	ipaddress.com.cn	cn
 covered	domain_suffix	ipanda.cn	cn
 covered	domain_suffix	ipanda.com.cn	cn
+covered	domain_suffix	ipchacha.cn	cn
+covered	domain_suffix	ipchaxun.com.cn	cn
+covered	domain_suffix	ipchk.cn	cn
 covered	domain_suffix	iphone-8.com.cn	cn
 covered	domain_suffix	ipify.cn	cn
 covered	domain_suffix	ipod.com.cn	cn
 covered	domain_suffix	iprintworks.cn	cn
+covered	domain_suffix	ipsearch.com.cn	cn
+covered	domain_suffix	ipsee.cn	cn
+covered	domain_suffix	iptest.cn	cn
 covered	domain_suffix	ipw.cn	cn
 covered	domain_suffix	iresearch.cn	cn
 covered	domain_suffix	is-cool.cn	cn
@@ -1980,29 +2005,4 @@ covered	domain_suffix	log.umtrack.com	umtrack.com
 covered	domain_suffix	log.v2.hunantv.com	hunantv.com
 covered	domain_suffix	log.zijieapi.com	zijieapi.com
 covered	domain_suffix	log2.sina.cn	cn
-covered	domain_suffix	logger.qmai.cn	cn
-covered	domain_suffix	logs.amap.com	amap.com
-covered	domain_suffix	logupdate.avlyun.sec.miui.com	miui.com
-covered	domain_suffix	longone.com.cn	cn
-covered	domain_suffix	loongair.cn	cn
-covered	domain_suffix	louisvuitton.cn	cn
-covered	domain_suffix	lpl.com.cn	cn
-covered	domain_suffix	ls66.cn	cn
-covered	domain_suffix	lstat.youku.com	youku.com
-covered	domain_suffix	lu.sogou.com	sogou.com
-covered	domain_suffix	lu.sogoucdn.com	sogoucdn.com
-covered	domain_suffix	lu1da.cn	cn
-covered	domain_suffix	ludosuperstar.cn	cn
-covered	domain_suffix	luhua.cn	cn
-covered	domain_suffix	lulian.cn	cn
-covered	domain_suffix	luogu.com.cn	cn
-covered	domain_suffix	lxdns.cn	cn
-covered	domain_suffix	lxzjjt.cn	cn
-covered	domain_suffix	lydaas.cn	cn
-covered	domain_suffix	lydaas.com.cn	cn
-covered	domain_suffix	lydass.cn	cn
-covered	domain_suffix	lydass.com.cn	cn
-covered	domain_suffix	lync.cn	cn
-covered	domain_suffix	m-adash.m.taobao.com	taobao.com
-covered	domain_suffix	m-now.cn	cn
-# ... 已截断: 共 3018 行, 仅保留前 2000 行 (完整清单见 report/.full/direct-domain.txt)
+# ... 已截断: 共 3049 行, 仅保留前 2000 行 (完整清单见 report/.full/direct-domain.txt)

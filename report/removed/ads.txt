@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/ads.txt (不提交, 随 CI artifact 上传)
-# 本次共 8626 行 (dup=8407, covered=219); 提交版上限 2000 行
+# 本次共 8620 行 (dup=8400, covered=220); 提交版上限 2000 行
 dup	domain	adblogger.vk.com
 dup	domain	adblogger.vk.ru
 dup	domain	ads.vk.com
@@ -615,6 +615,7 @@ dup	domain_suffix	6lpm5zq6t3.com
 dup	domain_suffix	6mdf9teiz.com
 dup	domain_suffix	6mdgv1kmj.com
 dup	domain_suffix	6mrhrbfqw9.com
+dup	domain_suffix	6mujth3wgx.com
 dup	domain_suffix	6n528aywi9.com
 dup	domain_suffix	6o04ylee62.com
 dup	domain_suffix	6o2k80jf8w.com
@@ -708,7 +709,6 @@ dup	domain_suffix	7u7jwonbf.com
 dup	domain_suffix	7ue931y0gn.com
 dup	domain_suffix	7usgqu07mk.com
 dup	domain_suffix	7w7kditsz.com
-dup	domain_suffix	7xi9g1.com1.z0.glb.clouddn.com
 dup	domain_suffix	7xkdyg9b8k.com
 dup	domain_suffix	7xm6spgwu.com
 dup	domain_suffix	7xx3jbcil.com
@@ -928,8 +928,8 @@ dup	domain_suffix	aa3zx8wko.top
 dup	domain_suffix	aa4jq9non.com
 dup	domain_suffix	aa52jm08ly.com
 dup	domain_suffix	aa7hzjsow.com
-dup	domain_suffix	aai-id-sentry.advai.net
 dup	domain_suffix	aaoffice.cn
+dup	domain_suffix	aapz.com
 dup	domain_suffix	ab1bhie0c.com
 dup	domain_suffix	ab3de9.gamersky.com
 dup	domain_suffix	ab41q03rvf.com
@@ -951,6 +951,7 @@ dup	domain_suffix	abtest.todesk.com
 dup	domain_suffix	abtest3-misc-hl.zijieapi.com
 dup	domain_suffix	abtest3-misc-lf.zijieapi.com
 dup	domain_suffix	ac.dun.163yun.com
+dup	domain_suffix	ac.o2.qq.com
 dup	domain_suffix	ac00qmnjz.com
 dup	domain_suffix	acc.3gbizhi.com
 dup	domain_suffix	acc.jiangsujiaxue.com
@@ -1685,7 +1686,6 @@ dup	domain_suffix	api-push.meizu.com
 dup	domain_suffix	api-sentry.ws.126.net
 dup	domain_suffix	api-z.weidian.com
 dup	domain_suffix	api-zhibo.qtfm.cn
-dup	domain_suffix	api.52youtu.com
 dup	domain_suffix	api.accelerator.intl.miui.com
 dup	domain_suffix	api.afdback.ppsimg.com
 dup	domain_suffix	api.antibanads.com
@@ -1726,18 +1726,13 @@ dup	domain_suffix	api.mp.uc.cn
 dup	domain_suffix	api.myadsget.com
 dup	domain_suffix	api.newsfeed.intl.miui.com
 dup	domain_suffix	api.open.oppomobile.com
-dup	domain_suffix	api.pingstart.com
-dup	domain_suffix	api.platform.letv.com
 dup	domain_suffix	api.qttunion.com
-dup	domain_suffix	api.qvpublish.com
-dup	domain_suffix	api.revenuads.com
 dup	domain_suffix	api.sec.intl.miui.com
 dup	domain_suffix	api.setting.intl.miui.com
 dup	domain_suffix	api.shanghailingye.cn
 dup	domain_suffix	api.sms.intl.miui.com
 dup	domain_suffix	api.sve.cc
 dup	domain_suffix	api.taboola.sve.cc
-dup	domain_suffix	api.tusdk.com
 dup	domain_suffix	api.tv.sohu.com
 dup	domain_suffix	api.twibida.com
 dup	domain_suffix	api.xmpush.global.xiaomi.com
@@ -1758,21 +1753,11 @@ dup	domain_suffix	apisnd.heytapmobi.com
 dup	domain_suffix	apiv4-iyes.youku.com
 dup	domain_suffix	apiwmda.58.com.cn
 dup	domain_suffix	apiyd.my91app.com
-dup	domain_suffix	apkevery.com
-dup	domain_suffix	aplus.alibaba.com
 dup	domain_suffix	aplus.gmarket.co.kr
 dup	domain_suffix	apm-api.mihoyo.com
-dup	domain_suffix	apm-fe.rnote.com
-dup	domain_suffix	apm-fe.xiaohongshu.com
-dup	domain_suffix	apm-log-upload-os.hoyoverse.com
 dup	domain_suffix	apm-log-upload-v6.mihoyo.com
-dup	domain_suffix	apm-log-upload.mihoyo.com
-dup	domain_suffix	apm-native.redbascket.com
-dup	domain_suffix	apm-native.xiaohongshu.com
-dup	domain_suffix	apm-track.xiaohongshu.com
 dup	domain_suffix	apm.volccdn.com
 dup	domain_suffix	apmcx60sm5.com
-dup	domain_suffix	apmplus.ap-southeast-1.volces.com
 dup	domain_suffix	apmplus.volces.com
 dup	domain_suffix	app-analysislog.sto.cn
 dup	domain_suffix	app-analytics-ru.huami.com
@@ -2005,4 +1990,19 @@ dup	domain_suffix	bdjs.daziba.cn
 dup	domain_suffix	bdjs.guangyuanol.cn
 dup	domain_suffix	bdjs.uimg.cn
 dup	domain_suffix	bdm.911cha.com
-# ... 已截断: 共 8626 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
+dup	domain_suffix	bdm.ye-su.cn
+dup	domain_suffix	bdmjs.xywy.com
+dup	domain_suffix	bdogfb.com
+dup	domain_suffix	bds.snssdk.com
+dup	domain_suffix	bdstatic.eastmoney.com
+dup	domain_suffix	bdu.focus.cn
+dup	domain_suffix	bdu1.coozhi.cn
+dup	domain_suffix	bdunion1.suxiazai.com
+dup	domain_suffix	bduserlog.eastmoney.com
+dup	domain_suffix	bdwblog.eastmoney.com
+dup	domain_suffix	bdwmhz.120askimages.com
+dup	domain_suffix	bdx.playnext.cn
+dup	domain_suffix	bea-s.dinghuoche.com
+dup	domain_suffix	beacon-api.aliyuncs.com
+dup	domain_suffix	beacon-api.aliyuncs.com.gds.alibabadns.com
+# ... 已截断: 共 8620 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
