@@ -7,9 +7,9 @@
 
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
-| `ads` | 8 | 0 | 171773 | 24122 | 9886 | 220 | 14016 | +38 / -42 |
-| `ai` | 1 | 0 | 2193 | 205 | 0 | 0 | 205 | +11 / -0 |
-| `direct-domain` | 13 | 0 | 40108 | 9950 | 457 | 2620 | 6873 | +18 / -0 |
+| `ads` | 8 | 0 | 173320 | 24396 | 10051 | 220 | 14125 | +111 / -2 |
+| `ai` | 1 | 0 | 2193 | 205 | 0 | 0 | 205 | = 无变化 |
+| `direct-domain` | 13 | 0 | 40108 | 9950 | 457 | 2620 | 6873 | = 无变化 |
 | `direct-ip` | 1 | 0 | 34268 | 8113 | 0 | 0 | 8113 | = 无变化 |
 | `google` | 1 | 0 | 7091 | 938 | 0 | 76 | 862 | = 无变化 |
 | `tailscale` | 1 | 0 | 80 | 3 | 0 | 0 | 3 | = 无变化 |
@@ -23,7 +23,7 @@
 
 | 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 136 | 13832 | 25 | 1 | 22 | 0 | ✅ |
+| `ads` | 136 | 13941 | 25 | 1 | 22 | 0 | ✅ |
 | `ai` | 31 | 173 | 0 | 1 | 0 | 0 | ✅ |
 | `direct-domain` | 525 | 6339 | 0 | 9 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8113 | 0 | ✅ |
@@ -46,11 +46,11 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 8 / 0 |
-| 产物 | `dist/ads.srs` — 171773 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 24122 / 14236 / 14016 |
-| 删除: 上游重复 / 被覆盖 | 9886 / 220 |
-| 匹配器 | domain=136, domain_suffix=13832, domain_keyword=25, domain_regex=1, ip_cidr=22 |
-| 与上次提交对比 | +38 / -42 |
+| 产物 | `dist/ads.srs` — 173320 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 24396 / 14345 / 14125 |
+| 删除: 上游重复 / 被覆盖 | 10051 / 220 |
+| 匹配器 | domain=136, domain_suffix=13941, domain_keyword=25, domain_regex=1, ip_cidr=22 |
+| 与上次提交对比 | +111 / -2 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
@@ -58,44 +58,36 @@
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
 | `geosite-category-ads-all.srs` | 8129 B | 904 |
-| `adblocksingboxlite.srs` | 62275 B | 8287 |
+| `adblocksingboxlite.srs` | 63241 B | 8425 |
 | `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
-| `BanAD.srs` | 70867 B | 8719 |
+| `BanAD.srs` | 71823 B | 8855 |
 | `BanADCompany.srs` | 1473 B | 131 |
 | `BanEasyListChina.srs` | 33475 B | 5050 |
 | `BanProgramAD.srs` | 7940 B | 1008 |
 
 </details>
 
-与上次相比 **移除 42 条**（前 10 条，完整见明细文件）：
+与上次相比 **移除 2 条**（前 10 条，完整见明细文件）：
 
 ```
-domain_suffix	aai-id-sentry.advai.net
-domain_suffix	api.52youtu.com
-domain_suffix	api.pingstart.com
-domain_suffix	api.platform.letv.com
-domain_suffix	api.qvpublish.com
-domain_suffix	api.revenuads.com
-domain_suffix	api.tusdk.com
-domain_suffix	apkevery.com
-domain_suffix	aplus.alibaba.com
-domain_suffix	apm-fe.rnote.com
+domain_suffix	fancydigital.com.cn
+domain_suffix	placidocn.com
 ```
 
-与上次相比 **新增 38 条**（前 10 条）：
+与上次相比 **新增 111 条**（前 10 条）：
 
 ```
-domain_suffix	6mujth3wgx.com
-domain_suffix	aapz.com
-domain_suffix	ac.o2.qq.com
-domain_suffix	cdn-new-ad.wtzw.com
-domain_suffix	download.pdf00.com
-domain_suffix	flash.cn
-domain_suffix	flsfzr.cn
-domain_suffix	form-submission-workspace.ajo-stage.srv.smart.com
-domain_suffix	forms-emea.lenovo.com
-domain_suffix	fourier.alibaba.com
+domain_suffix	2x3le64mm.com
+domain_suffix	34148m9pq.com
+domain_suffix	47f9jdixm7.com
+domain_suffix	5cmog8sd8.com
+domain_suffix	9cs1fibvfp.com
+domain_suffix	9mnmzh506.com
+domain_suffix	ad.etnetchina.cn
+domain_suffix	ad.ourplay.com.cn
+domain_suffix	ads-vp5-xhscdn.tliveapp.com.cdn.dnsv1.com
+domain_suffix	ads.intergreat.com
 ```
 
 ### ai
@@ -107,7 +99,7 @@ domain_suffix	fourier.alibaba.com
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 205 / 205 / 205 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
 | 匹配器 | domain=31, domain_suffix=173, domain_keyword=0, domain_regex=1, ip_cidr=0 |
-| 与上次提交对比 | +11 / -0 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/ai.txt`](removed/ai.txt) |
 
 <details><summary>上游明细</summary>
@@ -118,21 +110,6 @@ domain_suffix	fourier.alibaba.com
 
 </details>
 
-与上次相比 **新增 11 条**（前 10 条）：
-
-```
-domain	o33249.ingest.us.sentry.io
-domain_suffix	ant.dev
-domain_suffix	anthropic.team
-domain_suffix	antspace.dev
-domain_suffix	chatbotclaude.com
-domain_suffix	claude.app
-domain_suffix	claude.new
-domain_suffix	claude.site
-domain_suffix	claudeacademy.com
-domain_suffix	claudepages.dev
-```
-
 ### direct-domain
 
 | 项 | 值 |
@@ -142,14 +119,14 @@ domain_suffix	claudepages.dev
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 9950 / 9493 / 6873 |
 | 删除: 上游重复 / 被覆盖 | 457 / 2620 |
 | 匹配器 | domain=525, domain_suffix=6339, domain_keyword=0, domain_regex=9, ip_cidr=0 |
-| 与上次提交对比 | +18 / -0 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/direct-domain.txt`](removed/direct-domain.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-cn.srs` | 56465 B | 9353 |
+| `geosite-cn.srs` | 56468 B | 9353 |
 | `geosite-category-pt.srs` | 1160 B | 126 |
 | `geosite-category-game-platforms-download@cn.srs` | 431 B | 24 |
 | `geosite-115.srs` | 172 B | 14 |
@@ -164,21 +141,6 @@ domain_suffix	claudepages.dev
 | `bilibili2.srs` | 107 B | 4 |
 
 </details>
-
-与上次相比 **新增 18 条**（前 10 条）：
-
-```
-domain	ip.3322.net
-domain	ip.kutool.com
-domain	ip.plyz.net
-domain	ipv6test.wcode.net
-domain_suffix	chaip.me
-domain_suffix	cip.cc
-domain_suffix	cz88.net
-domain_suffix	getmyip.top
-domain_suffix	ifconfig.cc
-domain_suffix	ip.plus
-```
 
 ### direct-ip
 
