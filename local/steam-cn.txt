@@ -1,0 +1,32 @@
+# ⚠️ 本文件由 scripts/convert-steam.sh 生成，请勿手动修改
+# 上游: https://raw.githubusercontent.com/mrblack0407/surge_rules/main/rules/Steam-Direct.list
+# 策略: Steam-cn: 直连（配合 DNS -> dns-china，否则下载仍会拿到境外 CDN）
+# 格式: PR1 手写条目 —— suffix:=domain_suffix / full:=domain / keyword:=domain_keyword / ip:=ip_cidr
+suffix:steampowered.com
+suffix:steamcontent.com
+suffix:steamserver.net
+suffix:steampipe.akamaized.net
+suffix:steampipe-kr.akamaized.net
+suffix:steampipe-partner.akamaized.net
+suffix:store.cloudflare.steamstatic.com
+suffix:store.akamai.steamstatic.com
+suffix:store.fastly.steamstatic.com
+suffix:cdn.cloudflare.steamstatic.com
+suffix:cdn.akamai.steamstatic.com
+suffix:cdn.fastly.steamstatic.com
+suffix:shared.cloudflare.steamstatic.com
+suffix:shared.akamai.steamstatic.com
+suffix:shared.fastly.steamstatic.com
+suffix:video.cloudflare.steamstatic.com
+suffix:video.akamai.steamstatic.com
+suffix:clientconfig.akamai.steamstatic.com
+suffix:client-update.akamai.steamstatic.com
+suffix:steamstore-a.akamaihd.net
+suffix:steamcdn-a.akamaihd.net
+suffix:steammobile.akamaized.net
+suffix:steamgames.com
+suffix:steamchina.com
+suffix:st.dl.eccdnx.com
+suffix:st.dl.bscstorage.net
+suffix:dl.steam.clngaa.com
+suffix:xz.pphimalayanrt.com

@@ -10,12 +10,15 @@
 ```
 sources/          # 声明式输入：每个 .txt = 一个成品规则集，一行一个上游 URL
   direct-domain.txt   direct-ip.txt   ads.txt   ai.txt
-  google.txt          tailscale.txt   us.txt
+  google.txt          youtube.txt     tailscale.txt   us.txt
+  steam-cn.txt
 local/            # 手写条目：每个 .txt = 同名分组的补充规则（与上游合并后一起编译）
   us.txt
+  steam-cn.txt    steam-proxy.txt   # ← 由 scripts/convert-steam.sh 生成（勿手改）
 build.sh          # 构建脚本（POSIX sh，CI 与路由器都能跑）
 scripts/
   apply-picks.sh  # 把 picks/picks.json 写进 sources/*.txt 的自动块
+  convert-steam.sh # 把 Surge/Clash 的 Steam 清单转成 local/*.txt（幂等、遇到不可转类型硬失败）
 picks/
   picks.json      # ← 油猴脚本的导出贴这里，CI 自动生效
 tools/
@@ -40,7 +43,10 @@ report/           # 构建报告（由 CI 自动提交，见下文）
 | `dist/ai.srs` | `geosite-category-ai-!cn` | AI 出站分组 |
 | `dist/google.srs` | `geosite-google` | 指定出站 / urltest 分组 |
 | `dist/tailscale.srs` | `geosite-tailscale` | `direct`（否则 Tailscale 打洞端点会变成节点 IP）|
-| `dist/us.srs` | lyc8503: `18comic` | US 分组（JP 节点被 Cloudflare 拒）|
+| `dist/us.srs` | lyc8503: `18comic` + `local/us.txt` | US 分组（JP 节点被 Cloudflare 拒）|
+| `dist/youtube.srs` | SagerNet: `geosite-youtube` | YouTube selector（**规则必须排在 `google` 之前**，见下）|
+| `dist/steam-cn.srs` | SagerNet: `geosite-steam@cn` + `local/steam-cn.txt` | **`direct`**（⚠️ 必须配 DNS → `dns-china`，否则下载仍拿境外 CDN）|
+| `dist/steam-proxy.srs` | `local/steam-proxy.txt`（仅本地，无上游）| Steam 代理 selector（社区 / 创意工坊 / 聊天 / 直播）|
 
 > 每个产物都可以再叠加 `local/<name>.txt` 的手写条目（见「本地手写分组」一节）。
 

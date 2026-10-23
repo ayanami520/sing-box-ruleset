@@ -1,0 +1,23 @@
+# ⚠️ 本文件由 scripts/convert-steam.sh 生成，请勿手动修改
+# 上游: https://raw.githubusercontent.com/mrblack0407/surge_rules/main/rules/Steam-Community.list
+# 策略: Steam-proxy: 走代理（社区 / 创意工坊 / 聊天 / 直播）
+# 格式: PR1 手写条目 —— suffix:=domain_suffix / full:=domain / keyword:=domain_keyword / ip:=ip_cidr
+suffix:steamcommunity.com
+suffix:steamcommunity-a.akamaihd.net
+suffix:community.cloudflare.steamstatic.com
+suffix:community.akamai.steamstatic.com
+suffix:community.fastly.steamstatic.com
+suffix:avatars.cloudflare.steamstatic.com
+suffix:avatars.akamai.steamstatic.com
+suffix:avatars.fastly.steamstatic.com
+suffix:avatars.steamstatic.com
+suffix:steamusercontent.com
+suffix:steamusercontent-a.akamaihd.net
+suffix:steamuserimages-a.akamaihd.net
+suffix:steam-chat.com
+suffix:s.team
+suffix:steam.tv
+suffix:steambroadcast.akamaized.net
+suffix:steamvideo-a.akamaihd.net
+suffix:valvesoftware.com
+suffix:steamdeck.com

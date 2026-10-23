@@ -1,0 +1,12 @@
+# Steam 直连分组（Steam-cn）
+#   sources/steam-cn.txt + local/steam-cn.txt（同组合并）-> dist/steam-cn.srs
+#   路由动作: selector Steam-cn（成员 direct/JP/KR/US，默认 direct）
+#
+# ⚠️ 必须配套 DNS 规则 {"rule_set":["direct-domain","Steam-cn"],"server":"dns-china",...}
+#    否则 steamcontent.com 仍从境外 DNS 解析 ⇒ 仍被分配到海外 CDN ✗（白改）
+#
+# 本文件只放"上游"；手写/转换出来的条目在 local/steam-cn.txt
+# （由 scripts/convert-steam.sh 从 mrblack0407/surge_rules 的 Steam-Direct.list 生成）
+
+# 国内 CDN 镜像（sing-geosite 的 @cn 子集 = 只保留国内可达 / 有落地节点的那部分）
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-steam%40cn.srs

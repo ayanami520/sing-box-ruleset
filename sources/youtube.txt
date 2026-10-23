@@ -1,0 +1,13 @@
+# YouTube 分组
+#   sources/<name>.txt -> dist/<name>.srs
+#   路由动作: selector Youtube（成员 JP/KR/US，默认 JP）
+#
+# ★ 顺序要求: Youtube 规则必须排在 Google 之前
+#   实测 geosite-google 完全包含 geosite-youtube（youtube.com / googlevideo.com /
+#   ytimg.com / yt3.ggpht.com / youtu.be 全部在 google 集里也命中）⇒
+#   若 Google 在前，Youtube 分组永远选不中 ✗
+#
+# 一行一个上游地址, # 开头为注释。支持 .srs(二进制) 与 .json(源格式) 混用。
+
+# YouTube（sing-geosite）
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-youtube.srs
