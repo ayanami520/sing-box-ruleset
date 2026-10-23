@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/ads.txt (不提交, 随 CI artifact 上传)
-# 本次共 8757 行 (dup=8537, covered=220); 提交版上限 2000 行
+# 本次共 8756 行 (dup=8535, covered=221); 提交版上限 2000 行
 dup	domain	adblogger.vk.com
 dup	domain	adblogger.vk.ru
 dup	domain	ads.vk.com
@@ -1205,6 +1205,7 @@ dup	domain_suffix	admob-cn.com
 dup	domain_suffix	admob.com
 dup	domain_suffix	admobile.top
 dup	domain_suffix	admon.cn
+dup	domain_suffix	admusicpic.music.126.net
 dup	domain_suffix	adn-plus.com.cn
 dup	domain_suffix	adnet.sohu.com
 dup	domain_suffix	adnxs.com
@@ -1255,7 +1256,6 @@ dup	domain_suffix	ads-video-al.xhscdn.com
 dup	domain_suffix	ads-video-al.xhscdn.com.w.cdngslb.com
 dup	domain_suffix	ads-video-qc.xhscdn.com
 dup	domain_suffix	ads-vp5-xhscdn.tliveapp.com
-dup	domain_suffix	ads-vp5-xhscdn.tliveapp.com.cdn.dnsv1.com
 dup	domain_suffix	ads-vp5.xhscdn.com
 dup	domain_suffix	ads.17track.net
 dup	domain_suffix	ads.95516.com
@@ -2005,4 +2005,4 @@ dup	domain_suffix	bd.watu.cn
 dup	domain_suffix	bd1.click.com.cn
 dup	domain_suffix	bd1.guancha.cn
 dup	domain_suffix	bd1.moguvet.com
-# ... 已截断: 共 8757 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
+# ... 已截断: 共 8756 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
