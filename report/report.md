@@ -7,16 +7,16 @@
 
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
-| `ads` | 8 | 0 | 173536 | 24426 | 10048 | 221 | 14157 | +32 / -0 |
+| `ads` | 8 | 0 | 173762 | 24456 | 10085 | 220 | 14151 | +1 / -7 |
 | `ai` | 1 | 0 | 2193 | 205 | 0 | 0 | 205 | = 无变化 |
 | `direct-domain` | 13 | 0 | 40108 | 9950 | 457 | 2620 | 6873 | = 无变化 |
 | `direct-ip` | 1 | 0 | 34268 | 8113 | 0 | 0 | 8113 | = 无变化 |
 | `google` | 1 | 0 | 7091 | 938 | 0 | 76 | 862 | = 无变化 |
-| `steam-cn` | 1 | 28 | 616 | 45 | 4 | 2 | 39 | 🆕 首次 (无上次产物可比) |
-| `steam-proxy` | 0 | 19 | 334 | 19 | 0 | 0 | 19 | 🆕 首次 (无上次产物可比) |
+| `steam-cn` | 1 | 28 | 616 | 45 | 4 | 2 | 39 | = 无变化 |
+| `steam-proxy` | 0 | 19 | 334 | 19 | 0 | 0 | 19 | = 无变化 |
 | `tailscale` | 1 | 0 | 80 | 3 | 0 | 0 | 3 | = 无变化 |
 | `us` | 1 | 5 | 690 | 56 | 0 | 0 | 56 | = 无变化 |
-| `youtube` | 1 | 0 | 1279 | 178 | 0 | 1 | 177 | 🆕 首次 (无上次产物可比) |
+| `youtube` | 1 | 0 | 1279 | 178 | 0 | 1 | 177 | = 无变化 |
 
 - `原始条目` = 各上游条目直接相加（`local/` 手写条目也算在内，含重复）；`最终条目` 才是写进 `.srs` 的条数。
 - `覆盖删除` = 被更短的 `domain_suffix` 覆盖而剔除的条目（语义等价）。
@@ -26,7 +26,7 @@
 
 | 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 136 | 13973 | 25 | 1 | 22 | 0 | ✅ |
+| `ads` | 137 | 13966 | 25 | 1 | 22 | 0 | ✅ |
 | `ai` | 31 | 173 | 0 | 1 | 0 | 0 | ✅ |
 | `direct-domain` | 525 | 6339 | 0 | 9 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8113 | 0 | ✅ |
@@ -52,11 +52,11 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 8 / 0 |
-| 产物 | `dist/ads.srs` — 173536 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 24426 / 14378 / 14157 |
-| 删除: 上游重复 / 被覆盖 | 10048 / 221 |
-| 匹配器 | domain=136, domain_suffix=13973, domain_keyword=25, domain_regex=1, ip_cidr=22 |
-| 与上次提交对比 | +32 / -0 |
+| 产物 | `dist/ads.srs` — 173762 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 24456 / 14371 / 14151 |
+| 删除: 上游重复 / 被覆盖 | 10085 / 220 |
+| 匹配器 | domain=137, domain_suffix=13966, domain_keyword=25, domain_regex=1, ip_cidr=22 |
+| 与上次提交对比 | +1 / -7 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
@@ -67,26 +67,29 @@
 | `adblocksingboxlite.srs` | 63463 B | 8455 |
 | `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
-| `BanAD.srs` | 71823 B | 8855 |
+| `BanAD.srs` | 71981 B | 8885 |
 | `BanADCompany.srs` | 1473 B | 131 |
 | `BanEasyListChina.srs` | 33475 B | 5050 |
 | `BanProgramAD.srs` | 7940 B | 1008 |
 
 </details>
 
-与上次相比 **新增 32 条**（前 10 条）：
+与上次相比 **移除 7 条**（前 10 条，完整见明细文件）：
 
 ```
-domain_suffix	3rev8wh22y.com
-domain_suffix	9kos5nsw7.com
-domain_suffix	ad-cmp.hismarttv.com
-domain_suffix	ad-download.hismarttv.com
-domain_suffix	boost-cmp.hismarttv.com
-domain_suffix	crash.taptap.com
-domain_suffix	fg.yilianqing.com
-domain_suffix	fyi1v4fcw3.com
-domain_suffix	fzpress.com.cn
-domain_suffix	gdfzcez6q.com
+domain_suffix	ads-vp5-xhscdn.tliveapp.com.cdn.dnsv1.com
+domain_suffix	fdhvczd.cn
+domain_suffix	rtlog3-applog.fqnovel.com
+domain_suffix	statistics.one-all.cn
+domain_suffix	uaaooa.stansberryresearch.com
+domain_suffix	wbesryx.cn
+domain_suffix	zoossoft.cn
+```
+
+与上次相比 **新增 1 条**（前 10 条）：
+
+```
+domain	rtlog3-applog.fqnovel.com
 ```
 
 ### ai
@@ -190,7 +193,7 @@ domain_suffix	gdfzcez6q.com
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 45 / 41 / 39 |
 | 删除: 上游重复 / 被覆盖 | 4 / 2 |
 | 匹配器 | domain=1, domain_suffix=38, domain_keyword=0, domain_regex=0, ip_cidr=0 |
-| 与上次提交对比 | 🆕 首次 (无上次产物可比) |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/steam-cn.txt`](removed/steam-cn.txt) |
 
 <details><summary>上游明细</summary>
@@ -211,7 +214,7 @@ domain_suffix	gdfzcez6q.com
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 19 / 19 / 19 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
 | 匹配器 | domain=0, domain_suffix=19, domain_keyword=0, domain_regex=0, ip_cidr=0 |
-| 与上次提交对比 | 🆕 首次 (无上次产物可比) |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/steam-proxy.txt`](removed/steam-proxy.txt) |
 
 <details><summary>上游明细</summary>
@@ -272,7 +275,7 @@ domain_suffix	gdfzcez6q.com
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 178 / 178 / 177 |
 | 删除: 上游重复 / 被覆盖 | 0 / 1 |
 | 匹配器 | domain=1, domain_suffix=176, domain_keyword=0, domain_regex=0, ip_cidr=0 |
-| 与上次提交对比 | 🆕 首次 (无上次产物可比) |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/youtube.txt`](removed/youtube.txt) |
 
 <details><summary>上游明细</summary>
