@@ -18,3 +18,6 @@ jdbstatic.com
 # Hanime: 在 JP 节点上被拒, 必须走 US
 hanime1.me
 hanimeone.me
+
+#幻想次元
+hxcy.top
