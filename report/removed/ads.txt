@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/ads.txt (不提交, 随 CI artifact 上传)
-# 本次共 8769 行 (dup=8549, covered=220); 提交版上限 2000 行
+# 本次共 8796 行 (dup=8576, covered=220); 提交版上限 2000 行
 dup	domain	adblogger.vk.com
 dup	domain	adblogger.vk.ru
 dup	domain	ads.vk.com
@@ -70,6 +70,7 @@ dup	domain_suffix	0ihw4ipvm5.com
 dup	domain_suffix	0jghm60qg.com
 dup	domain_suffix	0kl9n3q2b.com
 dup	domain_suffix	0kplffrs42.com
+dup	domain_suffix	0kue3oryg.com
 dup	domain_suffix	0l7t5qhb4.com
 dup	domain_suffix	0lai5bvkg.com
 dup	domain_suffix	0mkeb9vth.com
@@ -159,6 +160,7 @@ dup	domain_suffix	18mo21a2ji.com
 dup	domain_suffix	192168.luyouwang.com
 dup	domain_suffix	198game.com
 dup	domain_suffix	19dkfu1wg.com
+dup	domain_suffix	1a7pxa2r7.com
 dup	domain_suffix	1aa0yygqst.com
 dup	domain_suffix	1bsb5sic0.com
 dup	domain_suffix	1cimslrk3.com
@@ -192,6 +194,7 @@ dup	domain_suffix	1mb71rr5oo.com
 dup	domain_suffix	1mpi.com
 dup	domain_suffix	1n4vrzxdms.com
 dup	domain_suffix	1nevsf92q.com
+dup	domain_suffix	1nrgur4y43.com
 dup	domain_suffix	1nvnkyg65.com
 dup	domain_suffix	1o0g85u7k1.com
 dup	domain_suffix	1o1nuqbjea.com
@@ -415,6 +418,7 @@ dup	domain_suffix	46y7erj0mw.com
 dup	domain_suffix	47f9jdixm7.com
 dup	domain_suffix	48dswtxkw.com
 dup	domain_suffix	48r3l2u5l2.com
+dup	domain_suffix	490i1rrbd.com
 dup	domain_suffix	49ioqq6kt.com
 dup	domain_suffix	49o4m4a5eo.com
 dup	domain_suffix	4bo5t8fzd.com
@@ -1069,6 +1073,7 @@ dup	domain_suffix	ad.meetyouintl.com
 dup	domain_suffix	ad.mh.163.com
 dup	domain_suffix	ad.mi.com
 dup	domain_suffix	ad.mingruidata.com
+dup	domain_suffix	ad.missionhillschina.com
 dup	domain_suffix	ad.mobile.youku.com
 dup	domain_suffix	ad.moonton.cn
 dup	domain_suffix	ad.new.oe.hmgreat.com
@@ -1216,6 +1221,7 @@ dup	domain_suffix	adpai.thepaper.cn
 dup	domain_suffix	adping.qq.com
 dup	domain_suffix	adproxy.autohome.com.cn
 dup	domain_suffix	adpublish.ydstatic.com
+dup	domain_suffix	adq.chinaso.com
 dup	domain_suffix	adquan.com
 dup	domain_suffix	adreal.cn
 dup	domain_suffix	adreq.vivo.com.cn
@@ -1287,6 +1293,7 @@ dup	domain_suffix	ads.ishansong.com
 dup	domain_suffix	ads.jianchiapp.com
 dup	domain_suffix	ads.linkedin.cn
 dup	domain_suffix	ads.linkedin.com
+dup	domain_suffix	ads.manguoguo.com
 dup	domain_suffix	ads.morefreegame.com
 dup	domain_suffix	ads.music.126.net
 dup	domain_suffix	ads.mykudou.com
@@ -1302,10 +1309,12 @@ dup	domain_suffix	ads.union.jd.com
 dup	domain_suffix	ads.unitychina.cn
 dup	domain_suffix	ads.uutest.cn
 dup	domain_suffix	ads.v3mh.com
+dup	domain_suffix	ads.welltalky.cn
 dup	domain_suffix	ads.yahoo.com
 dup	domain_suffix	ads.youtube.com
 dup	domain_suffix	ads.zestlink.net
 dup	domain_suffix	ads.zhinengxiyifang.cn
+dup	domain_suffix	ads.zhios.cn
 dup	domain_suffix	ads3-normal-hl.zijieapi.com
 dup	domain_suffix	ads3-normal-hl.zijieapi.com.queniurc.com
 dup	domain_suffix	ads3-normal-hl.zijieapi.com.w.cdngslb.com
@@ -1346,6 +1355,7 @@ dup	domain_suffix	adse.test.ximalaya.com
 dup	domain_suffix	adse.wsa.ximalaya.com
 dup	domain_suffix	adse.ximalaya.com
 dup	domain_suffix	adsense.google.cn
+dup	domain_suffix	adserver.mtrust.cn
 dup	domain_suffix	adserver.unityads.unity3d.com
 dup	domain_suffix	adserver.webproxy.idc-lorien21swww.bltheluxurystorontor.mgmt.toronto.ups.com.cn
 dup	domain_suffix	adserver.yaboo.com
@@ -1579,6 +1589,7 @@ dup	domain_suffix	analytics.cnblogs.com
 dup	domain_suffix	analytics.coodesker.com
 dup	domain_suffix	analytics.dealmoon.com
 dup	domain_suffix	analytics.dsyqt.com
+dup	domain_suffix	analytics.elim.cn
 dup	domain_suffix	analytics.emqx.com
 dup	domain_suffix	analytics.emqx.com.w.cdngslb.com
 dup	domain_suffix	analytics.f2b211.com
@@ -1588,6 +1599,7 @@ dup	domain_suffix	analytics.ganji.com
 dup	domain_suffix	analytics.globalsources.com
 dup	domain_suffix	analytics.ifanrusercontent.com
 dup	domain_suffix	analytics.infility.cn
+dup	domain_suffix	analytics.joomlass.com
 dup	domain_suffix	analytics.julebu.co
 dup	domain_suffix	analytics.ly200.com
 dup	domain_suffix	analytics.m5stack.com
@@ -1961,6 +1973,7 @@ dup	domain_suffix	b11tuokk6g.com
 dup	domain_suffix	b11yn56zn.com
 dup	domain_suffix	b1zftjhtwb.com
 dup	domain_suffix	b2-data.ads.heytapmobi.com
+dup	domain_suffix	b2rqwuqzea.com
 dup	domain_suffix	b2v18mn8f6.com
 dup	domain_suffix	b4641y3dw.com
 dup	domain_suffix	b47e82rmue.com
@@ -1992,17 +2005,4 @@ dup	domain_suffix	baycode.cn
 dup	domain_suffix	bayescom.com
 dup	domain_suffix	bb2k0pq1vf.com
 dup	domain_suffix	bbbazlp.cn
-dup	domain_suffix	bbcoe.cn
-dup	domain_suffix	bbqy4ihvz9.com
-dup	domain_suffix	bc.qunar.com
-dup	domain_suffix	bchina-1.xsfaya.com
-dup	domain_suffix	bcmbmedbqx.icu
-dup	domain_suffix	bd-p2p-v2.pull.yximgs.com
-dup	domain_suffix	bd-p2p.pull.yximgs.com
-dup	domain_suffix	bd-s.baixing.net
-dup	domain_suffix	bd.czxuexi.com
-dup	domain_suffix	bd.hd.sohu.com
-dup	domain_suffix	bd.watu.cn
-dup	domain_suffix	bd1.click.com.cn
-dup	domain_suffix	bd1.guancha.cn
-# ... 已截断: 共 8769 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
+# ... 已截断: 共 8796 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
