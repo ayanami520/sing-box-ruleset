@@ -7,15 +7,15 @@
 
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
-| `ads` | 8 | 0 | 173762 | 24456 | 10085 | 220 | 14151 | +1 / -7 |
+| `ads` | 8 | 0 | 173902 | 24465 | 10061 | 220 | 14184 | +33 / -0 |
 | `ai` | 1 | 0 | 2193 | 205 | 0 | 0 | 205 | = 无变化 |
-| `direct-domain` | 13 | 0 | 40108 | 9950 | 457 | 2620 | 6873 | = 无变化 |
+| `direct-domain` | 13 | 0 | 40099 | 9952 | 458 | 2620 | 6874 | +1 / -0 |
 | `direct-ip` | 1 | 0 | 34268 | 8113 | 0 | 0 | 8113 | = 无变化 |
 | `google` | 1 | 0 | 7091 | 938 | 0 | 76 | 862 | = 无变化 |
 | `steam-cn` | 1 | 28 | 616 | 45 | 4 | 2 | 39 | = 无变化 |
 | `steam-proxy` | 0 | 19 | 334 | 19 | 0 | 0 | 19 | = 无变化 |
 | `tailscale` | 1 | 0 | 80 | 3 | 0 | 0 | 3 | = 无变化 |
-| `us` | 1 | 5 | 690 | 56 | 0 | 0 | 56 | = 无变化 |
+| `us` | 1 | 6 | 695 | 57 | 0 | 0 | 57 | +1 / -0 |
 | `youtube` | 1 | 0 | 1279 | 178 | 0 | 1 | 177 | = 无变化 |
 
 - `原始条目` = 各上游条目直接相加（`local/` 手写条目也算在内，含重复）；`最终条目` 才是写进 `.srs` 的条数。
@@ -26,15 +26,15 @@
 
 | 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 137 | 13966 | 25 | 1 | 22 | 0 | ✅ |
+| `ads` | 137 | 13999 | 25 | 1 | 22 | 0 | ✅ |
 | `ai` | 31 | 173 | 0 | 1 | 0 | 0 | ✅ |
-| `direct-domain` | 525 | 6339 | 0 | 9 | 0 | 0 | ✅ |
+| `direct-domain` | 525 | 6340 | 0 | 9 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8113 | 0 | ✅ |
 | `google` | 31 | 829 | 0 | 2 | 0 | 0 | ✅ |
 | `steam-cn` | 1 | 38 | 0 | 0 | 0 | 0 | ✅ |
 | `steam-proxy` | 0 | 19 | 0 | 0 | 0 | 0 | ✅ |
 | `tailscale` | 0 | 3 | 0 | 0 | 0 | 0 | ✅ |
-| `us` | 0 | 55 | 1 | 0 | 0 | 0 | ✅ |
+| `us` | 0 | 56 | 1 | 0 | 0 | 0 | ✅ |
 | `youtube` | 1 | 176 | 0 | 0 | 0 | 0 | ✅ |
 
 - `domain` / `domain_suffix`：简洁字典树查找，**耗时与条数无关**，只看域名长度 ⇒ 放多少条都基本不影响速度。
@@ -52,11 +52,11 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 8 / 0 |
-| 产物 | `dist/ads.srs` — 173762 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 24456 / 14371 / 14151 |
-| 删除: 上游重复 / 被覆盖 | 10085 / 220 |
-| 匹配器 | domain=137, domain_suffix=13966, domain_keyword=25, domain_regex=1, ip_cidr=22 |
-| 与上次提交对比 | +1 / -7 |
+| 产物 | `dist/ads.srs` — 173902 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 24465 / 14404 / 14184 |
+| 删除: 上游重复 / 被覆盖 | 10061 / 220 |
+| 匹配器 | domain=137, domain_suffix=13999, domain_keyword=25, domain_regex=1, ip_cidr=22 |
+| 与上次提交对比 | +33 / -0 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
@@ -64,7 +64,7 @@
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
 | `geosite-category-ads-all.srs` | 8129 B | 904 |
-| `adblocksingboxlite.srs` | 63463 B | 8455 |
+| `adblocksingboxlite.srs` | 63549 B | 8464 |
 | `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
 | `BanAD.srs` | 71981 B | 8885 |
@@ -74,22 +74,19 @@
 
 </details>
 
-与上次相比 **移除 7 条**（前 10 条，完整见明细文件）：
+与上次相比 **新增 33 条**（前 10 条）：
 
 ```
-domain_suffix	ads-vp5-xhscdn.tliveapp.com.cdn.dnsv1.com
-domain_suffix	fdhvczd.cn
-domain_suffix	rtlog3-applog.fqnovel.com
-domain_suffix	statistics.one-all.cn
-domain_suffix	uaaooa.stansberryresearch.com
-domain_suffix	wbesryx.cn
-domain_suffix	zoossoft.cn
-```
-
-与上次相比 **新增 1 条**（前 10 条）：
-
-```
-domain	rtlog3-applog.fqnovel.com
+domain_suffix	0kue3oryg.com
+domain_suffix	1a7pxa2r7.com
+domain_suffix	1nrgur4y43.com
+domain_suffix	490i1rrbd.com
+domain_suffix	ad.missionhillschina.com
+domain_suffix	adq.chinaso.com
+domain_suffix	ads.manguoguo.com
+domain_suffix	ads.welltalky.cn
+domain_suffix	ads.zhios.cn
+domain_suffix	adserver.mtrust.cn
 ```
 
 ### ai
@@ -117,24 +114,24 @@ domain	rtlog3-applog.fqnovel.com
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 13 / 0 |
-| 产物 | `dist/direct-domain.srs` — 40108 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 9950 / 9493 / 6873 |
-| 删除: 上游重复 / 被覆盖 | 457 / 2620 |
-| 匹配器 | domain=525, domain_suffix=6339, domain_keyword=0, domain_regex=9, ip_cidr=0 |
-| 与上次提交对比 | = 无变化 |
+| 产物 | `dist/direct-domain.srs` — 40099 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 9952 / 9494 / 6874 |
+| 删除: 上游重复 / 被覆盖 | 458 / 2620 |
+| 匹配器 | domain=525, domain_suffix=6340, domain_keyword=0, domain_regex=9, ip_cidr=0 |
+| 与上次提交对比 | +1 / -0 |
 | 明细 | [`report/removed/direct-domain.txt`](removed/direct-domain.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-cn.srs` | 56468 B | 9353 |
+| `geosite-cn.srs` | 56497 B | 9354 |
 | `geosite-category-pt.srs` | 1160 B | 126 |
 | `geosite-category-game-platforms-download@cn.srs` | 431 B | 24 |
 | `geosite-115.srs` | 172 B | 14 |
 | `geosite-category-netdisk-cn.srs` | 770 B | 91 |
 | `geosite-category-social-media-cn.srs` | 518 B | 54 |
-| `geosite-category-speedtest@cn.srs` | 224 B | 17 |
+| `geosite-category-speedtest@cn.srs` | 246 B | 18 |
 | `apple-cn.srs` | 1306 B | 165 |
 | `apple-music@cn.srs` | 115 B | 7 |
 | `aws-cn.srs` | 394 B | 28 |
@@ -143,6 +140,12 @@ domain	rtlog3-applog.fqnovel.com
 | `bilibili2.srs` | 107 B | 4 |
 
 </details>
+
+与上次相比 **新增 1 条**（前 10 条）：
+
+```
+domain_suffix	wangsuceshi.bmcx.com
+```
 
 ### direct-ip
 
@@ -249,12 +252,12 @@ domain	rtlog3-applog.fqnovel.com
 
 | 项 | 值 |
 |---|---|
-| 上游数 / 本地条目 | 1 / 5 |
-| 产物 | `dist/us.srs` — 690 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 56 / 56 / 56 |
+| 上游数 / 本地条目 | 1 / 6 |
+| 产物 | `dist/us.srs` — 695 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 57 / 57 / 57 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
-| 匹配器 | domain=0, domain_suffix=55, domain_keyword=1, domain_regex=0, ip_cidr=0 |
-| 与上次提交对比 | = 无变化 |
+| 匹配器 | domain=0, domain_suffix=56, domain_keyword=1, domain_regex=0, ip_cidr=0 |
+| 与上次提交对比 | +1 / -0 |
 | 明细 | [`report/removed/us.txt`](removed/us.txt) |
 
 <details><summary>上游明细</summary>
@@ -262,9 +265,15 @@ domain	rtlog3-applog.fqnovel.com
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
 | `geosite-18comic.srs` | 623 B | 51 |
-| `local/us.txt` (本地手写) | - | 5 |
+| `local/us.txt` (本地手写) | - | 6 |
 
 </details>
+
+与上次相比 **新增 1 条**（前 10 条）：
+
+```
+domain_suffix	hxcy.top
+```
 
 ### youtube
 

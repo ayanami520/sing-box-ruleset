@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/direct-domain.txt (不提交, 随 CI artifact 上传)
-# 本次共 3049 行 (dup=429, covered=2620); 提交版上限 2000 行
+# 本次共 3050 行 (dup=430, covered=2620); 提交版上限 2000 行
 dup	domain	a1.mzstatic.com
 dup	domain	a2.mzstatic.com
 dup	domain	a3.mzstatic.com
@@ -407,6 +407,7 @@ dup	domain_suffix	uneed.com
 dup	domain_suffix	uneedx.com
 dup	domain_suffix	updream.cn
 dup	domain_suffix	vzuu.com
+dup	domain_suffix	wangsuceshi.bmcx.com
 dup	domain_suffix	weiyun.com
 dup	domain_suffix	wenshushu.cn
 dup	domain_suffix	wenshushu.com
@@ -2004,5 +2005,4 @@ covered	domain_suffix	log.tbs.qq.com	qq.com
 covered	domain_suffix	log.umtrack.com	umtrack.com
 covered	domain_suffix	log.v2.hunantv.com	hunantv.com
 covered	domain_suffix	log.zijieapi.com	zijieapi.com
-covered	domain_suffix	log2.sina.cn	cn
-# ... 已截断: 共 3049 行, 仅保留前 2000 行 (完整清单见 report/.full/direct-domain.txt)
+# ... 已截断: 共 3050 行, 仅保留前 2000 行 (完整清单见 report/.full/direct-domain.txt)

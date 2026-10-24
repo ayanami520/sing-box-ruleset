@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/ads.txt (不提交, 随 CI artifact 上传)
-# 本次共 8787 行 (dup=8567, covered=220); 提交版上限 2000 行
+# 本次共 8769 行 (dup=8549, covered=220); 提交版上限 2000 行
 dup	domain	adblogger.vk.com
 dup	domain	adblogger.vk.ru
 dup	domain	ads.vk.com
@@ -965,7 +965,6 @@ dup	domain_suffix	acc.3gbizhi.com
 dup	domain_suffix	acc.jiangsujiaxue.com
 dup	domain_suffix	accredencisive.top
 dup	domain_suffix	accscdn.m.taobao.com
-dup	domain_suffix	acgshenshicha.cn
 dup	domain_suffix	acjs.aliyun.com
 dup	domain_suffix	acookie.alimama.com
 dup	domain_suffix	acqephvfx.com
@@ -997,7 +996,6 @@ dup	domain_suffix	ad-host-backup-asia.oss-ap-southeast-1.aliyuncs.com
 dup	domain_suffix	ad-host-backup-europe.oss-eu-central-1.aliyuncs.com
 dup	domain_suffix	ad-incentive.ximalaya.com
 dup	domain_suffix	ad-log-upload-os.hoyoverse.com
-dup	domain_suffix	ad-log-upload.mihoyo.com
 dup	domain_suffix	ad-log.didiglobal.com
 dup	domain_suffix	ad-plus.cn
 dup	domain_suffix	ad-r.soulapp.cn
@@ -2005,4 +2003,6 @@ dup	domain_suffix	bd-s.baixing.net
 dup	domain_suffix	bd.czxuexi.com
 dup	domain_suffix	bd.hd.sohu.com
 dup	domain_suffix	bd.watu.cn
-# ... 已截断: 共 8787 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
+dup	domain_suffix	bd1.click.com.cn
+dup	domain_suffix	bd1.guancha.cn
+# ... 已截断: 共 8769 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
