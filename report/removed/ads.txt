@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/ads.txt (不提交, 随 CI artifact 上传)
-# 本次共 8796 行 (dup=8576, covered=220); 提交版上限 2000 行
+# 本次共 8810 行 (dup=8589, covered=221); 提交版上限 2000 行
 dup	domain	adblogger.vk.com
 dup	domain	adblogger.vk.ru
 dup	domain	ads.vk.com
@@ -566,6 +566,7 @@ dup	domain_suffix	5uzpwjwkb.com
 dup	domain_suffix	5v19ql3xi1.com
 dup	domain_suffix	5vszw5ab2.com
 dup	domain_suffix	5w31xv1a2.com
+dup	domain_suffix	5wczjm7h4.com
 dup	domain_suffix	5wkni37mso.com
 dup	domain_suffix	5wt390pvwz.com
 dup	domain_suffix	5wv0y42ub.com
@@ -878,7 +879,6 @@ dup	domain_suffix	a.ac.qq.com
 dup	domain_suffix	a.armystar.com
 dup	domain_suffix	a.baidinet.com
 dup	domain_suffix	a.baidu.com
-dup	domain_suffix	a.baomihua.com
 dup	domain_suffix	a.bfking.cn
 dup	domain_suffix	a.dangdang.com
 dup	domain_suffix	a.dyjqd.com
@@ -906,7 +906,6 @@ dup	domain_suffix	a1.51shiti.cn
 dup	domain_suffix	a1.99933.cn
 dup	domain_suffix	a1.99966.cn
 dup	domain_suffix	a1.bajiu.cn
-dup	domain_suffix	a1.bestopview.com
 dup	domain_suffix	a1.cyyangqiguan.com
 dup	domain_suffix	a1.itc.cn
 dup	domain_suffix	a1.lshou.com
@@ -969,6 +968,7 @@ dup	domain_suffix	acc.3gbizhi.com
 dup	domain_suffix	acc.jiangsujiaxue.com
 dup	domain_suffix	accredencisive.top
 dup	domain_suffix	accscdn.m.taobao.com
+dup	domain_suffix	acgshenshicha.cn
 dup	domain_suffix	acjs.aliyun.com
 dup	domain_suffix	acookie.alimama.com
 dup	domain_suffix	acqephvfx.com
@@ -1000,6 +1000,7 @@ dup	domain_suffix	ad-host-backup-asia.oss-ap-southeast-1.aliyuncs.com
 dup	domain_suffix	ad-host-backup-europe.oss-eu-central-1.aliyuncs.com
 dup	domain_suffix	ad-incentive.ximalaya.com
 dup	domain_suffix	ad-log-upload-os.hoyoverse.com
+dup	domain_suffix	ad-log-upload.mihoyo.com
 dup	domain_suffix	ad-log.didiglobal.com
 dup	domain_suffix	ad-plus.cn
 dup	domain_suffix	ad-r.soulapp.cn
@@ -1024,6 +1025,7 @@ dup	domain_suffix	ad.51wnl.com
 dup	domain_suffix	ad.980x.com
 dup	domain_suffix	ad.a.yximgs.com
 dup	domain_suffix	ad.adtrack.enlightent.cn
+dup	domain_suffix	ad.ah.jrgphq.cn
 dup	domain_suffix	ad.api.3g.youku.com
 dup	domain_suffix	ad.api.mobile.youku.com
 dup	domain_suffix	ad.api.moji.com
@@ -1054,16 +1056,19 @@ dup	domain_suffix	ad.gameskksdk.xyz
 dup	domain_suffix	ad.ganji.com
 dup	domain_suffix	ad.glinkmedia.com
 dup	domain_suffix	ad.gmw.cn
+dup	domain_suffix	ad.hbwxfwl.top
 dup	domain_suffix	ad.house365.com
 dup	domain_suffix	ad.hunyuan.tencent.com
 dup	domain_suffix	ad.ibotomo.com
 dup	domain_suffix	ad.iot.360.cn
+dup	domain_suffix	ad.itrwzs.cn
 dup	domain_suffix	ad.iwhop.cn
 dup	domain_suffix	ad.jia.360.cn
 dup	domain_suffix	ad.jooancloud.com
 dup	domain_suffix	ad.jschina.com.cn
 dup	domain_suffix	ad.ldplayer.net
 dup	domain_suffix	ad.lelongpp.com
+dup	domain_suffix	ad.lhyghh.cn
 dup	domain_suffix	ad.life.360.cn
 dup	domain_suffix	ad.lofter.com
 dup	domain_suffix	ad.m.iqiyi.com
@@ -1109,6 +1114,7 @@ dup	domain_suffix	ad.weplayer.cc
 dup	domain_suffix	ad.winrar.com.cn
 dup	domain_suffix	ad.xiaomi.com
 dup	domain_suffix	ad.ximalaya.com
+dup	domain_suffix	ad.xmydch.cn
 dup	domain_suffix	ad.xtdrug.com
 dup	domain_suffix	ad.xuanheng03.cn
 dup	domain_suffix	ad.xunkids.com
@@ -1263,16 +1269,19 @@ dup	domain_suffix	ads-video-al.xhscdn.com
 dup	domain_suffix	ads-video-al.xhscdn.com.w.cdngslb.com
 dup	domain_suffix	ads-video-qc.xhscdn.com
 dup	domain_suffix	ads-vp5-xhscdn.tliveapp.com
+dup	domain_suffix	ads-vp5-xhscdn.tliveapp.com.cdn.dnsv1.com
 dup	domain_suffix	ads-vp5.xhscdn.com
 dup	domain_suffix	ads.17track.net
 dup	domain_suffix	ads.95516.com
 dup	domain_suffix	ads.adagent.chacha.com
 dup	domain_suffix	ads.adyoung.cn
+dup	domain_suffix	ads.api.my7v.com
 dup	domain_suffix	ads.apple.com
 dup	domain_suffix	ads.bestads.com
 dup	domain_suffix	ads.bestads.com.queniuaa.com
 dup	domain_suffix	ads.cecb2b.com
 dup	domain_suffix	ads.china.com
+dup	domain_suffix	ads.cloud.huawei.com
 dup	domain_suffix	ads.csdn.net
 dup	domain_suffix	ads.cup.com.cn
 dup	domain_suffix	ads.didiglobal.com
@@ -1424,11 +1433,11 @@ dup	domain_suffix	adv.sec.miui.com
 dup	domain_suffix	adv.vk.com
 dup	domain_suffix	adv.xmmku.com
 dup	domain_suffix	adver.pengyou.com
+dup	domain_suffix	advert-prod.hyrz.qq.com
 dup	domain_suffix	advert-server.elecfans.com
 dup	domain_suffix	advert-statistic-vip.xunlei.com
 dup	domain_suffix	advert.58.com
 dup	domain_suffix	advert.api.thejoyrun.com
-dup	domain_suffix	advertise.baicizhan.com
 dup	domain_suffix	advertise.cloudlinks.cn
 dup	domain_suffix	advertise.ldplayer.net
 dup	domain_suffix	advertpay-vip-ssl.xunlei.com
@@ -1996,13 +2005,4 @@ dup	domain_suffix	baidustatic.com
 dup	domain_suffix	baifen.music.baidu.com
 dup	domain_suffix	baifendian.com
 dup	domain_suffix	baixing.com
-dup	domain_suffix	bakbitionb.com
-dup	domain_suffix	balanced-red-emhnkdfj-dp7g2kvqxx8n.edgeone.dev
-dup	domain_suffix	banana.le.com
-dup	domain_suffix	bar.baidu.com
-dup	domain_suffix	bartender.cc
-dup	domain_suffix	baycode.cn
-dup	domain_suffix	bayescom.com
-dup	domain_suffix	bb2k0pq1vf.com
-dup	domain_suffix	bbbazlp.cn
-# ... 已截断: 共 8796 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
+# ... 已截断: 共 8810 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)

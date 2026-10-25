@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/direct-domain.txt (不提交, 随 CI artifact 上传)
-# 本次共 3050 行 (dup=430, covered=2620); 提交版上限 2000 行
+# 本次共 3056 行 (dup=430, covered=2626); 提交版上限 2000 行
 dup	domain	a1.mzstatic.com
 dup	domain	a2.mzstatic.com
 dup	domain	a3.mzstatic.com
@@ -441,6 +441,7 @@ covered	domain	ads5-normal-hl.zijieapi.com	zijieapi.com
 covered	domain	ads5-normal.zijieapi.com	zijieapi.com
 covered	domain	ai.zhaomi.cn	cn
 covered	domain	apilog-web.acfun.cn	cn
+covered	domain	app.moegirl.org.cn	cn
 covered	domain	assets1.xboxlive.cn	cn
 covered	domain	assets2.xboxlive.cn	cn
 covered	domain	blzdist-d3.necdn.leihuo.netease.com	netease.com
@@ -508,6 +509,7 @@ covered	domain	rtlog5-applog.fqnovel.com	fqnovel.com
 covered	domain	ss.bjmu.edu.cn	cn
 covered	domain	st.dl.bscstorage.net	st.dl.bscstorage.net
 covered	domain	st.dl.eccdnx.com	st.dl.eccdnx.com
+covered	domain	storage.moegirl.org.cn	cn
 covered	domain	study.163.com	163.com
 covered	domain	time.amazonaws.cn	cn
 covered	domain	time.izatcloud.net	izatcloud.net
@@ -613,6 +615,7 @@ covered	domain_suffix	a.youdao.com	youdao.com
 covered	domain_suffix	a2z.org.cn	cn
 covered	domain_suffix	aadcloud.cn	cn
 covered	domain_suffix	aadrm.cn	cn
+covered	domain_suffix	aaej.cn	cn
 covered	domain_suffix	aaic.com.cn	cn
 covered	domain_suffix	aaid.umeng.com	umeng.com
 covered	domain_suffix	aboutamazon.cn	cn
@@ -961,6 +964,7 @@ covered	domain_suffix	blueos.com.cn	cn
 covered	domain_suffix	bmac.com.cn	cn
 covered	domain_suffix	boc.cn	cn
 covered	domain_suffix	boccfc.cn	cn
+covered	domain_suffix	bocd.com.cn	cn
 covered	domain_suffix	bocichina.cn	cn
 covered	domain_suffix	bocichina.com.cn	cn
 covered	domain_suffix	bocifunds.cn	cn
@@ -1235,8 +1239,10 @@ covered	domain_suffix	cptu.cn	cn
 covered	domain_suffix	cptu.org.cn	cn
 covered	domain_suffix	cpu.baidu.com	baidu.com
 covered	domain_suffix	cqctyiptv.cn	cn
+covered	domain_suffix	cqge.com.cn	cn
 covered	domain_suffix	cqhlw.cn	cn
 covered	domain_suffix	cqn.com.cn	cn
+covered	domain_suffix	cqsdlys.cn	cn
 covered	domain_suffix	cqtk.com.cn	cn
 covered	domain_suffix	crash.163.com	163.com
 covered	domain_suffix	crash2.zhihu.com	zhihu.com
@@ -1586,6 +1592,7 @@ covered	domain_suffix	gov.cn	cn
 covered	domain_suffix	govwza.cn	cn
 covered	domain_suffix	gpall.cn	cn
 covered	domain_suffix	gputechconf.cn	cn
+covered	domain_suffix	gpzshq.cn	cn
 covered	domain_suffix	greatwallwine.com.cn	cn
 covered	domain_suffix	gree.cn	cn
 covered	domain_suffix	gree.com.cn	cn
@@ -1772,7 +1779,6 @@ covered	domain_suffix	icbccstz.com.cn	cn
 covered	domain_suffix	icbcmanila.com.cn	cn
 covered	domain_suffix	icloud-apple.cn	cn
 covered	domain_suffix	icloud-content.com.cn	cn
-covered	domain_suffix	icloud.cn	cn
 covered	domain_suffix	icloud.com.cn	cn
 covered	domain_suffix	icloud.net.cn	cn
 covered	domain_suffix	icloudapple.cn	cn
@@ -1843,6 +1849,7 @@ covered	domain_suffix	is-cool.cn	cn
 covered	domain_suffix	is-cool.com.cn	cn
 covered	domain_suffix	iscas.ac.cn	cn
 covered	domain_suffix	isdspeed.qq.com	qq.com
+covered	domain_suffix	isigning.cn	cn
 covered	domain_suffix	istv.cn	cn
 covered	domain_suffix	itc.cn	cn
 covered	domain_suffix	itdog.cn	cn
@@ -1998,11 +2005,4 @@ covered	domain_suffix	livephotos.cn	cn
 covered	domain_suffix	livephotos.com.cn	cn
 covered	domain_suffix	lofter.httpdns.c.163.com	163.com
 covered	domain_suffix	log-upload.mihoyo.com	mihoyo.com
-covered	domain_suffix	log.hunantv.com	hunantv.com
-covered	domain_suffix	log.mix.sina.com.cn	cn
-covered	domain_suffix	log.sina.cn	cn
-covered	domain_suffix	log.tbs.qq.com	qq.com
-covered	domain_suffix	log.umtrack.com	umtrack.com
-covered	domain_suffix	log.v2.hunantv.com	hunantv.com
-covered	domain_suffix	log.zijieapi.com	zijieapi.com
-# ... 已截断: 共 3050 行, 仅保留前 2000 行 (完整清单见 report/.full/direct-domain.txt)
+# ... 已截断: 共 3056 行, 仅保留前 2000 行 (完整清单见 report/.full/direct-domain.txt)

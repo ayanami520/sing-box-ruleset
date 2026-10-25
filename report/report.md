@@ -7,9 +7,9 @@
 
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
-| `ads` | 8 | 0 | 174018 | 24474 | 10088 | 220 | 14166 | +0 / -18 |
+| `ads` | 8 | 0 | 174131 | 24501 | 10103 | 221 | 14177 | +23 / -12 |
 | `ai` | 1 | 0 | 2193 | 205 | 0 | 0 | 205 | = 无变化 |
-| `direct-domain` | 13 | 0 | 40099 | 9952 | 458 | 2620 | 6874 | = 无变化 |
+| `direct-domain` | 13 | 0 | 40114 | 9969 | 458 | 2626 | 6885 | +12 / -1 |
 | `direct-ip` | 1 | 0 | 34268 | 8113 | 0 | 0 | 8113 | = 无变化 |
 | `google` | 1 | 0 | 7091 | 938 | 0 | 76 | 862 | = 无变化 |
 | `steam-cn` | 1 | 28 | 616 | 45 | 4 | 2 | 39 | = 无变化 |
@@ -26,9 +26,9 @@
 
 | 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 137 | 13981 | 25 | 1 | 22 | 0 | ✅ |
+| `ads` | 136 | 13993 | 25 | 1 | 22 | 0 | ✅ |
 | `ai` | 31 | 173 | 0 | 1 | 0 | 0 | ✅ |
-| `direct-domain` | 525 | 6340 | 0 | 9 | 0 | 0 | ✅ |
+| `direct-domain` | 525 | 6351 | 0 | 9 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8113 | 0 | ✅ |
 | `google` | 31 | 829 | 0 | 2 | 0 | 0 | ✅ |
 | `steam-cn` | 1 | 38 | 0 | 0 | 0 | 0 | ✅ |
@@ -52,41 +52,56 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 8 / 0 |
-| 产物 | `dist/ads.srs` — 174018 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 24474 / 14386 / 14166 |
-| 删除: 上游重复 / 被覆盖 | 10088 / 220 |
-| 匹配器 | domain=137, domain_suffix=13981, domain_keyword=25, domain_regex=1, ip_cidr=22 |
-| 与上次提交对比 | +0 / -18 |
+| 产物 | `dist/ads.srs` — 174131 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 24501 / 14398 / 14177 |
+| 删除: 上游重复 / 被覆盖 | 10103 / 221 |
+| 匹配器 | domain=136, domain_suffix=13993, domain_keyword=25, domain_regex=1, ip_cidr=22 |
+| 与上次提交对比 | +23 / -12 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-category-ads-all.srs` | 8129 B | 904 |
-| `adblocksingboxlite.srs` | 63549 B | 8464 |
+| `geosite-category-ads-all.srs` | 8131 B | 905 |
+| `adblocksingboxlite.srs` | 63647 B | 8477 |
 | `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
-| `BanAD.srs` | 72101 B | 8894 |
+| `BanAD.srs` | 72240 B | 8907 |
 | `BanADCompany.srs` | 1473 B | 131 |
 | `BanEasyListChina.srs` | 33475 B | 5050 |
 | `BanProgramAD.srs` | 7940 B | 1008 |
 
 </details>
 
-与上次相比 **移除 18 条**（前 10 条，完整见明细文件）：
+与上次相比 **移除 12 条**（前 10 条，完整见明细文件）：
 
 ```
+domain	rtlog3-applog.fqnovel.com
+domain_suffix	advertise.baicizhan.com
+domain_suffix	minor-api.mihoyo.com
+domain_suffix	mx-cota.vivoglobal.com
+domain_suffix	online-logger.webapp.163.com
+domain_suffix	pl.cp31.ott.cibntv.net
+domain_suffix	tjsptech.com
+domain_suffix	touch-moblie.com
+domain_suffix	upaicdn.xinmei365.com
+domain_suffix	v95-zjjx2tc-reading-ad.qznovelvod.com
+```
+
+与上次相比 **新增 23 条**（前 10 条）：
+
+```
+domain_suffix	5wczjm7h4.com
 domain_suffix	acgshenshicha.cn
 domain_suffix	ad-log-upload.mihoyo.com
-domain_suffix	eyqw474.com
-domain_suffix	grs-dbankcloud-com-drcn.wec.dbankedge.cn
-domain_suffix	media.yc.ifeng.com
-domain_suffix	pcmx.autohome.com.cn
-domain_suffix	sdk.loveota.net
-domain_suffix	sentry.dvdfab.cn
-domain_suffix	sentry.eks.hoyoverse.com
-domain_suffix	sentry.xboxmechanichead.com
+domain_suffix	ad.ah.jrgphq.cn
+domain_suffix	ad.hbwxfwl.top
+domain_suffix	ad.itrwzs.cn
+domain_suffix	ad.lhyghh.cn
+domain_suffix	ad.xmydch.cn
+domain_suffix	ads-vp5-xhscdn.tliveapp.com.cdn.dnsv1.com
+domain_suffix	ads.cloud.huawei.com
 ```
 
 ### ai
@@ -114,18 +129,18 @@ domain_suffix	sentry.xboxmechanichead.com
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 13 / 0 |
-| 产物 | `dist/direct-domain.srs` — 40099 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 9952 / 9494 / 6874 |
-| 删除: 上游重复 / 被覆盖 | 458 / 2620 |
-| 匹配器 | domain=525, domain_suffix=6340, domain_keyword=0, domain_regex=9, ip_cidr=0 |
-| 与上次提交对比 | = 无变化 |
+| 产物 | `dist/direct-domain.srs` — 40114 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 9969 / 9511 / 6885 |
+| 删除: 上游重复 / 被覆盖 | 458 / 2626 |
+| 匹配器 | domain=525, domain_suffix=6351, domain_keyword=0, domain_regex=9, ip_cidr=0 |
+| 与上次提交对比 | +12 / -1 |
 | 明细 | [`report/removed/direct-domain.txt`](removed/direct-domain.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-cn.srs` | 56497 B | 9354 |
+| `geosite-cn.srs` | 56638 B | 9371 |
 | `geosite-category-pt.srs` | 1160 B | 126 |
 | `geosite-category-game-platforms-download@cn.srs` | 431 B | 24 |
 | `geosite-115.srs` | 172 B | 14 |
@@ -140,6 +155,27 @@ domain_suffix	sentry.xboxmechanichead.com
 | `bilibili2.srs` | 107 B | 4 |
 
 </details>
+
+与上次相比 **移除 1 条**（前 10 条，完整见明细文件）：
+
+```
+domain_suffix	moegirl.org
+```
+
+与上次相比 **新增 12 条**（前 10 条）：
+
+```
+domain_suffix	bigdatacq.com
+domain_suffix	cdrcb.com
+domain_suffix	cdrcbank.com
+domain_suffix	cldisk.com
+domain_suffix	cqdcg.com
+domain_suffix	cqyyxc.com
+domain_suffix	digitalcnzz.com
+domain_suffix	easemob.com
+domain_suffix	ibangbank.com
+domain_suffix	isigning.com
+```
 
 ### direct-ip
 
