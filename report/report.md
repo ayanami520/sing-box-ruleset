@@ -7,9 +7,9 @@
 
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
-| `ads` | 8 | 0 | 174131 | 24501 | 10103 | 221 | 14177 | +23 / -12 |
+| `ads` | 8 | 0 | 174074 | 24507 | 10114 | 221 | 14172 | +37 / -42 |
 | `ai` | 1 | 0 | 2193 | 205 | 0 | 0 | 205 | = 无变化 |
-| `direct-domain` | 13 | 0 | 40114 | 9969 | 458 | 2626 | 6885 | +12 / -1 |
+| `direct-domain` | 13 | 0 | 40114 | 9969 | 458 | 2626 | 6885 | = 无变化 |
 | `direct-ip` | 1 | 0 | 34268 | 8113 | 0 | 0 | 8113 | = 无变化 |
 | `google` | 1 | 0 | 7091 | 938 | 0 | 76 | 862 | = 无变化 |
 | `steam-cn` | 1 | 28 | 616 | 45 | 4 | 2 | 39 | = 无变化 |
@@ -26,7 +26,7 @@
 
 | 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 136 | 13993 | 25 | 1 | 22 | 0 | ✅ |
+| `ads` | 136 | 13988 | 25 | 1 | 22 | 0 | ✅ |
 | `ai` | 31 | 173 | 0 | 1 | 0 | 0 | ✅ |
 | `direct-domain` | 525 | 6351 | 0 | 9 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8113 | 0 | ✅ |
@@ -52,11 +52,11 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 8 / 0 |
-| 产物 | `dist/ads.srs` — 174131 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 24501 / 14398 / 14177 |
-| 删除: 上游重复 / 被覆盖 | 10103 / 221 |
-| 匹配器 | domain=136, domain_suffix=13993, domain_keyword=25, domain_regex=1, ip_cidr=22 |
-| 与上次提交对比 | +23 / -12 |
+| 产物 | `dist/ads.srs` — 174074 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 24507 / 14393 / 14172 |
+| 删除: 上游重复 / 被覆盖 | 10114 / 221 |
+| 匹配器 | domain=136, domain_suffix=13988, domain_keyword=25, domain_regex=1, ip_cidr=22 |
+| 与上次提交对比 | +37 / -42 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
@@ -64,44 +64,44 @@
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
 | `geosite-category-ads-all.srs` | 8131 B | 905 |
-| `adblocksingboxlite.srs` | 63647 B | 8477 |
+| `adblocksingboxlite.srs` | 63615 B | 8480 |
 | `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
-| `BanAD.srs` | 72240 B | 8907 |
+| `BanAD.srs` | 72186 B | 8910 |
 | `BanADCompany.srs` | 1473 B | 131 |
 | `BanEasyListChina.srs` | 33475 B | 5050 |
 | `BanProgramAD.srs` | 7940 B | 1008 |
 
 </details>
 
-与上次相比 **移除 12 条**（前 10 条，完整见明细文件）：
+与上次相比 **移除 42 条**（前 10 条，完整见明细文件）：
 
 ```
-domain	rtlog3-applog.fqnovel.com
-domain_suffix	advertise.baicizhan.com
-domain_suffix	minor-api.mihoyo.com
-domain_suffix	mx-cota.vivoglobal.com
-domain_suffix	online-logger.webapp.163.com
-domain_suffix	pl.cp31.ott.cibntv.net
-domain_suffix	tjsptech.com
-domain_suffix	touch-moblie.com
-domain_suffix	upaicdn.xinmei365.com
-domain_suffix	v95-zjjx2tc-reading-ad.qznovelvod.com
-```
-
-与上次相比 **新增 23 条**（前 10 条）：
-
-```
-domain_suffix	5wczjm7h4.com
-domain_suffix	acgshenshicha.cn
-domain_suffix	ad-log-upload.mihoyo.com
-domain_suffix	ad.ah.jrgphq.cn
-domain_suffix	ad.hbwxfwl.top
-domain_suffix	ad.itrwzs.cn
-domain_suffix	ad.lhyghh.cn
-domain_suffix	ad.xmydch.cn
+domain_suffix	5etv.com
+domain_suffix	6xigema.com
+domain_suffix	71zrh.cn
+domain_suffix	97sky.cn
 domain_suffix	ads-vp5-xhscdn.tliveapp.com.cdn.dnsv1.com
-domain_suffix	ads.cloud.huawei.com
+domain_suffix	advert-statistic-vip.xunlei.com
+domain_suffix	bjhjw.com.cn
+domain_suffix	brenoes.shop
+domain_suffix	canjepuntosplus.click
+domain_suffix	canjepuntostotal.click
+```
+
+与上次相比 **新增 37 条**（前 10 条）：
+
+```
+domain_suffix	4k4zbfclm.com
+domain_suffix	65362655721.edgeone.dev
+domain_suffix	adimage.bwton.com.w.kunluncan.com
+domain_suffix	advertise.baicizhan.com
+domain_suffix	akydw.com
+domain_suffix	analysis.shixunsuda.com
+domain_suffix	audit.aaa.mgtv.com
+domain_suffix	dhlpolska.edgeone.cool
+domain_suffix	dseulm.shop
+domain_suffix	error-code.jftechws.com
 ```
 
 ### ai
@@ -133,7 +133,7 @@ domain_suffix	ads.cloud.huawei.com
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 9969 / 9511 / 6885 |
 | 删除: 上游重复 / 被覆盖 | 458 / 2626 |
 | 匹配器 | domain=525, domain_suffix=6351, domain_keyword=0, domain_regex=9, ip_cidr=0 |
-| 与上次提交对比 | +12 / -1 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/direct-domain.txt`](removed/direct-domain.txt) |
 
 <details><summary>上游明细</summary>
@@ -155,27 +155,6 @@ domain_suffix	ads.cloud.huawei.com
 | `bilibili2.srs` | 107 B | 4 |
 
 </details>
-
-与上次相比 **移除 1 条**（前 10 条，完整见明细文件）：
-
-```
-domain_suffix	moegirl.org
-```
-
-与上次相比 **新增 12 条**（前 10 条）：
-
-```
-domain_suffix	bigdatacq.com
-domain_suffix	cdrcb.com
-domain_suffix	cdrcbank.com
-domain_suffix	cldisk.com
-domain_suffix	cqdcg.com
-domain_suffix	cqyyxc.com
-domain_suffix	digitalcnzz.com
-domain_suffix	easemob.com
-domain_suffix	ibangbank.com
-domain_suffix	isigning.com
-```
 
 ### direct-ip
 

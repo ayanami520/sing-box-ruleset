@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/ads.txt (不提交, 随 CI artifact 上传)
-# 本次共 8810 行 (dup=8589, covered=221); 提交版上限 2000 行
+# 本次共 8813 行 (dup=8592, covered=221); 提交版上限 2000 行
 dup	domain	adblogger.vk.com
 dup	domain	adblogger.vk.ru
 dup	domain	ads.vk.com
@@ -109,6 +109,7 @@ dup	domain_suffix	1.feihua.com
 dup	domain_suffix	1.glook.cn
 dup	domain_suffix	1.gunsuo.com
 dup	domain_suffix	1.jushtong.com
+dup	domain_suffix	1.pncdn.cn
 dup	domain_suffix	1.shopit.cn
 dup	domain_suffix	1.sj33.net
 dup	domain_suffix	1.v-x.com.cn
@@ -444,6 +445,7 @@ dup	domain_suffix	4ikj2pbeqb.com
 dup	domain_suffix	4j7mf4mmx.com
 dup	domain_suffix	4jh1le34m.com
 dup	domain_suffix	4k3nzijpm0.com
+dup	domain_suffix	4k4zbfclm.com
 dup	domain_suffix	4kngwxegq5.com
 dup	domain_suffix	4l5bbkug99.com
 dup	domain_suffix	4lqs5j3ckn.com
@@ -529,7 +531,6 @@ dup	domain_suffix	5e9rwtjh1s.com
 dup	domain_suffix	5edf1d2qv.com
 dup	domain_suffix	5edrgrnqg.com
 dup	domain_suffix	5enhjla7z.com
-dup	domain_suffix	5etv.com
 dup	domain_suffix	5eyal1g5a9.com
 dup	domain_suffix	5f1qyi04vz.com
 dup	domain_suffix	5h3wnuhr8.com
@@ -584,6 +585,7 @@ dup	domain_suffix	61fjluqray.com
 dup	domain_suffix	629jpgi3i.com
 dup	domain_suffix	644446.com
 dup	domain_suffix	64sfltdfd9.com
+dup	domain_suffix	65362655721.edgeone.dev
 dup	domain_suffix	664095r19h.com
 dup	domain_suffix	6651tp.com
 dup	domain_suffix	66l11y82dn.com
@@ -650,12 +652,10 @@ dup	domain_suffix	6v4.work
 dup	domain_suffix	6v6.work
 dup	domain_suffix	6vspt720xf.com
 dup	domain_suffix	6w4ix4bxz1.com
-dup	domain_suffix	6xigema.com
 dup	domain_suffix	6xu7at70ok.com
 dup	domain_suffix	6y10di5jko.com
 dup	domain_suffix	6zc7gvmavf.com
 dup	domain_suffix	70ba9ncke.com
-dup	domain_suffix	71zrh.cn
 dup	domain_suffix	7250xdj0x.com
 dup	domain_suffix	72d8ejvmha.com
 dup	domain_suffix	72qv9fhgm.com
@@ -814,7 +814,6 @@ dup	domain_suffix	961.com
 dup	domain_suffix	9613gwqee.com
 dup	domain_suffix	96382zubo66756.com
 dup	domain_suffix	96zddjwn2.com
-dup	domain_suffix	97sky.cn
 dup	domain_suffix	97uvo47k3y.com
 dup	domain_suffix	97vk351gi.com
 dup	domain_suffix	9800.com
@@ -1179,6 +1178,7 @@ dup	domain_suffix	adhdsb.cn
 dup	domain_suffix	adim.pinduoduo.com
 dup	domain_suffix	adimage.blm.net
 dup	domain_suffix	adimage.bwton.com
+dup	domain_suffix	adimage.bwton.com.w.kunluncan.com
 dup	domain_suffix	adimg.163.com
 dup	domain_suffix	adimg.liba.com
 dup	domain_suffix	adimg.mobile.sina.cn
@@ -1269,7 +1269,6 @@ dup	domain_suffix	ads-video-al.xhscdn.com
 dup	domain_suffix	ads-video-al.xhscdn.com.w.cdngslb.com
 dup	domain_suffix	ads-video-qc.xhscdn.com
 dup	domain_suffix	ads-vp5-xhscdn.tliveapp.com
-dup	domain_suffix	ads-vp5-xhscdn.tliveapp.com.cdn.dnsv1.com
 dup	domain_suffix	ads-vp5.xhscdn.com
 dup	domain_suffix	ads.17track.net
 dup	domain_suffix	ads.95516.com
@@ -1435,9 +1434,9 @@ dup	domain_suffix	adv.xmmku.com
 dup	domain_suffix	adver.pengyou.com
 dup	domain_suffix	advert-prod.hyrz.qq.com
 dup	domain_suffix	advert-server.elecfans.com
-dup	domain_suffix	advert-statistic-vip.xunlei.com
 dup	domain_suffix	advert.58.com
 dup	domain_suffix	advert.api.thejoyrun.com
+dup	domain_suffix	advertise.baicizhan.com
 dup	domain_suffix	advertise.cloudlinks.cn
 dup	domain_suffix	advertise.ldplayer.net
 dup	domain_suffix	advertpay-vip-ssl.xunlei.com
@@ -1532,6 +1531,7 @@ dup	domain_suffix	akdbr.com
 dup	domain_suffix	aki-gb-sdklog.kurogames.net
 dup	domain_suffix	ako.cc
 dup	domain_suffix	akuohvb4u.com
+dup	domain_suffix	akydw.com
 dup	domain_suffix	al.autohome.com.cn
 dup	domain_suffix	al.newxue.com
 dup	domain_suffix	al1n6v56m.com
@@ -1570,6 +1570,7 @@ dup	domain_suffix	an9ynwsct.com
 dup	domain_suffix	analy.qq.com
 dup	domain_suffix	analy.tuniu.cn
 dup	domain_suffix	analysis.chatglm.cn
+dup	domain_suffix	analysis.shixunsuda.com
 dup	domain_suffix	analysis.tratao.com
 dup	domain_suffix	analysis.watcha.cn
 dup	domain_suffix	analysis.yozocloud.cn
@@ -1933,6 +1934,7 @@ dup	domain_suffix	attribuly.com
 dup	domain_suffix	au.ff.avast.sec.miui.com
 dup	domain_suffix	audid-api-sg.taobao.com
 dup	domain_suffix	audid-api.taobao.com
+dup	domain_suffix	audit.aaa.mgtv.com
 dup	domain_suffix	auth-em.hismarttv.com
 dup	domain_suffix	auth-eu.hismarttv.com
 dup	domain_suffix	auth-jp.hismarttv.com
@@ -2003,6 +2005,4 @@ dup	domain_suffix	baidu1.cardbaobao.com
 dup	domain_suffix	baiducom.bj.bcebos.com
 dup	domain_suffix	baidustatic.com
 dup	domain_suffix	baifen.music.baidu.com
-dup	domain_suffix	baifendian.com
-dup	domain_suffix	baixing.com
-# ... 已截断: 共 8810 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
+# ... 已截断: 共 8813 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
