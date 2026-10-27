@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/ads.txt (不提交, 随 CI artifact 上传)
-# 本次共 8813 行 (dup=8592, covered=221); 提交版上限 2000 行
+# 本次共 8812 行 (dup=8591, covered=221); 提交版上限 2000 行
 dup	domain	adblogger.vk.com
 dup	domain	adblogger.vk.ru
 dup	domain	ads.vk.com
@@ -878,6 +878,7 @@ dup	domain_suffix	a.ac.qq.com
 dup	domain_suffix	a.armystar.com
 dup	domain_suffix	a.baidinet.com
 dup	domain_suffix	a.baidu.com
+dup	domain_suffix	a.baomihua.com
 dup	domain_suffix	a.bfking.cn
 dup	domain_suffix	a.dangdang.com
 dup	domain_suffix	a.dyjqd.com
@@ -1178,7 +1179,6 @@ dup	domain_suffix	adhdsb.cn
 dup	domain_suffix	adim.pinduoduo.com
 dup	domain_suffix	adimage.blm.net
 dup	domain_suffix	adimage.bwton.com
-dup	domain_suffix	adimage.bwton.com.w.kunluncan.com
 dup	domain_suffix	adimg.163.com
 dup	domain_suffix	adimg.liba.com
 dup	domain_suffix	adimg.mobile.sina.cn
@@ -1259,7 +1259,6 @@ dup	domain_suffix	ads-monitoring.shziyi.com
 dup	domain_suffix	ads-shopping.shouqianba.com
 dup	domain_suffix	ads-splash-i1.xhscdn.com
 dup	domain_suffix	ads-splash-i2.xhscdn.com
-dup	domain_suffix	ads-splash-i2.xhscdn.com.w.cdngslb.com
 dup	domain_suffix	ads-splash-v1.xhscdn.com
 dup	domain_suffix	ads-splash-v2.xhscdn.com
 dup	domain_suffix	ads-twitter.com
@@ -1570,7 +1569,6 @@ dup	domain_suffix	an9ynwsct.com
 dup	domain_suffix	analy.qq.com
 dup	domain_suffix	analy.tuniu.cn
 dup	domain_suffix	analysis.chatglm.cn
-dup	domain_suffix	analysis.shixunsuda.com
 dup	domain_suffix	analysis.tratao.com
 dup	domain_suffix	analysis.watcha.cn
 dup	domain_suffix	analysis.yozocloud.cn
@@ -1745,7 +1743,6 @@ dup	domain_suffix	api.device.xiaomi.net
 dup	domain_suffix	api.dewmobile.net
 dup	domain_suffix	api.e-toys.cn
 dup	domain_suffix	api.eu.hismarttv.com
-dup	domain_suffix	api.firwinds.site
 dup	domain_suffix	api.flowsixteen.com
 dup	domain_suffix	api.g.micloud.xiaomi.net
 dup	domain_suffix	api.hdtv.letv.com
@@ -1934,7 +1931,6 @@ dup	domain_suffix	attribuly.com
 dup	domain_suffix	au.ff.avast.sec.miui.com
 dup	domain_suffix	audid-api-sg.taobao.com
 dup	domain_suffix	audid-api.taobao.com
-dup	domain_suffix	audit.aaa.mgtv.com
 dup	domain_suffix	auth-em.hismarttv.com
 dup	domain_suffix	auth-eu.hismarttv.com
 dup	domain_suffix	auth-jp.hismarttv.com
@@ -2005,4 +2001,8 @@ dup	domain_suffix	baidu1.cardbaobao.com
 dup	domain_suffix	baiducom.bj.bcebos.com
 dup	domain_suffix	baidustatic.com
 dup	domain_suffix	baifen.music.baidu.com
-# ... 已截断: 共 8813 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
+dup	domain_suffix	baifendian.com
+dup	domain_suffix	baixing.com
+dup	domain_suffix	bakbitionb.com
+dup	domain_suffix	balanced-red-emhnkdfj-dp7g2kvqxx8n.edgeone.dev
+# ... 已截断: 共 8812 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)

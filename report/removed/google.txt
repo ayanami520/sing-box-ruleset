@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/google.txt (不提交, 随 CI artifact 上传)
-# 本次共 76 行 (dup=0, covered=76); 提交版上限 2000 行
+# 本次共 78 行 (dup=0, covered=78); 提交版上限 2000 行
 covered	domain	alt1-mtalk.google.com	google.com
 covered	domain	alt2-mtalk.google.com	google.com
 covered	domain	alt3-mtalk.google.com	google.com
@@ -34,6 +34,8 @@ covered	domain	dl.l.google.com	google.com
 covered	domain	download.mlcc.google.com	google.com
 covered	domain	download.tensorflow.google.com	google.com
 covered	domain	firebase-settings.crashlytics.com	crashlytics.com
+covered	domain	firebaselogging-pa.googleapis.com	googleapis.com
+covered	domain	firebaselogging.googleapis.com	googleapis.com
 covered	domain	fontfiles.googleapis.com	googleapis.com
 covered	domain	fonts.googleapis.com	googleapis.com
 covered	domain	fonts.gstatic.com	gstatic.com
