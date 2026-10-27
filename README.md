@@ -35,18 +35,23 @@ report/           # 构建报告（由 CI 自动提交，见下文）
 
 ## 产物 ↔ 上游对照
 
-| 产物 | 上游 | 路由动作 |
-|---|---|---|
-| `dist/direct-domain.srs` | SagerNet: `geosite-cn`/`category-pt`/`game-platforms-download@cn` + lyc8503: `115` + MetaCubeX: `apple-cn`/`apple-music@cn`/`aws-cn`/`bilibili`/`bilibili2`/`bilibili-cdn` | `direct` |
-| `dist/direct-ip.srs` | `geoip-cn` | `direct` |
-| `dist/ads.srs` | `geosite-category-ads-all` | `block` |
-| `dist/ai.srs` | `geosite-category-ai-!cn` | AI 出站分组 |
-| `dist/google.srs` | `geosite-google` | 指定出站 / urltest 分组 |
-| `dist/tailscale.srs` | `geosite-tailscale` | `direct`（否则 Tailscale 打洞端点会变成节点 IP）|
-| `dist/us.srs` | lyc8503: `18comic` + `local/us.txt` | US 分组（JP 节点被 Cloudflare 拒）|
-| `dist/youtube.srs` | SagerNet: `geosite-youtube` | YouTube selector（**规则必须排在 `google` 之前**，见下）|
-| `dist/steam-cn.srs` | SagerNet: `geosite-steam@cn` + `local/steam-cn.txt` | **`direct`**（⚠️ 必须配 DNS → `dns-china`，否则下载仍拿境外 CDN）|
-| `dist/steam-proxy.srs` | `local/steam-proxy.txt`（仅本地，无上游）| Steam 代理 selector（社区 / 创意工坊 / 聊天 / 直播）|
+| 产物 | 路由器 `rule_set` tag | 上游 | 路由动作 |
+|---|---|---|---|
+| `dist/direct-domain.srs` | `direct-domain` | SagerNet: `geosite-cn`/`category-pt`/`game-platforms-download@cn` + lyc8503: `115` + MetaCubeX: `apple-cn`/`apple-music@cn`/`aws-cn`/`bilibili`/`bilibili2`/`bilibili-cdn` | `direct` |
+| `dist/direct-ip.srs` | `direct-ip` | `geoip-cn` | `direct` |
+| `dist/ads.srs` | `ads` | `geosite-category-ads-all` | `block`（`action: reject`）|
+| `dist/ai.srs` | **`AI`**（注意大写）| `geosite-category-ai-!cn` | → selector `AI` |
+| `dist/google.srs` | **`Google`**（注意大写）| `geosite-google` | → selector `Google` |
+| `dist/tailscale.srs` | `tailscale` | `geosite-tailscale` | `direct`（否则 Tailscale 打洞端点会变成节点 IP）|
+| `dist/us.srs` | `us` | lyc8503: `18comic` + `local/us.txt` | → `US` 分组 |
+| `dist/youtube.srs` | **`Youtube`**（注意大写）| SagerNet: `geosite-youtube` | → selector `Youtube`（**规则必须排在 `Google` 之前**，见下）|
+| `dist/steam-cn.srs` | **`Steam-cn`** | SagerNet: `geosite-steam@cn` + `local/steam-cn.txt` | → selector `Steam-cn`（默认 `direct`）；⚠️ **必须配 DNS → `dns-china`**，否则下载仍拿境外 CDN |
+| `dist/steam-proxy.srs` | **`Steam-proxy`** | `local/steam-proxy.txt`（仅本地，无上游）| → selector `Steam-proxy`（社区 / 创意工坊 / 聊天 / 直播）|
+
+> ⚠️ **tag 与实际文件名不必一致，而且大小写敏感** ✗：文件是 `google.srs`，但路由器上的 tag 是 `Google`；
+> 文件 `ai.srs` → tag `AI`。**写错大小写不会报"tag 不存在"以外的提示，而 `sing-box check` 也查不出
+> 「规则的 `rule_set` 引用了不存在的 tag」** ⇒ 改 tag 时**必须同时改**：
+> ① `route.rule_set[].tag` ② 所有 `route.rules[].rule_set[]` ③ 所有 `dns.rules[].rule_set[]`（最容易漏 ✗）
 
 > 每个产物都可以再叠加 `local/<name>.txt` 的手写条目（见「本地手写分组」一节）。
 
@@ -87,8 +92,11 @@ sources/us.txt ┘
 - `local/` 可以**单独成组**：没有同名 `sources/<name>.txt` 也能构建（报告里会标注「仅本地条目」）
 - 手写条目与上游重复时，会出现在 `report/removed/<name>.txt` 的 `dup` 明细里
 
-> 与 `sources/` 的分工：`apply-picks.sh` **只维护 `sources/*.txt` 里的自动块**，
-> `local/` 永远是手写区，不会被任何脚本改写。
+> 与 `sources/` 的分工：
+> - `apply-picks.sh` **只维护 `sources/*.txt` 里的自动块**，`local/` 它从不碰 ✓
+> - `local/` 的内容只有两个来源：**你手写**，或**显式运行** `scripts/convert-steam.sh`
+>   （它只写自己那两个文件：`local/steam-cn.txt`、`local/steam-proxy.txt`，文件头带「由脚本生成，勿手改」标记 ✓）
+> - **CI 永远不会改写 `local/`** ✓（想让 CI 管的内容请放 `sources/`）
 
 ## ③ 浏览器收集器（推荐方式）
 
@@ -117,9 +125,14 @@ sources/us.txt ┘
 | **撤销清空** | 清空前把快照写进 `localStorage`，**刷新页面后仍可撤销**（按钮上会显示条数） |
 | **菜单命令也有提示** | 面板没打开时走 `alert` 兜底，不再"剪贴板被改了却毫无反馈" |
 
-> ⚠️ **JP / KR 分组**：脚本可以标注这两个动作，但仓库里原本没有这两个分组。
-> 第一次用到时 `apply-picks.sh` 会自动创建 `sources/jp.txt` / `kr.txt`，
-> 但**路由器侧还需要加一次对应的规则**（`{"rule_set":["jp"],"outbound":"JP"}`）。
+> ⚠️ **JP / KR / 其它新分组容易被误解**：
+> - 路由器上的 `JP` / `KR` 是**出站分组（outbound）**，**不是规则集** ✗ —— 本仓库不产出、也不管理出站 ✓
+> - 想做"某类域名走 JP"，需要**两层**：① 仓库里建规则集（`sources/jp.txt` → `dist/jp.srs` ✓）
+>   ② 路由器上加 `rule_set` 定义 + 一条 `{"rule_set":["jp"],"action":"route","outbound":"JP"}` ✓
+> - **目前路由器上没有 `jp` / `kr` 规则集** ⇒ 现在用这两个动作标注**不会生效** ✗
+>   （`apply-picks.sh` 会建 `sources/jp.txt` 并产出 `dist/jp.srs` ✓，但没人引用它 ✓）
+> - 同理：`youtube` / `steam-cn` / `steam-proxy` 的规则集**已经存在** ✓，但**收集器里没有对应按钮** ✗
+>   （动作只有 `direct / us / jp / kr / block / ai / google`）⇒ 要给这三个分组加规则，直接手写进 `sources/*.txt` ✓
 
 ### 自动块长这样
 
