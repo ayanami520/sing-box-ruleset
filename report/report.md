@@ -7,9 +7,9 @@
 
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
-| `ads` | 8 | 0 | 174248 | 24546 | 10112 | 221 | 14213 | +41 / -0 |
-| `ai` | 1 | 0 | 2291 | 213 | 0 | 0 | 213 | +8 / -0 |
-| `direct-domain` | 13 | 0 | 40155 | 9971 | 458 | 2626 | 6887 | +3 / -1 |
+| `ads` | 8 | 0 | 174429 | 24585 | 10165 | 220 | 14200 | +1 / -14 |
+| `ai` | 1 | 0 | 2291 | 213 | 0 | 0 | 213 | = 无变化 |
+| `direct-domain` | 13 | 0 | 40155 | 9971 | 458 | 2626 | 6887 | = 无变化 |
 | `direct-ip` | 1 | 0 | 34268 | 8113 | 0 | 0 | 8113 | = 无变化 |
 | `google` | 1 | 0 | 7091 | 940 | 0 | 78 | 862 | = 无变化 |
 | `steam-cn` | 1 | 28 | 616 | 45 | 4 | 2 | 39 | = 无变化 |
@@ -26,7 +26,7 @@
 
 | 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 136 | 14029 | 25 | 1 | 22 | 0 | ✅ |
+| `ads` | 137 | 14015 | 25 | 1 | 22 | 0 | ✅ |
 | `ai` | 34 | 178 | 0 | 1 | 0 | 0 | ✅ |
 | `direct-domain` | 525 | 6353 | 0 | 9 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8113 | 0 | ✅ |
@@ -52,11 +52,11 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 8 / 0 |
-| 产物 | `dist/ads.srs` — 174248 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 24546 / 14434 / 14213 |
-| 删除: 上游重复 / 被覆盖 | 10112 / 221 |
-| 匹配器 | domain=136, domain_suffix=14029, domain_keyword=25, domain_regex=1, ip_cidr=22 |
-| 与上次提交对比 | +41 / -0 |
+| 产物 | `dist/ads.srs` — 174429 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 24585 / 14420 / 14200 |
+| 删除: 上游重复 / 被覆盖 | 10165 / 220 |
+| 匹配器 | domain=137, domain_suffix=14015, domain_keyword=25, domain_regex=1, ip_cidr=22 |
+| 与上次提交对比 | +1 / -14 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
@@ -67,26 +67,32 @@
 | `adblocksingboxlite.srs` | 63767 B | 8519 |
 | `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
-| `BanAD.srs` | 72186 B | 8910 |
+| `BanAD.srs` | 72301 B | 8949 |
 | `BanADCompany.srs` | 1473 B | 131 |
 | `BanEasyListChina.srs` | 33475 B | 5050 |
 | `BanProgramAD.srs` | 7940 B | 1008 |
 
 </details>
 
-与上次相比 **新增 41 条**（前 10 条）：
+与上次相比 **移除 14 条**（前 10 条，完整见明细文件）：
 
 ```
-domain_suffix	0nh9bt6v6a.com
-domain_suffix	3jkb97w0tp.com
-domain_suffix	ad.ourplay.net
-domain_suffix	ad.zamae.cn
-domain_suffix	admate.cn
-domain_suffix	bagmarket.shop
-domain_suffix	bc4zqavx5d.com
-domain_suffix	box.pandora.xiaomi.com
-domain_suffix	browser-api-th.heytapmobile.com
-domain_suffix	deepseek404.com
+domain_suffix	adimage.bwton.com.w.kunluncan.com
+domain_suffix	ads-splash-i2.xhscdn.com.w.cdngslb.com
+domain_suffix	analysis.shixunsuda.com
+domain_suffix	api.firwinds.site
+domain_suffix	audit.aaa.mgtv.com
+domain_suffix	fanzhuang.net.cn
+domain_suffix	omgup.didiglobal.com
+domain_suffix	omgup.xiaojukeji.com
+domain_suffix	omgup1.xiaojukeji.com
+domain_suffix	rtlog3-applog.fqnovel.com
+```
+
+与上次相比 **新增 1 条**（前 10 条）：
+
+```
+domain	rtlog3-applog.fqnovel.com
 ```
 
 ### ai
@@ -98,7 +104,7 @@ domain_suffix	deepseek404.com
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 213 / 213 / 213 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
 | 匹配器 | domain=34, domain_suffix=178, domain_keyword=0, domain_regex=1, ip_cidr=0 |
-| 与上次提交对比 | +8 / -0 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/ai.txt`](removed/ai.txt) |
 
 <details><summary>上游明细</summary>
@@ -109,19 +115,6 @@ domain_suffix	deepseek404.com
 
 </details>
 
-与上次相比 **新增 8 条**（前 10 条）：
-
-```
-domain	appsgenaiserver-pa.clients.google.com
-domain	appsgenaiserver-pa.clients6.google.com
-domain	appsgenaiserver-pa.googleapis.com
-domain_suffix	artificialanalysis.ai
-domain_suffix	cline.bot
-domain_suffix	commandcode.ai
-domain_suffix	context7.com
-domain_suffix	nousresearch.com
-```
-
 ### direct-domain
 
 | 项 | 值 |
@@ -131,7 +124,7 @@ domain_suffix	nousresearch.com
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 9971 / 9513 / 6887 |
 | 删除: 上游重复 / 被覆盖 | 458 / 2626 |
 | 匹配器 | domain=525, domain_suffix=6353, domain_keyword=0, domain_regex=9, ip_cidr=0 |
-| 与上次提交对比 | +3 / -1 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/direct-domain.txt`](removed/direct-domain.txt) |
 
 <details><summary>上游明细</summary>
@@ -153,20 +146,6 @@ domain_suffix	nousresearch.com
 | `bilibili2.srs` | 107 B | 4 |
 
 </details>
-
-与上次相比 **移除 1 条**（前 10 条，完整见明细文件）：
-
-```
-domain_suffix	jikipedia.com
-```
-
-与上次相比 **新增 3 条**（前 10 条）：
-
-```
-domain_suffix	filmorigin.com
-domain_suffix	kakaxing.com
-domain_suffix	xiaomaigui.com
-```
 
 ### direct-ip
 

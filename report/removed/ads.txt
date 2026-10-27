@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/ads.txt (不提交, 随 CI artifact 上传)
-# 本次共 8812 行 (dup=8591, covered=221); 提交版上限 2000 行
+# 本次共 8851 行 (dup=8631, covered=220); 提交版上限 2000 行
 dup	domain	adblogger.vk.com
 dup	domain	adblogger.vk.ru
 dup	domain	ads.vk.com
@@ -74,6 +74,7 @@ dup	domain_suffix	0kue3oryg.com
 dup	domain_suffix	0l7t5qhb4.com
 dup	domain_suffix	0lai5bvkg.com
 dup	domain_suffix	0mkeb9vth.com
+dup	domain_suffix	0nh9bt6v6a.com
 dup	domain_suffix	0nyzdw2maq.com
 dup	domain_suffix	0oi1ej7mo.com
 dup	domain_suffix	0oo9j37xp.com
@@ -368,6 +369,7 @@ dup	domain_suffix	3ikcnjvsx.com
 dup	domain_suffix	3is34bpqs4.com
 dup	domain_suffix	3iulae112b.com
 dup	domain_suffix	3j4vjpx7k.com
+dup	domain_suffix	3jkb97w0tp.com
 dup	domain_suffix	3k2frl8r79.com
 dup	domain_suffix	3lbqpzrlmz.com
 dup	domain_suffix	3llzzztmz.com
@@ -1088,6 +1090,7 @@ dup	domain_suffix	ad.open.api.jihuoniao.com
 dup	domain_suffix	ad.otomedream.com
 dup	domain_suffix	ad.ourgame.com
 dup	domain_suffix	ad.ourplay.com.cn
+dup	domain_suffix	ad.ourplay.net
 dup	domain_suffix	ad.palmmerchant.com
 dup	domain_suffix	ad.partner.gifshow.com
 dup	domain_suffix	ad.passport.weibo.cn
@@ -1120,6 +1123,7 @@ dup	domain_suffix	ad.xuanheng03.cn
 dup	domain_suffix	ad.xunkids.com
 dup	domain_suffix	ad.yicai.com
 dup	domain_suffix	ad.youku.com
+dup	domain_suffix	ad.zamae.cn
 dup	domain_suffix	ad.zhuanzhuan.com
 dup	domain_suffix	ad.zijieapi.com
 dup	domain_suffix	ad.zui.com
@@ -1209,6 +1213,7 @@ dup	domain_suffix	adm.zookingsoft.com
 dup	domain_suffix	adm2.autoimg.cn
 dup	domain_suffix	adm3.autoimg.cn
 dup	domain_suffix	admaster.com.cn
+dup	domain_suffix	admate.cn
 dup	domain_suffix	admgr.qingting.fm
 dup	domain_suffix	admin5.com
 dup	domain_suffix	admin6.com
@@ -1273,7 +1278,6 @@ dup	domain_suffix	ads.17track.net
 dup	domain_suffix	ads.95516.com
 dup	domain_suffix	ads.adagent.chacha.com
 dup	domain_suffix	ads.adyoung.cn
-dup	domain_suffix	ads.api.my7v.com
 dup	domain_suffix	ads.apple.com
 dup	domain_suffix	ads.bestads.com
 dup	domain_suffix	ads.bestads.com.queniuaa.com
@@ -1994,15 +1998,11 @@ dup	domain_suffix	b8o9c4s42l.com
 dup	domain_suffix	b9jda4zig.com
 dup	domain_suffix	ba5la9ccq.com
 dup	domain_suffix	badjs.weixinbridge.com
+dup	domain_suffix	bagmarket.shop
 dup	domain_suffix	baichuan-sdk.alicdn.com
 dup	domain_suffix	baichuan-sdk.taobao.com
 dup	domain_suffix	baichuan.baidu.com
 dup	domain_suffix	baidu1.cardbaobao.com
 dup	domain_suffix	baiducom.bj.bcebos.com
 dup	domain_suffix	baidustatic.com
-dup	domain_suffix	baifen.music.baidu.com
-dup	domain_suffix	baifendian.com
-dup	domain_suffix	baixing.com
-dup	domain_suffix	bakbitionb.com
-dup	domain_suffix	balanced-red-emhnkdfj-dp7g2kvqxx8n.edgeone.dev
-# ... 已截断: 共 8812 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
+# ... 已截断: 共 8851 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
