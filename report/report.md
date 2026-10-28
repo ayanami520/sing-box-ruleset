@@ -7,9 +7,9 @@
 
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
-| `ads` | 8 | 0 | 174429 | 24585 | 10165 | 220 | 14200 | +1 / -14 |
-| `ai` | 1 | 0 | 2291 | 213 | 0 | 0 | 213 | = 无变化 |
-| `direct-domain` | 13 | 0 | 40155 | 9971 | 458 | 2626 | 6887 | = 无变化 |
+| `ads` | 8 | 0 | 174078 | 24548 | 10102 | 220 | 14226 | +26 / -0 |
+| `ai` | 1 | 0 | 2300 | 214 | 0 | 0 | 214 | +1 / -0 |
+| `direct-domain` | 14 | 0 | 43450 | 10390 | 458 | 2691 | 7241 | +354 / -0 |
 | `direct-ip` | 1 | 0 | 34268 | 8113 | 0 | 0 | 8113 | = 无变化 |
 | `google` | 1 | 0 | 7091 | 940 | 0 | 78 | 862 | = 无变化 |
 | `steam-cn` | 1 | 28 | 616 | 45 | 4 | 2 | 39 | = 无变化 |
@@ -26,9 +26,9 @@
 
 | 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 137 | 14015 | 25 | 1 | 22 | 0 | ✅ |
-| `ai` | 34 | 178 | 0 | 1 | 0 | 0 | ✅ |
-| `direct-domain` | 525 | 6353 | 0 | 9 | 0 | 0 | ✅ |
+| `ads` | 137 | 14041 | 25 | 1 | 22 | 0 | ✅ |
+| `ai` | 34 | 179 | 0 | 1 | 0 | 0 | ✅ |
+| `direct-domain` | 879 | 6353 | 0 | 9 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8113 | 0 | ✅ |
 | `google` | 31 | 829 | 0 | 2 | 0 | 0 | ✅ |
 | `steam-cn` | 1 | 38 | 0 | 0 | 0 | 0 | ✅ |
@@ -52,11 +52,11 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 8 / 0 |
-| 产物 | `dist/ads.srs` — 174429 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 24585 / 14420 / 14200 |
-| 删除: 上游重复 / 被覆盖 | 10165 / 220 |
-| 匹配器 | domain=137, domain_suffix=14015, domain_keyword=25, domain_regex=1, ip_cidr=22 |
-| 与上次提交对比 | +1 / -14 |
+| 产物 | `dist/ads.srs` — 174078 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 24548 / 14446 / 14226 |
+| 删除: 上游重复 / 被覆盖 | 10102 / 220 |
+| 匹配器 | domain=137, domain_suffix=14041, domain_keyword=25, domain_regex=1, ip_cidr=22 |
+| 与上次提交对比 | +26 / -0 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
@@ -64,7 +64,7 @@
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
 | `geosite-category-ads-all.srs` | 8131 B | 905 |
-| `adblocksingboxlite.srs` | 63767 B | 8519 |
+| `adblocksingboxlite.srs` | 63391 B | 8482 |
 | `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
 | `BanAD.srs` | 72301 B | 8949 |
@@ -74,25 +74,19 @@
 
 </details>
 
-与上次相比 **移除 14 条**（前 10 条，完整见明细文件）：
+与上次相比 **新增 26 条**（前 10 条）：
 
 ```
-domain_suffix	adimage.bwton.com.w.kunluncan.com
-domain_suffix	ads-splash-i2.xhscdn.com.w.cdngslb.com
-domain_suffix	analysis.shixunsuda.com
+domain_suffix	3sbbnyzps.com
+domain_suffix	ad-pool.shiyuegame.com
+domain_suffix	ad.fanxingnet.cn
 domain_suffix	api.firwinds.site
-domain_suffix	audit.aaa.mgtv.com
+domain_suffix	bigdata.downza.com
+domain_suffix	c5i6rfwyf.com
+domain_suffix	console.bce.baidu.com
+domain_suffix	e.api.adx.huazirc.com
 domain_suffix	fanzhuang.net.cn
-domain_suffix	omgup.didiglobal.com
-domain_suffix	omgup.xiaojukeji.com
-domain_suffix	omgup1.xiaojukeji.com
-domain_suffix	rtlog3-applog.fqnovel.com
-```
-
-与上次相比 **新增 1 条**（前 10 条）：
-
-```
-domain	rtlog3-applog.fqnovel.com
+domain_suffix	fyguhaghytusg.edgeone.dev
 ```
 
 ### ai
@@ -100,38 +94,44 @@ domain	rtlog3-applog.fqnovel.com
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 1 / 0 |
-| 产物 | `dist/ai.srs` — 2291 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 213 / 213 / 213 |
+| 产物 | `dist/ai.srs` — 2300 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 214 / 214 / 214 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
-| 匹配器 | domain=34, domain_suffix=178, domain_keyword=0, domain_regex=1, ip_cidr=0 |
-| 与上次提交对比 | = 无变化 |
+| 匹配器 | domain=34, domain_suffix=179, domain_keyword=0, domain_regex=1, ip_cidr=0 |
+| 与上次提交对比 | +1 / -0 |
 | 明细 | [`report/removed/ai.txt`](removed/ai.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-category-ai-!cn.srs` | 2291 B | 213 |
+| `geosite-category-ai-!cn.srs` | 2300 B | 214 |
 
 </details>
+
+与上次相比 **新增 1 条**（前 10 条）：
+
+```
+domain_suffix	metaaiusercontent.com
+```
 
 ### direct-domain
 
 | 项 | 值 |
 |---|---|
-| 上游数 / 本地条目 | 13 / 0 |
-| 产物 | `dist/direct-domain.srs` — 40155 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 9971 / 9513 / 6887 |
-| 删除: 上游重复 / 被覆盖 | 458 / 2626 |
-| 匹配器 | domain=525, domain_suffix=6353, domain_keyword=0, domain_regex=9, ip_cidr=0 |
-| 与上次提交对比 | = 无变化 |
+| 上游数 / 本地条目 | 14 / 0 |
+| 产物 | `dist/direct-domain.srs` — 43450 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 10390 / 9932 / 7241 |
+| 删除: 上游重复 / 被覆盖 | 458 / 2691 |
+| 匹配器 | domain=879, domain_suffix=6353, domain_keyword=0, domain_regex=9, ip_cidr=0 |
+| 与上次提交对比 | +354 / -0 |
 | 明细 | [`report/removed/direct-domain.txt`](removed/direct-domain.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-cn.srs` | 56611 B | 9373 |
+| `geosite-cn.srs` | 56609 B | 9375 |
 | `geosite-category-pt.srs` | 1160 B | 126 |
 | `geosite-category-game-platforms-download@cn.srs` | 431 B | 24 |
 | `geosite-115.srs` | 172 B | 14 |
@@ -144,8 +144,24 @@ domain	rtlog3-applog.fqnovel.com
 | `bilibili-cdn.srs` | 184 B | 14 |
 | `bilibili.srs` | 463 B | 53 |
 | `bilibili2.srs` | 107 B | 4 |
+| `singbox.json` | 18588 B | 417 |
 
 </details>
+
+与上次相比 **新增 354 条**（前 10 条）：
+
+```
+domain	ams-nl-ping.vultr.com
+domain	ams3.digitaloceanspaces.com
+domain	ap-south-1.linodeobjects.com
+domain	ap-southeast-1.oss.aliyuncs.com
+domain	api4.ipify.org
+domain	api6.ipify.org
+domain	ash-speed.hetzner.com
+domain	atl1.digitaloceanspaces.com
+domain	au-mel-1.linodeobjects.com
+domain	australiaeast.api.cognitive.microsoft.com
+```
 
 ### direct-ip
 

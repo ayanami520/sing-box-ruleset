@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/ads.txt (不提交, 随 CI artifact 上传)
-# 本次共 8851 行 (dup=8631, covered=220); 提交版上限 2000 行
+# 本次共 8790 行 (dup=8570, covered=220); 提交版上限 2000 行
 dup	domain	adblogger.vk.com
 dup	domain	adblogger.vk.ru
 dup	domain	ads.vk.com
@@ -132,7 +132,6 @@ dup	domain_suffix	12.cookcai.com
 dup	domain_suffix	121xpp689.com
 dup	domain_suffix	121yscfk5e.com
 dup	domain_suffix	123.sogou.com
-dup	domain_suffix	123.ywxww.net
 dup	domain_suffix	123cha.com
 dup	domain_suffix	12551-1311572332.cos.ap-shanghai.myqcloud.com
 dup	domain_suffix	126.cn
@@ -155,7 +154,6 @@ dup	domain_suffix	16aq.cn
 dup	domain_suffix	16mzw9gff.com
 dup	domain_suffix	16xxq8lb4g.com
 dup	domain_suffix	17.huanqiu.com
-dup	domain_suffix	1717.1000uc.com
 dup	domain_suffix	17ryi4j3qb.com
 dup	domain_suffix	18ioh53d3f.com
 dup	domain_suffix	18mo21a2ji.com
@@ -286,7 +284,6 @@ dup	domain_suffix	2ju7b73ton.com
 dup	domain_suffix	2juyabihe.com
 dup	domain_suffix	2ka41vagh.com
 dup	domain_suffix	2kbmdtlgme.com
-dup	domain_suffix	2kij3uhj3.cyou
 dup	domain_suffix	2lcdjyf37f.com
 dup	domain_suffix	2lj9n8sz0w.com
 dup	domain_suffix	2lpwji3xr.com
@@ -762,7 +759,6 @@ dup	domain_suffix	8h7j79qxm.com
 dup	domain_suffix	8hvq8jskh.com
 dup	domain_suffix	8hx7k0211.com
 dup	domain_suffix	8icep0mqi.com
-dup	domain_suffix	8ieu7ue.cyou
 dup	domain_suffix	8j7tu8vtxx.com
 dup	domain_suffix	8k69vb6421.com
 dup	domain_suffix	8k9ynfczfd.com
@@ -967,7 +963,6 @@ dup	domain_suffix	ac.dun.163yun.com
 dup	domain_suffix	ac.o2.qq.com
 dup	domain_suffix	ac00qmnjz.com
 dup	domain_suffix	acc.3gbizhi.com
-dup	domain_suffix	acc.jiangsujiaxue.com
 dup	domain_suffix	accredencisive.top
 dup	domain_suffix	accscdn.m.taobao.com
 dup	domain_suffix	acgshenshicha.cn
@@ -981,7 +976,6 @@ dup	domain_suffix	acs.agent.56.com
 dup	domain_suffix	acs4baichuan.m.taobao.com
 dup	domain_suffix	act.qq.com
 dup	domain_suffix	act.vip.iqiyi.com
-dup	domain_suffix	active.baofeng.com
 dup	domain_suffix	active.sangfor.com
 dup	domain_suffix	activity.browser.intl.miui.com
 dup	domain_suffix	ad-1258444056.cos.accelerate.myqcloud.com
@@ -2005,4 +1999,10 @@ dup	domain_suffix	baichuan.baidu.com
 dup	domain_suffix	baidu1.cardbaobao.com
 dup	domain_suffix	baiducom.bj.bcebos.com
 dup	domain_suffix	baidustatic.com
-# ... 已截断: 共 8851 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
+dup	domain_suffix	baifen.music.baidu.com
+dup	domain_suffix	baifendian.com
+dup	domain_suffix	baixing.com
+dup	domain_suffix	bakbitionb.com
+dup	domain_suffix	banana.le.com
+dup	domain_suffix	bar.baidu.com
+# ... 已截断: 共 8790 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
