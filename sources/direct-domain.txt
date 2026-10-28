@@ -37,3 +37,6 @@ https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/bili
 # 哔哩哔哩补充
 https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/bilibili2.srs
 
+# ── 测速聚合 ──────────────────────────────────────────────────────
+# https://m2c.1ms.dog/zh-cn 测速站提供的ruleset
+https://m2c.1ms.dog/rules/singbox.json
