@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/ads.txt (不提交, 随 CI artifact 上传)
-# 本次共 8790 行 (dup=8570, covered=220); 提交版上限 2000 行
+# 本次共 8812 行 (dup=8592, covered=220); 提交版上限 2000 行
 dup	domain	adblogger.vk.com
 dup	domain	adblogger.vk.ru
 dup	domain	ads.vk.com
@@ -383,6 +383,7 @@ dup	domain_suffix	3rc04o1rmy.com
 dup	domain_suffix	3rev8wh22y.com
 dup	domain_suffix	3rs337ci4.com
 dup	domain_suffix	3s7m2ss7g.com
+dup	domain_suffix	3sbbnyzps.com
 dup	domain_suffix	3sqvexc60y.com
 dup	domain_suffix	3t4j5adg9x.com
 dup	domain_suffix	3tv4botiq.com
@@ -999,6 +1000,7 @@ dup	domain_suffix	ad-log-upload-os.hoyoverse.com
 dup	domain_suffix	ad-log-upload.mihoyo.com
 dup	domain_suffix	ad-log.didiglobal.com
 dup	domain_suffix	ad-plus.cn
+dup	domain_suffix	ad-pool.shiyuegame.com
 dup	domain_suffix	ad-r.soulapp.cn
 dup	domain_suffix	ad-scope.com.cn
 dup	domain_suffix	ad-sdk-config.youdao.com
@@ -1046,6 +1048,7 @@ dup	domain_suffix	ad.didi-food.com
 dup	domain_suffix	ad.docer.wps.cn
 dup	domain_suffix	ad.duoduo.link
 dup	domain_suffix	ad.etnetchina.cn
+dup	domain_suffix	ad.fanxingnet.cn
 dup	domain_suffix	ad.fx168api.com
 dup	domain_suffix	ad.gameley.com
 dup	domain_suffix	ad.gameskksdk.xyz
@@ -1741,6 +1744,7 @@ dup	domain_suffix	api.device.xiaomi.net
 dup	domain_suffix	api.dewmobile.net
 dup	domain_suffix	api.e-toys.cn
 dup	domain_suffix	api.eu.hismarttv.com
+dup	domain_suffix	api.firwinds.site
 dup	domain_suffix	api.flowsixteen.com
 dup	domain_suffix	api.g.micloud.xiaomi.net
 dup	domain_suffix	api.hdtv.letv.com
@@ -2001,8 +2005,4 @@ dup	domain_suffix	baiducom.bj.bcebos.com
 dup	domain_suffix	baidustatic.com
 dup	domain_suffix	baifen.music.baidu.com
 dup	domain_suffix	baifendian.com
-dup	domain_suffix	baixing.com
-dup	domain_suffix	bakbitionb.com
-dup	domain_suffix	banana.le.com
-dup	domain_suffix	bar.baidu.com
-# ... 已截断: 共 8790 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)
+# ... 已截断: 共 8812 行, 仅保留前 2000 行 (完整清单见 report/.full/ads.txt)

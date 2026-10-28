@@ -7,9 +7,9 @@
 
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
-| `ads` | 8 | 0 | 174078 | 24548 | 10102 | 220 | 14226 | +26 / -0 |
-| `ai` | 1 | 0 | 2300 | 214 | 0 | 0 | 214 | +1 / -0 |
-| `direct-domain` | 14 | 0 | 43450 | 10390 | 458 | 2691 | 7241 | +354 / -0 |
+| `ads` | 8 | 0 | 173713 | 24509 | 10124 | 220 | 14165 | +0 / -61 |
+| `ai` | 1 | 0 | 2300 | 214 | 0 | 0 | 214 | = 无变化 |
+| `direct-domain` | 14 | 0 | 43450 | 10390 | 458 | 2691 | 7241 | = 无变化 |
 | `direct-ip` | 1 | 0 | 34268 | 8113 | 0 | 0 | 8113 | = 无变化 |
 | `google` | 1 | 0 | 7091 | 940 | 0 | 78 | 862 | = 无变化 |
 | `steam-cn` | 1 | 28 | 616 | 45 | 4 | 2 | 39 | = 无变化 |
@@ -26,7 +26,7 @@
 
 | 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 137 | 14041 | 25 | 1 | 22 | 0 | ✅ |
+| `ads` | 137 | 13980 | 25 | 1 | 22 | 0 | ✅ |
 | `ai` | 34 | 179 | 0 | 1 | 0 | 0 | ✅ |
 | `direct-domain` | 879 | 6353 | 0 | 9 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8113 | 0 | ✅ |
@@ -52,11 +52,11 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 8 / 0 |
-| 产物 | `dist/ads.srs` — 174078 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 24548 / 14446 / 14226 |
-| 删除: 上游重复 / 被覆盖 | 10102 / 220 |
-| 匹配器 | domain=137, domain_suffix=14041, domain_keyword=25, domain_regex=1, ip_cidr=22 |
-| 与上次提交对比 | +26 / -0 |
+| 产物 | `dist/ads.srs` — 173713 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 24509 / 14385 / 14165 |
+| 删除: 上游重复 / 被覆盖 | 10124 / 220 |
+| 匹配器 | domain=137, domain_suffix=13980, domain_keyword=25, domain_regex=1, ip_cidr=22 |
+| 与上次提交对比 | +0 / -61 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
@@ -64,29 +64,29 @@
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
 | `geosite-category-ads-all.srs` | 8131 B | 905 |
-| `adblocksingboxlite.srs` | 63391 B | 8482 |
+| `adblocksingboxlite.srs` | 63468 B | 8480 |
 | `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
-| `BanAD.srs` | 72301 B | 8949 |
+| `BanAD.srs` | 71979 B | 8912 |
 | `BanADCompany.srs` | 1473 B | 131 |
 | `BanEasyListChina.srs` | 33475 B | 5050 |
 | `BanProgramAD.srs` | 7940 B | 1008 |
 
 </details>
 
-与上次相比 **新增 26 条**（前 10 条）：
+与上次相比 **移除 61 条**（前 10 条，完整见明细文件）：
 
 ```
-domain_suffix	3sbbnyzps.com
-domain_suffix	ad-pool.shiyuegame.com
-domain_suffix	ad.fanxingnet.cn
-domain_suffix	api.firwinds.site
-domain_suffix	bigdata.downza.com
-domain_suffix	c5i6rfwyf.com
-domain_suffix	console.bce.baidu.com
-domain_suffix	e.api.adx.huazirc.com
-domain_suffix	fanzhuang.net.cn
-domain_suffix	fyguhaghytusg.edgeone.dev
+domain_suffix	123.ywxww.net
+domain_suffix	1717.1000uc.com
+domain_suffix	2kij3uhj3.cyou
+domain_suffix	8ieu7ue.cyou
+domain_suffix	acc.jiangsujiaxue.com
+domain_suffix	active.baofeng.com
+domain_suffix	balanced-red-emhnkdfj-dp7g2kvqxx8n.edgeone.dev
+domain_suffix	cdn.file6.goodid.com
+domain_suffix	config.baofeng.net
+domain_suffix	cpxlt.cn
 ```
 
 ### ai
@@ -98,7 +98,7 @@ domain_suffix	fyguhaghytusg.edgeone.dev
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 214 / 214 / 214 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
 | 匹配器 | domain=34, domain_suffix=179, domain_keyword=0, domain_regex=1, ip_cidr=0 |
-| 与上次提交对比 | +1 / -0 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/ai.txt`](removed/ai.txt) |
 
 <details><summary>上游明细</summary>
@@ -109,12 +109,6 @@ domain_suffix	fyguhaghytusg.edgeone.dev
 
 </details>
 
-与上次相比 **新增 1 条**（前 10 条）：
-
-```
-domain_suffix	metaaiusercontent.com
-```
-
 ### direct-domain
 
 | 项 | 值 |
@@ -124,7 +118,7 @@ domain_suffix	metaaiusercontent.com
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 10390 / 9932 / 7241 |
 | 删除: 上游重复 / 被覆盖 | 458 / 2691 |
 | 匹配器 | domain=879, domain_suffix=6353, domain_keyword=0, domain_regex=9, ip_cidr=0 |
-| 与上次提交对比 | +354 / -0 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/direct-domain.txt`](removed/direct-domain.txt) |
 
 <details><summary>上游明细</summary>
@@ -147,21 +141,6 @@ domain_suffix	metaaiusercontent.com
 | `singbox.json` | 18588 B | 417 |
 
 </details>
-
-与上次相比 **新增 354 条**（前 10 条）：
-
-```
-domain	ams-nl-ping.vultr.com
-domain	ams3.digitaloceanspaces.com
-domain	ap-south-1.linodeobjects.com
-domain	ap-southeast-1.oss.aliyuncs.com
-domain	api4.ipify.org
-domain	api6.ipify.org
-domain	ash-speed.hetzner.com
-domain	atl1.digitaloceanspaces.com
-domain	au-mel-1.linodeobjects.com
-domain	australiaeast.api.cognitive.microsoft.com
-```
 
 ### direct-ip
 
