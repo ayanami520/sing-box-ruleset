@@ -15,7 +15,8 @@
 | `steam-cn` | 1 | 28 | 616 | 45 | 4 | 2 | 39 | = 无变化 |
 | `steam-proxy` | 0 | 19 | 334 | 19 | 0 | 0 | 19 | = 无变化 |
 | `tailscale` | 1 | 0 | 80 | 3 | 0 | 0 | 3 | = 无变化 |
-| `us` | 1 | 7 | 706 | 58 | 0 | 0 | 58 | +1 / -0 |
+| `twitter` | 1 | 0 | 315 | 24 | 0 | 0 | 24 | 🆕 首次 (无上次产物可比) |
+| `us` | 1 | 7 | 706 | 58 | 0 | 0 | 58 | = 无变化 |
 | `youtube` | 1 | 0 | 1279 | 178 | 0 | 1 | 177 | = 无变化 |
 
 - `原始条目` = 各上游条目直接相加（`local/` 手写条目也算在内，含重复）；`最终条目` 才是写进 `.srs` 的条数。
@@ -34,6 +35,7 @@
 | `steam-cn` | 1 | 38 | 0 | 0 | 0 | 0 | ✅ |
 | `steam-proxy` | 0 | 19 | 0 | 0 | 0 | 0 | ✅ |
 | `tailscale` | 0 | 3 | 0 | 0 | 0 | 0 | ✅ |
+| `twitter` | 0 | 24 | 0 | 0 | 0 | 0 | ✅ |
 | `us` | 0 | 57 | 1 | 0 | 0 | 0 | ✅ |
 | `youtube` | 1 | 176 | 0 | 0 | 0 | 0 | ✅ |
 
@@ -228,6 +230,26 @@
 
 </details>
 
+### twitter
+
+| 项 | 值 |
+|---|---|
+| 上游数 / 本地条目 | 1 / 0 |
+| 产物 | `dist/twitter.srs` — 315 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 24 / 24 / 24 |
+| 删除: 上游重复 / 被覆盖 | 0 / 0 |
+| 匹配器 | domain=0, domain_suffix=24, domain_keyword=0, domain_regex=0, ip_cidr=0 |
+| 与上次提交对比 | 🆕 首次 (无上次产物可比) |
+| 明细 | [`report/removed/twitter.txt`](removed/twitter.txt) |
+
+<details><summary>上游明细</summary>
+
+| 上游 | 原始体积 | 条目 |
+|---|---|---|
+| `geosite-twitter.srs` | 315 B | 24 |
+
+</details>
+
 ### us
 
 | 项 | 值 |
@@ -237,7 +259,7 @@
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 58 / 58 / 58 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
 | 匹配器 | domain=0, domain_suffix=57, domain_keyword=1, domain_regex=0, ip_cidr=0 |
-| 与上次提交对比 | +1 / -0 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/us.txt`](removed/us.txt) |
 
 <details><summary>上游明细</summary>
@@ -248,12 +270,6 @@
 | `local/us.txt` (本地手写) | - | 7 |
 
 </details>
-
-与上次相比 **新增 1 条**（前 10 条）：
-
-```
-domain_suffix	hxcy.moe
-```
 
 ### youtube
 
