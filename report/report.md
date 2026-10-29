@@ -7,7 +7,7 @@
 
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
-| `ads` | 8 | 0 | 173713 | 24509 | 10124 | 220 | 14165 | +0 / -61 |
+| `ads` | 8 | 0 | 173713 | 24509 | 10124 | 220 | 14165 | = 无变化 |
 | `ai` | 1 | 0 | 2300 | 214 | 0 | 0 | 214 | = 无变化 |
 | `direct-domain` | 14 | 0 | 43450 | 10390 | 458 | 2691 | 7241 | = 无变化 |
 | `direct-ip` | 1 | 0 | 34268 | 8113 | 0 | 0 | 8113 | = 无变化 |
@@ -15,7 +15,7 @@
 | `steam-cn` | 1 | 28 | 616 | 45 | 4 | 2 | 39 | = 无变化 |
 | `steam-proxy` | 0 | 19 | 334 | 19 | 0 | 0 | 19 | = 无变化 |
 | `tailscale` | 1 | 0 | 80 | 3 | 0 | 0 | 3 | = 无变化 |
-| `us` | 1 | 6 | 695 | 57 | 0 | 0 | 57 | = 无变化 |
+| `us` | 1 | 7 | 706 | 58 | 0 | 0 | 58 | +1 / -0 |
 | `youtube` | 1 | 0 | 1279 | 178 | 0 | 1 | 177 | = 无变化 |
 
 - `原始条目` = 各上游条目直接相加（`local/` 手写条目也算在内，含重复）；`最终条目` 才是写进 `.srs` 的条数。
@@ -34,7 +34,7 @@
 | `steam-cn` | 1 | 38 | 0 | 0 | 0 | 0 | ✅ |
 | `steam-proxy` | 0 | 19 | 0 | 0 | 0 | 0 | ✅ |
 | `tailscale` | 0 | 3 | 0 | 0 | 0 | 0 | ✅ |
-| `us` | 0 | 56 | 1 | 0 | 0 | 0 | ✅ |
+| `us` | 0 | 57 | 1 | 0 | 0 | 0 | ✅ |
 | `youtube` | 1 | 176 | 0 | 0 | 0 | 0 | ✅ |
 
 - `domain` / `domain_suffix`：简洁字典树查找，**耗时与条数无关**，只看域名长度 ⇒ 放多少条都基本不影响速度。
@@ -56,7 +56,7 @@
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 24509 / 14385 / 14165 |
 | 删除: 上游重复 / 被覆盖 | 10124 / 220 |
 | 匹配器 | domain=137, domain_suffix=13980, domain_keyword=25, domain_regex=1, ip_cidr=22 |
-| 与上次提交对比 | +0 / -61 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
@@ -73,21 +73,6 @@
 | `BanProgramAD.srs` | 7940 B | 1008 |
 
 </details>
-
-与上次相比 **移除 61 条**（前 10 条，完整见明细文件）：
-
-```
-domain_suffix	123.ywxww.net
-domain_suffix	1717.1000uc.com
-domain_suffix	2kij3uhj3.cyou
-domain_suffix	8ieu7ue.cyou
-domain_suffix	acc.jiangsujiaxue.com
-domain_suffix	active.baofeng.com
-domain_suffix	balanced-red-emhnkdfj-dp7g2kvqxx8n.edgeone.dev
-domain_suffix	cdn.file6.goodid.com
-domain_suffix	config.baofeng.net
-domain_suffix	cpxlt.cn
-```
 
 ### ai
 
@@ -125,7 +110,7 @@ domain_suffix	cpxlt.cn
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-cn.srs` | 56609 B | 9375 |
+| `geosite-cn.srs` | 56612 B | 9375 |
 | `geosite-category-pt.srs` | 1160 B | 126 |
 | `geosite-category-game-platforms-download@cn.srs` | 431 B | 24 |
 | `geosite-115.srs` | 172 B | 14 |
@@ -247,12 +232,12 @@ domain_suffix	cpxlt.cn
 
 | 项 | 值 |
 |---|---|
-| 上游数 / 本地条目 | 1 / 6 |
-| 产物 | `dist/us.srs` — 695 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 57 / 57 / 57 |
+| 上游数 / 本地条目 | 1 / 7 |
+| 产物 | `dist/us.srs` — 706 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 58 / 58 / 58 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
-| 匹配器 | domain=0, domain_suffix=56, domain_keyword=1, domain_regex=0, ip_cidr=0 |
-| 与上次提交对比 | = 无变化 |
+| 匹配器 | domain=0, domain_suffix=57, domain_keyword=1, domain_regex=0, ip_cidr=0 |
+| 与上次提交对比 | +1 / -0 |
 | 明细 | [`report/removed/us.txt`](removed/us.txt) |
 
 <details><summary>上游明细</summary>
@@ -260,9 +245,15 @@ domain_suffix	cpxlt.cn
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
 | `geosite-18comic.srs` | 623 B | 51 |
-| `local/us.txt` (本地手写) | - | 6 |
+| `local/us.txt` (本地手写) | - | 7 |
 
 </details>
+
+与上次相比 **新增 1 条**（前 10 条）：
+
+```
+domain_suffix	hxcy.moe
+```
 
 ### youtube
 
