@@ -7,7 +7,7 @@
 
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
-| `ads` | 8 | 0 | 173713 | 24509 | 10124 | 220 | 14165 | = 无变化 |
+| `ads` | 8 | 0 | 173688 | 24507 | 10124 | 220 | 14163 | +0 / -2 |
 | `ai` | 1 | 0 | 2300 | 214 | 0 | 0 | 214 | = 无变化 |
 | `direct-domain` | 14 | 0 | 43450 | 10390 | 458 | 2691 | 7241 | = 无变化 |
 | `direct-ip` | 1 | 0 | 34268 | 8113 | 0 | 0 | 8113 | = 无变化 |
@@ -15,7 +15,7 @@
 | `steam-cn` | 1 | 28 | 616 | 45 | 4 | 2 | 39 | = 无变化 |
 | `steam-proxy` | 0 | 19 | 334 | 19 | 0 | 0 | 19 | = 无变化 |
 | `tailscale` | 1 | 0 | 80 | 3 | 0 | 0 | 3 | = 无变化 |
-| `twitter` | 1 | 0 | 315 | 24 | 0 | 0 | 24 | 🆕 首次 (无上次产物可比) |
+| `twitter` | 1 | 0 | 315 | 24 | 0 | 0 | 24 | = 无变化 |
 | `us` | 1 | 7 | 706 | 58 | 0 | 0 | 58 | = 无变化 |
 | `youtube` | 1 | 0 | 1279 | 178 | 0 | 1 | 177 | = 无变化 |
 
@@ -27,7 +27,7 @@
 
 | 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 137 | 13980 | 25 | 1 | 22 | 0 | ✅ |
+| `ads` | 137 | 13978 | 25 | 1 | 22 | 0 | ✅ |
 | `ai` | 34 | 179 | 0 | 1 | 0 | 0 | ✅ |
 | `direct-domain` | 879 | 6353 | 0 | 9 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8113 | 0 | ✅ |
@@ -54,11 +54,11 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 8 / 0 |
-| 产物 | `dist/ads.srs` — 173713 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 24509 / 14385 / 14165 |
+| 产物 | `dist/ads.srs` — 173688 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 24507 / 14383 / 14163 |
 | 删除: 上游重复 / 被覆盖 | 10124 / 220 |
-| 匹配器 | domain=137, domain_suffix=13980, domain_keyword=25, domain_regex=1, ip_cidr=22 |
-| 与上次提交对比 | = 无变化 |
+| 匹配器 | domain=137, domain_suffix=13978, domain_keyword=25, domain_regex=1, ip_cidr=22 |
+| 与上次提交对比 | +0 / -2 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
@@ -69,12 +69,19 @@
 | `adblocksingboxlite.srs` | 63468 B | 8480 |
 | `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
-| `BanAD.srs` | 71979 B | 8912 |
+| `BanAD.srs` | 71995 B | 8910 |
 | `BanADCompany.srs` | 1473 B | 131 |
 | `BanEasyListChina.srs` | 33475 B | 5050 |
 | `BanProgramAD.srs` | 7940 B | 1008 |
 
 </details>
+
+与上次相比 **移除 2 条**（前 10 条，完整见明细文件）：
+
+```
+domain_suffix	dajars.shop
+domain_suffix	quiavo.shop
+```
 
 ### ai
 
@@ -239,7 +246,7 @@
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 24 / 24 / 24 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
 | 匹配器 | domain=0, domain_suffix=24, domain_keyword=0, domain_regex=0, ip_cidr=0 |
-| 与上次提交对比 | 🆕 首次 (无上次产物可比) |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/twitter.txt`](removed/twitter.txt) |
 
 <details><summary>上游明细</summary>
