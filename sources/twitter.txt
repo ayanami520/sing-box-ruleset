@@ -1,0 +1,27 @@
+# Twitter / X 分组
+#   sources/<name>.txt -> dist/<name>.srs
+#   路由动作: selector Twitter（成员 JP/KR/US，默认 JP）
+#
+# ★ 顺序要求: Twitter 规则必须排在 us 之前
+#   理由: route.rules 里 us 的位置早于 direct-domain / direct-ip。若 Twitter 排在 us 之后,
+#        一旦 us 集里混入 x.com / twimg.com, Twitter 分组就永远选不中 ✗
+#   (2026-10-30 实机验证: 插在 index 12、us 之前, x.com 命中 rule_set=twitter -> Twitter)
+#
+# ★ 上游选择说明:
+#   SagerNet/sing-geosite 与 lyc8503/sing-box-rules 两家的 geosite-twitter,
+#   反编译后 JSON 的 md5 完全一致 (1df36bb2885798ce47b32a18692a5b66),
+#   仅 .srs 编译产物字节不同 (编译器版本差异) ⇒ 两者内容等价。
+#   这里取 SagerNet, 与 youtube / google / ai / tailscale 同一个上游家族。
+#
+#   覆盖 24 条 domain_suffix:
+#     x.com  twitter.com  twimg.com  t.co  twttr.com  twttr.net
+#     twitter.jp  twitter.biz  twitter.map.fastly.net  ads-twitter.com
+#     tweetdeck.com  twitpic.com  twvid.com  twtrdns.net
+#     twittercommunity.com  twitterinc.com  twitteroauth.com  twitterstat.us
+#     twitterflightschool.com  tellapart.com  cms-twdigitalassets.com
+#     periscope.tv  pscp.tv  vine.co
+#
+# 一行一个上游地址, # 开头为注释。支持 .srs(二进制) 与 .json(源格式) 混用。
+
+# Twitter / X（sing-geosite）
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-twitter.srs

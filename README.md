@@ -11,7 +11,7 @@
 sources/          # 声明式输入：每个 .txt = 一个成品规则集，一行一个上游 URL
   direct-domain.txt   direct-ip.txt   ads.txt   ai.txt
   google.txt          youtube.txt     tailscale.txt   us.txt
-  steam-cn.txt
+  steam-cn.txt        twitter.txt
 local/            # 手写条目：每个 .txt = 同名分组的补充规则（与上游合并后一起编译）
   us.txt
   steam-cn.txt    steam-proxy.txt   # ← 由 scripts/convert-steam.sh 生成（勿手改）
@@ -45,6 +45,7 @@ report/           # 构建报告（由 CI 自动提交，见下文）
 | `dist/tailscale.srs` | `tailscale` | `geosite-tailscale` | `direct`（否则 Tailscale 打洞端点会变成节点 IP）|
 | `dist/us.srs` | `us` | lyc8503: `18comic` + `local/us.txt` | → `US` 分组 |
 | `dist/youtube.srs` | **`Youtube`**（注意大写）| SagerNet: `geosite-youtube` | → selector `Youtube`（**规则必须排在 `Google` 之前**，见下）|
+| `dist/twitter.srs` | **`Twitter`**（注意大写）| SagerNet: `geosite-twitter` | → selector `Twitter`（**规则必须排在 `us` 之前**，否则被 `us` 抢走）|
 | `dist/steam-cn.srs` | **`Steam-cn`** | SagerNet: `geosite-steam@cn` + `local/steam-cn.txt` | → selector `Steam-cn`（默认 `direct`）；⚠️ **必须配 DNS → `dns-china`**，否则下载仍拿境外 CDN |
 | `dist/steam-proxy.srs` | **`Steam-proxy`** | `local/steam-proxy.txt`（仅本地，无上游）| → selector `Steam-proxy`（社区 / 创意工坊 / 聊天 / 直播）|
 
