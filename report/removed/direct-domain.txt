@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/direct-domain.txt (不提交, 随 CI artifact 上传)
-# 本次共 3121 行 (dup=430, covered=2691); 提交版上限 2000 行
+# 本次共 3122 行 (dup=431, covered=2691); 提交版上限 2000 行
 dup	domain	a1.mzstatic.com
 dup	domain	a2.mzstatic.com
 dup	domain	a3.mzstatic.com
@@ -193,6 +193,7 @@ dup	domain	weather-map2.apple.com
 dup	domain	weatherkit.apple.com
 dup	domain	www.apple.com
 dup	domain	www.apple.com.edgekey.net.globalredir.akadns.net
+dup	domain	www.gstatic.com
 dup	domain	xp.apple.com
 dup	domain	xz.pphimalayanrt.com
 dup	domain_regex	.+\.awsdns-cn-[0-9][0-9]\.(biz|com|net|top)$
@@ -476,6 +477,29 @@ covered	domain	dl.delivery.mp.microsoft.com	dl.delivery.mp.microsoft.com
 covered	domain	dl.steam.clngaa.com	dl.steam.clngaa.com
 covered	domain	dynamodb.cn-north-1.amazonaws.com.cn	cn
 covered	domain	dynamodb.cn-northwest-1.amazonaws.com.cn	cn
+covered	domain	ecs.af-north-1.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.af-south-1.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.ap-southeast-1.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.ap-southeast-2.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.ap-southeast-3.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.ap-southeast-4.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.ap-southeast-5.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.cn-east-2.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.cn-east-3.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.cn-east-5.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.cn-north-1.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.cn-north-4.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.cn-north-9.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.cn-south-1.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.cn-south-4.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.cn-southwest-2.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.la-north-2.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.la-south-2.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.me-east-1.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.my-kualalumpur-1.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.na-mexico-1.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.sa-brazil-1.myhuaweicloud.com	myhuaweicloud.com
+covered	domain	ecs.tr-west-1.myhuaweicloud.com	myhuaweicloud.com
 covered	domain	enrichgw.10010.com	10010.com
 covered	domain	epicgames-download1-1251447533.file.myqcloud.com	myqcloud.com
 covered	domain	fwh.bcebos.com	bcebos.com
@@ -509,29 +533,6 @@ covered	domain	ntp5.aliyun.com	aliyun.com
 covered	domain	ntp5.tencent.com	tencent.com
 covered	domain	ntp6.aliyun.com	aliyun.com
 covered	domain	ntp7.aliyun.com	aliyun.com
-covered	domain	obs.af-north-1.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.af-south-1.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.ap-southeast-1.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.ap-southeast-2.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.ap-southeast-3.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.ap-southeast-4.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.ap-southeast-5.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.cn-east-2.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.cn-east-3.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.cn-east-5.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.cn-north-1.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.cn-north-4.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.cn-north-9.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.cn-south-1.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.cn-south-4.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.cn-southwest-2.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.la-north-2.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.la-south-2.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.me-east-1.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.my-kualalumpur-1.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.na-mexico-1.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.sa-brazil-1.myhuaweicloud.com	myhuaweicloud.com
-covered	domain	obs.tr-west-1.myhuaweicloud.com	myhuaweicloud.com
 covered	domain	opencloud.wostore.cn	cn
 covered	domain	opencourse.pku.edu.cn	cn
 covered	domain	oss-cn-beijing.aliyuncs.com	oss-cn-beijing.aliyuncs.com
@@ -2004,5 +2005,4 @@ covered	domain_suffix	kgtest.cn	cn
 covered	domain_suffix	kijijidns.cn	cn
 covered	domain_suffix	kijijidns.com.cn	cn
 covered	domain_suffix	kimg.cn	cn
-covered	domain_suffix	kindle.cn	cn
-# ... 已截断: 共 3121 行, 仅保留前 2000 行 (完整清单见 report/.full/direct-domain.txt)
+# ... 已截断: 共 3122 行, 仅保留前 2000 行 (完整清单见 report/.full/direct-domain.txt)

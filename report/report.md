@@ -9,14 +9,14 @@
 |---|---|---|---|---|---|---|---|---|
 | `ads` | 8 | 0 | 173688 | 24507 | 10124 | 220 | 14163 | = 无变化 |
 | `ai` | 1 | 0 | 2300 | 214 | 0 | 0 | 214 | = 无变化 |
-| `direct-domain` | 14 | 0 | 43800 | 10424 | 458 | 2691 | 7275 | +34 / -0 |
+| `direct-domain` | 14 | 0 | 43858 | 10430 | 459 | 2691 | 7280 | +5 / -0 |
 | `direct-ip` | 1 | 0 | 34268 | 8113 | 0 | 0 | 8113 | = 无变化 |
 | `google` | 1 | 0 | 7091 | 940 | 0 | 78 | 862 | = 无变化 |
 | `steam-cn` | 1 | 28 | 616 | 45 | 4 | 2 | 39 | = 无变化 |
 | `steam-proxy` | 0 | 19 | 334 | 19 | 0 | 0 | 19 | = 无变化 |
 | `tailscale` | 1 | 0 | 80 | 3 | 0 | 0 | 3 | = 无变化 |
 | `twitter` | 1 | 0 | 315 | 24 | 0 | 0 | 24 | = 无变化 |
-| `us` | 1 | 7 | 704 | 59 | 0 | 0 | 59 | +1 / -0 |
+| `us` | 1 | 7 | 704 | 59 | 0 | 0 | 59 | = 无变化 |
 | `youtube` | 1 | 0 | 1279 | 178 | 0 | 1 | 177 | = 无变化 |
 
 - `原始条目` = 各上游条目直接相加（`local/` 手写条目也算在内，含重复）；`最终条目` 才是写进 `.srs` 的条数。
@@ -29,7 +29,7 @@
 |---|---|---|---|---|---|---|---|
 | `ads` | 137 | 13978 | 25 | 1 | 22 | 0 | ✅ |
 | `ai` | 34 | 179 | 0 | 1 | 0 | 0 | ✅ |
-| `direct-domain` | 910 | 6356 | 0 | 9 | 0 | 0 | ✅ |
+| `direct-domain` | 915 | 6356 | 0 | 9 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8113 | 0 | ✅ |
 | `google` | 31 | 829 | 0 | 2 | 0 | 0 | ✅ |
 | `steam-cn` | 1 | 38 | 0 | 0 | 0 | 0 | ✅ |
@@ -101,11 +101,11 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 14 / 0 |
-| 产物 | `dist/direct-domain.srs` — 43800 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 10424 / 9966 / 7275 |
-| 删除: 上游重复 / 被覆盖 | 458 / 2691 |
-| 匹配器 | domain=910, domain_suffix=6356, domain_keyword=0, domain_regex=9, ip_cidr=0 |
-| 与上次提交对比 | +34 / -0 |
+| 产物 | `dist/direct-domain.srs` — 43858 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 10430 / 9971 / 7280 |
+| 删除: 上游重复 / 被覆盖 | 459 / 2691 |
+| 匹配器 | domain=915, domain_suffix=6356, domain_keyword=0, domain_regex=9, ip_cidr=0 |
+| 与上次提交对比 | +5 / -0 |
 | 明细 | [`report/removed/direct-domain.txt`](removed/direct-domain.txt) |
 
 <details><summary>上游明细</summary>
@@ -125,23 +125,18 @@
 | `bilibili-cdn.srs` | 184 B | 14 |
 | `bilibili.srs` | 463 B | 53 |
 | `bilibili2.srs` | 107 B | 4 |
-| `singbox.json` | 19712 B | 448 |
+| `singbox.json` | 19907 B | 454 |
 
 </details>
 
-与上次相比 **新增 34 条**（前 10 条）：
+与上次相比 **新增 5 条**（前 10 条）：
 
 ```
-domain	almaty-1.storage.gcore.dev
-domain	ca.object-storage.io
-domain	chicago-1.storage.gcore.dev
-domain	de.object-storage.io
-domain	logging.de-fra.ionos.com
-domain	logging.de-txl.ionos.com
-domain	logging.es-vit.ionos.com
-domain	logging.fr-par.ionos.com
-domain	logging.gb-bhx.ionos.com
-domain	logging.gb-lhr.ionos.com
+domain	a0.awsstatic.com
+domain	assets.xboxservices.com
+domain	github.githubassets.com
+domain	store.akamai.steamstatic.com
+domain	www.cloudflare.com
 ```
 
 ### direct-ip
@@ -274,7 +269,7 @@ domain	logging.gb-lhr.ionos.com
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 59 / 59 / 59 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
 | 匹配器 | domain=0, domain_suffix=58, domain_keyword=1, domain_regex=0, ip_cidr=0 |
-| 与上次提交对比 | +1 / -0 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/us.txt`](removed/us.txt) |
 
 <details><summary>上游明细</summary>
@@ -285,12 +280,6 @@ domain	logging.gb-lhr.ionos.com
 | `local/us.txt` (本地手写) | - | 7 |
 
 </details>
-
-与上次相比 **新增 1 条**（前 10 条）：
-
-```
-domain_suffix	18comic.ink
-```
 
 ### youtube
 
