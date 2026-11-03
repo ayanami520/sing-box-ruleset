@@ -9,7 +9,7 @@
 |---|---|---|---|---|---|---|---|---|
 | `ads` | 8 | 0 | 173688 | 24507 | 10124 | 220 | 14163 | = 无变化 |
 | `ai` | 1 | 0 | 2300 | 214 | 0 | 0 | 214 | = 无变化 |
-| `direct-domain` | 14 | 0 | 43952 | 10454 | 459 | 2695 | 7300 | +20 / -0 |
+| `direct-domain` | 14 | 0 | 43952 | 10454 | 459 | 2695 | 7300 | = 无变化 |
 | `direct-ip` | 1 | 0 | 34268 | 8113 | 0 | 0 | 8113 | = 无变化 |
 | `google` | 1 | 0 | 7091 | 940 | 0 | 78 | 862 | = 无变化 |
 | `steam-cn` | 1 | 28 | 616 | 45 | 4 | 2 | 39 | = 无变化 |
@@ -105,14 +105,14 @@
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 10454 / 9995 / 7300 |
 | 删除: 上游重复 / 被覆盖 | 459 / 2695 |
 | 匹配器 | domain=915, domain_suffix=6376, domain_keyword=0, domain_regex=9, ip_cidr=0 |
-| 与上次提交对比 | +20 / -0 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/direct-domain.txt`](removed/direct-domain.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-cn.srs` | 56821 B | 9402 |
+| `geosite-cn.srs` | 56820 B | 9402 |
 | `geosite-category-pt.srs` | 1160 B | 126 |
 | `geosite-category-game-platforms-download@cn.srs` | 431 B | 24 |
 | `geosite-115.srs` | 172 B | 14 |
@@ -128,21 +128,6 @@
 | `singbox.json` | 19907 B | 454 |
 
 </details>
-
-与上次相比 **新增 20 条**（前 10 条）：
-
-```
-domain_suffix	alivecdn.com
-domain_suffix	allwinnertech.com
-domain_suffix	busyming.com
-domain_suffix	cambricon.com
-domain_suffix	doubaoapps.com
-domain_suffix	edge-byted.com
-domain_suffix	haimian.com
-domain_suffix	hnlshm.com
-domain_suffix	mnc000.mcc460.pub.3gppnetwork.org
-domain_suffix	mnc002.mcc460.pub.3gppnetwork.org
-```
 
 ### direct-ip
 
