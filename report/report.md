@@ -9,7 +9,7 @@
 |---|---|---|---|---|---|---|---|---|
 | `ads` | 8 | 0 | 173688 | 24507 | 10124 | 220 | 14163 | = 无变化 |
 | `ai` | 1 | 0 | 2300 | 214 | 0 | 0 | 214 | = 无变化 |
-| `direct-domain` | 14 | 0 | 43952 | 10454 | 459 | 2695 | 7300 | = 无变化 |
+| `direct-domain` | 14 | 0 | 43944 | 10455 | 459 | 2695 | 7301 | +1 / -0 |
 | `direct-ip` | 1 | 0 | 34268 | 8113 | 0 | 0 | 8113 | = 无变化 |
 | `google` | 1 | 0 | 7091 | 940 | 0 | 78 | 862 | = 无变化 |
 | `steam-cn` | 1 | 28 | 616 | 45 | 4 | 2 | 39 | = 无变化 |
@@ -29,7 +29,7 @@
 |---|---|---|---|---|---|---|---|
 | `ads` | 137 | 13978 | 25 | 1 | 22 | 0 | ✅ |
 | `ai` | 34 | 179 | 0 | 1 | 0 | 0 | ✅ |
-| `direct-domain` | 915 | 6376 | 0 | 9 | 0 | 0 | ✅ |
+| `direct-domain` | 915 | 6377 | 0 | 9 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8113 | 0 | ✅ |
 | `google` | 31 | 829 | 0 | 2 | 0 | 0 | ✅ |
 | `steam-cn` | 1 | 38 | 0 | 0 | 0 | 0 | ✅ |
@@ -101,18 +101,18 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 14 / 0 |
-| 产物 | `dist/direct-domain.srs` — 43952 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 10454 / 9995 / 7300 |
+| 产物 | `dist/direct-domain.srs` — 43944 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 10455 / 9996 / 7301 |
 | 删除: 上游重复 / 被覆盖 | 459 / 2695 |
-| 匹配器 | domain=915, domain_suffix=6376, domain_keyword=0, domain_regex=9, ip_cidr=0 |
-| 与上次提交对比 | = 无变化 |
+| 匹配器 | domain=915, domain_suffix=6377, domain_keyword=0, domain_regex=9, ip_cidr=0 |
+| 与上次提交对比 | +1 / -0 |
 | 明细 | [`report/removed/direct-domain.txt`](removed/direct-domain.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-cn.srs` | 56819 B | 9402 |
+| `geosite-cn.srs` | 56865 B | 9403 |
 | `geosite-category-pt.srs` | 1160 B | 126 |
 | `geosite-category-game-platforms-download@cn.srs` | 431 B | 24 |
 | `geosite-115.srs` | 172 B | 14 |
@@ -128,6 +128,12 @@
 | `singbox.json` | 19907 B | 454 |
 
 </details>
+
+与上次相比 **新增 1 条**（前 10 条）：
+
+```
+domain_suffix	allawnofs.com
+```
 
 ### direct-ip
 
