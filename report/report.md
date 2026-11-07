@@ -7,9 +7,9 @@
 
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
-| `ads` | 8 | 0 | 173688 | 24507 | 10124 | 220 | 14163 | = 无变化 |
+| `ads` | 8 | 0 | 173729 | 24511 | 10125 | 220 | 14166 | +3 / -0 |
 | `ai` | 1 | 0 | 2300 | 214 | 0 | 0 | 214 | = 无变化 |
-| `direct-domain` | 14 | 0 | 43944 | 10455 | 459 | 2695 | 7301 | +1 / -0 |
+| `direct-domain` | 14 | 0 | 44133 | 10562 | 459 | 2747 | 7356 | +57 / -2 |
 | `direct-ip` | 1 | 0 | 34268 | 8113 | 0 | 0 | 8113 | = 无变化 |
 | `google` | 1 | 0 | 7091 | 940 | 0 | 78 | 862 | = 无变化 |
 | `steam-cn` | 1 | 28 | 616 | 45 | 4 | 2 | 39 | = 无变化 |
@@ -27,9 +27,9 @@
 
 | 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 137 | 13978 | 25 | 1 | 22 | 0 | ✅ |
+| `ads` | 137 | 13981 | 25 | 1 | 22 | 0 | ✅ |
 | `ai` | 34 | 179 | 0 | 1 | 0 | 0 | ✅ |
-| `direct-domain` | 915 | 6377 | 0 | 9 | 0 | 0 | ✅ |
+| `direct-domain` | 916 | 6431 | 0 | 9 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8113 | 0 | ✅ |
 | `google` | 31 | 829 | 0 | 2 | 0 | 0 | ✅ |
 | `steam-cn` | 1 | 38 | 0 | 0 | 0 | 0 | ✅ |
@@ -54,18 +54,18 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 8 / 0 |
-| 产物 | `dist/ads.srs` — 173688 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 24507 / 14383 / 14163 |
-| 删除: 上游重复 / 被覆盖 | 10124 / 220 |
-| 匹配器 | domain=137, domain_suffix=13978, domain_keyword=25, domain_regex=1, ip_cidr=22 |
-| 与上次提交对比 | = 无变化 |
+| 产物 | `dist/ads.srs` — 173729 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 24511 / 14386 / 14166 |
+| 删除: 上游重复 / 被覆盖 | 10125 / 220 |
+| 匹配器 | domain=137, domain_suffix=13981, domain_keyword=25, domain_regex=1, ip_cidr=22 |
+| 与上次提交对比 | +3 / -0 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-category-ads-all.srs` | 8131 B | 905 |
+| `geosite-category-ads-all.srs` | 8175 B | 909 |
 | `adblocksingboxlite.srs` | 63468 B | 8480 |
 | `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
@@ -75,6 +75,14 @@
 | `BanProgramAD.srs` | 7940 B | 1008 |
 
 </details>
+
+与上次相比 **新增 3 条**（前 10 条）：
+
+```
+domain_suffix	ads-api-t.my7v.com
+domain_suffix	ads-o.res.leiniao.com
+domain_suffix	isms-o.api.my7v.com
+```
 
 ### ai
 
@@ -101,18 +109,18 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 14 / 0 |
-| 产物 | `dist/direct-domain.srs` — 43944 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 10455 / 9996 / 7301 |
-| 删除: 上游重复 / 被覆盖 | 459 / 2695 |
-| 匹配器 | domain=915, domain_suffix=6377, domain_keyword=0, domain_regex=9, ip_cidr=0 |
-| 与上次提交对比 | +1 / -0 |
+| 产物 | `dist/direct-domain.srs` — 44133 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 10562 / 10103 / 7356 |
+| 删除: 上游重复 / 被覆盖 | 459 / 2747 |
+| 匹配器 | domain=916, domain_suffix=6431, domain_keyword=0, domain_regex=9, ip_cidr=0 |
+| 与上次提交对比 | +57 / -2 |
 | 明细 | [`report/removed/direct-domain.txt`](removed/direct-domain.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-cn.srs` | 56865 B | 9403 |
+| `geosite-cn.srs` | 57454 B | 9510 |
 | `geosite-category-pt.srs` | 1160 B | 126 |
 | `geosite-category-game-platforms-download@cn.srs` | 431 B | 24 |
 | `geosite-115.srs` | 172 B | 14 |
@@ -129,10 +137,26 @@
 
 </details>
 
-与上次相比 **新增 1 条**（前 10 条）：
+与上次相比 **移除 2 条**（前 10 条，完整见明细文件）：
 
 ```
-domain_suffix	allawnofs.com
+domain_suffix	chuyu.me
+domain_suffix	in.th
+```
+
+与上次相比 **新增 57 条**（前 10 条）：
+
+```
+domain	radio.itunes.apple.com
+domain_suffix	120ask.com
+domain_suffix	120askimages.com
+domain_suffix	ai-indeed.com
+domain_suffix	baikemy.com
+domain_suffix	bangcle.com
+domain_suffix	bayescom.com
+domain_suffix	bseinfo.net
+domain_suffix	cctime.com
+domain_suffix	chinahtz.com
 ```
 
 ### direct-ip

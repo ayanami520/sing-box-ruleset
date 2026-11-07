@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/direct-domain.txt (不提交, 随 CI artifact 上传)
-# 本次共 3126 行 (dup=431, covered=2695); 提交版上限 2000 行
+# 本次共 3178 行 (dup=431, covered=2747); 提交版上限 2000 行
 dup	domain	a1.mzstatic.com
 dup	domain	a2.mzstatic.com
 dup	domain	a3.mzstatic.com
@@ -740,6 +740,9 @@ covered	domain_suffix	adnet.sohu.com	sohu.com
 covered	domain_suffix	adobedc.cn	cn
 covered	domain_suffix	adping.qq.com	qq.com
 covered	domain_suffix	adpm.app.qq.com	qq.com
+covered	domain_suffix	ads-api-o.api.leiniao.com	leiniao.com
+covered	domain_suffix	ads-api-t.my7v.com	my7v.com
+covered	domain_suffix	ads-o.res.leiniao.com	leiniao.com
 covered	domain_suffix	ads-union.jd.com	jd.com
 covered	domain_suffix	ads-uo.api.leiniao.com	leiniao.com
 covered	domain_suffix	ads-ut.api.leiniao.com	leiniao.com
@@ -971,6 +974,7 @@ covered	domain_suffix	bandao.cn	cn
 covered	domain_suffix	bankcomm.cn	cn
 covered	domain_suffix	bankofbeijing.com.cn	cn
 covered	domain_suffix	baobaoaichi.cn	cn
+covered	domain_suffix	base.api.my7v.com	my7v.com
 covered	domain_suffix	bbdc.cn	cn
 covered	domain_suffix	bbtnews.com.cn	cn
 covered	domain_suffix	bbtv.cn	cn
@@ -1037,14 +1041,17 @@ covered	domain_suffix	bocifunds.cn	cn
 covered	domain_suffix	bocifunds.com.cn	cn
 covered	domain_suffix	bocservices.com.cn	cn
 covered	domain_suffix	boe.com.cn	cn
+covered	domain_suffix	bohe.cn	cn
 covered	domain_suffix	booking.cn	cn
 covered	domain_suffix	bookln.cn	cn
 covered	domain_suffix	bootcdn.cn	cn
 covered	domain_suffix	bosc.cn	cn
 covered	domain_suffix	boscam.com.cn	cn
+covered	domain_suffix	bowangcaijing.cn	cn
 covered	domain_suffix	brawlstars.cn	cn
 covered	domain_suffix	bsb.com.cn	cn
 covered	domain_suffix	bsclink.cn	cn
+covered	domain_suffix	bse.cn	cn
 covered	domain_suffix	bsurl.cn	cn
 covered	domain_suffix	bt.byr.cn	cn
 covered	domain_suffix	btrace.qq.com	qq.com
@@ -1196,6 +1203,7 @@ covered	domain_suffix	chei.com.cn	cn
 covered	domain_suffix	chelaile.net.cn	cn
 covered	domain_suffix	chengjiaxiangqin.cn	cn
 covered	domain_suffix	chengquan.cn	cn
+covered	domain_suffix	chery.cn	cn
 covered	domain_suffix	chesicc.cn	cn
 covered	domain_suffix	chesicc.com.cn	cn
 covered	domain_suffix	chesicc.net.cn	cn
@@ -1205,6 +1213,7 @@ covered	domain_suffix	china.cn	cn
 covered	domain_suffix	china.com.cn	cn
 covered	domain_suffix	china.org.cn	cn
 covered	domain_suffix	chinabank.com.cn	cn
+covered	domain_suffix	chinacdc.cn	cn
 covered	domain_suffix	chinaclear.cn	cn
 covered	domain_suffix	chinacloud-mobile.cn	cn
 covered	domain_suffix	chinacloudapi.cn	cn
@@ -1269,9 +1278,12 @@ covered	domain_suffix	cmfunds.cn	cn
 covered	domain_suffix	cmicrwx.cn	cn
 covered	domain_suffix	cmicvip.cn	cn
 covered	domain_suffix	cmvideo.cn	cn
+covered	domain_suffix	cnca.cn	cn
 covered	domain_suffix	cncnimg.cn	cn
 covered	domain_suffix	cneo.com.cn	cn
+covered	domain_suffix	cnfood.cn	cn
 covered	domain_suffix	cnht.com.cn	cn
+covered	domain_suffix	cnindex.com.cn	cn
 covered	domain_suffix	cninfo.com.cn	cn
 covered	domain_suffix	cnki.com.cn	cn
 covered	domain_suffix	cnlogs.umeng.com	umeng.com
@@ -1290,6 +1302,7 @@ covered	domain_suffix	conac.cn	cn
 covered	domain_suffix	connectcommerce.cn	cn
 covered	domain_suffix	connectcommerce.com.cn	cn
 covered	domain_suffix	connectedcommerce.cn	cn
+covered	domain_suffix	countsheep.cn	cn
 covered	domain_suffix	coze.cn	cn
 covered	domain_suffix	cozebaas.cn	cn
 covered	domain_suffix	cozefn.cn	cn
@@ -1301,6 +1314,7 @@ covered	domain_suffix	cpic.com.cn	cn
 covered	domain_suffix	cpro.baidu.com	baidu.com
 covered	domain_suffix	cpro.baidustatic.com	baidustatic.com
 covered	domain_suffix	cps.360buy.com	360buy.com
+covered	domain_suffix	cpta.com.cn	cn
 covered	domain_suffix	cptu.cn	cn
 covered	domain_suffix	cptu.org.cn	cn
 covered	domain_suffix	cpu.baidu.com	baidu.com
@@ -1323,6 +1337,7 @@ covered	domain_suffix	csdnimg.cn	cn
 covered	domain_suffix	csg.cn	cn
 covered	domain_suffix	csgo.com.cn	cn
 covered	domain_suffix	csgo.wmsj.cn	cn
+covered	domain_suffix	csindex.com.cn	cn
 covered	domain_suffix	cstm.baidu.com	baidu.com
 covered	domain_suffix	ctacdn.cn	cn
 covered	domain_suffix	ctadns.cn	cn
@@ -1391,6 +1406,13 @@ covered	domain_suffix	dbankcdn.cn	cn
 covered	domain_suffix	dbankcloud.cn	cn
 covered	domain_suffix	dbankedge.cn	cn
 covered	domain_suffix	dbfund.com.cn	cn
+covered	domain_suffix	dbw.cn	cn
+covered	domain_suffix	dc-conf-o.api.leiniao.com	leiniao.com
+covered	domain_suffix	dc-conf-t.api.leiniao.com	leiniao.com
+covered	domain_suffix	dc-o.api.leiniao.com	leiniao.com
+covered	domain_suffix	dc-t.api.leiniao.com	leiniao.com
+covered	domain_suffix	dc-uo.api.leiniao.com	leiniao.com
+covered	domain_suffix	dc-ut.api.leiniao.com	leiniao.com
 covered	domain_suffix	dc.letv.com	letv.com
 covered	domain_suffix	dccnet.com.cn	cn
 covered	domain_suffix	dcloud.net.cn	cn
@@ -1546,12 +1568,14 @@ covered	domain_suffix	ewww.com.cn	cn
 covered	domain_suffix	extlog.snssdk.com	snssdk.com
 covered	domain_suffix	faasapp.cn	cn
 covered	domain_suffix	faasdev.cn	cn
+covered	domain_suffix	faceplusplus.com.cn	cn
 covered	domain_suffix	faceshift.cn	cn
 covered	domain_suffix	farfetch.cn	cn
 covered	domain_suffix	farfetch.com.cn	cn
 covered	domain_suffix	farfetch.net.cn	cn
 covered	domain_suffix	fastcdn.com.cn	cn
 covered	domain_suffix	fastcom.com.cn	cn
+covered	domain_suffix	faw.cn	cn
 covered	domain_suffix	fbstatic.cn	cn
 covered	domain_suffix	fclick.baidu.com	baidu.com
 covered	domain_suffix	fclog.baidu.com	baidu.com
@@ -1709,6 +1733,8 @@ covered	domain_suffix	hbhk.com.cn	cn
 covered	domain_suffix	hc-cdn.cn	cn
 covered	domain_suffix	hdinsightservices.cn	cn
 covered	domain_suffix	hdns.ksyun.com	ksyun.com
+covered	domain_suffix	hebnews.cn	cn
+covered	domain_suffix	hebrb.cn	cn
 covered	domain_suffix	hellofont.cn	cn
 covered	domain_suffix	helpothers.cn	cn
 covered	domain_suffix	hemashare.cn	cn
@@ -1725,7 +1751,6 @@ covered	domain_suffix	hihonor.cn	cn
 covered	domain_suffix	hikunpeng.cn	cn
 covered	domain_suffix	hikunpeng.com.cn	cn
 covered	domain_suffix	hisilicon.com.cn	cn
-covered	domain_suffix	hitokoto.cn	cn
 covered	domain_suffix	hiu58.cn	cn
 covered	domain_suffix	hjfile.cn	cn
 covered	domain_suffix	hm.baidu.com	baidu.com
@@ -1844,6 +1869,7 @@ covered	domain_suffix	icbc.com.cn	cn
 covered	domain_suffix	icbccs.com.cn	cn
 covered	domain_suffix	icbccstz.com.cn	cn
 covered	domain_suffix	icbcmanila.com.cn	cn
+covered	domain_suffix	iceo.com.cn	cn
 covered	domain_suffix	icloud-apple.cn	cn
 covered	domain_suffix	icloud-content.com.cn	cn
 covered	domain_suffix	icloud.com.cn	cn
@@ -1917,6 +1943,7 @@ covered	domain_suffix	is-cool.com.cn	cn
 covered	domain_suffix	iscas.ac.cn	cn
 covered	domain_suffix	isdspeed.qq.com	qq.com
 covered	domain_suffix	isigning.cn	cn
+covered	domain_suffix	isms-o.api.my7v.com	my7v.com
 covered	domain_suffix	istv.cn	cn
 covered	domain_suffix	itc.cn	cn
 covered	domain_suffix	itdog.cn	cn
@@ -1933,6 +1960,7 @@ covered	domain_suffix	izto.com.cn	cn
 covered	domain_suffix	ja.gamersky.com	gamersky.com
 covered	domain_suffix	ja1.gamersky.com	gamersky.com
 covered	domain_suffix	ja2.gamersky.com	gamersky.com
+covered	domain_suffix	jac.com.cn	cn
 covered	domain_suffix	japps.cn	cn
 covered	domain_suffix	jd-ex.cn	cn
 covered	domain_suffix	jd-ex.com.cn	cn
@@ -1977,32 +2005,4 @@ covered	domain_suffix	juejin.cn	cn
 covered	domain_suffix	juhuiwan.com.cn	cn
 covered	domain_suffix	jushuitan.cn	cn
 covered	domain_suffix	just-do-it.cn	cn
-covered	domain_suffix	jvcsmart.cn	cn
-covered	domain_suffix	jvcsmart.com.cn	cn
-covered	domain_suffix	jvoice.cn	cn
-covered	domain_suffix	jxnews.com.cn	cn
-covered	domain_suffix	jyzq.cn	cn
-covered	domain_suffix	jzt.jd.com	jd.com
-covered	domain_suffix	ka9bv.cn	cn
-covered	domain_suffix	kafan.cn	cn
-covered	domain_suffix	kaipuyun.cn	cn
-covered	domain_suffix	kaipuyun.com.cn	cn
-covered	domain_suffix	kancloud.cn	cn
-covered	domain_suffix	kaspersky.com.cn	cn
-covered	domain_suffix	kata.com.cn	cn
-covered	domain_suffix	kc9.cn	cn
-covered	domain_suffix	kdocs.cn	cn
-covered	domain_suffix	keep.com.cn	cn
-covered	domain_suffix	keke.cn	cn
-covered	domain_suffix	kemen.cn	cn
-covered	domain_suffix	kepuchina.cn	cn
-covered	domain_suffix	kf.cn	cn
-covered	domain_suffix	kfc.com.cn	cn
-covered	domain_suffix	kfomn.cn	cn
-covered	domain_suffix	kg.qq.com	qq.com
-covered	domain_suffix	kgdc.cn	cn
-covered	domain_suffix	kglink.cn	cn
-covered	domain_suffix	kgtest.cn	cn
-covered	domain_suffix	kijijidns.cn	cn
-covered	domain_suffix	kijijidns.com.cn	cn
-# ... 已截断: 共 3126 行, 仅保留前 2000 行 (完整清单见 report/.full/direct-domain.txt)
+# ... 已截断: 共 3178 行, 仅保留前 2000 行 (完整清单见 report/.full/direct-domain.txt)
