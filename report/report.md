@@ -8,7 +8,7 @@
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
 | `ads` | 8 | 0 | 173729 | 24511 | 10125 | 220 | 14166 | = 无变化 |
-| `ai` | 1 | 0 | 2360 | 218 | 0 | 0 | 218 | +4 / -0 |
+| `ai` | 1 | 0 | 2360 | 218 | 0 | 0 | 218 | = 无变化 |
 | `direct-domain` | 14 | 0 | 44133 | 10562 | 459 | 2747 | 7356 | = 无变化 |
 | `direct-ip` | 1 | 0 | 34268 | 8113 | 0 | 0 | 8113 | = 无变化 |
 | `google` | 1 | 0 | 7091 | 940 | 0 | 78 | 862 | = 无变化 |
@@ -85,7 +85,7 @@
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 218 / 218 / 218 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
 | 匹配器 | domain=37, domain_suffix=180, domain_keyword=0, domain_regex=1, ip_cidr=0 |
-| 与上次提交对比 | +4 / -0 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/ai.txt`](removed/ai.txt) |
 
 <details><summary>上游明细</summary>
@@ -95,15 +95,6 @@
 | `geosite-category-ai-!cn.srs` | 2360 B | 218 |
 
 </details>
-
-与上次相比 **新增 4 条**（前 10 条）：
-
-```
-domain	http-intake.logs.us5.datadoghq.com
-domain	o1158394.ingest.us.sentry.io
-domain	production-copilot-host-westus.webpubsub.azure.com
-domain_suffix	grokbot.com
-```
 
 ### direct-domain
 
