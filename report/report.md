@@ -9,7 +9,7 @@
 |---|---|---|---|---|---|---|---|---|
 | `ads` | 8 | 0 | 173729 | 24511 | 10125 | 220 | 14166 | = 无变化 |
 | `ai` | 1 | 0 | 2360 | 218 | 0 | 0 | 218 | = 无变化 |
-| `direct-domain` | 14 | 0 | 44133 | 10562 | 459 | 2747 | 7356 | = 无变化 |
+| `direct-domain` | 14 | 0 | 44125 | 10563 | 459 | 2747 | 7357 | +1 / -0 |
 | `direct-ip` | 1 | 0 | 34268 | 8113 | 0 | 0 | 8113 | = 无变化 |
 | `google` | 1 | 0 | 7091 | 940 | 0 | 78 | 862 | = 无变化 |
 | `steam-cn` | 1 | 28 | 616 | 45 | 4 | 2 | 39 | = 无变化 |
@@ -29,7 +29,7 @@
 |---|---|---|---|---|---|---|---|
 | `ads` | 137 | 13981 | 25 | 1 | 22 | 0 | ✅ |
 | `ai` | 37 | 180 | 0 | 1 | 0 | 0 | ✅ |
-| `direct-domain` | 916 | 6431 | 0 | 9 | 0 | 0 | ✅ |
+| `direct-domain` | 916 | 6432 | 0 | 9 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8113 | 0 | ✅ |
 | `google` | 31 | 829 | 0 | 2 | 0 | 0 | ✅ |
 | `steam-cn` | 1 | 38 | 0 | 0 | 0 | 0 | ✅ |
@@ -101,18 +101,18 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 14 / 0 |
-| 产物 | `dist/direct-domain.srs` — 44133 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 10562 / 10103 / 7356 |
+| 产物 | `dist/direct-domain.srs` — 44125 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 10563 / 10104 / 7357 |
 | 删除: 上游重复 / 被覆盖 | 459 / 2747 |
-| 匹配器 | domain=916, domain_suffix=6431, domain_keyword=0, domain_regex=9, ip_cidr=0 |
-| 与上次提交对比 | = 无变化 |
+| 匹配器 | domain=916, domain_suffix=6432, domain_keyword=0, domain_regex=9, ip_cidr=0 |
+| 与上次提交对比 | +1 / -0 |
 | 明细 | [`report/removed/direct-domain.txt`](removed/direct-domain.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-cn.srs` | 57456 B | 9510 |
+| `geosite-cn.srs` | 57480 B | 9511 |
 | `geosite-category-pt.srs` | 1160 B | 126 |
 | `geosite-category-game-platforms-download@cn.srs` | 431 B | 24 |
 | `geosite-115.srs` | 172 B | 14 |
@@ -128,6 +128,12 @@
 | `singbox.json` | 19907 B | 454 |
 
 </details>
+
+与上次相比 **新增 1 条**（前 10 条）：
+
+```
+domain_suffix	nia-teams.com
+```
 
 ### direct-ip
 
