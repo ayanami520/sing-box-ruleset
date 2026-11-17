@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/direct-domain.txt (不提交, 随 CI artifact 上传)
-# 本次共 3178 行 (dup=431, covered=2747); 提交版上限 2000 行
+# 本次共 3182 行 (dup=431, covered=2751); 提交版上限 2000 行
 dup	domain	a1.mzstatic.com
 dup	domain	a2.mzstatic.com
 dup	domain	a3.mzstatic.com
@@ -894,6 +894,7 @@ covered	domain_suffix	ar.umeng.com	umeng.com
 covered	domain_suffix	arcaea.cn	cn
 covered	domain_suffix	ark-doc-resources.cn	cn
 covered	domain_suffix	ark.letv.com	letv.com
+covered	domain_suffix	arknights.com.cn	cn
 covered	domain_suffix	arrow.cn	cn
 covered	domain_suffix	asfiovnxocqpcry.com.cn	cn
 covered	domain_suffix	asmlink.cn	cn
@@ -1854,6 +1855,9 @@ covered	domain_suffix	hwht.cn	cn
 covered	domain_suffix	hx168.com.cn	cn
 covered	domain_suffix	hxb.com.cn	cn
 covered	domain_suffix	hxzq.cn	cn
+covered	domain_suffix	hycdn.cn	cn
+covered	domain_suffix	hypergryph.cn	cn
+covered	domain_suffix	hypergryph.com.cn	cn
 covered	domain_suffix	hytung.cn	cn
 covered	domain_suffix	i.snssdk.com	snssdk.com
 covered	domain_suffix	i2oo.cn	cn
@@ -2001,8 +2005,4 @@ covered	domain_suffix	jsurvey.cn	cn
 covered	domain_suffix	jtexpress.cn	cn
 covered	domain_suffix	jtexpress.com.cn	cn
 covered	domain_suffix	jtfulfillment.cn	cn
-covered	domain_suffix	juejin.cn	cn
-covered	domain_suffix	juhuiwan.com.cn	cn
-covered	domain_suffix	jushuitan.cn	cn
-covered	domain_suffix	just-do-it.cn	cn
-# ... 已截断: 共 3178 行, 仅保留前 2000 行 (完整清单见 report/.full/direct-domain.txt)
+# ... 已截断: 共 3182 行, 仅保留前 2000 行 (完整清单见 report/.full/direct-domain.txt)
