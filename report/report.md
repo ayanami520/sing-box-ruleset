@@ -9,7 +9,7 @@
 |---|---|---|---|---|---|---|---|---|
 | `ads` | 8 | 0 | 173729 | 24511 | 10125 | 220 | 14166 | = 无变化 |
 | `ai` | 1 | 0 | 2360 | 218 | 0 | 0 | 218 | = 无变化 |
-| `direct-domain` | 14 | 0 | 44184 | 10579 | 459 | 2751 | 7369 | +12 / -0 |
+| `direct-domain` | 14 | 0 | 44184 | 10579 | 459 | 2751 | 7369 | = 无变化 |
 | `direct-ip` | 1 | 0 | 34259 | 8101 | 0 | 0 | 8101 | = 无变化 |
 | `google` | 1 | 0 | 7091 | 940 | 0 | 78 | 862 | = 无变化 |
 | `steam-cn` | 1 | 28 | 616 | 45 | 4 | 2 | 39 | = 无变化 |
@@ -105,7 +105,7 @@
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 10579 / 10120 / 7369 |
 | 删除: 上游重复 / 被覆盖 | 459 / 2751 |
 | 匹配器 | domain=919, domain_suffix=6441, domain_keyword=0, domain_regex=9, ip_cidr=0 |
-| 与上次提交对比 | +12 / -0 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/direct-domain.txt`](removed/direct-domain.txt) |
 
 <details><summary>上游明细</summary>
@@ -128,21 +128,6 @@
 | `singbox.json` | 19907 B | 454 |
 
 </details>
-
-与上次相比 **新增 12 条**（前 10 条）：
-
-```
-domain	configuration.ls.apple.com
-domain	musicstatus.itunes.apple.com
-domain	mzstorekit.itunes.apple.com
-domain_suffix	arknights.com
-domain_suffix	captive.apple.com
-domain_suffix	hgto.cc
-domain_suffix	hycdn.com
-domain_suffix	hypergryph.com
-domain_suffix	hypergryph.net
-domain_suffix	octavedge.com
-```
 
 ### direct-ip
 
