@@ -7,13 +7,13 @@
 
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
-| `ads` | 8 | 0 | 173741 | 24512 | 10125 | 220 | 14167 | +1 / -0 |
-| `ai` | 1 | 0 | 2381 | 219 | 0 | 0 | 219 | +1 / -0 |
-| `direct-domain` | 14 | 0 | 44324 | 10607 | 459 | 2758 | 7390 | +21 / -0 |
+| `ads` | 8 | 0 | 173741 | 24512 | 10125 | 220 | 14167 | = 无变化 |
+| `ai` | 1 | 0 | 2381 | 219 | 0 | 0 | 219 | = 无变化 |
+| `direct-domain` | 14 | 0 | 44324 | 10607 | 459 | 2758 | 7390 | = 无变化 |
 | `direct-ip` | 1 | 0 | 34259 | 8101 | 0 | 0 | 8101 | = 无变化 |
 | `google` | 1 | 0 | 7091 | 940 | 0 | 78 | 862 | = 无变化 |
-| `steam-cn` | 1 | 16 | 527 | 33 | 4 | 2 | 27 | +1 / -13 |
-| `steam-proxy` | 0 | 38 | 460 | 38 | 0 | 0 | 38 | +19 / -0 |
+| `steam-cn` | 1 | 16 | 527 | 33 | 4 | 2 | 27 | = 无变化 |
+| `steam-proxy` | 0 | 38 | 460 | 38 | 0 | 0 | 38 | = 无变化 |
 | `tailscale` | 1 | 0 | 80 | 3 | 0 | 0 | 3 | = 无变化 |
 | `twitter` | 1 | 0 | 315 | 24 | 0 | 0 | 24 | = 无变化 |
 | `us` | 1 | 7 | 704 | 59 | 0 | 0 | 59 | = 无变化 |
@@ -58,7 +58,7 @@
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 24512 / 14387 / 14167 |
 | 删除: 上游重复 / 被覆盖 | 10125 / 220 |
 | 匹配器 | domain=137, domain_suffix=13982, domain_keyword=25, domain_regex=1, ip_cidr=22 |
-| 与上次提交对比 | +1 / -0 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
@@ -76,12 +76,6 @@
 
 </details>
 
-与上次相比 **新增 1 条**（前 10 条）：
-
-```
-domain_suffix	tencentads.com
-```
-
 ### ai
 
 | 项 | 值 |
@@ -91,7 +85,7 @@ domain_suffix	tencentads.com
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 219 / 219 / 219 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
 | 匹配器 | domain=37, domain_suffix=181, domain_keyword=0, domain_regex=1, ip_cidr=0 |
-| 与上次提交对比 | +1 / -0 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/ai.txt`](removed/ai.txt) |
 
 <details><summary>上游明细</summary>
@@ -102,12 +96,6 @@ domain_suffix	tencentads.com
 
 </details>
 
-与上次相比 **新增 1 条**（前 10 条）：
-
-```
-domain_suffix	elevenlabsusercontent.com
-```
-
 ### direct-domain
 
 | 项 | 值 |
@@ -117,7 +105,7 @@ domain_suffix	elevenlabsusercontent.com
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 10607 / 10148 / 7390 |
 | 删除: 上游重复 / 被覆盖 | 459 / 2758 |
 | 匹配器 | domain=919, domain_suffix=6462, domain_keyword=0, domain_regex=9, ip_cidr=0 |
-| 与上次提交对比 | +21 / -0 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/direct-domain.txt`](removed/direct-domain.txt) |
 
 <details><summary>上游明细</summary>
@@ -140,21 +128,6 @@ domain_suffix	elevenlabsusercontent.com
 | `singbox.json` | 19907 B | 454 |
 
 </details>
-
-与上次相比 **新增 21 条**（前 10 条）：
-
-```
-domain_suffix	172.com
-domain_suffix	1qianbao.com
-domain_suffix	1y.com
-domain_suffix	1ycdn.com
-domain_suffix	4008000000.com
-domain_suffix	ajkimg.com
-domain_suffix	baishan.com
-domain_suffix	baishancloud.com
-domain_suffix	lenovofuturecenter.com
-domain_suffix	lujincaifu.com
-```
 
 ### direct-ip
 
@@ -205,7 +178,7 @@ domain_suffix	lujincaifu.com
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 33 / 29 / 27 |
 | 删除: 上游重复 / 被覆盖 | 4 / 2 |
 | 匹配器 | domain=1, domain_suffix=26, domain_keyword=0, domain_regex=0, ip_cidr=0 |
-| 与上次提交对比 | +1 / -13 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/steam-cn.txt`](removed/steam-cn.txt) |
 
 <details><summary>上游明细</summary>
@@ -217,27 +190,6 @@ domain_suffix	lujincaifu.com
 
 </details>
 
-与上次相比 **移除 13 条**（前 10 条，完整见明细文件）：
-
-```
-domain_suffix	cdn.akamai.steamstatic.com
-domain_suffix	cdn.cloudflare.steamstatic.com
-domain_suffix	cdn.fastly.steamstatic.com
-domain_suffix	shared.akamai.steamstatic.com
-domain_suffix	shared.cloudflare.steamstatic.com
-domain_suffix	shared.fastly.steamstatic.com
-domain_suffix	steampowered.com
-domain_suffix	steamstore-a.akamaihd.net
-domain_suffix	store.akamai.steamstatic.com
-domain_suffix	store.cloudflare.steamstatic.com
-```
-
-与上次相比 **新增 1 条**（前 10 条）：
-
-```
-domain_suffix	cm.steampowered.com
-```
-
 ### steam-proxy
 
 | 项 | 值 |
@@ -247,7 +199,7 @@ domain_suffix	cm.steampowered.com
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 38 / 38 / 38 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
 | 匹配器 | domain=0, domain_suffix=38, domain_keyword=0, domain_regex=0, ip_cidr=0 |
-| 与上次提交对比 | +19 / -0 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/steam-proxy.txt`](removed/steam-proxy.txt) |
 
 <details><summary>上游明细</summary>
@@ -257,21 +209,6 @@ domain_suffix	cm.steampowered.com
 | `local/steam-proxy.txt` (本地手写) | - | 38 |
 
 </details>
-
-与上次相比 **新增 19 条**（前 10 条）：
-
-```
-domain_suffix	api.steampowered.com
-domain_suffix	cdn.akamai.steamstatic.com
-domain_suffix	cdn.cloudflare.steamstatic.com
-domain_suffix	cdn.fastly.steamstatic.com
-domain_suffix	checkout.steampowered.com
-domain_suffix	help.steampowered.com
-domain_suffix	login.steampowered.com
-domain_suffix	partner.steampowered.com
-domain_suffix	shared.akamai.steamstatic.com
-domain_suffix	shared.cloudflare.steamstatic.com
-```
 
 ### tailscale
 
