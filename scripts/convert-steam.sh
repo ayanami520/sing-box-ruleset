@@ -5,6 +5,11 @@
 #   Steam-Direct.list     -> local/steam-cn.txt       （直连侧 ✓）
 #   Steam-Community.list  -> local/steam-proxy.txt    （代理侧 ✓）
 #
+# ⚠️ 默认【不执行】转换（直接退出并保留现有手工文件）：
+#    上游 Steam-Direct.list 会把 steampowered.com 全域和商店 *.steamstatic.com 划进直连，
+#    导致 store/login/api 全部直连（国内质量差、商店图片刷不出）。
+#    本地已改为手工精修维护；确需从上游重新生成，用 FORCE_STEAM=1。
+#
 # 只转换"能无损表达"的类型：
 #   DOMAIN-SUFFIX,x        -> suffix:x      (domain_suffix)
 #   DOMAIN,x               -> full:x        (domain)
@@ -89,11 +94,27 @@ convert() {
 
 mkdir -p "$LOCAL_DIR"
 
-echo "==> 转换 Steam 规则清单"
-convert "$BASE/Steam-Direct.list" \
-	"Steam-cn: 直连（配合 DNS -> dns-china，否则下载仍会拿到境外 CDN）" \
-	"$LOCAL_DIR/steam-cn.txt"
-convert "$BASE/Steam-Community.list" \
-	"Steam-proxy: 走代理（社区 / 创意工坊 / 聊天 / 直播）" \
-	"$LOCAL_DIR/steam-proxy.txt"
+echo "==> Steam 规则清单"
+if [ "${FORCE_STEAM:-0}" = "1" ]; then
+	echo "    FORCE_STEAM=1 ⇒ 从上游重新生成（会覆盖 local/steam-*.txt 的手工精修！）"
+	convert "$BASE/Steam-Direct.list" \
+		"Steam-cn: 直连（配合 DNS -> dns-china，否则下载仍会拿到境外 CDN）" \
+		"$LOCAL_DIR/steam-cn.txt"
+	convert "$BASE/Steam-Community.list" \
+		"Steam-proxy: 走代理（社区 / 创意工坊 / 聊天 / 直播）" \
+		"$LOCAL_DIR/steam-proxy.txt"
+else
+	# 默认跳过：上游 Steam-Direct.list 把整个 steampowered.com（含 store/login/api）
+	# 和商店页面的 *.steamstatic.com 资源都划进直连，会让商店/登录变直连、体验变差。
+	# 本地已改为手工精修维护，见 local/steam-cn.txt 与 local/steam-proxy.txt 头部说明。
+	for _g in steam-cn steam-proxy; do
+		if [ ! -f "$LOCAL_DIR/$_g.txt" ]; then
+			echo "!!! 缺少 $LOCAL_DIR/$_g.txt，且未指定 FORCE_STEAM=1 重新生成" >&2
+			exit 1
+		fi
+	done
+	echo "    跳过：local/steam-cn.txt 与 local/steam-proxy.txt 为手工精修维护"
+	echo "    上游清单会把 steampowered.com 全域与商店静态资源划入直连（会导致商店/登录卡）"
+	echo "    确需从上游重新生成：FORCE_STEAM=1 sh scripts/convert-steam.sh"
+fi
 echo "==> 完成（重跑到这里说明幂等：git diff 应为空）"

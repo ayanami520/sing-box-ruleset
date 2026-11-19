@@ -1,32 +1,43 @@
-# ⚠️ 本文件由 scripts/convert-steam.sh 生成，请勿手动修改
-# 上游: https://raw.githubusercontent.com/mrblack0407/surge_rules/main/rules/Steam-Direct.list
-# 策略: Steam-cn: 直连（配合 DNS -> dns-china，否则下载仍会拿到境外 CDN）
+# ⚠️ 本文件为【手工维护】，不再由 scripts/convert-steam.sh 自动生成
+#    （如需从上游重新拉取，用 FORCE_STEAM=1 sh scripts/convert-steam.sh，但会覆盖本文件的手工精修）
+# 策略: Steam-cn —— 只放两类域名：
+#   1) 决定「Valve 把你判定在哪个下载区域」的：steamserver.net（CM）
+#   2) 搬数据的：下载 / 内容分发 / 国内 CDN / 客户端更新
+# 商店、登录、API、结算、社区、页面静态资源【一律不在此列】→ 见 steam-proxy.txt
 # 格式: PR1 手写条目 —— suffix:=domain_suffix / full:=domain / keyword:=domain_keyword / ip:=ip_cidr
-suffix:steampowered.com
-suffix:steamcontent.com
+
+# ── 区域判定（唯一真正必须直连的“身份”域名）──────────────────────
+# 实测日志里 Valve 用 cmp<编号>-<区域>.steamserver.net（cmp1-tyo3 / cmp1-hkg1 / cmp2-sgp1 …）
+# + p2p-*.discovery.steamserver.net + ipv6check-http.steamserver.net
+# 这些一旦走代理，Valve 就会按代理出口 IP 判定区域 → 只下发境外 CDN。
 suffix:steamserver.net
+# 老式 CM 命名（cm-01-scl1.cm.steampowered.com）。实测已不再出现，保留作保险。
+suffix:cm.steampowered.com
+
+# ── 下载 / 内容分发 CDN ─────────────────────────────────────────
+suffix:steamcontent.com
 suffix:steampipe.akamaized.net
 suffix:steampipe-kr.akamaized.net
 suffix:steampipe-partner.akamaized.net
-suffix:store.cloudflare.steamstatic.com
-suffix:store.akamai.steamstatic.com
-suffix:store.fastly.steamstatic.com
-suffix:cdn.cloudflare.steamstatic.com
-suffix:cdn.akamai.steamstatic.com
-suffix:cdn.fastly.steamstatic.com
-suffix:shared.cloudflare.steamstatic.com
-suffix:shared.akamai.steamstatic.com
-suffix:shared.fastly.steamstatic.com
-suffix:video.cloudflare.steamstatic.com
-suffix:video.akamai.steamstatic.com
-suffix:clientconfig.akamai.steamstatic.com
-suffix:client-update.akamai.steamstatic.com
-suffix:steamstore-a.akamaihd.net
-suffix:steamcdn-a.akamaihd.net
-suffix:steammobile.akamaized.net
-suffix:steamgames.com
-suffix:steamchina.com
+
+# ── 中国大陆下载 CDN（判定为大陆后 Valve 会下发这些）─────────────
+suffix:dl.steam.clngaa.com
 suffix:st.dl.eccdnx.com
 suffix:st.dl.bscstorage.net
-suffix:dl.steam.clngaa.com
 suffix:xz.pphimalayanrt.com
+suffix:steamchina.com
+suffix:steamgames.com
+
+# ── 客户端配置 / 更新（小文件，直连可加速客户端启动）─────────────
+suffix:clientconfig.akamai.steamstatic.com
+suffix:client-update.akamai.steamstatic.com
+suffix:steamcdn-a.akamaihd.net
+suffix:steammobile.akamaized.net
+
+# ── 已移出本清单（改走 steam-proxy.txt）─────────────────────────
+# suffix:steampowered.com                        → 会连带 store/login/api/checkout/help 一起直连
+# suffix:store.{cloudflare,akamai,fastly}.steamstatic.com   → 商店 CSS/JS/图片
+# suffix:cdn.{cloudflare,akamai,fastly}.steamstatic.com     → 商店图片
+# suffix:shared.{cloudflare,akamai,fastly}.steamstatic.com  → 商店共享资源
+# suffix:video.{cloudflare,akamai}.steamstatic.com          → 商店视频
+# suffix:steamstore-a.akamaihd.net                          → 商店静态资源

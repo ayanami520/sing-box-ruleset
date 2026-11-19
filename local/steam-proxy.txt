@@ -1,7 +1,37 @@
-# ⚠️ 本文件由 scripts/convert-steam.sh 生成，请勿手动修改
-# 上游: https://raw.githubusercontent.com/mrblack0407/surge_rules/main/rules/Steam-Community.list
-# 策略: Steam-proxy: 走代理（社区 / 创意工坊 / 聊天 / 直播）
+# ⚠️ 本文件为【手工维护】，不再由 scripts/convert-steam.sh 自动生成
+#    （如需从上游重新拉取，用 FORCE_STEAM=1 sh scripts/convert-steam.sh，但会覆盖本文件的手工精修）
+# 策略: Steam-proxy —— 除「区域判定 + 下载」之外的一切 Steam 流量都走代理
+# 依据: store/login/api 都在 Akamai，国内直连实测高并发大面积 i/o timeout（实测 124 条）
+# 注意: 本规则集在配置里排在 Steam-cn 之前；这里【故意不写 suffix:steampowered.com 全域兜底】，
+#       否则会把 cm.steampowered.com 一起抢走，导致区域判定失效。
 # 格式: PR1 手写条目 —— suffix:=domain_suffix / full:=domain / keyword:=domain_keyword / ip:=ip_cidr
+
+# ── 商店 / 登录 / API / 结算 / 帮助（★ 这些必须走代理）──────────────
+suffix:store.steampowered.com
+suffix:login.steampowered.com
+suffix:api.steampowered.com
+suffix:checkout.steampowered.com
+suffix:help.steampowered.com
+suffix:support.steampowered.com
+suffix:partner.steampowered.com
+
+# ── 商店页面静态资源（图片 / CSS / JS / 视频）────────────────────
+# 注: store.akamai.steamstatic.com 也被 direct-domain 收录，此处必须显式列出，
+#     靠规则顺序（Steam-proxy 在 direct-domain 之前）抢回来。
+suffix:store.cloudflare.steamstatic.com
+suffix:store.akamai.steamstatic.com
+suffix:store.fastly.steamstatic.com
+suffix:cdn.cloudflare.steamstatic.com
+suffix:cdn.akamai.steamstatic.com
+suffix:cdn.fastly.steamstatic.com
+suffix:shared.cloudflare.steamstatic.com
+suffix:shared.akamai.steamstatic.com
+suffix:shared.fastly.steamstatic.com
+suffix:video.cloudflare.steamstatic.com
+suffix:video.akamai.steamstatic.com
+suffix:steamstore-a.akamaihd.net
+
+# ── 社区 / 创意工坊 / 聊天 / 直播 ───────────────────────────────
 suffix:steamcommunity.com
 suffix:steamcommunity-a.akamaihd.net
 suffix:community.cloudflare.steamstatic.com
