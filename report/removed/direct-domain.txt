@@ -4,7 +4,7 @@
 #   dup     = 上游/本地之间重复; 同一值重复多次只列 1 行, 总重复条数见报告"重复删除"列
 #   covered = 被更短的 domain_suffix 覆盖; 语义等价, 删掉只省内存, 命中结果不变
 # 完整未截断清单: report/.full/direct-domain.txt (不提交, 随 CI artifact 上传)
-# 本次共 3182 行 (dup=431, covered=2751); 提交版上限 2000 行
+# 本次共 3189 行 (dup=431, covered=2758); 提交版上限 2000 行
 dup	domain	a1.mzstatic.com
 dup	domain	a2.mzstatic.com
 dup	domain	a3.mzstatic.com
@@ -650,6 +650,7 @@ covered	domain_suffix	58antenna.cn	cn
 covered	domain_suffix	58cdn.com.cn	cn
 covered	domain_suffix	58control.cn	cn
 covered	domain_suffix	58v5.cn	cn
+covered	domain_suffix	58wos.com.cn	cn
 covered	domain_suffix	58xinghuo.cn	cn
 covered	domain_suffix	59bob.cn	cn
 covered	domain_suffix	6.cn	cn
@@ -966,6 +967,7 @@ covered	domain_suffix	baidu.cn	cn
 covered	domain_suffix	baidu.com.cn	cn
 covered	domain_suffix	baiduyuncdn.cn	cn
 covered	domain_suffix	baifen.music.baidu.com	baidu.com
+covered	domain_suffix	baishancdnx.cn	cn
 covered	domain_suffix	baiying.cn	cn
 covered	domain_suffix	baiying.com.cn	cn
 covered	domain_suffix	baltamatica.cn	cn
@@ -2003,6 +2005,4 @@ covered	domain_suffix	jsfund.cn	cn
 covered	domain_suffix	jsterp.cn	cn
 covered	domain_suffix	jsurvey.cn	cn
 covered	domain_suffix	jtexpress.cn	cn
-covered	domain_suffix	jtexpress.com.cn	cn
-covered	domain_suffix	jtfulfillment.cn	cn
-# ... 已截断: 共 3182 行, 仅保留前 2000 行 (完整清单见 report/.full/direct-domain.txt)
+# ... 已截断: 共 3189 行, 仅保留前 2000 行 (完整清单见 report/.full/direct-domain.txt)

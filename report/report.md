@@ -7,13 +7,13 @@
 
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
-| `ads` | 8 | 0 | 173729 | 24511 | 10125 | 220 | 14166 | = 无变化 |
-| `ai` | 1 | 0 | 2360 | 218 | 0 | 0 | 218 | = 无变化 |
-| `direct-domain` | 14 | 0 | 44184 | 10579 | 459 | 2751 | 7369 | = 无变化 |
+| `ads` | 8 | 0 | 173741 | 24512 | 10125 | 220 | 14167 | +1 / -0 |
+| `ai` | 1 | 0 | 2381 | 219 | 0 | 0 | 219 | +1 / -0 |
+| `direct-domain` | 14 | 0 | 44324 | 10607 | 459 | 2758 | 7390 | +21 / -0 |
 | `direct-ip` | 1 | 0 | 34259 | 8101 | 0 | 0 | 8101 | = 无变化 |
 | `google` | 1 | 0 | 7091 | 940 | 0 | 78 | 862 | = 无变化 |
-| `steam-cn` | 1 | 28 | 616 | 45 | 4 | 2 | 39 | = 无变化 |
-| `steam-proxy` | 0 | 19 | 334 | 19 | 0 | 0 | 19 | = 无变化 |
+| `steam-cn` | 1 | 16 | 527 | 33 | 4 | 2 | 27 | +1 / -13 |
+| `steam-proxy` | 0 | 38 | 460 | 38 | 0 | 0 | 38 | +19 / -0 |
 | `tailscale` | 1 | 0 | 80 | 3 | 0 | 0 | 3 | = 无变化 |
 | `twitter` | 1 | 0 | 315 | 24 | 0 | 0 | 24 | = 无变化 |
 | `us` | 1 | 7 | 704 | 59 | 0 | 0 | 59 | = 无变化 |
@@ -27,13 +27,13 @@
 
 | 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |
 |---|---|---|---|---|---|---|---|
-| `ads` | 137 | 13981 | 25 | 1 | 22 | 0 | ✅ |
-| `ai` | 37 | 180 | 0 | 1 | 0 | 0 | ✅ |
-| `direct-domain` | 919 | 6441 | 0 | 9 | 0 | 0 | ✅ |
+| `ads` | 137 | 13982 | 25 | 1 | 22 | 0 | ✅ |
+| `ai` | 37 | 181 | 0 | 1 | 0 | 0 | ✅ |
+| `direct-domain` | 919 | 6462 | 0 | 9 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8101 | 0 | ✅ |
 | `google` | 31 | 829 | 0 | 2 | 0 | 0 | ✅ |
-| `steam-cn` | 1 | 38 | 0 | 0 | 0 | 0 | ✅ |
-| `steam-proxy` | 0 | 19 | 0 | 0 | 0 | 0 | ✅ |
+| `steam-cn` | 1 | 26 | 0 | 0 | 0 | 0 | ✅ |
+| `steam-proxy` | 0 | 38 | 0 | 0 | 0 | 0 | ✅ |
 | `tailscale` | 0 | 3 | 0 | 0 | 0 | 0 | ✅ |
 | `twitter` | 0 | 24 | 0 | 0 | 0 | 0 | ✅ |
 | `us` | 0 | 58 | 1 | 0 | 0 | 0 | ✅ |
@@ -54,18 +54,18 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 8 / 0 |
-| 产物 | `dist/ads.srs` — 173729 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 24511 / 14386 / 14166 |
+| 产物 | `dist/ads.srs` — 173741 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 24512 / 14387 / 14167 |
 | 删除: 上游重复 / 被覆盖 | 10125 / 220 |
-| 匹配器 | domain=137, domain_suffix=13981, domain_keyword=25, domain_regex=1, ip_cidr=22 |
-| 与上次提交对比 | = 无变化 |
+| 匹配器 | domain=137, domain_suffix=13982, domain_keyword=25, domain_regex=1, ip_cidr=22 |
+| 与上次提交对比 | +1 / -0 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-category-ads-all.srs` | 8175 B | 909 |
+| `geosite-category-ads-all.srs` | 8188 B | 910 |
 | `adblocksingboxlite.srs` | 63468 B | 8480 |
 | `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
@@ -76,43 +76,55 @@
 
 </details>
 
+与上次相比 **新增 1 条**（前 10 条）：
+
+```
+domain_suffix	tencentads.com
+```
+
 ### ai
 
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 1 / 0 |
-| 产物 | `dist/ai.srs` — 2360 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 218 / 218 / 218 |
+| 产物 | `dist/ai.srs` — 2381 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 219 / 219 / 219 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
-| 匹配器 | domain=37, domain_suffix=180, domain_keyword=0, domain_regex=1, ip_cidr=0 |
-| 与上次提交对比 | = 无变化 |
+| 匹配器 | domain=37, domain_suffix=181, domain_keyword=0, domain_regex=1, ip_cidr=0 |
+| 与上次提交对比 | +1 / -0 |
 | 明细 | [`report/removed/ai.txt`](removed/ai.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-category-ai-!cn.srs` | 2360 B | 218 |
+| `geosite-category-ai-!cn.srs` | 2381 B | 219 |
 
 </details>
+
+与上次相比 **新增 1 条**（前 10 条）：
+
+```
+domain_suffix	elevenlabsusercontent.com
+```
 
 ### direct-domain
 
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 14 / 0 |
-| 产物 | `dist/direct-domain.srs` — 44184 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 10579 / 10120 / 7369 |
-| 删除: 上游重复 / 被覆盖 | 459 / 2751 |
-| 匹配器 | domain=919, domain_suffix=6441, domain_keyword=0, domain_regex=9, ip_cidr=0 |
-| 与上次提交对比 | = 无变化 |
+| 产物 | `dist/direct-domain.srs` — 44324 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 10607 / 10148 / 7390 |
+| 删除: 上游重复 / 被覆盖 | 459 / 2758 |
+| 匹配器 | domain=919, domain_suffix=6462, domain_keyword=0, domain_regex=9, ip_cidr=0 |
+| 与上次提交对比 | +21 / -0 |
 | 明细 | [`report/removed/direct-domain.txt`](removed/direct-domain.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-cn.srs` | 57617 B | 9527 |
+| `geosite-cn.srs` | 57792 B | 9555 |
 | `geosite-category-pt.srs` | 1160 B | 126 |
 | `geosite-category-game-platforms-download@cn.srs` | 431 B | 24 |
 | `geosite-115.srs` | 172 B | 14 |
@@ -128,6 +140,21 @@
 | `singbox.json` | 19907 B | 454 |
 
 </details>
+
+与上次相比 **新增 21 条**（前 10 条）：
+
+```
+domain_suffix	172.com
+domain_suffix	1qianbao.com
+domain_suffix	1y.com
+domain_suffix	1ycdn.com
+domain_suffix	4008000000.com
+domain_suffix	ajkimg.com
+domain_suffix	baishan.com
+domain_suffix	baishancloud.com
+domain_suffix	lenovofuturecenter.com
+domain_suffix	lujincaifu.com
+```
 
 ### direct-ip
 
@@ -173,12 +200,12 @@
 
 | 项 | 值 |
 |---|---|
-| 上游数 / 本地条目 | 1 / 28 |
-| 产物 | `dist/steam-cn.srs` — 616 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 45 / 41 / 39 |
+| 上游数 / 本地条目 | 1 / 16 |
+| 产物 | `dist/steam-cn.srs` — 527 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 33 / 29 / 27 |
 | 删除: 上游重复 / 被覆盖 | 4 / 2 |
-| 匹配器 | domain=1, domain_suffix=38, domain_keyword=0, domain_regex=0, ip_cidr=0 |
-| 与上次提交对比 | = 无变化 |
+| 匹配器 | domain=1, domain_suffix=26, domain_keyword=0, domain_regex=0, ip_cidr=0 |
+| 与上次提交对比 | +1 / -13 |
 | 明细 | [`report/removed/steam-cn.txt`](removed/steam-cn.txt) |
 
 <details><summary>上游明细</summary>
@@ -186,29 +213,65 @@
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
 | `geosite-steam%40cn.srs` | 308 B | 17 |
-| `local/steam-cn.txt` (本地手写) | - | 28 |
+| `local/steam-cn.txt` (本地手写) | - | 16 |
 
 </details>
+
+与上次相比 **移除 13 条**（前 10 条，完整见明细文件）：
+
+```
+domain_suffix	cdn.akamai.steamstatic.com
+domain_suffix	cdn.cloudflare.steamstatic.com
+domain_suffix	cdn.fastly.steamstatic.com
+domain_suffix	shared.akamai.steamstatic.com
+domain_suffix	shared.cloudflare.steamstatic.com
+domain_suffix	shared.fastly.steamstatic.com
+domain_suffix	steampowered.com
+domain_suffix	steamstore-a.akamaihd.net
+domain_suffix	store.akamai.steamstatic.com
+domain_suffix	store.cloudflare.steamstatic.com
+```
+
+与上次相比 **新增 1 条**（前 10 条）：
+
+```
+domain_suffix	cm.steampowered.com
+```
 
 ### steam-proxy
 
 | 项 | 值 |
 |---|---|
-| 上游数 / 本地条目 | 0 / 19 |
-| 产物 | `dist/steam-proxy.srs` — 334 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 19 / 19 / 19 |
+| 上游数 / 本地条目 | 0 / 38 |
+| 产物 | `dist/steam-proxy.srs` — 460 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 38 / 38 / 38 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
-| 匹配器 | domain=0, domain_suffix=19, domain_keyword=0, domain_regex=0, ip_cidr=0 |
-| 与上次提交对比 | = 无变化 |
+| 匹配器 | domain=0, domain_suffix=38, domain_keyword=0, domain_regex=0, ip_cidr=0 |
+| 与上次提交对比 | +19 / -0 |
 | 明细 | [`report/removed/steam-proxy.txt`](removed/steam-proxy.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `local/steam-proxy.txt` (本地手写) | - | 19 |
+| `local/steam-proxy.txt` (本地手写) | - | 38 |
 
 </details>
+
+与上次相比 **新增 19 条**（前 10 条）：
+
+```
+domain_suffix	api.steampowered.com
+domain_suffix	cdn.akamai.steamstatic.com
+domain_suffix	cdn.cloudflare.steamstatic.com
+domain_suffix	cdn.fastly.steamstatic.com
+domain_suffix	checkout.steampowered.com
+domain_suffix	help.steampowered.com
+domain_suffix	login.steampowered.com
+domain_suffix	partner.steampowered.com
+domain_suffix	shared.akamai.steamstatic.com
+domain_suffix	shared.cloudflare.steamstatic.com
+```
 
 ### tailscale
 
