@@ -7,7 +7,7 @@
 
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
-| `ads` | 8 | 0 | 180909 | 24973 | 12241 | 220 | 12512 | +1788 / -3443 |
+| `ads` | 8 | 0 | 180909 | 24973 | 12241 | 220 | 12512 | = 无变化 |
 | `ai` | 1 | 0 | 2381 | 219 | 0 | 0 | 219 | = 无变化 |
 | `direct-domain` | 14 | 0 | 44324 | 10607 | 459 | 2758 | 7390 | = 无变化 |
 | `direct-ip` | 1 | 0 | 34259 | 8101 | 0 | 0 | 8101 | = 无变化 |
@@ -58,7 +58,7 @@
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 24973 / 12732 / 12512 |
 | 删除: 上游重复 / 被覆盖 | 12241 / 220 |
 | 匹配器 | domain=137, domain_suffix=12328, domain_keyword=24, domain_regex=1, ip_cidr=22 |
-| 与上次提交对比 | +1788 / -3443 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/ads.txt`](removed/ads.txt) |
 
 <details><summary>上游明细</summary>
@@ -75,36 +75,6 @@
 | `BanProgramAD.srs` | 7940 B | 1008 |
 
 </details>
-
-与上次相比 **移除 3443 条**（前 10 条，完整见明细文件）：
-
-```
-domain_keyword	openx
-domain_suffix	00p034d0dw.com
-domain_suffix	01210sop.xyz
-domain_suffix	01211sop.xyz
-domain_suffix	01221sop.xyz
-domain_suffix	01231sop.xyz
-domain_suffix	01240sop.xyz
-domain_suffix	03t441b8w.com
-domain_suffix	04o.fun
-domain_suffix	0592.mobi
-```
-
-与上次相比 **新增 1788 条**（前 10 条）：
-
-```
-domain_suffix	007bq3y7e5.com
-domain_suffix	01wgskp9y3.com
-domain_suffix	06f2egypr.com
-domain_suffix	06hkgn0jl3.com
-domain_suffix	08137tabw.com
-domain_suffix	086123.xyz
-domain_suffix	0a1t46qpf.com
-domain_suffix	0l34c7sqy.com
-domain_suffix	0r5e0xvwes.com
-domain_suffix	0vpekhux1f.com
-```
 
 ### ai
 
