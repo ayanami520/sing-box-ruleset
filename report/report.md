@@ -9,7 +9,7 @@
 |---|---|---|---|---|---|---|---|---|
 | `ads` | 8 | 0 | 180909 | 24973 | 12241 | 220 | 12512 | = 无变化 |
 | `ai` | 1 | 0 | 2381 | 219 | 0 | 0 | 219 | = 无变化 |
-| `direct-domain` | 14 | 0 | 44324 | 10607 | 459 | 2758 | 7390 | = 无变化 |
+| `direct-domain` | 14 | 0 | 44366 | 10612 | 459 | 2758 | 7395 | +5 / -0 |
 | `direct-ip` | 1 | 0 | 34259 | 8101 | 0 | 0 | 8101 | = 无变化 |
 | `google` | 1 | 0 | 7091 | 940 | 0 | 78 | 862 | = 无变化 |
 | `steam-cn` | 1 | 16 | 527 | 33 | 4 | 2 | 27 | = 无变化 |
@@ -29,7 +29,7 @@
 |---|---|---|---|---|---|---|---|
 | `ads` | 137 | 12328 | 24 | 1 | 22 | 0 | ✅ |
 | `ai` | 37 | 181 | 0 | 1 | 0 | 0 | ✅ |
-| `direct-domain` | 919 | 6462 | 0 | 9 | 0 | 0 | ✅ |
+| `direct-domain` | 919 | 6467 | 0 | 9 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8101 | 0 | ✅ |
 | `google` | 31 | 829 | 0 | 2 | 0 | 0 | ✅ |
 | `steam-cn` | 1 | 26 | 0 | 0 | 0 | 0 | ✅ |
@@ -65,7 +65,7 @@
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-category-ads-all.srs` | 8188 B | 910 |
+| `geosite-category-ads-all.srs` | 8175 B | 910 |
 | `adblocksingboxlite.srs` | 63468 B | 8480 |
 | `geosite-category-social-media-!cn@ads.srs` | 260 B | 21 |
 | `geosite-category-social-media-cn@ads.srs` | 81 B | 2 |
@@ -92,7 +92,7 @@
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-category-ai-!cn.srs` | 2381 B | 219 |
+| `geosite-category-ai-!cn.srs` | 2377 B | 219 |
 
 </details>
 
@@ -101,20 +101,20 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 14 / 0 |
-| 产物 | `dist/direct-domain.srs` — 44324 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 10607 / 10148 / 7390 |
+| 产物 | `dist/direct-domain.srs` — 44366 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 10612 / 10153 / 7395 |
 | 删除: 上游重复 / 被覆盖 | 459 / 2758 |
-| 匹配器 | domain=919, domain_suffix=6462, domain_keyword=0, domain_regex=9, ip_cidr=0 |
-| 与上次提交对比 | = 无变化 |
+| 匹配器 | domain=919, domain_suffix=6467, domain_keyword=0, domain_regex=9, ip_cidr=0 |
+| 与上次提交对比 | +5 / -0 |
 | 明细 | [`report/removed/direct-domain.txt`](removed/direct-domain.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-cn.srs` | 57792 B | 9555 |
-| `geosite-category-pt.srs` | 1160 B | 126 |
-| `geosite-category-game-platforms-download@cn.srs` | 431 B | 24 |
+| `geosite-cn.srs` | 60343 B | 9560 |
+| `geosite-category-pt.srs` | 1156 B | 126 |
+| `geosite-category-game-platforms-download@cn.srs` | 428 B | 24 |
 | `geosite-115.srs` | 172 B | 14 |
 | `geosite-category-netdisk-cn.srs` | 770 B | 91 |
 | `geosite-category-social-media-cn.srs` | 518 B | 54 |
@@ -128,6 +128,16 @@
 | `singbox.json` | 19907 B | 454 |
 
 </details>
+
+与上次相比 **新增 5 条**（前 10 条）：
+
+```
+domain_suffix	echooai.com
+domain_suffix	faw-vw.com
+domain_suffix	fazhipro.com
+domain_suffix	icc.link
+domain_suffix	saasfz.com
+```
 
 ### direct-ip
 
@@ -165,7 +175,7 @@
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-google.srs` | 7792 B | 940 |
+| `geosite-google.srs` | 7779 B | 940 |
 
 </details>
 
@@ -185,7 +195,7 @@
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-steam%40cn.srs` | 308 B | 17 |
+| `geosite-steam%40cn.srs` | 305 B | 17 |
 | `local/steam-cn.txt` (本地手写) | - | 16 |
 
 </details>
@@ -226,7 +236,7 @@
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-tailscale.srs` | 80 B | 3 |
+| `geosite-tailscale.srs` | 77 B | 3 |
 
 </details>
 
@@ -246,7 +256,7 @@
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-twitter.srs` | 315 B | 24 |
+| `geosite-twitter.srs` | 312 B | 24 |
 
 </details>
 
@@ -287,6 +297,6 @@
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-youtube.srs` | 1286 B | 178 |
+| `geosite-youtube.srs` | 1272 B | 178 |
 
 </details>
