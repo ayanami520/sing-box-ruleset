@@ -8,10 +8,10 @@
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
 | `ads` | 8 | 0 | 180909 | 24973 | 12241 | 220 | 12512 | = 无变化 |
-| `ai` | 1 | 0 | 2381 | 219 | 0 | 0 | 219 | = 无变化 |
-| `direct-domain` | 14 | 0 | 44366 | 10612 | 459 | 2758 | 7395 | +5 / -0 |
+| `ai` | 1 | 0 | 2376 | 220 | 0 | 0 | 220 | +1 / -0 |
+| `direct-domain` | 14 | 0 | 44381 | 10616 | 459 | 2758 | 7399 | +4 / -0 |
 | `direct-ip` | 1 | 0 | 34259 | 8101 | 0 | 0 | 8101 | = 无变化 |
-| `google` | 1 | 0 | 7091 | 940 | 0 | 78 | 862 | = 无变化 |
+| `google` | 1 | 0 | 7099 | 941 | 0 | 78 | 863 | +1 / -0 |
 | `steam-cn` | 1 | 16 | 527 | 33 | 4 | 2 | 27 | = 无变化 |
 | `steam-proxy` | 0 | 38 | 460 | 38 | 0 | 0 | 38 | = 无变化 |
 | `tailscale` | 1 | 0 | 80 | 3 | 0 | 0 | 3 | = 无变化 |
@@ -28,10 +28,10 @@
 | 规则集 | domain | domain_suffix | domain_keyword | domain_regex | ip_cidr | 其它 | 判定 |
 |---|---|---|---|---|---|---|---|
 | `ads` | 137 | 12328 | 24 | 1 | 22 | 0 | ✅ |
-| `ai` | 37 | 181 | 0 | 1 | 0 | 0 | ✅ |
-| `direct-domain` | 919 | 6467 | 0 | 9 | 0 | 0 | ✅ |
+| `ai` | 37 | 182 | 0 | 1 | 0 | 0 | ✅ |
+| `direct-domain` | 919 | 6471 | 0 | 9 | 0 | 0 | ✅ |
 | `direct-ip` | 0 | 0 | 0 | 0 | 8101 | 0 | ✅ |
-| `google` | 31 | 829 | 0 | 2 | 0 | 0 | ✅ |
+| `google` | 31 | 830 | 0 | 2 | 0 | 0 | ✅ |
 | `steam-cn` | 1 | 26 | 0 | 0 | 0 | 0 | ✅ |
 | `steam-proxy` | 0 | 38 | 0 | 0 | 0 | 0 | ✅ |
 | `tailscale` | 0 | 3 | 0 | 0 | 0 | 0 | ✅ |
@@ -81,38 +81,44 @@
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 1 / 0 |
-| 产物 | `dist/ai.srs` — 2381 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 219 / 219 / 219 |
+| 产物 | `dist/ai.srs` — 2376 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 220 / 220 / 220 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
-| 匹配器 | domain=37, domain_suffix=181, domain_keyword=0, domain_regex=1, ip_cidr=0 |
-| 与上次提交对比 | = 无变化 |
+| 匹配器 | domain=37, domain_suffix=182, domain_keyword=0, domain_regex=1, ip_cidr=0 |
+| 与上次提交对比 | +1 / -0 |
 | 明细 | [`report/removed/ai.txt`](removed/ai.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-category-ai-!cn.srs` | 2377 B | 219 |
+| `geosite-category-ai-!cn.srs` | 2371 B | 220 |
 
 </details>
+
+与上次相比 **新增 1 条**（前 10 条）：
+
+```
+domain_suffix	gemma.ai
+```
 
 ### direct-domain
 
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 14 / 0 |
-| 产物 | `dist/direct-domain.srs` — 44366 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 10612 / 10153 / 7395 |
+| 产物 | `dist/direct-domain.srs` — 44381 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 10616 / 10157 / 7399 |
 | 删除: 上游重复 / 被覆盖 | 459 / 2758 |
-| 匹配器 | domain=919, domain_suffix=6467, domain_keyword=0, domain_regex=9, ip_cidr=0 |
-| 与上次提交对比 | +5 / -0 |
+| 匹配器 | domain=919, domain_suffix=6471, domain_keyword=0, domain_regex=9, ip_cidr=0 |
+| 与上次提交对比 | +4 / -0 |
 | 明细 | [`report/removed/direct-domain.txt`](removed/direct-domain.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-cn.srs` | 60343 B | 9560 |
+| `geosite-cn.srs` | 60365 B | 9564 |
 | `geosite-category-pt.srs` | 1156 B | 126 |
 | `geosite-category-game-platforms-download@cn.srs` | 428 B | 24 |
 | `geosite-115.srs` | 172 B | 14 |
@@ -129,14 +135,13 @@
 
 </details>
 
-与上次相比 **新增 5 条**（前 10 条）：
+与上次相比 **新增 4 条**（前 10 条）：
 
 ```
-domain_suffix	echooai.com
-domain_suffix	faw-vw.com
-domain_suffix	fazhipro.com
-domain_suffix	icc.link
-domain_suffix	saasfz.com
+domain_suffix	chunithm.wahlap.com
+domain_suffix	maimai.wahlap.com
+domain_suffix	tgk-wcaime.wahlap.com
+domain_suffix	wahlap.net
 ```
 
 ### direct-ip
@@ -164,20 +169,26 @@ domain_suffix	saasfz.com
 | 项 | 值 |
 |---|---|
 | 上游数 / 本地条目 | 1 / 0 |
-| 产物 | `dist/google.srs` — 7091 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 940 / 940 / 862 |
+| 产物 | `dist/google.srs` — 7099 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 941 / 941 / 863 |
 | 删除: 上游重复 / 被覆盖 | 0 / 78 |
-| 匹配器 | domain=31, domain_suffix=829, domain_keyword=0, domain_regex=2, ip_cidr=0 |
-| 与上次提交对比 | = 无变化 |
+| 匹配器 | domain=31, domain_suffix=830, domain_keyword=0, domain_regex=2, ip_cidr=0 |
+| 与上次提交对比 | +1 / -0 |
 | 明细 | [`report/removed/google.txt`](removed/google.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-google.srs` | 7779 B | 940 |
+| `geosite-google.srs` | 7817 B | 941 |
 
 </details>
+
+与上次相比 **新增 1 条**（前 10 条）：
+
+```
+domain_suffix	gemma.ai
+```
 
 ### steam-cn
 
