@@ -16,7 +16,7 @@
 | `steam-proxy` | 0 | 38 | 460 | 38 | 0 | 0 | 38 | = 无变化 |
 | `tailscale` | 1 | 0 | 80 | 3 | 0 | 0 | 3 | = 无变化 |
 | `twitter` | 1 | 0 | 315 | 24 | 0 | 0 | 24 | = 无变化 |
-| `us` | 1 | 7 | 704 | 59 | 0 | 0 | 59 | = 无变化 |
+| `us` | 1 | 8 | 714 | 60 | 0 | 0 | 60 | +1 / -0 |
 | `youtube` | 1 | 0 | 1279 | 178 | 0 | 1 | 177 | = 无变化 |
 
 - `原始条目` = 各上游条目直接相加（`local/` 手写条目也算在内，含重复）；`最终条目` 才是写进 `.srs` 的条数。
@@ -36,7 +36,7 @@
 | `steam-proxy` | 0 | 38 | 0 | 0 | 0 | 0 | ✅ |
 | `tailscale` | 0 | 3 | 0 | 0 | 0 | 0 | ✅ |
 | `twitter` | 0 | 24 | 0 | 0 | 0 | 0 | ✅ |
-| `us` | 0 | 58 | 1 | 0 | 0 | 0 | ✅ |
+| `us` | 0 | 59 | 1 | 0 | 0 | 0 | ✅ |
 | `youtube` | 1 | 176 | 0 | 0 | 0 | 0 | ✅ |
 
 - `domain` / `domain_suffix`：简洁字典树查找，**耗时与条数无关**，只看域名长度 ⇒ 放多少条都基本不影响速度。
@@ -112,7 +112,7 @@
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-cn.srs` | 60367 B | 9564 |
+| `geosite-cn.srs` | 60368 B | 9564 |
 | `geosite-category-pt.srs` | 1156 B | 126 |
 | `geosite-category-game-platforms-download@cn.srs` | 428 B | 24 |
 | `geosite-115.srs` | 172 B | 14 |
@@ -254,12 +254,12 @@
 
 | 项 | 值 |
 |---|---|
-| 上游数 / 本地条目 | 1 / 7 |
-| 产物 | `dist/us.srs` — 704 B |
-| 条目: 原始 / 去重后 / 覆盖过滤后 | 59 / 59 / 59 |
+| 上游数 / 本地条目 | 1 / 8 |
+| 产物 | `dist/us.srs` — 714 B |
+| 条目: 原始 / 去重后 / 覆盖过滤后 | 60 / 60 / 60 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
-| 匹配器 | domain=0, domain_suffix=58, domain_keyword=1, domain_regex=0, ip_cidr=0 |
-| 与上次提交对比 | = 无变化 |
+| 匹配器 | domain=0, domain_suffix=59, domain_keyword=1, domain_regex=0, ip_cidr=0 |
+| 与上次提交对比 | +1 / -0 |
 | 明细 | [`report/removed/us.txt`](removed/us.txt) |
 
 <details><summary>上游明细</summary>
@@ -267,9 +267,15 @@
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
 | `geosite-18comic.srs` | 621 B | 52 |
-| `local/us.txt` (本地手写) | - | 7 |
+| `local/us.txt` (本地手写) | - | 8 |
 
 </details>
+
+与上次相比 **新增 1 条**（前 10 条）：
+
+```
+domain_suffix	simpcity.cr
+```
 
 ### youtube
 
