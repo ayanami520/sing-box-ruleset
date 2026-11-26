@@ -22,3 +22,6 @@ hanimeone.me
 #幻想次元
 hxcy.top
 hxcy.moe
+
+#封日本IP
+simpcity.cr
