@@ -8,10 +8,10 @@
 | 规则集 | 上游 | 本地 | 产物(B) | 原始条目 | 重复删除 | 覆盖删除 | 最终条目 | 与上次 |
 |---|---|---|---|---|---|---|---|---|
 | `ads` | 8 | 0 | 180909 | 24973 | 12241 | 220 | 12512 | = 无变化 |
-| `ai` | 1 | 0 | 2376 | 220 | 0 | 0 | 220 | +1 / -0 |
-| `direct-domain` | 14 | 0 | 44381 | 10616 | 459 | 2758 | 7399 | +4 / -0 |
+| `ai` | 1 | 0 | 2376 | 220 | 0 | 0 | 220 | = 无变化 |
+| `direct-domain` | 14 | 0 | 44381 | 10616 | 459 | 2758 | 7399 | = 无变化 |
 | `direct-ip` | 1 | 0 | 34259 | 8101 | 0 | 0 | 8101 | = 无变化 |
-| `google` | 1 | 0 | 7099 | 941 | 0 | 78 | 863 | +1 / -0 |
+| `google` | 1 | 0 | 7099 | 941 | 0 | 78 | 863 | = 无变化 |
 | `steam-cn` | 1 | 16 | 527 | 33 | 4 | 2 | 27 | = 无变化 |
 | `steam-proxy` | 0 | 38 | 460 | 38 | 0 | 0 | 38 | = 无变化 |
 | `tailscale` | 1 | 0 | 80 | 3 | 0 | 0 | 3 | = 无变化 |
@@ -85,7 +85,7 @@
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 220 / 220 / 220 |
 | 删除: 上游重复 / 被覆盖 | 0 / 0 |
 | 匹配器 | domain=37, domain_suffix=182, domain_keyword=0, domain_regex=1, ip_cidr=0 |
-| 与上次提交对比 | +1 / -0 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/ai.txt`](removed/ai.txt) |
 
 <details><summary>上游明细</summary>
@@ -96,12 +96,6 @@
 
 </details>
 
-与上次相比 **新增 1 条**（前 10 条）：
-
-```
-domain_suffix	gemma.ai
-```
-
 ### direct-domain
 
 | 项 | 值 |
@@ -111,14 +105,14 @@ domain_suffix	gemma.ai
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 10616 / 10157 / 7399 |
 | 删除: 上游重复 / 被覆盖 | 459 / 2758 |
 | 匹配器 | domain=919, domain_suffix=6471, domain_keyword=0, domain_regex=9, ip_cidr=0 |
-| 与上次提交对比 | +4 / -0 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/direct-domain.txt`](removed/direct-domain.txt) |
 
 <details><summary>上游明细</summary>
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-cn.srs` | 60365 B | 9564 |
+| `geosite-cn.srs` | 60367 B | 9564 |
 | `geosite-category-pt.srs` | 1156 B | 126 |
 | `geosite-category-game-platforms-download@cn.srs` | 428 B | 24 |
 | `geosite-115.srs` | 172 B | 14 |
@@ -134,15 +128,6 @@ domain_suffix	gemma.ai
 | `singbox.json` | 19907 B | 454 |
 
 </details>
-
-与上次相比 **新增 4 条**（前 10 条）：
-
-```
-domain_suffix	chunithm.wahlap.com
-domain_suffix	maimai.wahlap.com
-domain_suffix	tgk-wcaime.wahlap.com
-domain_suffix	wahlap.net
-```
 
 ### direct-ip
 
@@ -173,7 +158,7 @@ domain_suffix	wahlap.net
 | 条目: 原始 / 去重后 / 覆盖过滤后 | 941 / 941 / 863 |
 | 删除: 上游重复 / 被覆盖 | 0 / 78 |
 | 匹配器 | domain=31, domain_suffix=830, domain_keyword=0, domain_regex=2, ip_cidr=0 |
-| 与上次提交对比 | +1 / -0 |
+| 与上次提交对比 | = 无变化 |
 | 明细 | [`report/removed/google.txt`](removed/google.txt) |
 
 <details><summary>上游明细</summary>
@@ -183,12 +168,6 @@ domain_suffix	wahlap.net
 | `geosite-google.srs` | 7817 B | 941 |
 
 </details>
-
-与上次相比 **新增 1 条**（前 10 条）：
-
-```
-domain_suffix	gemma.ai
-```
 
 ### steam-cn
 
