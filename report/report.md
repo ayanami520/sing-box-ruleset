@@ -112,7 +112,7 @@
 
 | 上游 | 原始体积 | 条目 |
 |---|---|---|
-| `geosite-cn.srs` | 60368 B | 9564 |
+| `geosite-cn.srs` | 60366 B | 9564 |
 | `geosite-category-pt.srs` | 1156 B | 126 |
 | `geosite-category-game-platforms-download@cn.srs` | 428 B | 24 |
 | `geosite-115.srs` | 172 B | 14 |
